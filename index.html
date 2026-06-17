@@ -74,112 +74,126 @@
         </div>
     </div>
 
-    <!-- Header / Nav -->
-    <header class="sticky top-0 z-50 bg-luxury-deep/95 backdrop-blur-md border-b border-gold-800/20 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- Mobile Menu Button -->
-                <div class="flex md:hidden">
-                    <button id="mobile-menu-btn" class="text-gold-300 hover:text-gold-500 focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-
-                <!-- ========================================== -->
-                <!-- LOGO AREA (الشعار الخاص بك المطور)        -->
-                <!-- ========================================== -->
-  <!-- Logo Section -->
-
-        <!-- زر القائمة للجوال -->
-       <div class="flex items-center justify-between h-24">
+    <body class="bg-luxury-deep text-gray-200 font-sans min-h-screen flex flex-col overflow-x-hidden">
 
 ```
-<!-- زر القائمة للجوال -->
-<div class="flex md:hidden">
-    <button id="mobile-menu-btn"
-            class="text-gold-300 hover:text-gold-500 focus:outline-none p-2">
-        <i class="fa-solid fa-bars text-2xl"></i>
-    </button>
-</div>
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-luxury-deep/95 backdrop-blur-md border-b border-gold-800/20 transition-all duration-300">
 
-<!-- الشعار -->
-<div class="flex-1 flex justify-center">
-    <a href="#" onclick="navigateTo('home')">
-        <img src="logo.png"
-             alt="Rose Diamond Trading Logo"
-             class="h-24 md:h-28 w-auto object-contain">
-    </a>
-</div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-<!-- فراغ للموازنة -->
-<div class="w-10 md:hidden"></div>
-```
+        <div class="flex items-center justify-between h-24">
 
-</div>
-
-        <!-- رقم الواتساب -->
-      
-        <!-- العنوان -->
-    
-
-   
-
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" onclick="navigateTo('home')" class="flex flex-col items-center">
-                        <span class="font-serif text-xl md:text-2xl lg:text-3xl font-extrabold tracking-widest text-gold-gradient">ROSE DIAMOND</span>
-                        <span id="logo-subtext" class="text-[9px] tracking-[0.25em] text-gold-300 uppercase -mt-1 font-sans">روز دايموند للتجارة</span>
-                    </a>
-                </div>
-
-                <!-- Desktop Navigation Links
-                <nav class="hidden md:flex space-x-8 space-x-reverse text-sm font-medium">
-                    <button onclick="navigateTo('home')" id="nav-home" class="text-gold-300 font-semibold border-b-2 border-gold-500 pb-1 transition-all">الرئيسية</button>
-                    <button onclick="navigateTo('builder')" id="nav-builder" class="text-gray-300 hover:text-gold-300 pb-1 transition-all flex items-center gap-1">
-                        <i class="fa-solid fa-gem animate-pulse text-gold-400"></i> <span id="nav-builder-text">صمم مجوهراتك الخاصة</span>
-                    </button>
-                </nav> -->
-                            
-                <!-- Action Buttons (Language Selector, Search, Cart) -->
-                <div class="flex items-center gap-3 sm:gap-4">
-                    <!-- Language Selector Dropdown -->
-                    <div class="relative">
-                        <select id="lang-selector" onchange="changeLanguage(this.value)" class="bg-luxury-slate/95 border border-gold-800/40 text-gold-300 text-xs rounded-full px-3 py-1.5 focus:outline-none focus:border-gold-500 cursor-pointer">
-                            <option value="ar" selected>العربية 🇸🇦</option>
-                            <option value="en">English 🇬🇧</option>
-                            <option value="id">Indonesia 🇮🇩</option>
-                        </select>
-                    </div>
-
-                    <button class="text-gray-300 hover:text-gold-400 p-2 hidden sm:block" id="search-toggle-btn">
-                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
-                    </button>
-                    
-                    <!-- Cart Badge Button -->
-                    <button id="cart-btn" class="bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep font-bold px-3 sm:px-5 py-2 rounded-full flex items-center gap-2 hover:from-gold-500 hover:to-gold-300 transition shadow-lg shadow-gold-500/10">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        <span id="cart-count" class="bg-luxury-deep text-gold-300 rounded-full text-xs px-2 py-0.5">0</span>
-                    </button>
-                </div>
+            <!-- Mobile Menu Button -->
+            <div class="flex md:hidden">
+                <button id="mobile-menu-btn"
+                        class="text-gold-300 hover:text-gold-500 focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
             </div>
+
+            <!-- Logo -->
+            <div class="flex-1 flex justify-center">
+                <a href="#" onclick="navigateTo('home')">
+                    <img src="logo.png"
+                         alt="Rose Diamond Trading Logo"
+                         class="h-24 md:h-28 w-auto object-contain">
+                </a>
+            </div>
+
+            <!-- Empty Space For Balance -->
+            <div class="w-10 md:hidden"></div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 space-x-reverse text-sm font-medium">
+                <button onclick="navigateTo('home')"
+                        id="nav-home"
+                        class="text-gold-300 font-semibold border-b-2 border-gold-500 pb-1 transition-all">
+                    الرئيسية
+                </button>
+
+                <button onclick="navigateTo('builder')"
+                        id="nav-builder"
+                        class="text-gray-300 hover:text-gold-300 pb-1 transition-all flex items-center gap-1">
+                    <i class="fa-solid fa-gem animate-pulse text-gold-400"></i>
+                    <span id="nav-builder-text">صمم مجوهراتك الخاصة</span>
+                </button>
+            </nav>
+
+            <!-- Right Buttons -->
+            <div class="flex items-center gap-3 sm:gap-4">
+
+                <div class="relative">
+                    <select id="lang-selector"
+                            onchange="changeLanguage(this.value)"
+                            class="bg-luxury-slate/95 border border-gold-800/40 text-gold-300 text-xs rounded-full px-3 py-1.5 focus:outline-none focus:border-gold-500 cursor-pointer">
+                        <option value="ar" selected>العربية 🇸🇦</option>
+                        <option value="en">English 🇬🇧</option>
+                        <option value="id">Indonesia 🇮🇩</option>
+                    </select>
+                </div>
+
+                <button class="text-gray-300 hover:text-gold-400 p-2 hidden sm:block"
+                        id="search-toggle-btn">
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                </button>
+
+                <button id="cart-btn"
+                        class="bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep font-bold px-3 sm:px-5 py-2 rounded-full flex items-center gap-2 hover:from-gold-500 hover:to-gold-300 transition shadow-lg shadow-gold-500/10">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cart-count"
+                          class="bg-luxury-deep text-gold-300 rounded-full text-xs px-2 py-0.5">
+                        0
+                    </span>
+                </button>
+
+            </div>
+
         </div>
 
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-luxury-slate border-b border-gold-800/20 px-4 pt-2 pb-4 space-y-2">
-            <button onclick="navigateTo('home'); toggleMobileMenu()" class="block w-full text-start px-3 py-2 rounded-md text-base font-medium text-gold-300 hover:bg-luxury-deep" id="mob-nav-home">الرئيسية</button>
-            <button onclick="navigateTo('builder'); toggleMobileMenu()" class="block w-full text-start px-3 py-2 rounded-md text-base font-bold text-gold-400 hover:bg-luxury-deep hover:text-gold-300 flex items-center gap-2">
-                <i class="fa-solid fa-gem"></i> <span id="mob-nav-builder-text">صمم مجوهراتك</span>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+         class="hidden md:hidden bg-luxury-slate border-b border-gold-800/20 px-4 pt-2 pb-4 space-y-2">
+
+        <button onclick="navigateTo('home'); toggleMobileMenu()"
+                class="block w-full text-start px-3 py-2 rounded-md text-base font-medium text-gold-300 hover:bg-luxury-deep"
+                id="mob-nav-home">
+            الرئيسية
+        </button>
+
+        <button onclick="navigateTo('builder'); toggleMobileMenu()"
+                class="block w-full text-start px-3 py-2 rounded-md text-base font-bold text-gold-400 hover:bg-luxury-deep hover:text-gold-300 flex items-center gap-2">
+            <i class="fa-solid fa-gem"></i>
+            <span id="mob-nav-builder-text">صمم مجوهراتك</span>
+        </button>
+
+    </div>
+
+    <!-- Search Panel -->
+    <div id="search-panel"
+         class="hidden bg-luxury-slate border-b border-gold-800/20 py-4 px-6">
+
+        <div class="max-w-3xl mx-auto flex gap-2">
+
+            <input type="text"
+                   id="search-input"
+                   placeholder="ابحث عن خاتم الماس، عقد ذهب، سوار..."
+                   class="w-full bg-luxury-deep text-white placeholder-gray-500 border border-gold-800/30 rounded-lg px-4 py-2 focus:outline-none focus:border-gold-500">
+
+            <button onclick="performSearch()"
+                    id="search-btn-txt"
+                    class="bg-gold-500 text-luxury-deep px-6 py-2 rounded-lg font-bold hover:bg-gold-400 transition">
+                بحث
             </button>
+
         </div>
 
-        <!-- Search Overlay Panel -->
-        <div id="search-panel" class="hidden bg-luxury-slate border-b border-gold-800/20 py-4 px-6">
-            <div class="max-w-3xl mx-auto flex gap-2">
-                <input type="text" id="search-input" placeholder="ابحث عن خاتم الماس، عقد ذهب، سوار..." class="w-full bg-luxury-deep text-white placeholder-gray-500 border border-gold-800/30 rounded-lg px-4 py-2 focus:outline-none focus:border-gold-500">
-                <button onclick="performSearch()" id="search-btn-txt" class="bg-gold-500 text-luxury-deep px-6 py-2 rounded-lg font-bold hover:bg-gold-400 transition">بحث</button>
-            </div>
-        </div>
-    </header>
+    </div>
+
+</header>
+```
 
     <!-- ======================================================== -->
     <!-- PAGE 1: HOME & SHOP BOUTIQUE                             -->
