@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دار النخبة للمجوهرات | Al-Nokba Luxury Jewelry | Perhiasan Mewah</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Tajawal for Arabic, Playfair Display & Inter for EN/ID) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tajawal:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fbf8eb',
+                            100: '#f4ecce',
+                            200: '#e9d99d',
+                            300: '#dac063',
+                            400: '#cca73b',
+                            500: '#b28d2d',
+                            600: '#946e22',
+                            700: '#75511b',
+                            800: '#5e4019',
+                            900: '#4e3418',
+                            950: '#2d1b0b',
+                        },
+                        luxury: {
+                            deep: '#0F1219', /* Dark Luxury Velvet Black */
+                            slate: '#1A1F2C', /* Soft Slate Card Background */
+                            accent: '#D4AF37', /* Pure Gold Accent */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Tajawal', 'Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 50%, #AA771C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-luxury-deep text-gray-200 font-sans min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- Header / Nav -->
+    <header class="sticky top-0 z-50 bg-luxury-deep/95 backdrop-blur-md border-b border-gold-800/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" class="text-gold-300 hover:text-gold-500 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- LOGO AREA (الشعار الخاص بك)                -->
+                <!-- ========================================== -->
+                <!-- 💡 لكيفية إضافة شعارك الخاص: 
+                     1. إذا كنت تملك صورة لشعارك، قم بإلغاء تعليق وسم <img> بالأسفل وقم بوضع رابط الصورة في الـ src.
+                     2. إذا كنت ترغب بشعار نصي فقط، يمكنك تعديل النصوص المكتوبة بالأسفل بكل سهولة.
+                -->
+                <div class="flex-shrink-0 flex items-center">
+    <a href="#" onclick="navigateTo('home')" class="flex flex-col items-center">
+
+        <img src="logo.png" alt="AL-NOKBA Logo" class="h-16 w-auto object-contain">
+
+        <span id="logo-subtext"
+              class="text-[9px] tracking-[0.25em] text-gold-300 uppercase mt-1 font-sans">
+            دار النخبة للمجوهرات
+        </span>
+
+    </a>
+</div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8 space-x-reverse text-sm font-medium">
+                    <button onclick="navigateTo('home')" id="nav-home" class="text-gold-300 font-semibold border-b-2 border-gold-500 pb-1 transition-all">الرئيسية</button>
+                    <button onclick="navigateTo('builder')" id="nav-builder" class="text-gray-300 hover:text-gold-300 pb-1 transition-all flex items-center gap-1">
+                        <i class="fa-solid fa-gem animate-pulse text-gold-400"></i> <span id="nav-builder-text">صمم مجوهراتك الخاصة</span>
+                    </button>
+                </nav>
+
+                <!-- Action Buttons (Language Selector, Search, Cart) -->
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <!-- Language Selector Dropdown -->
+                    <div class="relative">
+                        <select id="lang-selector" onchange="changeLanguage(this.value)" class="bg-luxury-slate/95 border border-gold-800/40 text-gold-300 text-xs rounded-full px-3 py-1.5 focus:outline-none focus:border-gold-500 cursor-pointer">
+                            <option value="ar" selected>العربية 🇸🇦</option>
+                            <option value="en">English 🇬🇧</option>
+                            <option value="id">Indonesia 🇮🇩</option>
+                        </select>
+                    </div>
+
+                    <button class="text-gray-300 hover:text-gold-400 p-2 hidden sm:block" id="search-toggle-btn">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    
+                    <!-- Cart Badge Button -->
+                    <button id="cart-btn" class="bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep font-bold px-3 sm:px-5 py-2 rounded-full flex items-center gap-2 hover:from-gold-500 hover:to-gold-300 transition shadow-lg shadow-gold-500/10">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span id="cart-count" class="bg-luxury-deep text-gold-300 rounded-full text-xs px-2 py-0.5">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-luxury-slate border-b border-gold-800/20 px-4 pt-2 pb-4 space-y-2">
+            <button onclick="navigateTo('home'); toggleMobileMenu()" class="block w-full text-start px-3 py-2 rounded-md text-base font-medium text-gold-300 hover:bg-luxury-deep" id="mob-nav-home">الرئيسية</button>
+            <button onclick="navigateTo('builder'); toggleMobileMenu()" class="block w-full text-start px-3 py-2 rounded-md text-base font-bold text-gold-400 hover:bg-luxury-deep hover:text-gold-300 flex items-center gap-2">
+                <i class="fa-solid fa-gem"></i> <span id="mob-nav-builder-text">صمم مجوهراتك</span>
+            </button>
+        </div>
+
+        <!-- Search Overlay Panel -->
+        <div id="search-panel" class="hidden bg-luxury-slate border-b border-gold-800/20 py-4 px-6">
+            <div class="max-w-3xl mx-auto flex gap-2">
+                <input type="text" id="search-input" placeholder="ابحث عن خاتم الماس، عقد ذهب، سوار..." class="w-full bg-luxury-deep text-white placeholder-gray-500 border border-gold-800/30 rounded-lg px-4 py-2 focus:outline-none focus:border-gold-500">
+                <button onclick="performSearch()" id="search-btn-txt" class="bg-gold-500 text-luxury-deep px-6 py-2 rounded-lg font-bold hover:bg-gold-400 transition">بحث</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================================================== -->
+    <!-- PAGE 1: HOME & SHOP BOUTIQUE                             -->
+    <!-- ======================================================== -->
+    <div id="page-home" class="page-container transition-all duration-300">
+        
+        <!-- Hero Section -->
+        <section class="relative min-h-[80vh] flex items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-luxury-slate via-luxury-deep to-black overflow-hidden py-16">
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full border border-gold-500 animate-pulse"></div>
+                <div class="absolute top-1/2 -right-20 w-80 h-80 rounded-full border border-gold-500/50"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                <!-- Text Content -->
+                <div class="space-y-6 text-center lg:text-start">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-500/30 bg-gold-950/20 text-gold-300 text-xs sm:text-sm font-semibold tracking-wider">
+                        <i class="fa-solid fa-star"></i>
+                        <span id="hero-badge">مجموعة الصيف الحصرية متوفرة الآن</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold leading-tight text-white">
+                        <span id="hero-title-1">حيث تولد الفخامة</span> <br>
+                        <span class="text-gold-gradient" id="hero-title-2">وتخلد اللحظات الثمينة</span>
+                    </h1>
+                    <p class="text-gray-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed" id="hero-desc">
+                        نصنع لكِ تحفاً فنية استثنائية من الذهب الخالص والألماس النقي المصقول بأيدي أمهر الحرفيين في العالم. تليق بمناسباتك الراقية.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#collection-section" class="bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-luxury-deep font-bold px-8 py-4 rounded-full text-center shadow-lg shadow-gold-500/20 transition duration-300" id="hero-cta-shop">
+                            تسوق التشكيلة الفريدة
+                        </a>
+                        <button onclick="navigateTo('builder')" class="border border-gold-500/50 hover:border-gold-400 text-gold-300 hover:bg-gold-500/10 font-bold px-8 py-4 rounded-full text-center transition duration-300" id="hero-cta-build">
+                            صمم قطعتك بنفسك
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero Image Card Showroom -->
+                <div class="relative flex justify-center items-center">
+                    <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gold-600/10 blur-3xl"></div>
+                    
+                    <div class="relative max-w-sm sm:max-w-md w-full bg-gradient-to-b from-luxury-slate to-luxury-deep rounded-2xl p-6 border border-gold-500/20 shadow-2xl overflow-hidden group">
+                        <img id="hero-carousel-img" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" 
+                             alt="مجوهرات فاخرة" 
+                             class="w-full h-80 object-cover rounded-xl shadow-lg transition duration-500 hover:scale-105"
+                             onerror="this.src='https://placehold.co/600x600/111827/D4AF37?text=Premium+Jewelry'">
+                        
+                        <div class="absolute bottom-10 left-10 right-10 bg-luxury-deep/90 backdrop-blur-md p-4 rounded-xl border border-gold-500/20">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 id="hero-carousel-title" class="font-bold text-white text-sm sm:text-base">قلادة "شمس الأمل"</h3>
+                                    <p id="hero-carousel-desc" class="text-[10px] sm:text-xs text-gold-400">ذهب أصفر عيار 18، مع حجر سمرقند</p>
+                                </div>
+                                <span id="hero-carousel-price" class="text-gold-300 font-bold font-serif text-sm">4,500 ر.س</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="py-16 bg-luxury-slate border-t border-b border-gold-800/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-3 mb-12">
+                    <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold" id="cat-badge">تصفح حسب الفئة</span>
+                    <h2 class="text-3xl font-serif font-bold text-white" id="cat-title">روائع المجموعات المتكاملة</h2>
+                    <div class="w-24 h-0.5 bg-gold-500 mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div onclick="filterProducts('rings')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
+                        <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-ring text-2xl text-gold-400 group-hover:text-gold-300"></i>
+                        </div>
+                        <h3 class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition" id="cat-card-1">خواتم الماس</h3>
+                    </div>
+
+                    <div onclick="filterProducts('necklaces')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
+                        <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-gem text-2xl text-gold-400 group-hover:text-gold-300"></i>
+                        </div>
+                        <h3 class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition" id="cat-card-2">قلائد وقلادات</h3>
+                    </div>
+
+                    <div onclick="filterProducts('bracelets')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
+                        <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+                            <i class="fa-solid fa-hands-bound text-2xl text-gold-400 group-hover:text-gold-300"></i>
+                        </div>
+                        <h3 class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition" id="cat-card-3">أساور فاخرة</h3>
+                    </div>
+
+                    <div onclick="filterProducts('earrings')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
+                        <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+                            <i class="fa-regular fa-star text-2xl text-gold-400 group-hover:text-gold-300"></i>
+                        </div>
+                        <h3 class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition" id="cat-card-4">أقراط متدلية</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Boutique Products Catalog Section -->
+        <section id="collection-section" class="py-20 bg-luxury-deep">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div class="space-y-3 text-center md:text-start">
+                        <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold" id="prod-badge">المعروض الحصري</span>
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white" id="prod-title">روائعنا المصممة بدقة</h2>
+                        <div class="w-24 h-0.5 bg-gold-500 mx-auto md:mx-0"></div>
+                    </div>
+
+                    <!-- Filters Control Tab -->
+                    <div class="flex flex-wrap gap-2 justify-center mt-6 md:mt-0" id="filter-tabs">
+                        <button onclick="filterProducts('all')" class="filter-tab active px-5 py-2 rounded-full border border-gold-500 text-sm font-semibold bg-gold-500 text-luxury-deep hover:bg-gold-400 transition" id="tab-all">الكل</button>
+                        <button onclick="filterProducts('rings')" class="filter-tab px-5 py-2 rounded-full border border-gold-800/30 text-sm font-semibold text-gray-400 hover:border-gold-500 hover:text-white transition" id="tab-rings">خواتم</button>
+                        <button onclick="filterProducts('necklaces')" class="filter-tab px-5 py-2 rounded-full border border-gold-800/30 text-sm font-semibold text-gray-400 hover:border-gold-500 hover:text-white transition" id="tab-necklaces">قلائد</button>
+                        <button onclick="filterProducts('bracelets')" class="filter-tab px-5 py-2 rounded-full border border-gold-800/30 text-sm font-semibold text-gray-400 hover:border-gold-500 hover:text-white transition" id="tab-bracelets">أساور</button>
+                        <button onclick="filterProducts('earrings')" class="filter-tab px-5 py-2 rounded-full border border-gold-800/30 text-sm font-semibold text-gray-400 hover:border-gold-500 hover:text-white transition" id="tab-earrings">أقراط</button>
+                    </div>
+                </div>
+
+                <!-- Products Grid Container -->
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Products rendered via JS -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- PAGE 2: INTERACTIVE CUSTOM JEWELRY BUILDER & CONSULTATION -->
+    <!-- ======================================================== -->
+    <div id="page-builder" class="page-container hidden transition-all duration-300">
+        
+        <!-- Interactive Ring Customizer Section -->
+        <section class="py-16 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-luxury-slate to-luxury-deep">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center space-y-3 mb-12">
+                    <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold" id="builder-badge">أنتِ المصممة الآن</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white" id="builder-title">تخصيص الخاتم الفاخر الفريد</h2>
+                    <div class="w-24 h-0.5 bg-gold-500 mx-auto"></div>
+                    <p class="text-gray-400 text-sm max-w-xl mx-auto" id="builder-desc">
+                        قومي باختيار المعدن والحجر وحجم القيراط لنقوم بصناعة قطعة حصرية تليق برغبتكِ الفاخرة، شاهدي السعر التقديري والمحاكاة الآن.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-luxury-deep rounded-3xl p-6 sm:p-10 border border-gold-500/15 shadow-2xl relative overflow-hidden">
+                    
+                    <!-- SVG Interactive Ring Graphic Core Preview -->
+                    <div class="lg:col-span-5 flex flex-col items-center justify-center p-6 bg-luxury-slate/50 rounded-2xl border border-gold-800/10 relative">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-luxury-deep/20 via-gold-500/5 to-luxury-deep/20 pointer-events-none rounded-2xl"></div>
+                        
+                        <div class="relative w-64 h-64 flex items-center justify-center">
+                            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="50" cy="85" rx="35" ry="6" fill="black" fill-opacity="0.4" filter="blur(3px)" />
+                                
+                                <!-- Ring Band Body -->
+                                <path id="svg-ring-shank" d="M20 50C20 33.4315 33.4315 20 50 20C66.5685 20 80 33.4315 80 50C80 66.5685 66.5685 80 50 80C33.4315 80 20 66.5685 20 50Z" 
+                                      stroke="#E6C15C" stroke-width="8" stroke-linecap="round" stroke-dasharray="190 20" stroke-dashoffset="10"/>
+                                
+                                <!-- Prong setting -->
+                                <path d="M43 23 L45 13 L55 13 L57 23 Z" fill="#E6C15C" id="svg-ring-prong" />
+                                
+                                <path d="M25 22 L27 18 L25 14 L23 18 Z" fill="white" class="animate-pulse" />
+                                <path d="M75 22 L77 18 L75 14 L73 18 Z" fill="white" class="animate-pulse" />
+
+                                <!-- Main Diamond / Gemstone Visualizer Layer -->
+                                <polygon id="svg-ring-gem" points="42,13 50,2 58,13 50,19" fill="#FFFFFF" stroke="white" stroke-width="0.5" />
+                            </svg>
+
+                            <div class="absolute bottom-2 bg-luxury-deep/80 border border-gold-500/20 rounded-full px-4 py-1 text-xs text-gold-300">
+                                <span id="builder-carat-title">حجم القيراط:</span> <span id="builder-carat-display">1.5</span> <span id="builder-carat-unit">قيراط</span>
+                            </div>
+                        </div>
+
+                        <!-- Chosen summary indicators -->
+                        <div class="w-full mt-6 text-center space-y-1">
+                            <div id="builder-metal-name" class="text-sm text-gold-400 font-bold">ذهب أصفر عيار 18</div>
+                            <div id="builder-stone-name" class="text-lg text-white font-serif font-bold">ألماس بلجيكي مصقول</div>
+                        </div>
+                    </div>
+
+                    <!-- Builder Controls -->
+                    <div class="lg:col-span-7 flex flex-col justify-between space-y-8">
+                        
+                        <!-- 1. Metal Selection -->
+                        <div class="space-y-4">
+                            <label class="block text-sm font-semibold text-gray-400" id="step-metal">1. اختر نوع الذهب والمعدن الكريم:</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button onclick="updateBuilderMetal('yellow-gold', '#E6C15C', 'yellow')" class="builder-metal-btn p-3 rounded-xl border border-gold-500 bg-gold-950/20 flex flex-col items-center gap-2 hover:border-gold-400 transition">
+                                    <span class="w-6 h-6 rounded-full bg-[#E6C15C] border border-white/20"></span>
+                                    <span class="text-[11px] sm:text-xs text-white font-medium" id="lbl-metal-yg">ذهب أصفر 18k</span>
+                                </button>
+                                <button onclick="updateBuilderMetal('rose-gold', '#E5A48B', 'rose')" class="builder-metal-btn p-3 rounded-xl border border-gold-800/20 bg-luxury-deep flex flex-col items-center gap-2 hover:border-gold-500 transition">
+                                    <span class="w-6 h-6 rounded-full bg-[#E5A48B] border border-white/20"></span>
+                                    <span class="text-[11px] sm:text-xs text-gray-300" id="lbl-metal-rg">ذهب وردي 18k</span>
+                                </button>
+                                <button onclick="updateBuilderMetal('platinum', '#E2E8F0', 'platinum')" class="builder-metal-btn p-3 rounded-xl border border-gold-800/20 bg-luxury-deep flex flex-col items-center gap-2 hover:border-gold-500 transition">
+                                    <span class="w-6 h-6 rounded-full bg-[#E2E8F0] border border-white/20"></span>
+                                    <span class="text-[11px] sm:text-xs text-gray-300" id="lbl-metal-plat">بلاتينوم نقي</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 2. Gemstone Selection -->
+                        <div class="space-y-4">
+                            <label class="block text-sm font-semibold text-gray-400" id="step-stone">2. اختر الحجر الكريم المركزي:</label>
+                            <div class="grid grid-cols-4 gap-2">
+                                <button onclick="updateBuilderStone('diamond', '#FFFFFF', 'diamond', 3000)" class="builder-stone-btn p-2 rounded-xl border border-gold-500 bg-gold-950/20 text-xs text-center hover:border-gold-400 transition">
+                                    <div class="w-5 h-5 rounded-full bg-white mx-auto mb-1"></div>
+                                    <span class="block font-medium" id="lbl-stone-diam">ألماس</span>
+                                </button>
+                                <button onclick="updateBuilderStone('ruby', '#DC2626', 'ruby', 2200)" class="builder-stone-btn p-2 rounded-xl border border-gold-800/20 bg-luxury-deep text-xs text-center hover:border-gold-500 transition">
+                                    <div class="w-5 h-5 rounded-full bg-red-600 mx-auto mb-1"></div>
+                                    <span class="block font-medium" id="lbl-stone-ruby">ياقوت</span>
+                                </button>
+                                <button onclick="updateBuilderStone('emerald', '#059669', 'emerald', 2600)" class="builder-stone-btn p-2 rounded-xl border border-gold-800/20 bg-luxury-deep text-xs text-center hover:border-gold-500 transition">
+                                    <div class="w-5 h-5 rounded-full bg-emerald-600 mx-auto mb-1"></div>
+                                    <span class="block font-medium" id="lbl-stone-em">زمرد</span>
+                                </button>
+                                <button onclick="updateBuilderStone('sapphire', '#1D4ED8', 'sapphire', 1900)" class="builder-stone-btn p-2 rounded-xl border border-gold-800/20 bg-luxury-deep text-xs text-center hover:border-gold-500 transition">
+                                    <div class="w-5 h-5 rounded-full bg-blue-700 mx-auto mb-1"></div>
+                                    <span class="block font-medium" id="lbl-stone-sap">سافير</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 3. Carat Selection -->
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <label class="text-sm font-semibold text-gray-400" id="step-carat">3. اختر حجم قيراط الحجر:</label>
+                                <span class="text-gold-300 text-sm font-bold" id="builder-carat-val">1.5 قيراط</span>
+                            </div>
+                            <input type="range" id="builder-carat-slider" min="0.5" max="4.0" step="0.1" value="1.5" oninput="updateBuilderCarat(this.value)"
+                                   class="w-full accent-gold-500 bg-luxury-slate h-2 rounded-lg cursor-pointer">
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span id="lbl-carat-soft">0.5 قيراط (ناعم)</span>
+                                <span id="lbl-carat-bold">4.0 قيراط (مبهر جداً)</span>
+                            </div>
+                        </div>
+
+                        <!-- pricing display box and action CTA -->
+                        <div class="bg-luxury-slate p-5 rounded-2xl border border-gold-800/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div>
+                                <span class="text-xs text-gray-400 block" id="lbl-total-est">السعر الإجمالي التقديري</span>
+                                <span id="builder-total-price" class="text-3xl font-serif font-extrabold text-gold-300">7,200 ر.س</span>
+                            </div>
+                            
+                            <button onclick="addCustomRingToCart()" class="w-full sm:w-auto bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep font-bold px-8 py-3 rounded-full hover:from-gold-500 hover:to-gold-300 shadow-xl transition-all duration-300 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i> <span id="btn-add-custom-cart">إضافة قطعة حلمي للسلة</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Consultation Form -->
+        <section class="py-20 bg-luxury-deep relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="bg-gradient-to-b from-luxury-slate to-luxury-deep rounded-3xl p-8 sm:p-12 border border-gold-500/10 shadow-2xl relative overflow-hidden">
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full border border-gold-500/10 pointer-events-none"></div>
+
+                    <div class="text-center space-y-4 mb-8">
+                        <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold" id="form-badge">خدمة كبار الشخصيات VIP</span>
+                        <h2 class="text-3xl font-serif font-bold text-white" id="form-title">استشارة خاصة لتصميم مجوهراتك</h2>
+                        <p class="text-gray-400 text-sm max-w-lg mx-auto" id="form-desc">
+                            احجز موعداً افتراضياً أو حضورياً في أحد معارضنا لمناقشة تصميم مخصص من الألماس والذهب الخالص بمساعدة خبيرنا المختص.
+                        </p>
+                    </div>
+
+                    <form id="consultation-form" onsubmit="submitConsultation(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs text-gold-400 font-bold mb-2" id="lbl-form-name">الاسم بالكامل</label>
+                                <input type="text" id="consult-name" required placeholder="مثال: ياسمين أحمد" class="w-full bg-luxury-deep/80 text-white placeholder-gray-500 border border-gold-800/30 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gold-400 font-bold mb-2" id="lbl-form-phone">رقم الجوال (واتساب)</label>
+                                <input type="tel" id="consult-phone" required placeholder="مثال: +9665xxxxxxxx" class="w-full bg-luxury-deep/80 text-white placeholder-gray-500 border border-gold-800/30 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 transition">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs text-gold-400 font-bold mb-2" id="lbl-form-date">تاريخ الموعد المفضل</label>
+                                <input type="date" id="consult-date" required class="w-full bg-luxury-deep/80 text-white border border-gold-800/30 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gold-400 font-bold mb-2" id="lbl-form-type">نوع الاستشارة</label>
+                                <select id="consult-type" class="w-full bg-luxury-deep/80 text-white border border-gold-800/30 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 transition">
+                                    <option value="design-ring" id="opt-1">تصميم خاتم خطوبة فريد</option>
+                                    <option value="bridal-jewelry" id="opt-2">تجهيز طقم العروس الفاخر</option>
+                                    <option value="consult-gems" id="opt-3">اختيار وشراء أحجار ألماس معتمدة</option>
+                                    <option value="other" id="opt-4">أخرى (مخصصة)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs text-gold-400 font-bold mb-2" id="lbl-form-notes">ملاحظات أو تفاصيل للتصميم المفضل</label>
+                            <textarea id="consult-notes" rows="3" placeholder="..." class="w-full bg-luxury-deep/80 text-white placeholder-gray-500 border border-gold-800/30 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500 transition"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-luxury-deep font-extrabold text-base py-4 rounded-full shadow-lg shadow-gold-500/20 transition duration-300">
+                            <span id="btn-submit-form">تأكيد حجز موعد الاستشارة الفاخرة</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Trust indicators panel -->
+    <section class="py-16 bg-luxury-slate/30 border-t border-b border-gold-800/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            
+            <div class="space-y-3">
+                <div class="w-12 h-12 rounded-full border border-gold-500/20 bg-gold-950/20 flex items-center justify-center mx-auto text-gold-400">
+                    <i class="fa-solid fa-shield-halved text-xl"></i>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-white" id="trust-title-1">حماية وشحن مؤمن 100%</h3>
+                <p class="text-sm text-gray-500 max-w-xs mx-auto" id="trust-desc-1">نقوم بشحن جميع المجوهرات مغلفة بالكامل ومؤمنة في طرود مصممة خصيصاً لحماية النفائس.</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="w-12 h-12 rounded-full border border-gold-500/20 bg-gold-950/20 flex items-center justify-center mx-auto text-gold-400">
+                    <i class="fa-solid fa-gem text-xl"></i>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-white" id="trust-title-2">شهادة اعتماد الألماس الدولية</h3>
+                <p class="text-sm text-gray-500 max-w-xs mx-auto" id="trust-desc-2">تأتي كل قطعة مجوهرات من مجموعتنا مع شهادة من كبرى الهيئات العالمية الموثقة لنقاء الألماس.</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="w-12 h-12 rounded-full border border-gold-500/20 bg-gold-950/20 flex items-center justify-center mx-auto text-gold-400">
+                    <i class="fa-solid fa-arrows-rotate text-xl"></i>
+                </div>
+                <h3 class="font-serif font-bold text-lg text-white" id="trust-title-3">ضمان صيانة صقل مدى الحياة</h3>
+                <p class="text-sm text-gray-500 max-w-xs mx-auto" id="trust-desc-3">نلتزم تجاه زبائن النخبة بتقديم خدمة صيانة، تلميع وإعادة صقل دورية مدى الحياة لبريق لا ينطفئ.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 overflow-hidden">
+            <div id="cart-overlay" class="absolute inset-0 bg-black/75 transition-opacity duration-500" onclick="toggleCartDrawer()"></div>
+
+            <div class="pointer-events-none fixed inset-y-0 left-0 flex max-w-full pr-10">
+                <div class="pointer-events-auto w-screen max-w-md transform bg-luxury-slate border-r border-gold-800/20 text-white transition duration-500 ease-in-out shadow-2xl flex flex-col">
+                    
+                    <div class="px-6 py-5 bg-luxury-deep border-b border-gold-800/20 flex items-center justify-between">
+                        <h2 class="text-xl font-serif font-bold text-gold-300 flex items-center gap-2">
+                            <i class="fa-solid fa-bag-shopping"></i> <span id="cart-drawer-header">حقيبة تسوق النخبة</span>
+                        </h2>
+                        <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white p-2">
+                            <i class="fa-solid fa-xmark text-xl"></i>
+                        </button>
+                    </div>
+
+                    <!-- Cart Item list (Scrollable) -->
+                    <div class="flex-1 overflow-y-auto py-6 px-6 space-y-4 no-scrollbar" id="cart-items-container">
+                        <!-- Empty Cart state default -->
+                        <div class="text-center py-20 text-gray-500" id="empty-cart-message">
+                            <i class="fa-regular fa-folder-open text-4xl mb-4 text-gold-500/50"></i>
+                            <p class="text-sm" id="cart-empty-text">حقيبة التسوق فارغة حالياً.</p>
+                            <button onclick="toggleCartDrawer()" class="text-gold-400 hover:text-gold-300 text-xs font-bold underline mt-2" id="cart-back-shop">تسوق تشكيلاتنا الرائعة</button>
+                        </div>
+                    </div>
+
+                    <!-- Cart Footer pricing checkout -->
+                    <div class="border-t border-gold-800/20 bg-luxury-deep px-6 py-6 space-y-4">
+                        <div class="flex justify-between text-base font-semibold">
+                            <span class="text-gray-400" id="lbl-subtotal">المجموع الفرعي:</span>
+                            <span id="cart-subtotal" class="text-gold-300 font-serif">0 ر.س</span>
+                        </div>
+                        <div class="flex justify-between text-xs text-gray-500">
+                            <span id="lbl-shipping">الشحن والتأمين الفاخر:</span>
+                            <span class="text-emerald-500" id="lbl-shipping-free">مجاني ومؤمن بالكامل</span>
+                        </div>
+
+                        <div class="pt-4">
+                            <button onclick="checkoutCart()" class="w-full bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-luxury-deep font-extrabold text-center py-4 rounded-full shadow-lg shadow-gold-500/25 transition duration-300 flex justify-center items-center gap-2">
+                                <i class="fa-solid fa-credit-card"></i> <span id="btn-checkout">إتمام الشراء والتأمين الآمن</span>
+                            </button>
+                        </div>
+                        <p class="text-[10px] text-gray-500 text-center" id="lbl-checkout-guarantee">
+                            نضمن أمان الدفع بالكامل وجميع المنتجات تأتي مع شهادة اعتماد وضمان مدى الحياة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick View / Product Details Modal -->
+    <div id="quick-view-modal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-black/80 transition-opacity" onclick="closeQuickView()"></div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <div class="inline-block align-bottom bg-luxury-slate rounded-3xl text-start overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full border border-gold-500/20">
+                <div class="absolute top-4 right-4 z-10">
+                    <button onclick="closeQuickView()" class="bg-luxury-deep/80 text-gray-400 hover:text-white rounded-full p-2 border border-gold-800/20">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <!-- Image panel representation -->
+                    <div class="relative bg-luxury-deep flex items-center justify-center p-6 h-80 md:h-full">
+                        <img id="modal-img" src="" alt="مجوهرات" class="object-cover max-h-96 w-full rounded-2xl">
+                    </div>
+
+                    <!-- Details Description panel -->
+                    <div class="p-8 flex flex-col justify-between space-y-6">
+                        <div class="space-y-3">
+                            <span id="modal-tag" class="text-xs uppercase tracking-widest text-gold-400 font-bold bg-gold-950/40 border border-gold-500/20 rounded-full px-3 py-1 inline-block">خواتم</span>
+                            <h3 id="modal-title-text" class="text-2xl font-serif font-bold text-white">خاتم الألماس الإمبراطوري</h3>
+                            <div class="flex items-center gap-1 text-gold-400 text-sm">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p id="modal-desc" class="text-sm text-gray-400 leading-relaxed"></p>
+                        </div>
+
+                        <!-- Size selection mock markup -->
+                        <div id="ring-size-selector" class="space-y-2">
+                            <span class="text-xs text-gold-400 font-bold block" id="lbl-modal-size">اختر مقاس الإصبع (متاح مقاسات مختلفة):</span>
+                            <div class="flex gap-2">
+                                <button class="size-btn px-4 py-2 rounded-lg border border-gold-500 text-gold-300 bg-gold-950/20 text-xs hover:border-gold-400 transition">54 (M)</button>
+                                <button class="size-btn px-4 py-2 rounded-lg border border-gold-800/20 text-gray-400 text-xs hover:border-gold-500 hover:text-white transition">56 (L)</button>
+                                <button class="size-btn px-4 py-2 rounded-lg border border-gold-800/20 text-gray-400 text-xs hover:border-gold-500 hover:text-white transition">58 (XL)</button>
+                            </div>
+                        </div>
+
+                        <!-- Add to cart CTA -->
+                        <div class="border-t border-gold-800/10 pt-6 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] sm:text-xs text-gray-500 block" id="lbl-modal-tax">السعر شامل الضريبة</span>
+                                <span id="modal-price" class="text-xl sm:text-2xl font-serif font-extrabold text-gold-300">12,500 ر.س</span>
+                            </div>
+
+                            <button id="modal-add-to-cart-btn" class="bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-luxury-deep font-extrabold px-5 py-3 rounded-full transition duration-300 flex items-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i> <span id="btn-modal-add">أضف للحقيبة الآن</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification system toast alerts -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 space-y-3"></div>
+
+    <!-- Footer Area -->
+    <footer class="bg-luxury-deep border-t border-gold-800/20 pt-16 pb-8 text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            
+            <!-- Column 1: Brand Info & Logo integration area -->
+            <div class="space-y-4">
+                <div class="flex flex-col items-start">
+                    <span class="font-serif text-3xl font-bold tracking-widest text-gold-gradient">AL-NOKBA</span>
+                    <span id="footer-logo-subtext" class="text-[10px] tracking-[0.25em] text-gold-300 uppercase -mt-1 font-sans">دار النخبة للمجوهرات</span>
+                </div>
+                <p class="text-sm text-gray-500 leading-relaxed" id="footer-brand-desc">
+                    منذ عام 1998 ونحن نقوم بابتكار قطع كلاسيكية وفنية معاصرة تلامس القلوب، لتليق بأفراح النخبة والأناقة العربية الأصيلة.
+                </p>
+                <div class="flex space-x-4 space-x-reverse text-gold-400 text-lg">
+                    <a href="#" class="hover:text-gold-200"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-gold-200"><i class="fa-brands fa-snapchat"></i></a>
+                    <a href="#" class="hover:text-gold-200"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#" class="hover:text-gold-200"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Navigation Links -->
+            <div class="space-y-4">
+                <h3 class="font-serif text-white font-bold text-lg" id="footer-links-title">الروابط السريعة</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><button onclick="navigateTo('home')" class="hover:text-gold-400 transition" id="foot-nav-1">الرئيسية</button></li>
+                    <li><button onclick="navigateTo('builder')" class="hover:text-gold-400 transition" id="foot-nav-2">مصمم المجوهرات</button></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Customer Care links -->
+            <div class="space-y-4">
+                <h3 class="font-serif text-white font-bold text-lg" id="footer-care-title">رعاية عملاء النخبة</h3>
+                <ul class="space-y-2 text-sm">
+                    <li id="foot-care-1">شروط الشحن والتأمين الفاخر</li>
+                    <li id="foot-care-2">دليل قياس الخواتم</li>
+                    <li id="foot-care-3">ضمان مدى الحياة للألماس</li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Newsletter -->
+            <div class="space-y-4">
+                <h3 class="font-serif text-white font-bold text-lg" id="footer-newsletter-title">انضم لقائمتنا الخاصة</h3>
+                <p class="text-sm text-gray-500" id="footer-newsletter-desc">احصل على عروض حصرية، ودعوات قبل الجميع لمزادات القطع النادرة الفريدة.</p>
+                
+                <div class="flex gap-2">
+                    <input type="email" id="newsletter-email" placeholder="بريدك الإلكتروني" class="bg-luxury-slate text-white placeholder-gray-500 border border-gold-800/30 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-gold-500 w-full">
+                    <button onclick="subscribeNewsletter()" class="bg-gold-500 text-luxury-deep font-bold px-4 py-2 rounded-lg text-sm hover:bg-gold-400 transition" id="footer-newsletter-btn">انضمام</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gold-800/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-600 gap-4">
+            <p id="footer-copy">© 2026 دار النخبة للمجوهرات. جميع الحقوق محفوظة لعلامة AL-NOKBA.</p>
+            <p id="footer-designed-by">صُمم بروح الفخامة والأناقة الفائقة.</p>
+        </div>
+    </footer>
+
+    <!-- Translation / Database States Script -->
+    <script>
+        const translations = {
+            ar: {
+                direction: 'rtl',
+                logoSub: 'دار النخبة للمجوهرات',
+                navHome: 'الرئيسية',
+                navBuilder: 'صمم مجوهراتك الخاصة',
+                searchPlaceholder: 'ابحث عن خاتم الماس، عقد ذهب، سوار...',
+                searchBtn: 'بحث',
+                heroBadge: 'مجموعة الصيف الحصرية متوفرة الآن',
+                heroTitle1: 'حيث تولد الفخامة',
+                heroTitle2: 'وتخلد اللحظات الثمينة',
+                heroDesc: 'نصنع لكِ تحفاً فنية استثنائية من الذهب الخالص والألماس النقي المصقول بأيدي أمهر الحرفيين في العالم. تليق بمناسباتك الراقية.',
+                heroCtaShop: 'تسوق التشكيلة الفريدة',
+                heroCtaBuild: 'صمم قطعتك بنفسك',
+                catBadge: 'تصفح حسب الفئة',
+                catTitle: 'روائع المجموعات المتكاملة',
+                catCard1: 'خواتم الماس',
+                catCard2: 'قلائد وقلادات',
+                catCard3: 'أساور فاخرة',
+                catCard4: 'أقراط متدلية',
+                prodBadge: 'المعروض الحصري',
+                prodTitle: 'روائعنا المصممة بدقة',
+                filterAll: 'الكل',
+                filterRings: 'خواتم',
+                filterNecklaces: 'قلائد',
+                filterBracelets: 'أساور',
+                filterEarrings: 'أقراط',
+                
+                // Builder Translations
+                builderBadge: 'أنتِ المصممة الآن',
+                builderTitle: 'تخصيص الخاتم الفاخر الفريد',
+                builderDesc: 'قومي باختيار المعدن والحجر وحجم القيراط لنقوم بصناعة قطعة حصرية تليق برغبتكِ الفاخرة، شاهدي السعر التقديري والمحاكاة الآن.',
+                builderCaratTitle: 'حجم القيراط:',
+                builderCaratUnit: 'قيراط',
+                stepMetal: '1. اختر نوع الذهب والمعدن الكريم:',
+                stepStone: '2. اختر الحجر الكريم المركزي:',
+                stepCarat: '3. اختر حجم قيراط الحجر:',
+                lblMetalYg: 'ذهب أصفر 18k',
+                lblMetalRg: 'ذهب وردي 18k',
+                lblMetalPlat: 'بلاتينوم نقي',
+                lblStoneDiam: 'ألماس',
+                lblStoneRuby: 'ياقوت',
+                lblStoneEm: 'زمرد',
+                lblStoneSap: 'سافير',
+                lblCaratSoft: '0.5 قيراط (ناعم)',
+                lblCaratBold: '4.0 قيراط (مبهر جداً)',
+                lblTotalEst: 'السعر الإجمالي التقديري',
+                btnAddCustomCart: 'إضافة قطعة حلمي للسلة',
+
+                // Metals Descriptive Names
+                metal_yellow: 'ذهب أصفر عيار 18',
+                metal_rose: 'ذهب وردي عتيق عيار 18',
+                metal_platinum: 'بلاتينوم ملكي نقي',
+
+                // Stones Descriptive Names
+                stone_diamond: 'ألماس بلجيكي مصقول',
+                stone_ruby: 'ياقوت أحمر دموي ملكي',
+                stone_emerald: 'زمرد كولومبي نادر',
+                stone_sapphire: 'ياقوت أزرق فاخر كشميري',
+
+                // Consultation Form Translations
+                formBadge: 'خدمة كبار الشخصيات VIP',
+                formTitle: 'استشارة خاصة لتصميم مجوهراتك',
+                formDesc: 'احجز موعداً افتراضياً أو حضورياً في أحد معارضنا لمناقشة تصميم مخصص من الألماس والذهب الخالص بمساعدة خبيرنا المختص.',
+                lblFormName: 'الاسم بالكامل',
+                lblFormPhone: 'رقم الجوال (واتساب)',
+                lblFormDate: 'تاريخ الموعد المفضل',
+                lblFormType: 'نوع الاستشارة',
+                lblFormNotes: 'ملاحظات أو تفاصيل للتصميم المفضل',
+                btnSubmitForm: 'تأكيد حجز موعد الاستشارة الفاخرة',
+                placeholderName: 'مثال: ياسمين أحمد',
+                placeholderNotes: 'اكتب رغبتك، المعادن المفضلة أو الميزانية التقديرية لمساعدتنا في الاستعداد...',
+                opt1: 'تصميم خاتم خطوبة فريد',
+                opt2: 'تجهيز طقم العروس الفاخر',
+                opt3: 'اختيار وشراء أحجار ألماس معتمدة',
+                opt4: 'أخرى (مخصصة)',
+
+                // Trust Elements
+                trustTitle1: 'حماية وشحن مؤمن 100%',
+                trustDesc1: 'نقوم بشحن جميع المجوهرات مغلفة بالكامل ومؤمنة في طرود مصممة خصيصاً لحماية النفائس.',
+                trustTitle2: 'شهادة اعتماد الألماس الدولية',
+                trustDesc2: 'تأتي كل قطعة مجوهرات من مجموعتنا مع شهادة من كبرى الهيئات العالمية الموثقة لنقاء الألماس.',
+                trustTitle3: 'ضمان صيانة صقل مدى الحياة',
+                trustDesc3: 'نلتزم تجاه زبائن النخبة بتقديم خدمة صيانة، تلميع وإعادة صقل دورية مدى الحياة لبريق لا ينطفئ.',
+
+                // Cart Elements
+                cartHeader: 'حقيبة تسوق النخبة',
+                cartEmptyText: 'حقيبة التسوق فارغة حالياً.',
+                cartBackShop: 'تسوق تشكيلاتنا الرائعة',
+                lblSubtotal: 'المجموع الفرعي:',
+                lblShipping: 'الشحن والتأمين الفاخر:',
+                lblShippingFree: 'مجاني ومؤمن بالكامل',
+                btnCheckout: 'إتمام الشراء والتأمين الآمن',
+                lblCheckoutGuarantee: 'نضمن أمان الدفع بالكامل وجميع المنتجات تأتي مع شهادة اعتماد وضمان مدى الحياة.',
+
+                // Modals
+                lblModalSize: 'اختر مقاس الإصبع (متاح مقاسات مختلفة):',
+                lblModalTax: 'السعر شامل الضريبة',
+                btnModalAdd: 'أضف للحقيبة الآن',
+
+                // Footer
+                footerLogoSub: 'دار النخبة للمجوهرات',
+                footerBrandDesc: 'منذ عام 1998 ونحن نقوم بابتكار قطع كلاسيكية وفنية معاصرة تلامس القلوب، لتليق بأفراح النخبة والأناقة العربية الأصيلة.',
+                footerLinksTitle: 'الروابط السريعة',
+                footerCareTitle: 'رعاية عملاء النخبة',
+                footCare1: 'شروط الشحن والتأمين الفاخر',
+                footCare2: 'دليل قياس الخواتم',
+                footCare3: 'ضمان مدى الحياة للألماس',
+                footerNewsletterTitle: 'انضم لقائمتنا الخاصة',
+                footerNewsletterDesc: 'احصل على عروض حصرية، ودعوات قبل الجميع لمزادات القطع النادرة الفريدة.',
+                footerNewsletterBtn: 'انضمام',
+                footerCopy: '© 2026 دار النخبة للمجوهرات. جميع الحقوق محفوظة لعلامة AL-NOKBA.',
+                footerDesignedBy: 'صُمم بروح الفخامة والأناقة الفائقة.',
+
+                // Messages / Toasts
+                msgAddedCart: 'تمت إضافة العنصر بنجاح للحقيبة.',
+                msgAddedCustom: 'تمت إضافة خاتم التصميم الخاص بك إلى حقيبة التسوق.',
+                msgEmptyCart: 'حقيبة التسوق فارغة حالياً. أضف بعض القطع الفاخرة للبدء.',
+                msgRedirectCheckout: 'جاري نقلك لبوابة السداد الآمن والتأمين الدولي لمجموعة النخبة...',
+                msgSuccessCheckout: 'شكراً لتسوقك من دار النخبة للمجوهرات. تم إرسال معلومات الشحن والتأمين لبريدك المسجل.',
+                msgSearching: 'جاري البحث في مجموعات النخبة المعتمدة...',
+                msgSearchDone: 'تم فرز وعرض أقرب تطابق في المعرض أدناه.',
+                msgConsultationSuccess: 'تم تسجيل طلب موعد استشارة بنجاح. سيتواصل معك خبيرنا قريباً.',
+                msgSubscribed: 'تم اشتراكك بنجاح في النشرة الخاصة لكبار الشخصيات'
+            },
+            en: {
+                direction: 'ltr',
+                logoSub: 'Al-Nokba Luxury Jewelry',
+                navHome: 'Home',
+                navBuilder: 'Custom Jewelry Designer',
+                searchPlaceholder: 'Search for diamond rings, necklaces, bracelets...',
+                searchBtn: 'Search',
+                heroBadge: 'Exclusive Summer Collection Available Now',
+                heroTitle1: 'Where Luxury is Born',
+                heroTitle2: 'And Precious Moments Last',
+                heroDesc: 'We craft exceptional masterpieces from pure gold and flawless certified diamonds, sculpted by the world\'s most skilled artisans. Worthy of your elegant occasions.',
+                heroCtaShop: 'Shop Unique Collection',
+                heroCtaBuild: 'Design Your Own Piece',
+                catBadge: 'Browse By Category',
+                catTitle: 'Masterpieces of Integrated Collections',
+                catCard1: 'Diamond Rings',
+                catCard2: 'Fine Necklaces',
+                catCard3: 'Luxury Bracelets',
+                catCard4: 'Drop Earrings',
+                prodBadge: 'Exclusive Showcase',
+                prodTitle: 'Our Meticulously Crafted Masterpieces',
+                filterAll: 'All',
+                filterRings: 'Rings',
+                filterNecklaces: 'Necklaces',
+                filterBracelets: 'Bracelets',
+                filterEarrings: 'Earrings',
+                
+                // Builder Translations
+                builderBadge: 'You Are The Designer Now',
+                builderTitle: 'Customize Your Unique Luxury Ring',
+                builderDesc: 'Choose the precious metal, gemstone, and carat weight to let us handcraft a masterpiece tailored to your desire. View dynamic pricing and instant simulation.',
+                builderCaratTitle: 'Carat Size:',
+                builderCaratUnit: 'ct',
+                stepMetal: '1. Choose Precious Metal Base:',
+                stepStone: '2. Select Central Gemstone:',
+                stepCarat: '3. Choose Gemstone Carat Size:',
+                lblMetalYg: '18k Yellow Gold',
+                lblMetalRg: '18k Rose Gold',
+                lblMetalPlat: 'Pure Platinum',
+                lblStoneDiam: 'Diamond',
+                lblStoneRuby: 'Ruby',
+                lblStoneEm: 'Emerald',
+                lblStoneSap: 'Sapphire',
+                lblCaratSoft: '0.5 Carat (Delicate)',
+                lblCaratBold: '4.0 Carat (Striking)',
+                lblTotalEst: 'Estimated Total Price',
+                btnAddCustomCart: 'Add My Dream Ring To Cart',
+
+                // Metals Descriptive Names
+                metal_yellow: '18K Yellow Gold Solid',
+                metal_rose: '18K Vintage Rose Gold',
+                metal_platinum: 'Pure Royal Platinum',
+
+                // Stones Descriptive Names
+                stone_diamond: 'Polished Belgian Diamond',
+                stone_ruby: 'Royal Blood Ruby',
+                stone_emerald: 'Rare Colombian Emerald',
+                stone_sapphire: 'Premium Kashmiri Sapphire',
+
+                // Consultation Form Translations
+                formBadge: 'VIP Service Concierge',
+                formTitle: 'Book a Private Jewelry Design Consultation',
+                formDesc: 'Book a virtual or in-person private appointment at our showroom to design customized masterpieces with our expert concierge.',
+                lblFormName: 'Full Name',
+                lblFormPhone: 'Phone Number (WhatsApp)',
+                lblFormDate: 'Preferred Appointment Date',
+                lblFormType: 'Consultation Category',
+                lblFormNotes: 'Design Notes or Preferences',
+                btnSubmitForm: 'Confirm Luxury Consultation Booking',
+                placeholderName: 'Example: Jane Smith',
+                placeholderNotes: 'Specify preferred metal, gemstone, or estimated budget to help us prepare...',
+                opt1: 'Unique Engagement Ring Design',
+                opt2: 'Bridal Set Consultation',
+                opt3: 'Certified Loose Diamonds Selection',
+                opt4: 'Other Custom Request',
+
+                // Trust Elements
+                trustTitle1: '100% Secure Insured Shipping',
+                trustDesc1: 'We deliver all jewelry heavily protected, sealed and fully insured in discrete, premium boxes.',
+                trustTitle2: 'International Diamond Certificate',
+                trustDesc2: 'Every luxury diamond piece includes certificates from major global gemological institutes.',
+                trustTitle3: 'Lifetime Complimentary Re-Polishing',
+                trustDesc3: 'We provide our elite clients with lifetime cleaning, diamond tightening, and re-polishing.',
+
+                // Cart Elements
+                cartHeader: 'Elite Shopping Bag',
+                cartEmptyText: 'Your shopping bag is currently empty.',
+                cartBackShop: 'Shop Our Collections',
+                lblSubtotal: 'Subtotal:',
+                lblShipping: 'Insured Shipping:',
+                lblShippingFree: 'Complimentary & Fully Insured',
+                btnCheckout: 'Proceed to Secured Checkout',
+                lblCheckoutGuarantee: 'We guarantee full payment protection. All pieces come with certified documentation and a lifetime guarantee.',
+
+                // Modals
+                lblModalSize: 'Select Finger Size (Multiple sizes available):',
+                lblModalTax: 'Price inclusive of tax',
+                btnModalAdd: 'Add to Bag Now',
+
+                // Footer
+                footerLogoSub: 'Al-Nokba Fine Jewelry',
+                footerBrandDesc: 'Since 1998, we have been crafting timeless, contemporary art-pieces that capture hearts and grace noble Arab occasions.',
+                footerLinksTitle: 'Quick Links',
+                footerCareTitle: 'Client Care',
+                footCare1: 'Premium Insured Shipping Policy',
+                footCare2: 'Ring Size Measuring Guide',
+                footCare3: 'Lifetime Diamond Warranty',
+                footerNewsletterTitle: 'Join Private List',
+                footerNewsletterDesc: 'Receive exclusive invitations to private auctions and access to rare gemstone releases.',
+                footerNewsletterBtn: 'Join',
+                footerCopy: '© 2026 Al-Nokba Jewelry. All rights reserved.',
+                footerDesignedBy: 'Crafted with premium luxury and elegance.',
+
+                // Messages / Toasts
+                msgAddedCart: 'Successfully added to your shopping bag.',
+                msgAddedCustom: 'Your custom designed ring was added to the cart.',
+                msgEmptyCart: 'Your shopping bag is empty. Explore boutique pieces first.',
+                msgRedirectCheckout: 'Redirecting you securely to our international VIP payment portal...',
+                msgSuccessCheckout: 'Thank you for purchasing from Al-Nokba. Fully insured shipping details sent to your registered email.',
+                msgSearching: 'Searching our exclusive vaults...',
+                msgSearchDone: 'Displaying closest matches in our showcase below.',
+                msgConsultationSuccess: 'Consultation request submitted successfully. Our expert concierge will contact you shortly.',
+                msgSubscribed: 'Successfully subscribed to our elite private newsletter.'
+            },
+            id: {
+                direction: 'ltr',
+                logoSub: 'Al-Nokba Perhiasan Mewah',
+                navHome: 'Beranda',
+                navBuilder: 'Perancang Perhiasan Kustom',
+                searchPlaceholder: 'Cari cincin berlian, kalung, gelang emas...',
+                searchBtn: 'Cari',
+                heroBadge: 'Koleksi Musim Panas Eksklusif Tersedia Sekarang',
+                heroTitle1: 'Tempat Kemewahan Dilahirkan',
+                heroTitle2: 'Dan Momen Berharga Abadi',
+                heroDesc: 'Kami menciptakan mahakarya luar biasa dari emas murni dan berlian bersertifikat tanpa cela, dirancang oleh pengrajin terbaik dunia. Sesuai untuk momen elegan Anda.',
+                heroCtaShop: 'Belanja Koleksi Unik',
+                heroCtaBuild: 'Rancang Sendiri Perhiasan Anda',
+                catBadge: 'Telusuri Kategori',
+                catTitle: 'Koleksi Mahakarya Terintegrasi',
+                catCard1: 'Cincin Berlian',
+                catCard2: 'Kalung Indah',
+                catCard3: 'Gelang Mewah',
+                catCard4: 'Anting Drop',
+                prodBadge: 'Showcase Eksklusif',
+                prodTitle: 'Koleksi Mahakarya Kami yang Dibuat dengan Teliti',
+                filterAll: 'Semua',
+                filterRings: 'Cincin',
+                filterNecklaces: 'Kalung',
+                filterBracelets: 'Gelang',
+                filterEarrings: 'Anting',
+                
+                // Builder Translations
+                builderBadge: 'Anda Adalah Perancangnya Sekarang',
+                builderTitle: 'Sesuaikan Cincin Mewah Unik Anda',
+                builderDesc: 'Pilih logam mulia, batu permata, dan berat karat untuk kami buatkan cincin impian Anda. Lihat perkiraan harga secara dinamis dan simulasi instan.',
+                builderCaratTitle: 'Ukuran Karat:',
+                builderCaratUnit: 'ct',
+                stepMetal: '1. Pilih Dasar Logam Mulia:',
+                stepStone: '2. Pilih Batu Permata Utama:',
+                stepCarat: '3. Pilih Ukuran Karat Permata:',
+                lblMetalYg: 'Emas Kuning 18k',
+                lblMetalRg: 'Emas Merah Muda 18k',
+                lblMetalPlat: 'Platina Murni',
+                lblStoneDiam: 'Berlian',
+                lblStoneRuby: 'Rubi',
+                lblStoneEm: 'Zamrud',
+                lblStoneSap: 'Safir',
+                lblCaratSoft: '0.5 Karat (Halus)',
+                lblCaratBold: '4.0 Karat (Mencolok)',
+                lblTotalEst: 'Estimasi Harga Total',
+                btnAddCustomCart: 'Tambahkan Cincin Impian ke Keranjang',
+
+                // Metals Descriptive Names
+                metal_yellow: 'Emas Kuning Solid 18K',
+                metal_rose: 'Emas Merah Muda Klasik 18K',
+                metal_platinum: 'Platina Royal Murni',
+
+                // Stones Descriptive Names
+                stone_diamond: 'Berlian Belgia Poles',
+                stone_ruby: 'Rubi Darah Kerajaan',
+                stone_emerald: 'Zamrud Kolombia Langka',
+                stone_sapphire: 'Safir Kashmir Premium',
+
+                // Consultation Form Translations
+                formBadge: 'Layanan VIP Concierge',
+                formTitle: 'Pesan Sesi Konsultasi Desain Pribadi',
+                formDesc: 'Pesan janji temu privat secara virtual atau tatap muka di showroom kami untuk merancang perhiasan kustom dengan ahli kami.',
+                lblFormName: 'Nama Lengkap',
+                lblFormPhone: 'Nomor Telepon (WhatsApp)',
+                lblFormDate: 'Tanggal Janji Temu Pilihan',
+                lblFormType: 'Kategori Konsultasi',
+                lblFormNotes: 'Catatan Desain atau Preferensi',
+                btnSubmitForm: 'Konfirmasi Pemesanan Konsultasi Mewah',
+                placeholderName: 'Contoh: Jane Smith',
+                placeholderNotes: 'Sebutkan jenis logam pilihan, permata, atau perkiraan anggaran untuk persiapan kami...',
+                opt1: 'Desain Cincin Tunangan Unik',
+                opt2: 'Konsultasi Set Pernikahan',
+                opt3: 'Pemilihan Berlian Bersertifikat',
+                opt4: 'Permintaan Kustom Lainnya',
+
+                // Trust Elements
+                trustTitle1: 'Pengiriman Aman Terasuransi 100%',
+                trustDesc1: 'Kami mengirimkan semua perhiasan dalam kemasan pelindung ekstra aman dan terasuransi penuh.',
+                trustTitle2: 'Sertifikat Berlian Internasional',
+                trustDesc2: 'Setiap perhiasan berlian mewah dilengkapi sertifikasi resmi dari lembaga gemologi dunia.',
+                trustTitle3: 'Perawatan Pemolesan Gratis Seumur Hidup',
+                trustDesc3: 'Kami menyediakan pembersihan, pengencangan berlian, dan pemolesan ulang seumur hidup bagi klien elit kami.',
+
+                // Cart Elements
+                cartHeader: 'Tas Belanja Elit',
+                cartEmptyText: 'Tas belanja Anda saat ini kosong.',
+                cartBackShop: 'Belanja Koleksi Kami',
+                lblSubtotal: 'Subtotal:',
+                lblShipping: 'Pengiriman Terasuransi:',
+                lblShippingFree: 'Gratis & Terasuransi Penuh',
+                btnCheckout: 'Lanjutkan ke Pembayaran Aman',
+                lblCheckoutGuarantee: 'Kami menjamin keamanan pembayaran penuh. Semua produk dilengkapi dokumen sertifikasi dan garansi seumur hidup.',
+
+                // Modals
+                lblModalSize: 'Pilih Ukuran Jari (Tersedia berbagai ukuran):',
+                lblModalTax: 'Harga termasuk pajak',
+                btnModalAdd: 'Tambahkan ke Tas Sekarang',
+
+                // Footer
+                footerLogoSub: 'Perhiasan Elit Al-Nokba',
+                footerBrandDesc: 'Sejak 1998, kami telah menciptakan karya seni kontemporer abadi yang memikat hati dan menghiasi momen istimewa bangsawan Arab.',
+                footerLinksTitle: 'Tautan Cepat',
+                footerCareTitle: 'Layanan Pelanggan',
+                footCare1: 'Kebijakan Pengiriman Terasuransi Premium',
+                footCare2: 'Panduan Mengukur Ukuran Cincin',
+                footCare3: 'Garansi Berlian Seumur Hidup',
+                footerNewsletterTitle: 'Bergabung dengan Milis Pribadi',
+                footerNewsletterDesc: 'Dapatkan undangan eksklusif ke pelelangan privat dan rilis permata langka.',
+                footerNewsletterBtn: 'Gabung',
+                footerCopy: '© 2026 Al-Nokba Perhiasan. Hak Cipta Dilindungi.',
+                footerDesignedBy: 'Dibuat dengan kemewahan dan keanggunan tinggi.',
+
+                // Messages / Toasts
+                msgAddedCart: 'Berhasil ditambahkan ke tas belanja Anda.',
+                msgAddedCustom: 'Cincin desain kustom Anda telah ditambahkan ke keranjang.',
+                msgEmptyCart: 'Tas belanja Anda kosong. Telusuri koleksi kami terlebih dahulu.',
+                msgRedirectCheckout: 'Mengalihkan Anda dengan aman ke portal pembayaran VIP internasional kami...',
+                msgSuccessCheckout: 'Terima kasih telah membeli dari Al-Nokba. Rincian pengiriman terasuransi dikirim ke email Anda.',
+                msgSearching: 'Mencari koleksi eksklusif kami...',
+                msgSearchDone: 'Menampilkan kecocokan terdekat di showcase kami di bawah.',
+                msgConsultationSuccess: 'Permintaan konsultasi berhasil dikirim. Hubungi perwakilan kami akan segera menghubungi Anda.',
+                msgSubscribed: 'Berhasil mendaftar milis pribadi VIP kami.'
+            }
+        };
+
+        const productsDatabase = [
+            {
+                id: 'p1',
+                category: 'rings',
+                price: 18400,
+                tag: 'VIP',
+                img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80',
+                title: {
+                    ar: 'خاتم السوليتير الإمبراطوري الفاخر',
+                    en: 'Imperial Solitaire Diamond Ring',
+                    id: 'Cincin Berlian Solitaire Imperial'
+                },
+                desc: {
+                    ar: 'خاتم مصنع بالكامل من الذهب الأبيض عيار 18 قيراطاً، مزين بحجر سوليتير مركزي نقي معتمد بوزن 1.5 قيراط وحواف مرصعة بالألماس الصغير.',
+                    en: 'Solid 18k white gold ring featuring a certified 1.5-carat pure central solitaire surrounded by a delicate pavé diamond halo.',
+                    id: 'Cincin emas putih 18k murni dengan berlian solitaire pusat 1.5 karat bersertifikasi dan dikelilingi berlian pavé halus.'
+                }
+            },
+            {
+                id: 'p2',
+                category: 'necklaces',
+                price: 32500,
+                tag: 'Elite',
+                img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=500&q=80',
+                title: {
+                    ar: 'قلادة طوق النخبة من الذهب والألماس',
+                    en: 'Al-Nokba Diamond Collier Necklace',
+                    id: 'Kalung Collier Berlian Al-Nokba'
+                },
+                desc: {
+                    ar: 'عقد ذهبي ساحر بتصميم ملكي يحيط العنق بالبهاء. يحتوي على 180 حبة ألماس لامع مستدير ومكعبات بلاتينية.',
+                    en: 'An opulent royal collier made of 18k gold set with 180 brilliant-cut diamonds, cascading light at every single movement.',
+                    id: 'Kalung royal mewah dari emas 18k dengan 180 berlian brilliant-cut yang memancarkan cahaya pada setiap gerakan Anda.'
+                }
+            },
+            {
+                id: 'p3',
+                category: 'bracelets',
+                price: 15900,
+                tag: 'Royal',
+                img: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=500&q=80',
+                title: {
+                    ar: 'سوار العرس الكلاسيكي اللامع',
+                    en: 'Classic Bridal Sapphire Bracelet',
+                    id: 'Gelang Safir Pengantin Klasik'
+                },
+                desc: {
+                    ar: 'سوار ناعم ذو مرونة عالية وتصميم مريح لليد، مرصع بصفين من الياقوت الأزرق الكشميري والألماس الفاخر.',
+                    en: 'Double row exquisite wedding bracelet embedded with rare blue Kashmiri sapphires and premium brilliant diamonds.',
+                    id: 'Gelang pernikahan elegan baris ganda bertatahkan batu safir Kashmir biru langka dan berlian cemerlang premium.'
+                }
+            },
+            {
+                id: 'p4',
+                category: 'earrings',
+                price: 9200,
+                tag: 'Glamour',
+                img: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=500&q=80',
+                title: {
+                    ar: 'أقراط الندى المتدلية البراقة',
+                    en: 'Glimmering Morning Dew Drop Earrings',
+                    id: 'Anting-anting Glimmer Morning Dew Drop'
+                },
+                desc: {
+                    ar: 'أقراط متدلية مستوحاة من قطرات الندى الصباحي، مصنوعة من الذهب الوردي الفريد وحجر الزبرجد الأخضر.',
+                    en: 'Enchanting earrings inspired by morning dew drops, fashioned in 18k rose gold with luminous green peridots.',
+                    id: 'Anting mempesona terinspirasi embun pagi, dibentuk dari emas merah muda 18k dengan batu peridot hijau bercahaya.'
+                }
+            },
+            {
+                id: 'p5',
+                category: 'rings',
+                price: 21000,
+                tag: 'Heritage',
+                img: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=500&q=80',
+                title: {
+                    ar: 'خاتم الملكة الياقوتي الأزرق المذهل',
+                    en: 'The Queen Sapphire Cluster Ring',
+                    id: 'Cincin Safir Kluster Ratu'
+                },
+                desc: {
+                    ar: 'تصميم عتيق يجسد الملكية، يتميز بحجر ياقوت كشميري نقي محاط بهالة براقة من الألماس البارز الفاخر.',
+                    en: 'Vintage cluster ring reflecting royalty, featuring a deep blue Kashmiri sapphire surrounded by majestic diamonds.',
+                    id: 'Cincin kluster klasik bertema kerajaan, dengan safir Kashmir biru tua yang dikelilingi berlian megah.'
+                }
+            },
+            {
+                id: 'p6',
+                category: 'necklaces',
+                price: 7800,
+                tag: 'Popular',
+                img: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=500&q=80',
+                title: {
+                    ar: 'قلادة الحب اللانهائي من الذهب الوردي',
+                    en: 'Rose Gold Infinity Love Necklace',
+                    id: 'Kalung Infinity Love Emas Merah Muda'
+                },
+                desc: {
+                    ar: 'قلادة ناعمة وأنيقة لتمثل الرمز واللحظات الخاصة. مصنوعة من الذهب الوردي عيار 18 مع لمسة الماس مصقول.',
+                    en: 'A dainty infinity love necklace set in 18k rose gold and encrusted with brilliant accent diamonds.',
+                    id: 'Kalung cinta tak terbatas yang manis terbuat dari emas merah muda 18k bertatahkan berlian aksen berkilau.'
+                }
+            },
+            {
+                id: 'p7',
+                category: 'bracelets',
+                price: 24500,
+                tag: 'Limited',
+                img: 'https://images.unsplash.com/photo-1611085583191-a3b1a30a5a40?auto=format&fit=crop&w=500&q=80',
+                title: {
+                    ar: 'سوار الزمرد الساحر الأنيق',
+                    en: 'Charming Colombian Emerald Bracelet',
+                    id: 'Gelang Zamrud Kolombia Menawan'
+                },
+                desc: {
+                    ar: 'أخضر زمردي يخطف الألباب. سوار فاخر مصنوع كتحفة فنية فريدة تناسب حضور المناسبات والمؤتمرات الكبرى.',
+                    en: 'Spectacular green Colombia emeralds set in a flexible premium gold chassis for unparalleled royal elegance.',
+                    id: 'Zamrud Kolombia hijau spektakuler yang dipasang pada gelang emas lentur untuk keanggunan royal tiada tanding.'
+                }
+            },
+            {
+                id: 'p8',
+                category: 'earrings',
+                price: 11000,
+                tag: 'Stars',
+                img: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=500&q=80',
+                title: {
+                    ar: 'أقراط النجمة الكونية المزدوجة',
+                    en: 'Cosmic Double Star Drop Earrings',
+                    id: 'Anting Drop Bintang Ganda Kosmik'
+                },
+                desc: {
+                    ar: 'أقراط ماسية لامعة تناسب الإطلالات الكلاسيكية والفساتين الفاخرة، تعطي بريق النجوم مع كل حركة سريعة.',
+                    en: 'Gleaming double star diamond drop earrings designed to maximize cosmic light reflection at every party.',
+                    id: 'Anting drop berlian bintang ganda berkilau yang dirancang untuk memantulkan cahaya kosmik yang maksimal.'
+                }
+            }
+        ];
+
+        // Hero slideshow collection
+        const heroSlides = [
+            {
+                title: {
+                    ar: 'قلادة "شمس الأمل"',
+                    en: 'Solar Hope Pendant',
+                    id: 'Kalung Solar Hope'
+                },
+                desc: {
+                    ar: 'ذهب أصفر عيار 18، مع حجر سمرقند',
+                    en: '18k yellow gold with celestial Samarkand stone',
+                    id: 'Emas kuning 18k dengan batu surgawi Samarkand'
+                },
+                price: {
+                    ar: '4,500 ر.س',
+                    en: 'SAR 4,500',
+                    id: 'SAR 4,500'
+                },
+                img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                title: {
+                    ar: 'خاتم "الملكة سوليتير"',
+                    en: 'Queen Solitaire Ring',
+                    id: 'Cincin Queen Solitaire'
+                },
+                desc: {
+                    ar: 'بلاتينوم خالص، ألماس بلجيكي 2 قيراط',
+                    en: 'Pure platinum with 2ct certified diamond',
+                    id: 'Platina murni dengan berlian bersertifikat 2ct'
+                },
+                price: {
+                    ar: '28,900 ر.س',
+                    en: 'SAR 28,900',
+                    id: 'SAR 28,900'
+                },
+                img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                title: {
+                    ar: 'أقراط "دمعة القمر"',
+                    en: 'Lunas Tear Earrings',
+                    id: 'Anting Luna Tears'
+                },
+                desc: {
+                    ar: 'ذهب أبيض نقي مع أحجار الياقوت',
+                    en: '18k white gold set with pristine sapphires',
+                    id: 'Emas putih 18k dengan safir alami murni'
+                },
+                price: {
+                    ar: '12,400 ر.س',
+                    en: 'SAR 12,400',
+                    id: 'SAR 12,400'
+                },
+                img: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=600&q=80'
+            }
+        ];
+
+        let currentLang = 'ar';
+        let cart = [];
+        let currentCategoryFilter = 'all';
+        let currentHeroIndex = 0;
+
+        let builderState = {
+            metal: 'yellow-gold',
+            metalColor: '#E6C15C',
+            metalTypeKey: 'yellow',
+            stone: 'diamond',
+            stoneColor: '#FFFFFF',
+            stoneKey: 'diamond',
+            stoneBasePrice: 3000,
+            carat: 1.5,
+            metalBasePrice: 1500
+        };
+
+        // Navigation state controller (Routing simulation)
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-container').forEach(el => el.classList.add('hidden'));
+            
+            const activePage = document.getElementById(`page-${pageId}`);
+            if (activePage) activePage.classList.remove('hidden');
+
+            // Manage nav button styling
+            const btnHome = document.getElementById('nav-home');
+            const btnBuilder = document.getElementById('nav-builder');
+
+            if (pageId === 'home') {
+                btnHome.className = "text-gold-300 font-semibold border-b-2 border-gold-500 pb-1 transition-all";
+                btnBuilder.className = "text-gray-300 hover:text-gold-300 pb-1 transition-all flex items-center gap-1";
+            } else {
+                btnBuilder.className = "text-gold-300 font-semibold border-b-2 border-gold-500 pb-1 transition-all flex items-center gap-1";
+                btnHome.className = "text-gray-300 hover:text-gold-300 pb-1 transition-all";
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Change Language Action
+        function changeLanguage(lang) {
+            currentLang = lang;
+            const dict = translations[lang];
+
+            // Apply direction layout change
+            document.documentElement.dir = dict.direction;
+            document.documentElement.lang = lang;
+
+            // Apply direction specific adjustments for absolute offsets
+            const cardGrid = document.getElementById('products-grid');
+            if (dict.direction === 'rtl') {
+                document.body.classList.add('font-sans');
+                document.body.classList.remove('font-serif');
+            } else {
+                document.body.classList.remove('font-sans');
+            }
+
+            // Update DOM Elements
+            document.getElementById('logo-subtext').innerText = dict.logoSub;
+            document.getElementById('nav-home').innerText = dict.navHome;
+            document.getElementById('mob-nav-home').innerText = dict.navHome;
+            document.getElementById('nav-builder-text').innerText = dict.navBuilder;
+            document.getElementById('mob-nav-builder-text').innerText = dict.navBuilder;
+            document.getElementById('search-input').placeholder = dict.searchPlaceholder;
+            document.getElementById('search-btn-txt').innerText = dict.searchBtn;
+            
+            // Hero
+            document.getElementById('hero-badge').innerText = dict.heroBadge;
+            document.getElementById('hero-title-1').innerText = dict.heroTitle1;
+            document.getElementById('hero-title-2').innerText = dict.heroTitle2;
+            document.getElementById('hero-desc').innerText = dict.heroDesc;
+            document.getElementById('hero-cta-shop').innerText = dict.heroCtaShop;
+            document.getElementById('hero-cta-build').innerText = dict.heroCtaBuild;
+
+            // Categories
+            document.getElementById('cat-badge').innerText = dict.catBadge;
+            document.getElementById('cat-title').innerText = dict.catTitle;
+            document.getElementById('cat-card-1').innerText = dict.catCard1;
+            document.getElementById('cat-card-2').innerText = dict.catCard2;
+            document.getElementById('cat-card-3').innerText = dict.catCard3;
+            document.getElementById('cat-card-4').innerText = dict.catCard4;
+
+            // Products
+            document.getElementById('prod-badge').innerText = dict.prodBadge;
+            document.getElementById('prod-title').innerText = dict.prodTitle;
+            document.getElementById('tab-all').innerText = dict.filterAll;
+            document.getElementById('tab-rings').innerText = dict.filterRings;
+            document.getElementById('tab-necklaces').innerText = dict.filterNecklaces;
+            document.getElementById('tab-bracelets').innerText = dict.filterBracelets;
+            document.getElementById('tab-earrings').innerText = dict.filterEarrings;
+
+            // Builder Controls Texts
+            document.getElementById('builder-badge').innerText = dict.builderBadge;
+            document.getElementById('builder-title').innerText = dict.builderTitle;
+            document.getElementById('builder-desc').innerText = dict.builderDesc;
+            document.getElementById('builder-carat-title').innerText = dict.builderCaratTitle;
+            document.getElementById('builder-carat-unit').innerText = dict.builderCaratUnit;
+            document.getElementById('step-metal').innerText = dict.stepMetal;
+            document.getElementById('step-stone').innerText = dict.stepStone;
+            document.getElementById('step-carat').innerText = dict.stepCarat;
+            document.getElementById('lbl-metal-yg').innerText = dict.lblMetalYg;
+            document.getElementById('lbl-metal-rg').innerText = dict.lblMetalRg;
+            document.getElementById('lbl-metal-plat').innerText = dict.lblMetalPlat;
+            document.getElementById('lbl-stone-diam').innerText = dict.lblStoneDiam;
+            document.getElementById('lbl-stone-ruby').innerText = dict.lblStoneRuby;
+            document.getElementById('lbl-stone-em').innerText = dict.lblStoneEm;
+            document.getElementById('lbl-stone-sap').innerText = dict.lblStoneSap;
+            document.getElementById('lbl-carat-soft').innerText = dict.lblCaratSoft;
+            document.getElementById('lbl-carat-bold').innerText = dict.lblCaratBold;
+            document.getElementById('lbl-total-est').innerText = dict.lblTotalEst;
+            document.getElementById('btn-add-custom-cart').innerText = dict.btnAddCustomCart;
+
+            // Update active Builder descriptive text state
+            document.getElementById('builder-metal-name').innerText = dict[`metal_${builderState.metalTypeKey}`];
+            document.getElementById('builder-stone-name').innerText = dict[`stone_${builderState.stoneKey}`];
+
+            // Consultation Form
+            document.getElementById('form-badge').innerText = dict.formBadge;
+            document.getElementById('form-title').innerText = dict.formTitle;
+            document.getElementById('form-desc').innerText = dict.formDesc;
+            document.getElementById('lbl-form-name').innerText = dict.lblFormName;
+            document.getElementById('consult-name').placeholder = dict.placeholderName;
+            document.getElementById('lbl-form-phone').innerText = dict.lblFormPhone;
+            document.getElementById('lbl-form-date').innerText = dict.lblFormDate;
+            document.getElementById('lbl-form-type').innerText = dict.lblFormType;
+            document.getElementById('lbl-form-notes').innerText = dict.lblFormNotes;
+            document.getElementById('consult-notes').placeholder = dict.placeholderNotes;
+            document.getElementById('btn-submit-form').innerText = dict.btnSubmitForm;
+            document.getElementById('opt-1').innerText = dict.opt1;
+            document.getElementById('opt-2').innerText = dict.opt2;
+            document.getElementById('opt-3').innerText = dict.opt3;
+            document.getElementById('opt-4').innerText = dict.opt4;
+
+            // Trust elements
+            document.getElementById('trust-title-1').innerText = dict.trustTitle1;
+            document.getElementById('trust-desc-1').innerText = dict.trustDesc1;
+            document.getElementById('trust-title-2').innerText = dict.trustTitle2;
+            document.getElementById('trust-desc-2').innerText = dict.trustDesc2;
+            document.getElementById('trust-title-3').innerText = dict.trustTitle3;
+            document.getElementById('trust-desc-3').innerText = dict.trustDesc3;
+
+            // Cart elements
+            document.getElementById('cart-drawer-header').innerText = dict.cartHeader;
+            document.getElementById('cart-empty-text').innerText = dict.cartEmptyText;
+            document.getElementById('cart-back-shop').innerText = dict.cartBackShop;
+            document.getElementById('lbl-subtotal').innerText = dict.lblSubtotal;
+            document.getElementById('lbl-shipping').innerText = dict.lblShipping;
+            document.getElementById('lbl-shipping-free').innerText = dict.lblShippingFree;
+            document.getElementById('btn-checkout').innerText = dict.btnCheckout;
+            document.getElementById('lbl-checkout-guarantee').innerText = dict.lblCheckoutGuarantee;
+
+            // Modals
+            document.getElementById('lbl-modal-size').innerText = dict.lblModalSize;
+            document.getElementById('lbl-modal-tax').innerText = dict.lblModalTax;
+            document.getElementById('btn-modal-add').innerText = dict.btnModalAdd;
+
+            // Footer
+            document.getElementById('footer-logo-subtext').innerText = dict.footerLogoSub;
+            document.getElementById('footer-brand-desc').innerText = dict.footerBrandDesc;
+            document.getElementById('footer-links-title').innerText = dict.footerLinksTitle;
+            document.getElementById('footer-care-title').innerText = dict.footerCareTitle;
+            document.getElementById('foot-care-1').innerText = dict.footCare1;
+            document.getElementById('foot-care-2').innerText = dict.footCare2;
+            document.getElementById('foot-care-3').innerText = dict.footCare3;
+            document.getElementById('footer-newsletter-title').innerText = dict.footerNewsletterTitle;
+            document.getElementById('footer-newsletter-desc').innerText = dict.footerNewsletterDesc;
+            document.getElementById('footer-newsletter-btn').innerText = dict.footerNewsletterBtn;
+            document.getElementById('footer-copy').innerText = dict.footerCopy;
+            document.getElementById('footer-designed-by').innerText = dict.footerDesignedBy;
+            document.getElementById('foot-nav-1').innerText = dict.navHome;
+            document.getElementById('foot-nav-2').innerText = dict.navBuilder;
+
+            // Recalculate slider text
+            document.getElementById('builder-carat-val').innerText = builderState.carat + ' ' + (lang === 'ar' ? 'قيراط' : (lang === 'en' ? 'ct' : 'ct'));
+
+            // Refresh Dynamic Elements
+            renderProducts();
+            updateCartStats();
+            renderCartItems();
+            updateHeroCarouselContent();
+        }
+
+        function renderProducts() {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
+            const filtered = productsDatabase.filter(p => {
+                if (currentCategoryFilter === 'all') return true;
+                return p.category === currentCategoryFilter;
+            });
+
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = "group bg-luxury-slate rounded-2xl p-4 border border-gold-800/10 hover:border-gold-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-gold-500/5 flex flex-col justify-between";
+                
+                const titleText = p.title[currentLang];
+                const descText = p.desc[currentLang];
+                const btnText = currentLang === 'ar' ? '+ أضف للسلة' : (currentLang === 'en' ? '+ Add to Bag' : '+ Tambah');
+                const priceLabel = currentLang === 'ar' ? 'السعر شامل الضريبة' : (currentLang === 'en' ? 'Tax inclusive' : 'Termasuk pajak');
+
+                card.innerHTML = `
+                    <div>
+                        <div class="relative overflow-hidden rounded-xl mb-4 bg-luxury-deep h-60 flex items-center justify-center">
+                            <span class="absolute top-2 right-2 bg-gold-600/95 text-luxury-deep text-[10px] font-bold px-3 py-1 rounded-full z-10">${p.tag}</span>
+                            <img src="${p.img}" alt="${titleText}" class="object-cover h-full w-full group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x400/111827/D4AF37?text=Premium+Jewelry'">
+                            
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                                <button onclick="openQuickView('${p.id}')" class="p-3 bg-luxury-slate hover:bg-gold-500 hover:text-luxury-deep text-gold-400 rounded-full transition shadow-lg">
+                                    <i class="fa-solid fa-eye text-lg"></i>
+                                </button>
+                                <button onclick="addToCart('${p.id}')" class="p-3 bg-gold-500 hover:bg-gold-400 text-luxury-deep rounded-full transition shadow-lg">
+                                    <i class="fa-solid fa-cart-plus text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 text-start">
+                            <span class="text-xs text-gold-400 font-semibold block uppercase tracking-wider">${translateCategory(p.category)}</span>
+                            <h3 class="font-bold text-base text-white group-hover:text-gold-300 transition line-clamp-1">${titleText}</h3>
+                            <p class="text-xs text-gray-500 line-clamp-2">${descText}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between border-t border-gold-800/10 pt-4 mt-4">
+                        <div class="text-start">
+                            <span class="text-[10px] text-gray-500 block">${priceLabel}</span>
+                            <span class="text-gold-300 font-serif font-bold text-base sm:text-lg">${formatPrice(p.price)} ${getCurrency()}</span>
+                        </div>
+                        
+                        <button onclick="addToCart('${p.id}')" class="bg-gold-950/40 hover:bg-gold-500 hover:text-luxury-deep border border-gold-500/30 hover:border-transparent text-gold-300 text-xs font-bold px-3 py-2 rounded-full transition duration-300">
+                            ${btnText}
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Helper helpers
+        function translateCategory(key) {
+            if (currentLang === 'ar') {
+                switch(key) {
+                    case 'rings': return 'خواتم';
+                    case 'necklaces': return 'قلائد';
+                    case 'bracelets': return 'أساور';
+                    case 'earrings': return 'أقراط';
+                    default: return 'مجوهرات';
+                }
+            } else if (currentLang === 'en') {
+                switch(key) {
+                    case 'rings': return 'Rings';
+                    case 'necklaces': return 'Necklaces';
+                    case 'bracelets': return 'Bracelets';
+                    case 'earrings': return 'Earrings';
+                    default: return 'Jewelry';
+                }
+            } else {
+                switch(key) {
+                    case 'rings': return 'Cincin';
+                    case 'necklaces': return 'Kalung';
+                    case 'bracelets': return 'Gelang';
+                    case 'earrings': return 'Anting';
+                    default: return 'Perhiasan';
+                }
+            }
+        }
+
+        function formatPrice(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function getCurrency() {
+            return currentLang === 'ar' ? 'ر.س' : 'SAR';
+        }
+
+        // Active Product category filters
+        function filterProducts(category) {
+            currentCategoryFilter = category;
+            
+            const tabs = document.querySelectorAll('#filter-tabs button');
+            tabs.forEach(btn => {
+                btn.className = "filter-tab px-5 py-2 rounded-full border border-gold-800/30 text-sm font-semibold text-gray-400 hover:border-gold-500 hover:text-white transition";
+            });
+
+            const activeBtn = Array.from(tabs).find(btn => {
+                if(category === 'all' && (btn.id === 'tab-all')) return true;
+                if(category === 'rings' && (btn.id === 'tab-rings')) return true;
+                if(category === 'necklaces' && (btn.id === 'tab-necklaces')) return true;
+                if(category === 'bracelets' && (btn.id === 'tab-bracelets')) return true;
+                if(category === 'earrings' && (btn.id === 'tab-earrings')) return true;
+                return false;
+            });
+            if (activeBtn) {
+                activeBtn.className = "filter-tab active px-5 py-2 rounded-full border border-gold-500 text-sm font-semibold bg-gold-500 text-luxury-deep hover:bg-gold-400 transition";
+            }
+
+            renderProducts();
+        }
+
+        function updateCartStats() {
+            const count = cart.reduce((acc, curr) => acc + curr.qty, 0);
+            document.getElementById('cart-count').innerText = count;
+
+            const subtotal = cart.reduce((acc, curr) => acc + (curr.price * curr.qty), 0);
+            document.getElementById('cart-subtotal').innerText = formatPrice(subtotal) + ' ' + getCurrency();
+
+            const emptyMsg = document.getElementById('empty-cart-message');
+            if (cart.length === 0) {
+                emptyMsg.classList.remove('hidden');
+            } else {
+                emptyMsg.classList.add('hidden');
+            }
+        }
+
+        function toggleCartDrawer() {
+            document.getElementById('cart-drawer').classList.toggle('hidden');
+        }
+
+        function addToCart(productId) {
+            const product = productsDatabase.find(p => p.id === productId);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    title: product.title,
+                    price: product.price,
+                    img: product.img,
+                    qty: 1,
+                    custom: false
+                });
+            }
+
+            renderCartItems();
+            updateCartStats();
+            showToast(translations[currentLang].msgAddedCart);
+        }
+
+        function addCustomRingToCart() {
+            const price = calculateBuilderPrice();
+            const specText = `${translations[currentLang][`metal_${builderState.metalTypeKey}`]} | ${translations[currentLang][`stone_${builderState.stoneKey}`]}`;
+            const titleObject = {
+                ar: `خاتم مخصص: ${translations['ar'][`stone_${builderState.stoneKey}`]} (${builderState.carat} قيراط)`,
+                en: `Custom Ring: ${translations['en'][`stone_${builderState.stoneKey}`]} (${builderState.carat} ct)`,
+                id: `Cincin Kustom: ${translations['id'][`stone_${builderState.stoneKey}`]} (${builderState.carat} ct)`
+            };
+            
+            const customId = `custom-${Date.now()}`;
+
+            cart.push({
+                id: customId,
+                title: titleObject,
+                price: price,
+                img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80',
+                qty: 1,
+                custom: true,
+                specs: specText
+            });
+
+            renderCartItems();
+            updateCartStats();
+            toggleCartDrawer();
+            showToast(translations[currentLang].msgAddedCustom);
+        }
+
+        function removeFromCart(id) {
+            const itemIndex = cart.findIndex(item => item.id === id);
+            if (itemIndex > -1) {
+                if (cart[itemIndex].qty > 1) {
+                    cart[itemIndex].qty -= 1;
+                } else {
+                    cart.splice(itemIndex, 1);
+                }
+            }
+            renderCartItems();
+            updateCartStats();
+        }
+
+        function addMoreOfItem(id) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.qty += 1;
+                renderCartItems();
+                updateCartStats();
+            }
+        }
+
+        function deleteLineFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            renderCartItems();
+            updateCartStats();
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cart-items-container');
+            const emptyMsg = document.getElementById('empty-cart-message');
+            container.innerHTML = '';
+            container.appendChild(emptyMsg);
+
+            cart.forEach(item => {
+                const row = document.createElement('div');
+                row.className = "flex items-center gap-4 bg-luxury-deep p-4 rounded-xl border border-gold-800/10 relative text-start";
+                
+                const displayTitle = item.title[currentLang];
+
+                row.innerHTML = `
+                    <img src="${item.img}" alt="${displayTitle}" class="w-16 h-16 object-cover rounded-lg border border-gold-500/10">
+                    <div class="flex-1 space-y-1">
+                        <h4 class="text-sm font-semibold text-white line-clamp-1">${displayTitle}</h4>
+                        <p class="text-xs text-gold-400 font-serif">${formatPrice(item.price)} ${getCurrency()}</p>
+                        ${item.custom ? `<p class="text-[10px] text-gray-500">${item.specs}</p>` : ''}
+                        
+                        <div class="flex items-center gap-2 mt-2">
+                            <button onclick="removeFromCart('${item.id}')" class="bg-luxury-slate hover:bg-gold-500 hover:text-luxury-deep text-gray-400 text-xs w-6 h-6 rounded flex items-center justify-center transition">-</button>
+                            <span class="text-xs font-semibold px-2">${item.qty}</span>
+                            <button onclick="addMoreOfItem('${item.id}')" class="bg-luxury-slate hover:bg-gold-500 hover:text-luxury-deep text-gray-400 text-xs w-6 h-6 rounded flex items-center justify-center transition">+</button>
+                        </div>
+                    </div>
+
+                    <button onclick="deleteLineFromCart('${item.id}')" class="text-gray-500 hover:text-rose-500 transition absolute top-2 right-2">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        function checkoutCart() {
+            const dict = translations[currentLang];
+            if (cart.length === 0) {
+                showToast(dict.msgEmptyCart, "error");
+                return;
+            }
+            
+            showToast(dict.msgRedirectCheckout, "success");
+            
+            setTimeout(() => {
+                cart = [];
+                updateCartStats();
+                renderCartItems();
+                toggleCartDrawer();
+                showToast(dict.msgSuccessCheckout);
+            }, 3000);
+        }
+
+        function calculateBuilderPrice() {
+            let stoneFactorPrice = builderState.stoneBasePrice * builderState.carat;
+            let metalFactorPrice = builderState.metalBasePrice;
+            
+            if (builderState.metal === 'platinum') {
+                metalFactorPrice = 2200;
+            } else if (builderState.metal === 'rose-gold') {
+                metalFactorPrice = 1800;
+            }
+
+            return Math.round(stoneFactorPrice + metalFactorPrice);
+        }
+
+        function updateBuilderMetal(id, color, key) {
+            builderState.metal = id;
+            builderState.metalColor = color;
+            builderState.metalTypeKey = key;
+
+            const btns = document.querySelectorAll('.builder-metal-btn');
+            btns.forEach(btn => btn.classList.replace('border-gold-500', 'border-gold-800/20'));
+            event.currentTarget.classList.replace('border-gold-800/20', 'border-gold-500');
+
+            document.getElementById('svg-ring-shank').setAttribute('stroke', color);
+            document.getElementById('svg-ring-prong').setAttribute('fill', color);
+            
+            document.getElementById('builder-metal-name').innerText = translations[currentLang][`metal_${key}`];
+            
+            const currentTotal = calculateBuilderPrice();
+            document.getElementById('builder-total-price').innerText = formatPrice(currentTotal) + ' ' + getCurrency();
+        }
+
+        function updateBuilderStone(id, color, key, basePrice) {
+            builderState.stone = id;
+            builderState.stoneColor = color;
+            builderState.stoneKey = key;
+            builderState.stoneBasePrice = basePrice;
+
+            const btns = document.querySelectorAll('.builder-stone-btn');
+            btns.forEach(btn => btn.classList.replace('border-gold-500', 'border-gold-800/20'));
+            event.currentTarget.classList.replace('border-gold-800/20', 'border-gold-500');
+
+            document.getElementById('svg-ring-gem').setAttribute('fill', color);
+            document.getElementById('builder-stone-name').innerText = translations[currentLang][`stone_${key}`];
+
+            const currentTotal = calculateBuilderPrice();
+            document.getElementById('builder-total-price').innerText = formatPrice(currentTotal) + ' ' + getCurrency();
+        }
+
+        function updateBuilderCarat(val) {
+            builderState.carat = parseFloat(val);
+            const unitLabel = currentLang === 'ar' ? 'قيراط' : 'ct';
+            
+            document.getElementById('builder-carat-val').innerText = val + ' ' + unitLabel;
+            document.getElementById('builder-carat-display').innerText = val;
+
+            const scaleFactor = 1 + (val - 1.5) * 0.15;
+            document.getElementById('svg-ring-gem').style.transform = `scale(${scaleFactor})`;
+            document.getElementById('svg-ring-gem').style.transformOrigin = `50px 10px`;
+
+            const currentTotal = calculateBuilderPrice();
+            document.getElementById('builder-total-price').innerText = formatPrice(currentTotal) + ' ' + getCurrency();
+        }
+
+        function openQuickView(productId) {
+            const product = productsDatabase.find(p => p.id === productId);
+            if (!product) return;
+
+            document.getElementById('modal-img').src = product.img;
+            document.getElementById('modal-tag').innerText = translateCategory(product.category);
+            document.getElementById('modal-title-text').innerText = product.title[currentLang];
+            document.getElementById('modal-desc').innerText = product.desc[currentLang];
+            document.getElementById('modal-price').innerText = formatPrice(product.price) + ' ' + getCurrency();
+
+            document.getElementById('modal-add-to-cart-btn').onclick = function() {
+                addToCart(product.id);
+                closeQuickView();
+            };
+
+            document.getElementById('quick-view-modal').classList.remove('hidden');
+        }
+
+        function closeQuickView() {
+            document.getElementById('quick-view-modal').classList.add('hidden');
+        }
+
+        // Elegant custom notifications
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `flex items-center gap-3 px-5 py-4 rounded-xl border border-gold-500/20 bg-luxury-slate shadow-2xl transition duration-500 text-sm font-semibold max-w-sm text-start`;
+            
+            let icon = `<i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>`;
+            if (type === 'error') {
+                icon = `<i class="fa-solid fa-circle-exclamation text-rose-500 text-lg"></i>`;
+            }
+
+            toast.innerHTML = `
+                ${icon}
+                <div class="text-white">${message}</div>
+            `;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', '-translate-y-2');
+                setTimeout(() => {
+                    toast.remove();
+                }, 500);
+            }, 4000);
+        }
+
+        function submitConsultation(event) {
+            event.preventDefault();
+            const name = document.getElementById('consult-name').value;
+            
+            showToast(translations[currentLang].msgConsultationSuccess, "success");
+            document.getElementById('consultation-form').reset();
+        }
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email.trim() === '') return;
+            showToast(translations[currentLang].msgSubscribed, "success");
+            document.getElementById('newsletter-email').value = '';
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            toggleMobileMenu();
+        });
+
+        document.getElementById('search-toggle-btn').addEventListener('click', () => {
+            const panel = document.getElementById('search-panel');
+            panel.classList.toggle('hidden');
+            if (!panel.classList.contains('hidden')) {
+                document.getElementById('search-input').focus();
+            }
+        });
+
+        function performSearch() {
+            const input = document.getElementById('search-input').value.trim();
+            if (input === '') return;
+
+            showToast(translations[currentLang].msgSearching);
+            
+            setTimeout(() => {
+                showToast(translations[currentLang].msgSearchDone);
+                currentCategoryFilter = 'all';
+                renderProducts();
+                document.getElementById('search-panel').classList.add('hidden');
+                document.getElementById('collection-section').scrollIntoView({ behavior: 'smooth' });
+            }, 1000);
+        }
+
+        document.getElementById('cart-btn').addEventListener('click', () => {
+            toggleCartDrawer();
+        });
+
+        // Rotate slides in Home Hero
+        function runHeroCarousel() {
+            currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
+            updateHeroCarouselContent();
+        }
+
+        function updateHeroCarouselContent() {
+            const show = heroSlides[currentHeroIndex];
+            const img = document.getElementById('hero-carousel-img');
+            const title = document.getElementById('hero-carousel-title');
+            const desc = document.getElementById('hero-carousel-desc');
+            const price = document.getElementById('hero-carousel-price');
+
+            img.classList.add('opacity-0');
+            setTimeout(() => {
+                img.src = show.img;
+                title.innerText = show.title[currentLang];
+                desc.innerText = show.desc[currentLang];
+                
+                const curPriceNum = show.price.en.replace(/[^\d]/g, '');
+                price.innerText = currentLang === 'ar' ? `${formatPrice(curPriceNum)} ر.س` : `SAR ${formatPrice(curPriceNum)}`;
+                img.classList.remove('opacity-0');
+            }, 400);
+        }
+
+        // Load Window setup
+        window.onload = function() {
+            // Initiate Localization
+            changeLanguage('ar');
+
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            document.getElementById('consult-date').value = tomorrow.toISOString().split('T')[0];
+
+            setInterval(runHeroCarousel, 7000);
+        }
+    </script>
+</body>
+</html>
