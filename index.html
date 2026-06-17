@@ -90,47 +90,42 @@
                 <!-- LOGO AREA (الشعار الخاص بك المطور)        -->
                 <!-- ========================================== -->
   <!-- Logo Section -->
-<div class="flex flex-col items-center justify-center text-center">
+<header class="sticky top-0 z-50 bg-luxury-deep/95 backdrop-blur-md border-b border-gold-800/20 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- إطار الشعار -->
-    <div class="border border-gold-500/40 rounded-2xl px-6 py-4 bg-luxury-slate/60 backdrop-blur-sm shadow-lg">
+```
+    <div class="flex items-center justify-between h-24">
+
+        <!-- زر القائمة للجوال -->
+        <div class="flex md:hidden">
+            <button id="mobile-menu-btn"
+                    class="text-gold-300 hover:text-gold-500 focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
 
         <!-- الشعار -->
-        <img src="logo.png"
-             alt="Rose Diamond Trading Logo"
-             class="h-20 md:h-24 w-auto mx-auto object-contain mb-3">
+        <div class="flex-1 flex justify-center">
+            <a href="#"
+               onclick="navigateTo('home')"
+               class="flex flex-col items-center">
 
-        <!-- اسم الشركة -->
-        <h1 class="font-serif text-2xl md:text-3xl font-bold text-gold-gradient">
-            ROSE DIAMOND
-        </h1>
+                <img src="logo.png"
+                     alt="Rose Diamond Trading Logo"
+                     class="h-24 md:h-28 w-auto object-contain">
 
-        <p class="text-gold-300 text-sm mt-1">
-            روزماري لتجارة الألماس
-        </p>
+            </a>
+        </div>
 
-        <!-- رقم الواتساب داخل الإطار -->
-        <a href="https://wa.me/62816875000"
-           target="_blank"
-           class="mt-4 inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-full text-white font-bold transition">
+        <!-- مساحة فارغة للموازنة -->
+        <div class="w-10 md:hidden"></div>
 
-            <i class="fa-brands fa-whatsapp text-lg"></i>
-            <span>+62 816 875 000</span>
-
-        </a>
-
-    </div>
-
-    <!-- العنوان تحت الإطار -->
-    <div class="mt-4 flex items-center gap-2 text-gold-200 text-sm max-w-xl">
-        <i class="fa-solid fa-location-dot text-gold-400"></i>
-        <span>
-            آي تي سي كونينغان، الطابق الأرضي، بلوك E4 رقم 5،
-            سيتيابودي، جنوب جاكرتا
-        </span>
     </div>
 
 </div>
+```
+
+</header>
 
         <!-- رقم الواتساب -->
       
