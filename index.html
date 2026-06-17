@@ -115,52 +115,37 @@
 
         </div>
 
-        <!-- Right Side -->
-        <div class="flex items-center gap-3">
+        <div class="flex flex-col items-center gap-2">
 
-            <!-- Language -->
-            <select
-                id="lang-selector"
-                onchange="changeLanguage(this.value)"
-                class="bg-luxury-slate border border-gold-800/40 text-gold-300 text-xs rounded-full px-3 py-2">
+    <!-- Cart -->
+    <button
+        id="cart-btn"
+        class="bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep px-4 py-2 rounded-full flex items-center gap-2">
 
-                <option value="ar" selected>
-                    العربية 🇸🇦
-                </option>
+        <i class="fa-solid fa-bag-shopping"></i>
 
-                <option value="en">
-                    English 🇬🇧
-                </option>
+        <span id="cart-count"
+            class="bg-luxury-deep text-gold-300 rounded-full text-xs px-2 py-1">
+            0
+        </span>
 
-                <option value="id">
-                    Indonesia 🇮🇩
-                </option>
+    </button>
 
-            </select>
+    <!-- Language -->
+    <select
+        id="lang-selector"
+        onchange="changeLanguage(this.value)"
+        class="bg-luxury-slate border border-gold-800/40 text-gold-300 text-xs rounded-full px-3 py-2">
 
-            <!-- Search -->
-            <button
-                id="search-toggle-btn"
-                class="text-gold-300 hover:text-gold-500 hidden sm:block">
-                <i class="fa-solid fa-magnifying-glass text-lg"></i>
-            </button>
+        <option value="ar">العربية 🇸🇦</option>
+        <option value="en">English 🇬🇧</option>
+        <option value="id">Indonesia 🇮🇩</option>
 
-            <!-- Cart -->
-            <button
-                id="cart-btn"
-                class="bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep px-4 py-2 rounded-full flex items-center gap-2">
+    </select>
 
-                <i class="fa-solid fa-bag-shopping"></i>
-
-                <span
-                    id="cart-count"
-                    class="bg-luxury-deep text-gold-300 rounded-full text-xs px-2 py-1">
-                    0
-                </span>
-
-            </button>
-
-        </div>
+</div>
+           
+           
 
     </div>
 
