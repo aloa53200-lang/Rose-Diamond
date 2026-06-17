@@ -93,39 +93,42 @@
                 </button>
             </div>
 
-            <!-- Logo -->
-            <div class="flex-1 flex justify-center">
-                <a href="#" onclick="navigateTo('home')">
-                    <img
-                        src="logo.png"
-                        alt="Rose Diamond Trading Logo"
-                        class="h-24 md:h-28 w-auto object-contain">
-                </a>
-            </div>
+       
 
-            <!-- Empty Space For Balance -->
-            <div class="w-10 md:hidden"></div>
+   <!-- Logo + Company Name -->
+<div class="flex-1 flex flex-col items-center justify-center">
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex space-x-8 space-x-reverse text-sm font-medium">
+    <img
+        src="logo.png"
+        alt="Rose Diamond Trading Logo"
+        class="h-14 md:h-20 w-auto object-contain">
 
-                <button
-                    onclick="navigateTo('home')"
-                    id="nav-home"
-                    class="text-gold-300 font-semibold border-b-2 border-gold-500 pb-1 transition-all">
-                    الرئيسية
-                </button>
+    <h1 class="text-sm md:text-2xl font-bold text-gold-300 mt-2 text-center">
+        Rose Diamond Trading
+    </h1>
 
-                <button
-                    onclick="navigateTo('builder')"
-                    id="nav-builder"
-                    class="text-gray-300 hover:text-gold-300 pb-1 transition-all flex items-center gap-1">
-                    <i class="fa-solid fa-gem animate-pulse text-gold-400"></i>
-                    <span id="nav-builder-text">صمم مجوهراتك الخاصة</span>
-                </button>
+</div>
+    <!-- Description -->
+    <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+        أفخم المجوهرات والتصاميم الراقية بأعلى معايير الجودة والفخامة
+    </p>
 
-            </nav>
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button
+            onclick="navigateTo('shop')"
+            class="bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep font-bold px-8 py-3 rounded-full hover:scale-105 transition">
+            تسوق الآن
+        </button>
 
+        <button
+            onclick="navigateTo('builder')"
+            class="border border-gold-500 text-gold-300 px-8 py-3 rounded-full hover:bg-gold-500 hover:text-black transition">
+            صمم مجوهراتك
+        </button>
+    </div>
+
+</div>
             <!-- Right Buttons -->
             <div class="flex items-center gap-3 sm:gap-4">
 
