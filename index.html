@@ -173,10 +173,16 @@
                 <div class="relative flex justify-center items-center">
                     <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gold-600/10 blur-3xl"></div>
                     
-                                  <video controls width="600">
-                        <source src="./video.mp4" type="video/mp4">
-                    </video>
-                                        
+                                            <video
+                        controls
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        class="w-full h-[500px] object-cover rounded-xl"
+                        onerror="alert('فشل تحميل الفيديو')">
+                        <source src="video.mp4" type="video/mp4">
+                    </video>          
                     <div class="absolute bottom-10 left-10 right-10 bg-luxury-deep/90 backdrop-blur-md p-4 rounded-xl border border-gold-500/20">
                             <div class="flex justify-between items-center">
                                 <div>
