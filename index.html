@@ -70,83 +70,70 @@
                 <i class="fa-solid fa-location-dot text-gold-400"></i>
                 
             </div>-->
-           
-     
-
-
-
-<header class="sticky top-0 z-50 bg-luxury-deep/95 backdrop-blur-md border-b border-gold-800/20"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <div class="flex items-center justify-between h-24">
-
-        <!-- Mobile Menu -->
-        <div class="md:hidden">
-            <button
-                id="mobile-menu-btn"
-                class="text-gold-300 hover:text-gold-500 p-2">
-                <i class="fa-solid fa-bars text-2xl"></i>
-            </button>
-        </div>
-
-        <!-- Logo + Company Name -->
-        <div class="flex-1 flex items-center justify-center gap-2 px-2">
-            <a href="#" onclick="navigateTo('home')"
-               class="flex items-center gap-3">
-
-                <img
-                    src="logo.png"
-                    alt="Rose Diamond Trading Logo"
-                class="h-10 md:h-16 w-auto object-contain"
-                <div class="text-center">
-
-                  <div class="text-center">
-                <h1 class="text-sm md:text-2xl font-bold text-gold-300">
-                Rose Diamond Trading
-                    </h1>
-            </div>
+   <!-- Top Luxury Navigation Bar -->
+    <header class="bg-darkBg/95 border-b border-gold/20 sticky top-0 z-50 backdrop-blur-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 relative">
+                
+                <!-- Left/RTL Right Menu Button (Visible only on mobile, positioned nicely on side) -->
+                <div class="flex md:hidden z-10">
+                    <button onclick="toggleMobileMenu()" class="text-gray-400 hover:text-gold p-2 focus:outline-none transition-colors duration-300">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
                 </div>
 
-            </a>
+                <!-- ======================================================= -->
+                <!-- MAIN LOGO: Centered on mobile, aligned to side on desktop -->
+                <!-- ======================================================= -->
+                <div class="absolute inset-x-0 flex justify-center items-center pointer-events-none md:static md:inset-auto md:flex md:justify-start md:pointer-events-auto">
+                    <a href="#" onclick="navigateTo('home')" class="block pointer-events-auto transition-transform duration-300 hover:scale-105">
+                        <!-- تلميح: يمكنك استبدال الرابط أدناه بملف صورتك الخاص مباشرة -->
+                        <img id="main-logo" src="https://placehold.co/240x60/0f1219/d4af37?text=ROSE+DIAMOND" alt="Rose Diamond Logo" class="h-9 sm:h-11 md:h-12 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/240x60/0b0f17/d4af37?text=ROSE+DIAMOND';">
+                    </a>
+                </div>
 
+                <!-- Desktop Navigation Links (Hidden on mobile) -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                    <button onclick="navigateTo('home')" id="nav-home" class="text-gold border-b-2 border-gold pb-1 px-1 transition-all duration-300 font-semibold">الرئيسية</button>
+                    <button onclick="navigateTo('builder')" id="nav-builder" class="text-gray-400 hover:text-gold pb-1 px-1 transition-all duration-300 flex items-center gap-1.5">
+                        <i class="fa-solid fa-gem text-gold/80 animate-pulse"></i> <span id="nav-builder-text">صمم مجوهراتك الخاصة</span>
+                    </button>
+                    
+                    <!-- أزرار تغيير اللغة الفاخرة بجانب خيارات التصفح مباشرة -->
+                    <div class="flex items-center bg-darkCard border border-gold/20 rounded-full p-1 gap-1">
+                        <button onclick="changeLanguage('ar')" id="lang-btn-ar" class="px-3 py-1 rounded-full text-xs transition-all duration-300 bg-gold text-darkBg font-bold">العربية</button>
+                        <button onclick="changeLanguage('en')" id="lang-btn-en" class="px-3 py-1 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent">EN</button>
+                        <button onclick="changeLanguage('id')" id="lang-btn-id" class="px-3 py-1 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent">ID</button>
+                    </div>
+                </nav>
+
+                <!-- Language Selector & Cart Action (Visible on both) -->
+                <div class="flex items-center space-x-2 sm:space-x-4 space-x-reverse z-10">
+                    <!-- Cart Button -->
+                    <button onclick="toggleCart()" class="relative p-2 text-gray-400 hover:text-gold transition-colors duration-300 flex items-center">
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-gold text-darkBg text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        <i class="fa-solid fa-bag-shopping text-lg sm:text-xl"></i>
+                    </button>
+                </div>
+
+            </div>
         </div>
 
-        <div class="flex flex-col items-center gap-2">
-
-    <!-- Cart -->
-    <button
-        id="cart-btn"
-        class="bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep px-4 py-2 rounded-full flex items-center gap-2">
-
-        <i class="fa-solid fa-bag-shopping"></i>
-
-        <span id="cart-count"
-            class="bg-luxury-deep text-gold-300 rounded-full text-xs px-2 py-1">
-            0
-        </span>
-
-    </button>
-
-    <!-- Language -->
-    <select
-        id="lang-selector"
-        onchange="changeLanguage(this.value)"
-        class="bg-luxury-slate border border-gold-800/40 text-gold-300 text-xs rounded-full px-3 py-2">
-
-        <option value="ar">العربية 🇸🇦</option>
-        <option value="en">English 🇬🇧</option>
-        <option value="id">Indonesia 🇮🇩</option>
-
-    </select>
-
-</div>
-           
-           
-
-    </div>
-
-</div>
-
-</header>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darkBg border-b border-gold/10 px-4 pt-2 pb-4 space-y-2">
+            <button onclick="navigateTo('home'); toggleMobileMenu()" id="mob-nav-home" class="block w-full text-right text-gold py-2 text-base font-medium">الرئيسية</button>
+            <button onclick="navigateTo('builder'); toggleMobileMenu()" id="mob-nav-builder-text" class="block w-full text-right text-gray-400 hover:text-gold py-2 text-base font-medium flex items-center gap-2">
+                <i class="fa-solid fa-gem text-gold/80"></i> صمم مجوهراتك الخاصة
+            </button>
+            
+            <!-- أزرار اللغات المتناسقة في قائمة الجوال -->
+            <div class="flex items-center justify-start bg-darkCard border border-gold/20 rounded-full p-1 gap-1 w-fit mt-2">
+                <button onclick="changeLanguage('ar'); toggleMobileMenu()" id="mob-lang-btn-ar" class="px-3 py-1.5 rounded-full text-xs transition-all duration-300 bg-gold text-darkBg font-bold">العربية</button>
+                <button onclick="changeLanguage('en'); toggleMobileMenu()" id="mob-lang-btn-en" class="px-3 py-1.5 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent">EN</button>
+                <button onclick="changeLanguage('id'); toggleMobileMenu()" id="mob-lang-btn-id" class="px-3 py-1.5 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent">ID</button>
+            </div>
+        </div>
+    </header>
     <!-- Description -->
     <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-8">
         أفخم المجوهرات والتصاميم الراقية بأعلى معايير الجودة والفخامة
