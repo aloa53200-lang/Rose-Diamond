@@ -414,20 +414,28 @@
                             </div>
                         </div>
 
-                        <!-- 3. Carat Selection -->
+                       <!-- Ring Size Selection -->
+                                              <!-- Ring Size Selection -->
                         <div class="space-y-4">
-                            <div class="flex justify-between items-center">
-                                <label class="text-sm font-semibold text-gray-400" id="step-carat">3. اختر حجم قيراط الحجر:</label>
-                                <span class="text-gold-300 text-sm font-bold" id="builder-carat-val">1.5 قيراط</span>
-                            </div>
-                            <input type="range" id="builder-carat-slider" min="0.5" max="4.0" step="0.1" value="1.5" oninput="updateBuilderCarat(this.value)"
-                                   class="w-full accent-gold-500 bg-luxury-slate h-2 rounded-lg cursor-pointer">
-                            <div class="flex justify-between text-xs text-gray-500">
-                                <span id="lbl-carat-soft">0.5 قيراط (ناعم)</span>
-                                <span id="lbl-carat-bold">4.0 قيراط (مبهر جداً)</span>
-                            </div>
+                            <label class="text-sm font-semibold text-gray-400">
+                                اختر مقاس الإصبع (متاح مقاسات مختلفة):
+                            </label>
+                        
+                            <select id="ring-size"
+                                    onchange="updateRingSize(this.value)"
+                                    class="w-full bg-luxury-slate border border-gold-800/20 rounded-xl p-3 text-white">
+                                <option value="54">54 (M)</option>
+                                <option value="56">56 (L)</option>
+                                <option value="58">58 (XL)</option>
+                            </select>
+                        
+                            <p class="text-gold-300 text-sm">
+                                المقاس المختار:
+                                <span id="selected-ring-size">54 (M)</span>
+                            </p>
                         </div>
 
+                        
                         <!-- pricing display box and action CTA -->
                         <div class="bg-luxury-slate p-5 rounded-2xl border border-gold-800/20 flex flex-col sm:flex-row items-center justify-between gap-4">
                             <div>
@@ -1471,13 +1479,213 @@
                         id: 'Batu zamrud alami berkualitas tinggi.'
                     }
                 },
+
+            
+                         {
+                    id: 'p24',
+                    category: 'gemstones',
+                    priceUSD: 2600,
+                    tag: 'Premium',
+                    img: 'gemstone2.jpg',
+                    title: {
+                        ar: 'زمرد فاخر',
+                        en: 'Luxury Emerald',
+                        id: 'Batu Zamrud Mewah'
+                    },
+                    desc: {
+                        ar: 'حجر زمرد طبيعي عالي النقاء.',
+                        en: 'Natural high-quality emerald gemstone.',
+                        id: 'Batu zamrud alami berkualitas tinggi.'
+                    }
+                },
+                
+                         {
+                    id: 'p24',
+                    category: 'gemstones',
+                    priceUSD: 2600,
+                    tag: 'Premium',
+                    img: 'gemstone3.jpg',
+                    title: {
+                        ar: 'زمرد فاخر',
+                        en: 'Luxury Emerald',
+                        id: 'Batu Zamrud Mewah'
+                    },
+                    desc: {
+                        ar: 'حجر زمرد طبيعي عالي النقاء.',
+                        en: 'Natural high-quality emerald gemstone.',
+                        id: 'Batu zamrud alami berkualitas tinggi.'
+                    }
+                },
+                
+                         {
+                    id: 'p24',
+                    category: 'gemstones',
+                    priceUSD: 2600,
+                    tag: 'Premium',
+                    img: 'gemstone4.jpg',
+                    title: {
+                        ar: 'زمرد فاخر',
+                        en: 'Luxury Emerald',
+                        id: 'Batu Zamrud Mewah'
+                    },
+                    desc: {
+                        ar: 'حجر زمرد طبيعي عالي النقاء.',
+                        en: 'Natural high-quality emerald gemstone.',
+                        id: 'Batu zamrud alami berkualitas tinggi.'
+                    }
+                },
+                
+                         {
+                    id: 'p24',
+                    category: 'gemstones',
+                    priceUSD: 2600,
+                    tag: 'Premium',
+                    img: 'gemstone5.jpg',
+                    title: {
+                        ar: 'زمرد فاخر',
+                        en: 'Luxury Emerald',
+                        id: 'Batu Zamrud Mewah'
+                    },
+                    desc: {
+                        ar: 'حجر زمرد طبيعي عالي النقاء.',
+                        en: 'Natural high-quality emerald gemstone.',
+                        id: 'Batu zamrud alami berkualitas tinggi.'
+                    }
+                },
+                
+                         {
+                    id: 'p24',
+                    category: 'gemstones',
+                    priceUSD: 2600,
+                    tag: 'Premium',
+                    img: 'gemstone6.jpg',
+                    title: {
+                        ar: 'زمرد فاخر',
+                        en: 'Luxury Emerald',
+                        id: 'Batu Zamrud Mewah'
+                    },
+                    desc: {
+                        ar: 'حجر زمرد طبيعي عالي النقاء.',
+                        en: 'Natural high-quality emerald gemstone.',
+                        id: 'Batu zamrud alami berkualitas tinggi.'
+                    }
+                },
+                
+                         {
+                    id: 'p24',
+                    category: 'gemstones',
+                    priceUSD: 2600,
+                    tag: 'Premium',
+                    img: 'gemstone7.jpg',
+                    title: {
+                        ar: 'زمرد فاخر',
+                        en: 'Luxury Emerald',
+                        id: 'Batu Zamrud Mewah'
+                    },
+                    desc: {
+                        ar: 'حجر زمرد طبيعي عالي النقاء.',
+                        en: 'Natural high-quality emerald gemstone.',
+                        id: 'Batu zamrud alami berkualitas tinggi.'
+                    }
+                },
+                
+                         {
+                    id: 'p24',
+                    category: 'gemstones',
+                    priceUSD: 2600,
+                    tag: 'Premium',
+                    img: 'gemstone8.jpg',
+                    title: {
+                        ar: 'زمرد فاخر',
+                        en: 'Luxury Emerald',
+                        id: 'Batu Zamrud Mewah'
+                    },
+                    desc: {
+                        ar: 'حجر زمرد طبيعي عالي النقاء.',
+                        en: 'Natural high-quality emerald gemstone.',
+                        id: 'Batu zamrud alami berkualitas tinggi.'
+                    }
+                },
+                
+                         {
+                    id: 'p24',
+                    category: 'gemstones',
+                    priceUSD: 2600,
+                    tag: 'Premium',
+                    img: 'gemstone9.jpg',
+                    title: {
+                        ar: 'زمرد فاخر',
+                        en: 'Luxury Emerald',
+                        id: 'Batu Zamrud Mewah'
+                    },
+                    desc: {
+                        ar: 'حجر زمرد طبيعي عالي النقاء.',
+                        en: 'Natural high-quality emerald gemstone.',
+                        id: 'Batu zamrud alami berkualitas tinggi.'
+                    }
+                },
+                
+                         {
+                    id: 'p24',
+                    category: 'gemstones',
+                    priceUSD: 2600,
+                    tag: 'Premium',
+                    img: 'gemstone10.jpg',
+                    title: {
+                        ar: 'زمرد فاخر',
+                        en: 'Luxury Emerald',
+                        id: 'Batu Zamrud Mewah'
+                    },
+                    desc: {
+                        ar: 'حجر زمرد طبيعي عالي النقاء.',
+                        en: 'Natural high-quality emerald gemstone.',
+                        id: 'Batu zamrud alami berkualitas tinggi.'
+                    }
+                },
+                
+                         {
+                    id: 'p24',
+                    category: 'gemstones',
+                    priceUSD: 2600,
+                    tag: 'Premium',
+                    img: 'gemstone11.jpg',
+                    title: {
+                        ar: 'زمرد فاخر',
+                        en: 'Luxury Emerald',
+                        id: 'Batu Zamrud Mewah'
+                    },
+                    desc: {
+                        ar: 'حجر زمرد طبيعي عالي النقاء.',
+                        en: 'Natural high-quality emerald gemstone.',
+                        id: 'Batu zamrud alami berkualitas tinggi.'
+                    }
+                },
+                
+                         {
+                    id: 'p24',
+                    category: 'gemstones',
+                    priceUSD: 2600,
+                    tag: 'Premium',
+                    img: 'gemstone12.jpg',
+                    title: {
+                        ar: 'زمرد فاخر',
+                        en: 'Luxury Emerald',
+                        id: 'Batu Zamrud Mewah'
+                    },
+                    desc: {
+                        ar: 'حجر زمرد طبيعي عالي النقاء.',
+                        en: 'Natural high-quality emerald gemstone.',
+                        id: 'Batu zamrud alami berkualitas tinggi.'
+                    }
+                },
+                
                 
                 {
                     id: 'p25',
                     category: 'gemstones',
                     priceUSD: 3100,
                     tag: 'Premium',
-                    img: 'gemstone2.jpg',
+                    img: 'gemstone13.jpg',
                     title: {
                         ar: 'ياقوت أزرق ملكي',
                         en: 'Royal Blue Sapphire',
@@ -2056,15 +2264,38 @@
             if (mobMenu) mobMenu.classList.toggle('hidden');
         }
 
-        // Window initial state loader
-        window.onload = function() {
-             changeLanguage(currentLang);
+       let selectedRingSize = "54";
 
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            const cDate = document.getElementById('consult-date');
-            if (cDate) cDate.value = tomorrow.toISOString().split('T')[0];
-        }
+function updateRingSize(size) {
+    selectedRingSize = size;
+
+    const sizes = {
+        "54": "54 (M)",
+        "56": "56 (L)",
+        "58": "58 (XL)"
+    };
+
+    const el = document.getElementById('selected-ring-size');
+    if (el) {
+        el.innerText = sizes[size];
+    }
+
+    console.log("Selected ring size:", size);
+}
+
+
+// Window initial state loader
+window.onload = function() {
+    changeLanguage(currentLang);
+
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const cDate = document.getElementById('consult-date');
+    if (cDate) {
+        cDate.value = tomorrow.toISOString().split('T')[0];
+    }
+};
     </script>
 </body>
 </html>
