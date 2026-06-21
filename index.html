@@ -212,46 +212,73 @@
             </div>
         </section>
 
-        <!-- Categories Section -->
-        <section class="py-16 bg-luxury-slate border-t border-b border-gold-800/10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center space-y-3 mb-12">
-                    <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold" id="cat-badge">تصفح حسب الفئة</span>
-                    <h2 class="text-3xl font-serif font-bold text-white" id="cat-title">روائع المجموعات المتكاملة</h2>
-                    <div class="w-24 h-0.5 bg-gold-500 mx-auto"></div>
-                </div>
+       <!-- Categories Section -->
+<section class="py-16 bg-luxury-slate border-t border-b border-gold-800/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div onclick="filterProducts('rings')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
-                        <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
-                            <i class="fa-solid fa-ring text-2xl text-gold-400 group-hover:text-gold-300"></i>
-                        </div>
-                        <h3 class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition" id="cat-card-1">خواتم الماس</h3>
-                    </div>
+        <!-- Section Header -->
+        <div class="text-center space-y-3 mb-12">
+            <span
+                id="cat-badge"
+                class="text-xs uppercase tracking-widest text-gold-400 font-semibold">
+                تصفح حسب الفئة
+            </span>
 
-                    <div onclick="filterProducts('necklaces')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
-                        <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
-                            <i class="fa-solid fa-gem text-2xl text-gold-400 group-hover:text-gold-300"></i>
-                        </div>
-                        <h3 class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition" id="cat-card-2">قلائد وقلادات</h3>
-                    </div>
+            <h2
+                id="cat-title"
+                class="text-3xl font-serif font-bold text-white">
+                روائع المجموعات المتكاملة
+            </h2>
 
-                    <div onclick="filterProducts('bracelets')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
-                        <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
-                            <i class="fa-solid fa-hands-bound text-2xl text-gold-400 group-hover:text-gold-300"></i>
-                        </div>
-                        <h3 class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition" id="cat-card-3">أساور فاخرة</h3>
-                    </div>
+            <div class="w-24 h-0.5 bg-gold-500 mx-auto"></div>
+        </div>
 
-                    <div onclick="filterProducts('earrings')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
-                        <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
-                            <i class="fa-regular fa-star text-2xl text-gold-400 group-hover:text-gold-300"></i>
-                        </div>
-                        <h3 class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition" id="cat-card-4">أقراط متدلية</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Categories Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+
+<!-- Rings -->
+<div onclick="filterProducts('rings')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
+    <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+        <i class="fa-solid fa-ring text-2xl text-gold-400 group-hover:text-gold-300"></i>
+    </div>
+    <h3 id="cat-card-1" class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition">
+        خواتم الماس
+    </h3>
+</div>
+
+<!-- Necklaces -->
+<div onclick="filterProducts('necklaces')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
+    <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+        <i class="fa-solid fa-gem text-2xl text-gold-400 group-hover:text-gold-300"></i>
+    </div>
+    <h3 id="cat-card-2" class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition">
+        قلائد وقلادات
+    </h3>
+</div>
+
+<!-- Sets -->
+<div onclick="filterProducts('sets')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
+    <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+        <i class="fa-solid fa-crown text-2xl text-gold-400 group-hover:text-gold-300"></i>
+    </div>
+    <h3 id="cat-card-3" class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition">
+        أطقم ملكية
+    </h3>
+</div>
+
+<!-- Gemstones -->
+<div onclick="filterProducts('gemstones')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
+    <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
+        <i class="fa-solid fa-gem text-2xl text-gold-400 group-hover:text-gold-300"></i>
+    </div>
+    <h3 id="cat-card-4" class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition">
+        أحجار كريمة
+    </h3>
+</div>
+
+        </div>
+    </div>
+</section>
 
         <!-- Boutique Products Catalog Section -->
         <section id="collection-section" class="py-20 bg-luxury-deep">
@@ -704,15 +731,15 @@
                 "cat-title": "روائع المجموعات المتكاملة",
                 "cat-card-1": "خواتم الماس",
                 "cat-card-2": "قلائد وقلادات",
-                "cat-card-3": "أساور فاخرة",
-                "cat-card-4": "أقراط متدلية",
+                "cat-card-3": "أطقم ملكية",
+"cat-card-4": "أحجار كريمة",
                 "prod-badge": "المعروض الحصري",
                 "prod-title": "روائعنا المصممة بدقة",
                 "tab-all": "الكل",
                 "tab-rings": "خواتم",
                 "tab-necklaces": "قلائد",
-                "tab-bracelets": "أساور",
-                "tab-earrings": "أقراط",
+                "tab-bracelets": "أطقم",
+"tab-earrings": "أحجار كريمة",
                 
                 // Builder Translations
                 "builder-badge": "أنتِ المصممة الآن",
@@ -832,15 +859,15 @@
                 "cat-title": "Masterpieces of Integrated Collections",
                 "cat-card-1": "Diamond Rings",
                 "cat-card-2": "Fine Necklaces",
-                "cat-card-3": "Luxury Bracelets",
-                "cat-card-4": "Drop Earrings",
+                "cat-card-3": "Royal Sets",
+"cat-card-4": "Precious Gemstones",
                 "prod-badge": "Exclusive Showcase",
                 "prod-title": "Our Meticulously Crafted Masterpieces",
                 "tab-all": "All",
                 "tab-rings": "Rings",
                 "tab-necklaces": "Necklaces",
-                "tab-bracelets": "Bracelets",
-                "tab-earrings": "Earrings",
+                "tab-bracelets": "Sets",
+"tab-earrings": "Gemstones",
                 
                 // Builder Translations
                 "builder-badge": "You Are The Designer Now",
@@ -960,15 +987,15 @@
                 "cat-title": "Koleksi Mahakarya Terintegrasi",
                 "cat-card-1": "Cincin Berlian",
                 "cat-card-2": "Kalung Indah",
-                "cat-card-3": "Gelang Mewah",
-                "cat-card-4": "Anting Drop",
+                "cat-card-3": "Set Perhiasan Mewah",
+"cat-card-4": "Batu Permata",
                 "prod-badge": "Showcase Eksklusif",
                 "prod-title": "Koleksi Mahakarya Kami yang Dibuat dengan Teliti",
                 "tab-all": "Semua",
                 "tab-rings": "Cincin",
                 "tab-necklaces": "Kalung",
-                "tab-bracelets": "Gelang",
-                "tab-earrings": "Anting",
+                "tab-bracelets": "Set",
+"tab-earrings": "Batu Permata",
                 
                 // Builder Translations
                 "builder-badge": "Anda Adalah Perancangnya Sekarang",
@@ -1070,7 +1097,7 @@
 
         const productsDatabase = [
             {
-                id: 'p2',
+                id: 'p1',
                 category: 'rings',
                 priceUSD: 4900,
                 tag: 'VIP',
@@ -1348,8 +1375,8 @@
 
             
             {
-                id: 'p3',
-                category: 'bracelets',
+                id: 'p16',
+                category: 'sets',
                 priceUSD: 4200,
                 tag: 'Royal',
                 img: 'earrings1.jpg',
@@ -1365,8 +1392,8 @@
                 }
             },
  {
-                id: 'p3',
-                category: 'bracelets',
+                id: 'p17',
+                category: 'sets',
                 priceUSD: 4200,
                 tag: 'Royal',
                 img: 'earrings2.jpg',
@@ -1381,8 +1408,8 @@
                     id: 'Gelang pernikahan elegan baris ganda bertatahkan batu safir Kashmir biru langka dan berlian cemerlang premium.'
                 }
             }, {
-                id: 'p3',
-                category: 'bracelets',
+                id: 'p18',
+                category: 'sets',
                 priceUSD: 4200,
                 tag: 'Royal',
                 img: 'earrings4.jpg',
@@ -1397,8 +1424,8 @@
                     id: 'Gelang pernikahan elegan baris ganda bertatahkan batu safir Kashmir biru langka dan berlian cemerlang premium.'
                 }
             }, {
-                id: 'p3',
-                category: 'bracelets',
+                id: 'p19',
+                category: 'sets',
                 priceUSD: 4200,
                 tag: 'Royal',
                 img: 'earrings5.jpg',
@@ -1413,8 +1440,8 @@
                     id: 'Gelang pernikahan elegan baris ganda bertatahkan batu safir Kashmir biru langka dan berlian cemerlang premium.'
                 }
             }, {
-                id: 'p3',
-                category: 'bracelets',
+                id: 'p20',
+                category: 'sets',
                 priceUSD: 4200,
                 tag: 'Royal',
                 img: 'earrings6.jpg',
@@ -1429,8 +1456,8 @@
                     id: 'Gelang pernikahan elegan baris ganda bertatahkan batu safir Kashmir biru langka dan berlian cemerlang premium.'
                 }
             }, {
-                id: 'p3',
-                category: 'bracelets',
+                id: 'p21',
+                category: 'sets',
                 priceUSD: 4200,
                 tag: 'Royal',
                 img: 'earrings7.jpg',
@@ -1445,8 +1472,8 @@
                     id: 'Gelang pernikahan elegan baris ganda bertatahkan batu safir Kashmir biru langka dan berlian cemerlang premium.'
                 }
             }, {
-                id: 'p3',
-                category: 'bracelets',
+                id: 'p22',
+                category: 'sets',
                 priceUSD: 4200,
                 tag: 'Royal',
                 img: 'earrings9.jpg',
@@ -1465,8 +1492,8 @@
 
             
             {
-                id: 'p4',
-                category: 'earrings',
+                id: 'p23',
+                category: 'gemstones',
                 priceUSD: 2400,
                 tag: 'Glamour',
                 img: 'earrings9.jpg',
@@ -1483,10 +1510,9 @@
             }
         ];
 
-        let currentLang = 'ar';
+       let currentLang = localStorage.getItem('lang') || 'ar';
         let cart = [];
         let currentCategoryFilter = 'all';
-
         // Conversion exchange rates for 2026
         const USD_TO_SAR_RATE = 3.75;
         const USD_TO_IDR_RATE = 17750;
@@ -1536,9 +1562,13 @@
         }
 
         // Translation controller with key matching element IDs
-        function changeLanguage(lang) {
-            currentLang = lang;
-            const dict = translations[lang];
+      function changeLanguage(lang) {
+        currentLang = lang;
+    
+        // حفظ اللغة المختارة
+        localStorage.setItem('lang', lang);
+    
+        const dict = translations[lang];
 
             // Set text layout direction
             document.documentElement.dir = dict.direction;
@@ -1676,30 +1706,30 @@
         function translateCategory(key) {
             if (currentLang === 'ar') {
                 switch(key) {
-                    case 'rings': return 'خواتم';
-                    case 'necklaces': return 'قلائد';
-                    case 'bracelets': return 'أساور';
-                    case 'earrings': return 'أقراط';
-                    default: return 'مجوهرات';
-                }
-            } else if (currentLang === 'en') {
-                switch(key) {
-                    case 'rings': return 'Rings';
-                    case 'necklaces': return 'Necklaces';
-                    case 'bracelets': return 'Bracelets';
-                    case 'earrings': return 'Earrings';
-                    default: return 'Jewelry';
-                }
-            } else {
-                switch(key) {
-                    case 'rings': return 'Cincin';
-                    case 'necklaces': return 'Kalung';
-                    case 'bracelets': return 'Gelang';
-                    case 'earrings': return 'Anting';
-                    default: return 'Perhiasan';
-                }
-            }
+            case 'rings': return 'خواتم';
+            case 'necklaces': return 'قلائد';
+            case 'sets': return 'أطقم';
+            case 'gemstones': return 'أحجار كريمة';
+            default: return 'مجوهرات';
         }
+    } else if (currentLang === 'en') {
+        switch(key) {
+            case 'rings': return 'Rings';
+            case 'necklaces': return 'Necklaces';
+            case 'sets': return 'Jewelry Sets';
+            case 'gemstones': return 'Gemstones';
+            default: return 'Jewelry';
+        }
+    } else {
+        switch(key) {
+            case 'rings': return 'Cincin';
+            case 'necklaces': return 'Kalung';
+            case 'sets': return 'Set Perhiasan';
+            case 'gemstones': return 'Batu Permata';
+            default: return 'Perhiasan';
+        }
+    }
+}
 
         function filterProducts(category) {
             currentCategoryFilter = category;
@@ -1709,12 +1739,12 @@
                 btn.className = "filter-tab px-5 py-2 rounded-full border border-gold-800/30 text-sm font-semibold text-gray-400 hover:border-gold-500 hover:text-white transition";
             });
 
-            const activeBtn = Array.from(tabs).find(btn => {
-                if(category === 'all' && (btn.id === 'tab-all')) return true;
-                if(category === 'rings' && (btn.id === 'tab-rings')) return true;
-                if(category === 'necklaces' && (btn.id === 'tab-necklaces')) return true;
-                if(category === 'bracelets' && (btn.id === 'tab-bracelets')) return true;
-                if(category === 'earrings' && (btn.id === 'tab-earrings')) return true;
+                       const activeBtn = Array.from(tabs).find(btn => {
+                if(category === 'all' && btn.id === 'tab-all') return true;
+                if(category === 'rings' && btn.id === 'tab-rings') return true;
+                if(category === 'necklaces' && btn.id === 'tab-necklaces') return true;
+                if(category === 'sets' && btn.id === 'tab-sets') return true;
+                if(category === 'gemstones' && btn.id === 'tab-gemstones') return true;
                 return false;
             });
             if (activeBtn) {
@@ -2047,7 +2077,7 @@
 
         // Window initial state loader
         window.onload = function() {
-            changeLanguage('ar');
+             changeLanguage(currentLang);
 
             const tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
