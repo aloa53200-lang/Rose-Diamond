@@ -1068,539 +1068,83 @@
             }
         };
 
-      const productsDatabase = [
-    {
-                
+        const productsDatabase = [
+            {
                 id: 'p1',
                 category: 'rings',
-                price: 4900, // Price in USD
+                priceUSD: 4900,
                 tag: 'VIP',
-                img: 'rng17.jpg',
+                img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80',
                 title: {
-                    ar: 'خاتم السوليتير',
-                    en: 'Imperial ',
-                    id: 'Cincin'
+                    ar: 'خاتم السوليتير الإمبراطوري الفاخر',
+                    en: 'Imperial Solitaire Diamond Ring',
+                    id: 'Cincin Berlian Solitaire Imperial'
                 },
                 desc: {
-                    ar: 'خاتم مصنع.',
-                    en: ' halo.',
-                    id: 'Cincin .'
+                    ar: 'خاتم مصنع بالكامل من الذهب الأبيض عيار 18 قيراطاً، مزين بحجر سوليتير مركزي نقي معتمد بوزن 1.5 قيراط وحواف مرصعة بالألماس الصغير.',
+                    en: 'Solid 18k white gold ring featuring a certified 1.5-carat pure central solitaire surrounded by a delicate pavé diamond halo.',
+                    id: 'Cincin emas putih 18k murni dengan berlian solitaire pusat 1.5 karat bersertifikasi dan dikelilingi berlian pavé halus.'
                 }
-    },
+            },
             {
                 id: 'p2',
-                category: 'rings',
-                price: 4900, // Price in USD
-                tag: 'VIP',
-                img: 'rng2.jpg',
-                title: {
-                    ar: 'خاتم السوليتير',
-                    en: 'Imperial',
-                    id: 'Cincin'
-                },
-                desc: {
-                    ar: 'خاتم مصنع بالكامل من الذهب الأبيض عيار.',
-                    en: ' pavé diamond halo.',
-                    id: ' berlian pavé halus.'
-                }
-            },
-            {
-                id: 'p3',
-                category: 'rings',
-                price: 4900, // Price in USD
-                tag: 'VIP',
-                img: 'rng1.jpg',
-                title: {
-                    ar: 'خاتم السوليتير',
-                    en: ' Ring',
-                    id: ' Imperial'
-                },
-                desc: {
-                    ar: 'خاتم مصنع بالكامل من الذهب الأبيض عيار 18 قيراطاً.',
-                    en: 'Solid.',
-                    id: 'Cincin .'
-                }
-            },
-            {
-                id: 'p4',
-                category: 'rings',
-                price: 4900, // Price in USD
-                tag: 'VIP',
-                img: 'rng5.jpg',
-                title: {
-                    ar: 'خاتم السوليتير',
-                    en: 'Imperial Solitaire Diamond Ring',
-                    id: 'Cincin Berlian Solitaire Imperial'
-                },
-                desc: {
-                    ar: 'خاتم مصنع بالكامل من الذهب الأبيض عيار 18 قيراطاً.',
-                    en: 'Solid 18k white gold ring featuring a certified.',
-                    id: 'Cincin emas putih 18k murni dengan berlian soli.'
-                }
-            },
-            {
-                id: 'p5',
-                category: 'rings',
-                price: 4900, // Price in USD
-                tag: 'VIP',
-                img: 'rng12.jpg',
-                title: {
-                    ar: 'خاتم السوليتير',
-                    en: 'Imperial Solitaire Diamond Ring',
-                    id: 'Cincin Berlian Solitaire Imperial'
-                },
-                desc: {
-                    ar: 'خاتم مصنع بالكامل من الذهب الأبيض عيار 18 قيراطاً، .',
-                    en: 'Solid 18k white gold ring featuring a certified 1.5-carat pure central solitaire surrounded by a delicate pavé diamond halo.',
-                    id: 'Cincin emas putih 18k murni dengan berlian solitaire pusat 1.5 karat bersertifikasi dan dikelilingi berlian pavé halus.'
-                }
-            },
-            {
-                id: 'p6',
-                category: 'rings',
-                price: 4900, // Price in USD
-                tag: 'VIP',
-                img: 'rng13.jpg',
-                title: {
-                    ar: 'خاتم السوليتير',
-                    en: 'Imperial Solitaire Diamond Ring',
-                    id: 'Cincin Berlian Solitaire Imperial'
-                },
-                desc: {
-                    ar: 'خاتم مصنع بالكامل من الذهب الأبيض عيار 18 .',
-                    en: 'Solid 18k white gold ring featuring a certified 1.5-carat pure central solitaire surrounded by a delicate pavé diamond halo.',
-                    id: 'Cincin emas putih 18k murni dengan berlian solitaire pusat 1.5 karat bersertifikasi dan dikelilingi berlian pavé halus.'
-                }
-            },
-            {
-                id: 'p7',
                 category: 'necklaces',
-                price: 8600, // Price in USD
+                priceUSD: 8600,
                 tag: 'Elite',
-                img: 'bracelets1.jpg',
+                img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=500&q=80',
                 title: {
-                    ar: 'قلادة طوق النخبة من الذهب والألماس',
-                    en: 'Al-Nokba Diamond Collier Necklace',
-                    id: 'Kalung Collier Berlian Al-Nokba'
+                    ar: 'عقد روز من الذهب الخالص والألماس',
+                    en: 'Pure Gold Rose Pendant Necklace',
+                    id: 'Kalung Collier Berlian Pure Rose'
                 },
                 desc: {
                     ar: 'عقد ذهبي ساحر بتصميم ملكي يحيط العنق بالبهاء. يحتوي على 180 حبة ألماس لامع مستدير ومكعبات بلاتينية.',
                     en: 'An opulent royal collier made of 18k gold set with 180 brilliant-cut diamonds, cascading light at every single movement.',
                     id: 'Kalung royal mewah dari emas 18k dengan 180 berlian brilliant-cut yang memancarkan cahaya pada setiap gerakan Anda.'
                 }
-            },    
-                {
-                id: 'p8',
-                category: 'necklaces',
-                price: 8600, // Price in USD
-                tag: 'Elite',
-                img: 'bracelets3.jpg',
+            },
+            {
+                id: 'p3',
+                category: 'bracelets',
+                priceUSD: 4200,
+                tag: 'Royal',
+                img: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=500&q=80',
                 title: {
                     ar: 'سوار العرس الكلاسيكي اللامع',
                     en: 'Classic Bridal Sapphire Bracelet',
                     id: 'Gelang Safir Pengantin Klasik'
                 },
                 desc: {
-                    ar: 'سوار ناعم ذو مرونة عالية وتصميم مريح .',
-                    en: 'm brilliant diamonds.',
-                    id: ' premium.'
-                }
-            },  
-          {
-                id: 'p9',
-                category: 'necklaces',
-                price: 8600, // Price in USD
-                tag: 'Elite',
-                img: 'bracelets9.jpg',
-                title: {
-                    ar: 'سوار ناعم ذو ',
-                    en: 'Classic Bridal Sapphire Bracelet',
-                    id: 'Gelang Safir Pengantin Klasik'
-                },
-                desc: {
-                    ar: 'سوار ناعم ذو مرونة  .',
-                    en: 'm brilliant diamonds.',
-                    id: ' premium.'
-                }
-            },    {
-                id: 'p10',
-                category: 'necklaces',
-                price: 8600, // Price in USD
-                tag: 'Elite',
-                img: 'bracelets5.jpg',
-                title: {
-                    ar: 'سوار ناعم ذو مرونة ',
-                    en: 'Classic Bridal Sapphire Bracelet',
-                    id: 'Gelang Safir Pengantin Klasik'
-                },
-                desc: {
-                    ar: 'سوار ناعم ذو مرونة عالية وتصميم مريح .',
-                    en: 'm brilliant diamonds.',
-                    id: ' premium.'
-                }
-            },   
-          {
-                id: 'p11',
-                category: 'necklaces',
-                price: 8600, // Price in USD
-                tag: 'Elite',
-                img: 'bracelets7.jpg',
-                title: {
-                    ar: 'سوار ناعم ذو مرونة ',
-                    en: 'Classic',
-                    id: 'Gelang  '
-                },
-                desc: {
-                    ar: 'سوار ناعم ذو مرونة عالية وتصميم مريح .',
-                    en: 'm brilliant diamonds.',
-                    id: ' premium.'
-                }
-            },   
-          {
-                id: 'p12',
-                category: 'necklaces',
-                price: 8600, // Price in USD
-                tag: 'Elite',
-                img: 'bracelets6.jpg',
-                title: {
-                    ar: 'سوار ناعم ذو مرون ',
-                    en: 'Classic Bridal',
-                    id: 'Gelang Safir '
-                },
-                desc: {
-                    ar: 'سوار ناعم ذو  وتصميم مريح .',
-                    en: 'm brilliant diamonds.',
-                    id: ' premium.'
+                    ar: 'سوار ناعم ذو مرونة عالية وتصميم مريح لليد، مرصع بصفين من الياقوت الأزرق الكشميري والألماس الفاخر.',
+                    en: 'Double row exquisite wedding bracelet embedded with rare blue Kashmiri sapphires and premium brilliant diamonds.',
+                    id: 'Gelang pernikahan elegan baris ganda bertatahkan batu safir Kashmir biru langka dan berlian cemerlang premium.'
                 }
             },
-          {
-                id: 'p13',
+            {
+                id: 'p4',
                 category: 'earrings',
-                price: 2400, // Price in USD
+                priceUSD: 2400,
                 tag: 'Glamour',
-                img: 'earrings1.jpg',
+                img: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=500&q=80',
                 title: {
-                    ar: 'أطقم الندى المتدلقة',
-                    en: 'Glimmer',
-                    id: 'Anting'
+                    ar: 'أقراط الندى المتدلية البراقة',
+                    en: 'Glimmering Morning Dew Drop Earrings',
+                    id: 'Anting-anting Glimmer Morning Dew Drop'
                 },
                 desc: {
-                    ar: ' متدلية مستوحاة من .',
-                    en: 'Enchanting earrings inspired.',
-                    id: 'Anting mempesona terinspired embun.'
+                    ar: 'أقراط متدلية مستوحاة من قطرات الندى الصباحي، مصنوعة من الذهب الوردي الفريد وحجر الزبرجد الأخضر.',
+                    en: 'Enchanting earrings inspired by morning dew drops, fashioned in 18k rose gold with luminous green peridots.',
+                    id: 'Anting mempesona terinspired embun pagi, dibentuk dari emas merah muda 18k dengan batu peridot hijau bercahaya.'
                 }
-            },
-            {
-                id: 'p14',
-                category: 'earrings',
-                price: 2400, // Price in USD
-                tag: 'Glamour',
-                img: 'earrings2.jpg',
-                title: {
-                    ar: 'أطقم الندى البراقة',
-                    en: 'Glimmer',
-                    id: 'Anting'
-                },
-                desc: {
-                    ar: 'أقراط  مستوحاة  .',
-                    en: 'Enchanting earrings inspired.',
-                    id: 'Anting mempesona terinspired embun.'
-                }
-            },
-               {
-                id: 'p14',
-                category: 'earrings',
-                price: 2400, // Price in USD
-                tag: 'Glamour',
-                img: 'earrings5.jpg',
-                title: {
-                    ar: 'أطقم البراقة',
-                    en: 'Glimmer',
-                    id: 'Anting'
-                },
-                desc: {
-                    ar: 'أقراط متدلية مستوحاة من .',
-                    en: 'Enchanting earrings inspired.',
-                    id: 'Anting mempesona terinspired embun.'
-                }
-            },     {
-                id: 'p15',
-                category: 'earrings',
-                price: 2400, // Price in USD
-                tag: 'Glamour',
-                img: 'earrings4.jpg',
-                title: {
-                    ar: 'أطقم   ',
-                    en: 'Glimmer',
-                    id: 'Anting'
-                },
-                desc: {
-                    ar: 'أقراط  مستوحاة من .',
-                    en: 'Enchanting .',
-                    id: 'Anting  terinspired embun.'
-                }
-            },  
-         
-
-            {
-                id: 'p16',
-                category: 'rings',
-                price: 5600, // Price in USD
-                tag: 'Heritage',
-                img: 'rng18.jpg',
-                title: {
-                    ar: 'خاتم الملكة الياقوتي الأزرق المذهل',
-                    en: 'The Queen Sapphire Cluster Ring',
-                    id: 'Cincin Safir Kluster Ratu'
-                },
-                desc: {
-                    ar: 'تصميم عتيق يجسد الملكية، يتميز بحجر ياقوت كشميري نقي محاط بهالة براقة من الألماس البارز الفاخر.',
-                    en: 'Vintage cluster ring reflecting royalty, featuring a deep blue Kashmiri sapphire surrounded by majestic diamonds.',
-                    id: 'Cincin kluster klasik bertema kerajaan, dengan safir Kashmir biru tua yang dikelilingi berlian megah.'
-                }
-            }, {
-                id: 'p17',
-                category: 'rings',
-                price: 5600, // Price in USD
-                tag: 'Heritage',
-                img: 'rng6.jpg',
-                title: {
-                    ar: 'خاتم الملكة الياقوتي الأزرق المذهل',
-                    en: 'The Queen Sapphire Cluster Ring',
-                    id: 'Cincin Safir Kluster Ratu'
-                },
-                desc: {
-                    ar: 'تصميم عتيق يجسد الملكية، يتميز بحجر ياقوت كشميري نقي محاط بهالة براقة من الألماس البارز الفاخر.',
-                    en: 'Vintage cluster ring reflecting royalty, featuring a deep blue Kashmiri sapphire surrounded by majestic diamonds.',
-                    id: 'Cincin kluster klasik bertema kerajaan, dengan safir Kashmir biru tua yang dikelilingi berlian megah.'
-                }
-            },
- {
-                id: 'p18',
-                category: 'rings',
-                price: 5600, // Price in USD
-                tag: 'Heritage',
-                img: 'rng7.jpg',
-                title: {
-                    ar: 'خاتم الملكة الياقوتي الأزرق المذهل',
-                    en: 'The Queen Sapphire Cluster Ring',
-                    id: 'Cincin Safir Kluster Ratu'
-                },
-                desc: {
-                    ar: 'تصميم عتيق يجسد الملكية، يتميز بحجر ياقوت كشميري نقي محاط بهالة براقة من الألماس البارز الفاخر.',
-                    en: 'Vintage cluster ring reflecting .',
-                    id: 'Cincin kluster klasik.'
-                }
-            },
-
-            
-           {
-                id: 'p19',
-                category: 'rings',
-                price: 5600, // Price in USD
-                tag: 'Heritage',
-                img: 'rng8.jpg',
-                title: {
-                    ar: 'خاتم الملكة الياقوتي الأزرق المذهل',
-                    en: 'The Queen Sapphire Cluster Ring',
-                    id: 'Cincin Safir Kluster Ratu'
-                },
-                desc: {
-                    ar: 'تصميم عتيق يجسد الملكية، يتميز بحجر.',
-                    en: 'Vintage diamonds.',
-                    id: 'Cincin kluster berlian megah.'
-                }
-            },
-                 {
-                id: 'p20',
-                category: 'bracelets',
-                price: 6500, // Price in USD
-                tag: 'Limited',
-                img: 'Limited8.jpg',
-                title: {
-                    ar: 'سوار الزمرد الساحر الأنيق',
-                    en: 'Charming C',
-                    id: 'Gelang  Menawan'
-                },
-                desc: {
-                    ar: 'أخضر زمردي يخطف الألباب. سوار فاخر مصنوع كتحفة فنية فريدة تناسب حضور المناسبات والمؤتمرات الكبرى.',
-                    en: 'Spectacular .',
-                    id: ' tiada tanding.'
-                }
-            },
-          {
-                id: 'p21',
-                category: 'bracelets',
-                price: 6500, // Price in USD
-                tag: 'Limited',
-                img: 'Limited4.jpg',
-                title: {
-                    ar: 'سوار الزمرد الساحر الأنيق',
-                    en: 'Charming C',
-                    id: 'Gelang  Menawan'
-                },
-                desc: {
-                    ar: 'أخضر زمردي يخطف الألباب. سوار فاخر مصنوع كتحفة فنية فريدة تناسب حضور المناسبات والمؤتمرات الكبرى.',
-                    en: 'Spectacular .',
-                    id: ' tiada tanding.'
-                }
-            },
-          {
-                id: 'p22',
-                category: 'bracelets',
-                price: 6500, // Price in USD
-                tag: 'Limited',
-                img: 'Limited3.jpg',
-                title: {
-                    ar: 'سوار الزمرد الساحر الأنيق',
-                    en: 'Charming C',
-                    id: 'Gelang  Menawan'
-                },
-                desc: {
-                    ar: 'أخضر زمردي يخطف الألباب. سوار فاخر مصنوع كتحفة فنية فريدة تناسب حضور المناسبات والمؤتمرات الكبرى.',
-                    en: 'Spectacular .',
-                    id: ' tiada tanding.'
-                }
-            },
-          {
-                id: 'p23',
-                category: 'bracelets',
-                price: 6500, // Price in USD
-                tag: 'Limited',
-                img: 'Limited2.jpg',
-                title: {
-                    ar: 'سوار الزمرد الساحر الأنيق',
-                    en: 'Charming C',
-                    id: 'Gelang  Menawan'
-                },
-                desc: {
-                    ar: 'أخضر زمردي يخطف الألباب. سوار فاخر مصنوع كتحفة فنية فريدة تناسب حضور المناسبات والمؤتمرات الكبرى.',
-                    en: 'Spectacular .',
-                    id: ' tiada tanding.'
-                }
-            },
-          {
-                id: 'p24',
-                category: 'bracelets',
-                price: 6500, // Price in USD
-                tag: 'Limited',
-                img: 'Limited1.jpg',
-                title: {
-                    ar: 'سوار الزمرد الساحر الأنيق',
-                    en: 'Charming C',
-                    id: 'Gelang  Menawan'
-                },
-                desc: {
-                    ar: 'أخضر زمردي يخطف الألباب. سوار فاخر مصنوع كتحفة فنية فريدة تناسب حضور المناسبات والمؤتمرات الكبرى.',
-                    en: 'Spectacular .',
-                    id: ' tiada tanding.'
-                }
-            },
-          {
-                id: 'p25',
-                category: 'bracelets',
-                price: 6500, // Price in USD
-                tag: 'Limited',
-                img: 'Limited5.jpg',
-                title: {
-                    ar: 'سوار الزمرد الساحر الأنيق',
-                    en: 'Charming C',
-                    id: 'Gelang  Menawan'
-                },
-                desc: {
-                    ar: 'أخضر زمردي يخطف الألباب. سوار فاخر مصنوع كتحفة فنية فريدة تناسب حضور المناسبات والمؤتمرات الكبرى.',
-                    en: 'Spectacular .',
-                    id: ' tiada tanding.'
-                }
-            },
-          {
-                id: 'p25',
-                category: 'bracelets',
-                price: 6500, // Price in USD
-                tag: 'Limited',
-                img: 'Limited6.jpg',
-                title: {
-                    ar: 'سوار الزمرد الساحر الأنيق',
-                    en: 'Charming C',
-                    id: 'Gelang  Menawan'
-                },
-                desc: {
-                    ar: 'أخضر زمردي يخطف الألباب. سوار فاخر مصنوع كتحفة فنية فريدة تناسب حضور المناسبات والمؤتمرات الكبرى.',
-                    en: 'Spectacular .',
-                    id: ' tiada tanding.'
-                }
-            },
-            {
-                id: 'p26',
-                category: 'bracelets',
-                price: 6500, // Price in USD
-                tag: 'Limited',
-                img: 'Limited7.jpg',
-                title: {
-                    ar: 'سوار الزمرد الساحر الأنيق',
-                    en: 'Charming C',
-                    id: 'Gelang  Menawan'
-                },
-                desc: {
-                    ar: 'أخضر زمردي يخطف الألباب. سوار فاخر مصنوع كتحفة فنية فريدة تناسب حضور المناسبات والمؤتمرات الكبرى.',
-                    en: 'Spectacular .',
-                    id: ' tiada tanding.'
-                }
-            },  
-      ];
-
-        // Hero slideshow collection
-        const heroSlides = [
-            {
-                title: {
-                    ar: 'قلادة "شمس الأمل"',
-                    en: 'Solar Hope Pendant',
-                    id: 'Kalung Solar Hope'
-                },
-                desc: {
-                    ar: 'ذهب أصفر عيار 18، مع حجر سمرقند',
-                    en: '18k yellow gold with celestial Samarkand stone',
-                    id: 'Emas kuning 18k dengan batu surgawi Samarkand'
-                },
-                priceBase: 4500, // USD
-                img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80'
-            },
-            {
-                title: {
-                    ar: 'خاتم "الملكة سوليتير"',
-                    en: 'Queen Solitaire Ring',
-                    id: 'Cincin Queen Solitaire'
-                },
-                desc: {
-                    ar: 'بلاتينوم خالص، ألماس بلجيكي 2 قيراط',
-                    en: 'Pure platinum with 2ct certified diamond',
-                    id: 'Platina murni dengan berlian bersertifikat 2ct'
-                },
-                priceBase: 8900, // USD
-                img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80'
-            },
-            {
-                title: {
-                    ar: ' "دمعة القمر"',
-                    en: 'Lunas Tear Earrings',
-                    id: 'Anting Luna Tears'
-                },
-                desc: {
-                    ar: 'ذهب أبيض نقي مع أحجار الياقوت',
-                    en: '18k white gold set with pristine sapphires',
-                    id: 'Emas putih 18k dengan safir alami murni'
-                },
-                priceBase: 2400, // USD
-                img: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=600&q=80'
             }
         ];
 
         let currentLang = 'ar';
         let cart = [];
         let currentCategoryFilter = 'all';
-        let currentHeroIndex = 0;
 
-        // USD to IDR rate for 2026
+        // Conversion exchange rates for 2026
+        const USD_TO_SAR_RATE = 3.75;
         const USD_TO_IDR_RATE = 17750;
 
         let builderState = {
@@ -1610,200 +1154,127 @@
             stone: 'diamond',
             stoneColor: '#FFFFFF',
             stoneKey: 'diamond',
-            stoneBasePrice: 800, // USD Base for builder diamonds
+            stoneBasePriceUSD: 1000, 
             carat: 1.5,
-            metalBasePrice: 400 // USD Base for yellow gold
+            metalBasePriceUSD: 400 
         };
 
-        // Navigation state controller (Routing simulation)
+        // Routing SPA system
         function navigateTo(pageId) {
             document.querySelectorAll('.page-container').forEach(el => el.classList.add('hidden'));
-            
             const activePage = document.getElementById(`page-${pageId}`);
             if (activePage) activePage.classList.remove('hidden');
 
-            // Manage nav button styling
             const btnHome = document.getElementById('nav-home');
             const btnBuilder = document.getElementById('nav-builder');
 
             if (pageId === 'home') {
-                btnHome.className = "text-gold-300 font-semibold border-b-2 border-gold-500 pb-1 transition-all";
-                btnBuilder.className = "text-gray-300 hover:text-gold-300 pb-1 transition-all flex items-center gap-1";
+                if (btnHome) btnHome.className = "text-gold-300 border-b-2 border-gold-500 pb-1 px-1 transition-all duration-300 font-semibold";
+                if (btnBuilder) btnBuilder.className = "text-gray-400 hover:text-gold-400 pb-1 px-1 transition-all duration-300 flex items-center gap-1.5";
             } else {
-                btnBuilder.className = "text-gold-300 font-semibold border-b-2 border-gold-500 pb-1 transition-all flex items-center gap-1";
-                btnHome.className = "text-gray-300 hover:text-gold-300 pb-1 transition-all";
+                if (btnBuilder) btnBuilder.className = "text-gold-300 border-b-2 border-gold-500 pb-1 px-1 transition-all duration-300 font-semibold flex items-center gap-1.5";
+                if (btnHome) btnHome.className = "text-gray-400 hover:text-gold-400 pb-1 px-1 transition-all duration-300";
             }
-
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Multicurrency formatter logic
         function formatPrice(usdAmount) {
             if (currentLang === 'id') {
                 const idrAmount = Math.round(usdAmount * USD_TO_IDR_RATE);
                 return 'Rp ' + idrAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            } else if (currentLang === 'ar') {
+                const sarAmount = Math.round(usdAmount * USD_TO_SAR_RATE);
+                return sarAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' ر.س';
             } else {
-                return '$' + usdAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                return '$' + usdAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' USD';
             }
         }
 
+        // Translation controller with key matching element IDs
         function changeLanguage(lang) {
             currentLang = lang;
             const dict = translations[lang];
 
-            // Apply direction layout change
+            // Set text layout direction
             document.documentElement.dir = dict.direction;
             document.documentElement.lang = lang;
 
-            // Apply direction specific adjustments for absolute offsets
-            const cardGrid = document.getElementById('products-grid');
-            if (dict.direction === 'rtl') {
-                document.body.classList.add('font-sans');
-                document.body.classList.remove('font-serif');
-                // Adjust WhatsApp floating widget position for RTL
-                const waBtn = document.getElementById('whatsapp-floating-btn');
-                waBtn.style.left = '1.5rem';
-                waBtn.style.right = 'auto';
-            } else {
-                document.body.classList.remove('font-sans');
-                // Adjust WhatsApp floating widget position for LTR
-                const waBtn = document.getElementById('whatsapp-floating-btn');
-                waBtn.style.right = '1.5rem';
-                waBtn.style.left = 'auto';
+            // Flip floating WhatsApp button safely
+            const waBtn = document.getElementById('whatsapp-floating-btn');
+            if (waBtn) {
+                if (dict.direction === 'rtl') {
+                    waBtn.style.left = '1.5rem';
+                    waBtn.style.right = 'auto';
+                } else {
+                    waBtn.style.right = '1.5rem';
+                    waBtn.style.left = 'auto';
+                }
             }
 
-            // Update DOM Elements
-            document.getElementById('logo-subtext').innerText = dict.logoSub;
-            document.getElementById('nav-home').innerText = dict.navHome;
-            document.getElementById('mob-nav-home').innerText = dict.navHome;
-            document.getElementById('nav-builder-text').innerText = dict.navBuilder;
-            document.getElementById('mob-nav-builder-text').innerText = dict.navBuilder;
-            document.getElementById('search-input').placeholder = dict.searchPlaceholder;
-            document.getElementById('search-btn-txt').innerText = dict.searchBtn;
-            
-            // Dynamic Address and WhatsApp Elements
-            document.getElementById('top-bar-address').innerText = dict.topBarAddress;
-            document.getElementById('top-bar-whatsapp').innerText = dict.topBarWhatsapp;
-            document.getElementById('footer-address').innerText = dict.topBarAddress;
-            document.getElementById('footer-whatsapp').innerText = dict.topBarWhatsapp;
+            // Loop through dictionary keys safely for 100% elements translation
+            for (const key in dict) {
+                if (key === 'direction' || key === 'currency' || key.startsWith('msg') || key.startsWith('metal_') || key.startsWith('stone_')) {
+                    continue; // Skip metadata / non-ID keys
+                }
+                const element = document.getElementById(key);
+                if (element) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = dict[key];
+                    } else if (element.tagName === 'SELECT') {
+                        // Skip selector configuration
+                    } else {
+                        element.innerText = dict[key];
+                    }
+                }
+            }
 
-            // Hero
-            document.getElementById('hero-badge').innerText = dict.heroBadge;
-            document.getElementById('hero-title-1').innerText = dict.heroTitle1;
-            document.getElementById('hero-title-2').innerText = dict.heroTitle2;
-            document.getElementById('hero-desc').innerText = dict.heroDesc;
-            document.getElementById('hero-cta-shop').innerText = dict.heroCtaShop;
-            document.getElementById('hero-cta-build').innerText = dict.heroCtaBuild;
+            // Highlight active desktop/mobile Language Pills
+            const langs = ['ar', 'en', 'id'];
+            langs.forEach(l => {
+                const btn = document.getElementById(`lang-btn-${l}`);
+                const mobBtn = document.getElementById(`mob-lang-btn-${l}`);
+                
+                if (btn) {
+                    if (l === lang) {
+                        btn.className = "px-3 py-1 rounded-full text-xs transition-all duration-300 bg-gold-500 text-luxury-deep font-bold";
+                    } else {
+                        btn.className = "px-3 py-1 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent";
+                    }
+                }
+                if (mobBtn) {
+                    if (l === lang) {
+                        mobBtn.className = "px-3 py-1.5 rounded-full text-xs transition-all duration-300 bg-gold-500 text-luxury-deep font-bold";
+                    } else {
+                        mobBtn.className = "px-3 py-1.5 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent";
+                    }
+                }
+            });
 
-            // Categories
-            document.getElementById('cat-badge').innerText = dict.catBadge;
-            document.getElementById('cat-title').innerText = dict.catTitle;
-            document.getElementById('cat-card-1').innerText = dict.catCard1;
-            document.getElementById('cat-card-2').innerText = dict.catCard2;
-            document.getElementById('cat-card-3').innerText = dict.catCard3;
-            document.getElementById('cat-card-4').innerText = dict.catCard4;
+            // Update Dynamic Customize texts
+            const buildMetalName = document.getElementById('builder-metal-name');
+            if (buildMetalName) {
+                buildMetalName.innerText = dict[`metal_${builderState.metalTypeKey}`];
+            }
+            const buildStoneName = document.getElementById('builder-stone-name');
+            if (buildStoneName) {
+                buildStoneName.innerText = dict[`stone_${builderState.stoneKey}`];
+            }
+            const buildCaratVal = document.getElementById('builder-carat-val');
+            if (buildCaratVal) {
+                buildCaratVal.innerText = `${builderState.carat} ${dict["builder-carat-unit"]}`;
+            }
 
-            // Products
-            document.getElementById('prod-badge').innerText = dict.prodBadge;
-            document.getElementById('prod-title').innerText = dict.prodTitle;
-            document.getElementById('tab-all').innerText = dict.filterAll;
-            document.getElementById('tab-rings').innerText = dict.filterRings;
-            document.getElementById('tab-necklaces').innerText = dict.filterNecklaces;
-            document.getElementById('tab-bracelets').innerText = dict.filterBracelets;
-            document.getElementById('tab-earrings').innerText = dict.filterEarrings;
-
-            // Builder Controls Texts
-            document.getElementById('builder-badge').innerText = dict.builderBadge;
-            document.getElementById('builder-title').innerText = dict.builderTitle;
-            document.getElementById('builder-desc').innerText = dict.builderDesc;
-            document.getElementById('builder-carat-title').innerText = dict.builderCaratTitle;
-            document.getElementById('builder-carat-unit').innerText = dict.builderCaratUnit;
-            document.getElementById('step-metal').innerText = dict.stepMetal;
-            document.getElementById('step-stone').innerText = dict.stepStone;
-            document.getElementById('step-carat').innerText = dict.stepCarat;
-            document.getElementById('lbl-metal-yg').innerText = dict.lblMetalYg;
-            document.getElementById('lbl-metal-rg').innerText = dict.lblMetalRg;
-            document.getElementById('lbl-metal-plat').innerText = dict.lblMetalPlat;
-            document.getElementById('lbl-stone-diam').innerText = dict.lblStoneDiam;
-            document.getElementById('lbl-stone-ruby').innerText = dict.lblStoneRuby;
-            document.getElementById('lbl-stone-em').innerText = dict.lblStoneEm;
-            document.getElementById('lbl-stone-sap').innerText = dict.lblStoneSap;
-            document.getElementById('lbl-carat-soft').innerText = dict.lblCaratSoft;
-            document.getElementById('lbl-carat-bold').innerText = dict.lblCaratBold;
-            document.getElementById('lbl-total-est').innerText = dict.lblTotalEst;
-            document.getElementById('btn-add-custom-cart').innerText = dict.btnAddCustomCart;
-
-            // Update active Builder descriptive text state
-            document.getElementById('builder-metal-name').innerText = dict[`metal_${builderState.metalTypeKey}`];
-            document.getElementById('builder-stone-name').innerText = dict[`stone_${builderState.stoneKey}`];
-
-            // Consultation Form
-            document.getElementById('form-badge').innerText = dict.formBadge;
-            document.getElementById('form-title').innerText = dict.formTitle;
-            document.getElementById('form-desc').innerText = dict.formDesc;
-            document.getElementById('lbl-form-name').innerText = dict.lblFormName;
-            document.getElementById('consult-name').placeholder = dict.placeholderName;
-            document.getElementById('lbl-form-phone').innerText = dict.lblFormPhone;
-            document.getElementById('lbl-form-date').innerText = dict.lblFormDate;
-            document.getElementById('lbl-form-type').innerText = dict.lblFormType;
-            document.getElementById('lbl-form-notes').innerText = dict.lblFormNotes;
-            document.getElementById('consult-notes').placeholder = dict.placeholderNotes;
-            document.getElementById('btn-submit-form').innerText = dict.btnSubmitForm;
-            document.getElementById('opt-1').innerText = dict.opt1;
-            document.getElementById('opt-2').innerText = dict.opt2;
-            document.getElementById('opt-3').innerText = dict.opt3;
-            document.getElementById('opt-4').innerText = dict.opt4;
-
-            // Trust elements
-            document.getElementById('trust-title-1').innerText = dict.trustTitle1;
-            document.getElementById('trust-desc-1').innerText = dict.trustDesc1;
-            document.getElementById('trust-title-2').innerText = dict.trustTitle2;
-            document.getElementById('trust-desc-2').innerText = dict.trustDesc2;
-            document.getElementById('trust-title-3').innerText = dict.trustTitle3;
-            document.getElementById('trust-desc-3').innerText = dict.trustDesc3;
-
-            // Cart elements
-            document.getElementById('cart-drawer-header').innerText = dict.cartHeader;
-            document.getElementById('cart-empty-text').innerText = dict.cartEmptyText;
-            document.getElementById('cart-back-shop').innerText = dict.cartBackShop;
-            document.getElementById('lbl-subtotal').innerText = dict.lblSubtotal;
-            document.getElementById('lbl-shipping').innerText = dict.lblShipping;
-            document.getElementById('lbl-shipping-free').innerText = dict.lblShippingFree;
-            document.getElementById('btn-checkout').innerText = dict.btnCheckout;
-            document.getElementById('lbl-checkout-guarantee').innerText = dict.lblCheckoutGuarantee;
-
-            // Modals
-            document.getElementById('lbl-modal-size').innerText = dict.lblModalSize;
-            document.getElementById('lbl-modal-tax').innerText = dict.lblModalTax;
-            document.getElementById('btn-modal-add').innerText = dict.btnModalAdd;
-
-            // Footer
-            document.getElementById('footer-logo-subtext').innerText = dict.footerLogoSub;
-            document.getElementById('footer-brand-desc').innerText = dict.footerBrandDesc;
-            document.getElementById('footer-links-title').innerText = dict.footerLinksTitle;
-            document.getElementById('footer-care-title').innerText = dict.footerCareTitle;
-            document.getElementById('foot-care-1').innerText = dict.footCare1;
-            document.getElementById('foot-care-2').innerText = dict.footCare2;
-            document.getElementById('foot-care-3').innerText = dict.footCare3;
-            document.getElementById('footer-newsletter-title').innerText = dict.footerNewsletterTitle;
-            document.getElementById('footer-newsletter-desc').innerText = dict.footerNewsletterDesc;
-            document.getElementById('footer-newsletter-btn').innerText = dict.footerNewsletterBtn;
-            document.getElementById('footer-copy').innerText = dict.footerCopy;
-            document.getElementById('footer-designed-by').innerText = dict.footerDesignedBy;
-            document.getElementById('foot-nav-1').innerText = dict.navHome;
-            document.getElementById('foot-nav-2').innerText = dict.navBuilder;
-
-            // Recalculate slider text
-            document.getElementById('builder-carat-val').innerText = builderState.carat + ' ' + (lang === 'ar' ? 'قيراط' : (lang === 'en' ? 'ct' : 'ct'));
-
-            // Refresh Dynamic Elements
+            // Refresh Dynamic Components
             renderProducts();
-            updateCartStats();
             renderCartItems();
-            updateHeroCarouselContent();
+            updateCartStats();
+            updateBuilderPriceDisplay();
         }
 
         function renderProducts() {
             const grid = document.getElementById('products-grid');
+            if (!grid) return;
             grid.innerHTML = '';
 
             const filtered = productsDatabase.filter(p => {
@@ -1846,7 +1317,7 @@
                     <div class="flex items-center justify-between border-t border-gold-800/10 pt-4 mt-4">
                         <div class="text-start">
                             <span class="text-[10px] text-gray-500 block">${priceLabel}</span>
-                            <span class="text-gold-300 font-serif font-bold text-base sm:text-lg">${formatPrice(p.price)}</span>
+                            <span class="text-gold-300 font-serif font-bold text-base sm:text-lg">${formatPrice(p.priceUSD)}</span>
                         </div>
                         
                         <button onclick="addToCart('${p.id}')" class="bg-gold-950/40 hover:bg-gold-500 hover:text-luxury-deep border border-gold-500/30 hover:border-transparent text-gold-300 text-xs font-bold px-3 py-2 rounded-full transition duration-300">
@@ -1858,14 +1329,13 @@
             });
         }
 
-        // Helper helpers
         function translateCategory(key) {
             if (currentLang === 'ar') {
                 switch(key) {
                     case 'rings': return 'خواتم';
                     case 'necklaces': return 'قلائد';
-                    case 'bracelets': return 'أحجار كريمة';
-                    case 'earrings': return 'أطقم';
+                    case 'bracelets': return 'أساور';
+                    case 'earrings': return 'أقراط';
                     default: return 'مجوهرات';
                 }
             } else if (currentLang === 'en') {
@@ -1887,7 +1357,6 @@
             }
         }
 
-        // Active Product category filters
         function filterProducts(category) {
             currentCategoryFilter = category;
             
@@ -1911,23 +1380,9 @@
             renderProducts();
         }
 
-        function updateCartStats() {
-            const count = cart.reduce((acc, curr) => acc + curr.qty, 0);
-            document.getElementById('cart-count').innerText = count;
-
-            const subtotal = cart.reduce((acc, curr) => acc + (curr.price * curr.qty), 0);
-            document.getElementById('cart-subtotal').innerText = formatPrice(subtotal);
-
-            const emptyMsg = document.getElementById('empty-cart-message');
-            if (cart.length === 0) {
-                emptyMsg.classList.remove('hidden');
-            } else {
-                emptyMsg.classList.add('hidden');
-            }
-        }
-
         function toggleCartDrawer() {
-            document.getElementById('cart-drawer').classList.toggle('hidden');
+            const drawer = document.getElementById('cart-drawer');
+            if (drawer) drawer.classList.toggle('hidden');
         }
 
         function addToCart(productId) {
@@ -1941,7 +1396,7 @@
                 cart.push({
                     id: product.id,
                     title: product.title,
-                    price: product.price,
+                    priceUSD: product.priceUSD,
                     img: product.img,
                     qty: 1,
                     custom: false
@@ -1967,7 +1422,7 @@
             cart.push({
                 id: customId,
                 title: titleObject,
-                price: price,
+                priceUSD: price,
                 img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80',
                 qty: 1,
                 custom: true,
@@ -2008,11 +1463,31 @@
             updateCartStats();
         }
 
+        function updateCartStats() {
+            const count = cart.reduce((acc, curr) => acc + curr.qty, 0);
+            const cartCountElement = document.getElementById('cart-count');
+            if (cartCountElement) cartCountElement.innerText = count;
+
+            const subtotal = cart.reduce((acc, curr) => acc + (curr.priceUSD * curr.qty), 0);
+            const cartSubtotalElement = document.getElementById('cart-subtotal');
+            if (cartSubtotalElement) cartSubtotalElement.innerText = formatPrice(subtotal);
+
+            const emptyMsg = document.getElementById('empty-cart-message');
+            if (emptyMsg) {
+                if (cart.length === 0) {
+                    emptyMsg.classList.remove('hidden');
+                } else {
+                    emptyMsg.classList.add('hidden');
+                }
+            }
+        }
+
         function renderCartItems() {
             const container = document.getElementById('cart-items-container');
             const emptyMsg = document.getElementById('empty-cart-message');
+            if (!container) return;
             container.innerHTML = '';
-            container.appendChild(emptyMsg);
+            if (emptyMsg) container.appendChild(emptyMsg);
 
             cart.forEach(item => {
                 const row = document.createElement('div');
@@ -2024,7 +1499,7 @@
                     <img src="${item.img}" alt="${displayTitle}" class="w-16 h-16 object-cover rounded-lg border border-gold-500/10">
                     <div class="flex-1 space-y-1">
                         <h4 class="text-sm font-semibold text-white line-clamp-1">${displayTitle}</h4>
-                        <p class="text-xs text-gold-400 font-serif">${formatPrice(item.price)}</p>
+                        <p class="text-xs text-gold-400 font-serif">${formatPrice(item.priceUSD)}</p>
                         ${item.custom ? `<p class="text-[10px] text-gray-500">${item.specs}</p>` : ''}
                         
                         <div class="flex items-center gap-2 mt-2">
@@ -2061,8 +1536,8 @@
         }
 
         function calculateBuilderPrice() {
-            let stoneFactorPrice = builderState.stoneBasePrice * builderState.carat;
-            let metalFactorPrice = builderState.metalBasePrice;
+            let stoneFactorPrice = builderState.stoneBasePriceUSD * builderState.carat;
+            let metalFactorPrice = builderState.metalBasePriceUSD;
             
             if (builderState.metal === 'platinum') {
                 metalFactorPrice = 600;
@@ -2080,74 +1555,109 @@
 
             const btns = document.querySelectorAll('.builder-metal-btn');
             btns.forEach(btn => btn.classList.replace('border-gold-500', 'border-gold-800/20'));
-            event.currentTarget.classList.replace('border-gold-800/20', 'border-gold-500');
+            
+            if (window.event && window.event.currentTarget) {
+                window.event.currentTarget.classList.replace('border-gold-800/20', 'border-gold-500');
+            }
 
-            document.getElementById('svg-ring-shank').setAttribute('stroke', color);
-            document.getElementById('svg-ring-prong').setAttribute('fill', color);
+            const ringShank = document.getElementById('svg-ring-shank');
+            const ringProng = document.getElementById('svg-ring-prong');
+            if (ringShank) ringShank.setAttribute('stroke', color);
+            if (ringProng) ringProng.setAttribute('fill', color);
             
-            document.getElementById('builder-metal-name').innerText = translations[currentLang][`metal_${key}`];
+            const bMetalName = document.getElementById('builder-metal-name');
+            if (bMetalName) bMetalName.innerText = translations[currentLang][`metal_${key}`];
             
-            const currentTotal = calculateBuilderPrice();
-            document.getElementById('builder-total-price').innerText = formatPrice(currentTotal);
+            updateBuilderPriceDisplay();
         }
 
-        function updateBuilderStone(id, color, key, basePrice) {
+        function updateBuilderStone(id, color, key, basePriceUSD) {
             builderState.stone = id;
             builderState.stoneColor = color;
             builderState.stoneKey = key;
-            builderState.stoneBasePrice = basePrice;
+            builderState.stoneBasePriceUSD = basePriceUSD;
 
             const btns = document.querySelectorAll('.builder-stone-btn');
             btns.forEach(btn => btn.classList.replace('border-gold-500', 'border-gold-800/20'));
-            event.currentTarget.classList.replace('border-gold-800/20', 'border-gold-500');
+            
+            if (window.event && window.event.currentTarget) {
+                window.event.currentTarget.classList.replace('border-gold-800/20', 'border-gold-500');
+            }
 
-            document.getElementById('svg-ring-gem').setAttribute('fill', color);
-            document.getElementById('builder-stone-name').innerText = translations[currentLang][`stone_${key}`];
+            const ringGem = document.getElementById('svg-ring-gem');
+            if (ringGem) ringGem.setAttribute('fill', color);
+            
+            const bStoneName = document.getElementById('builder-stone-name');
+            if (bStoneName) bStoneName.innerText = translations[currentLang][`stone_${key}`];
 
-            const currentTotal = calculateBuilderPrice();
-            document.getElementById('builder-total-price').innerText = formatPrice(currentTotal);
+            updateBuilderPriceDisplay();
         }
 
         function updateBuilderCarat(val) {
             builderState.carat = parseFloat(val);
-            const unitLabel = currentLang === 'ar' ? 'قيراط' : 'ct';
+            const unitLabel = translations[currentLang]["builder-carat-unit"];
             
-            document.getElementById('builder-carat-val').innerText = val + ' ' + unitLabel;
-            document.getElementById('builder-carat-display').innerText = val;
+            const bCaratVal = document.getElementById('builder-carat-val');
+            const bCaratDisp = document.getElementById('builder-carat-display');
+            if (bCaratVal) bCaratVal.innerText = val + ' ' + unitLabel;
+            if (bCaratDisp) bCaratDisp.innerText = val;
 
             const scaleFactor = 1 + (val - 1.5) * 0.15;
-            document.getElementById('svg-ring-gem').style.transform = `scale(${scaleFactor})`;
-            document.getElementById('svg-ring-gem').style.transformOrigin = `50px 10px`;
+            const ringGem = document.getElementById('svg-ring-gem');
+            if (ringGem) {
+                ringGem.style.transform = `scale(${scaleFactor})`;
+                ringGem.style.transformOrigin = `50px 10px`;
+            }
 
-            const currentTotal = calculateBuilderPrice();
-            document.getElementById('builder-total-price').innerText = formatPrice(currentTotal);
+            updateBuilderPriceDisplay();
+        }
+
+        function updateBuilderPriceDisplay() {
+            const currentTotalUSD = calculateBuilderPrice();
+            const builderTotalPrice = document.getElementById('builder-total-price');
+            if (builderTotalPrice) builderTotalPrice.innerText = formatPrice(currentTotalUSD);
         }
 
         function openQuickView(productId) {
             const product = productsDatabase.find(p => p.id === productId);
             if (!product) return;
 
-            document.getElementById('modal-img').src = product.img;
-            document.getElementById('modal-tag').innerText = translateCategory(product.category);
-            document.getElementById('modal-title-text').innerText = product.title[currentLang];
-            document.getElementById('modal-desc').innerText = product.desc[currentLang];
-            document.getElementById('modal-price').innerText = formatPrice(product.price);
+            const mImg = document.getElementById('modal-img');
+            const mTag = document.getElementById('modal-tag');
+            const mTitle = document.getElementById('modal-title-text');
+            const mDesc = document.getElementById('modal-desc');
+            const mPrice = document.getElementById('modal-price');
 
-            document.getElementById('modal-add-to-cart-btn').onclick = function() {
-                addToCart(product.id);
-                closeQuickView();
-            };
+            if (mImg) mImg.src = product.img;
+            if (mTag) mTag.innerText = translateCategory(product.category);
+            if (mTitle) mTitle.innerText = product.title[currentLang];
+            if (mDesc) mDesc.innerText = product.desc[currentLang];
+            if (mPrice) mPrice.innerText = formatPrice(product.priceUSD);
 
-            document.getElementById('quick-view-modal').classList.remove('hidden');
+            const mAddBtn = document.getElementById('modal-add-to-cart-btn');
+            if (mAddBtn) {
+                mAddBtn.onclick = function() {
+                    addToCart(product.id);
+                    closeQuickView();
+                };
+            }
+
+            const qvModal = document.getElementById('quick-view-modal');
+            if (qvModal) qvModal.classList.remove('hidden');
         }
 
         function closeQuickView() {
-            document.getElementById('quick-view-modal').classList.add('hidden');
+            const qvModal = document.getElementById('quick-view-modal');
+            if (qvModal) qvModal.classList.add('hidden');
         }
 
-        // Elegant custom notifications
+        function handleVideoError() {
+            console.log("Interactive cover media loaded.");
+        }
+
         function showToast(message, type = 'success') {
             const container = document.getElementById('toast-container');
+            if (!container) return;
             const toast = document.createElement('div');
             toast.className = `flex items-center gap-3 px-5 py-4 rounded-xl border border-gold-500/20 bg-luxury-slate shadow-2xl transition duration-500 text-sm font-semibold max-w-sm text-start`;
             
@@ -2172,87 +1682,33 @@
 
         function submitConsultation(event) {
             event.preventDefault();
-            const name = document.getElementById('consult-name').value;
-            
             showToast(translations[currentLang].msgConsultationSuccess, "success");
-            document.getElementById('consultation-form').reset();
+            const cForm = document.getElementById('consultation-form');
+            if (cForm) cForm.reset();
         }
 
         function subscribeNewsletter() {
-            const email = document.getElementById('newsletter-email').value;
+            const emailInput = document.getElementById('newsletter-email');
+            if (!emailInput) return;
+            const email = emailInput.value;
             if (email.trim() === '') return;
             showToast(translations[currentLang].msgSubscribed, "success");
-            document.getElementById('newsletter-email').value = '';
+            emailInput.value = '';
         }
 
         function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+            const mobMenu = document.getElementById('mobile-menu');
+            if (mobMenu) mobMenu.classList.toggle('hidden');
         }
 
-        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-            toggleMobileMenu();
-        });
-
-        document.getElementById('search-toggle-btn').addEventListener('click', () => {
-            const panel = document.getElementById('search-panel');
-            panel.classList.toggle('hidden');
-            if (!panel.classList.contains('hidden')) {
-                document.getElementById('search-input').focus();
-            }
-        });
-
-        function performSearch() {
-            const input = document.getElementById('search-input').value.trim();
-            if (input === '') return;
-
-            showToast(translations[currentLang].msgSearching);
-            
-            setTimeout(() => {
-                showToast(translations[currentLang].msgSearchDone);
-                currentCategoryFilter = 'all';
-                renderProducts();
-                document.getElementById('search-panel').classList.add('hidden');
-                document.getElementById('collection-section').scrollIntoView({ behavior: 'smooth' });
-            }, 1000);
-        }
-
-        document.getElementById('cart-btn').addEventListener('click', () => {
-            toggleCartDrawer();
-        });
-
-        // Rotate slides in Home Hero
-        function runHeroCarousel() {
-            currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
-            updateHeroCarouselContent();
-        }
-
-        function updateHeroCarouselContent() {
-            const show = heroSlides[currentHeroIndex];
-            const img = document.getElementById('hero-carousel-img');
-            const title = document.getElementById('hero-carousel-title');
-            const desc = document.getElementById('hero-carousel-desc');
-            const price = document.getElementById('hero-carousel-price');
-
-            img.classList.add('opacity-0');
-            setTimeout(() => {
-                img.src = show.img;
-                title.innerText = show.title[currentLang];
-                desc.innerText = show.desc[currentLang];
-                price.innerText = formatPrice(show.priceBase);
-                img.classList.remove('opacity-0');
-            }, 400);
-        }
-
-        // Load Window setup
+        // Window initial state loader
         window.onload = function() {
-            // Initiate Localization
             changeLanguage('ar');
 
             const tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
-            document.getElementById('consult-date').value = tomorrow.toISOString().split('T')[0];
-
-            setInterval(runHeroCarousel, 7000);
+            const cDate = document.getElementById('consult-date');
+            if (cDate) cDate.value = tomorrow.toISOString().split('T')[0];
         }
     </script>
 </body>
