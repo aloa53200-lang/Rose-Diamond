@@ -1994,32 +1994,47 @@
             showToast(translations[currentLang].msgAddedCart);
         }
 
-        function addCustomRingToCart() {
-            const price = calculateBuilderPrice();
-            const specText = `${translations[currentLang][`metal_${builderState.metalTypeKey}`]} | ${translations[currentLang][`stone_${builderState.stoneKey}`]}`;
-            const titleObject = {
-                ar: `خاتم مخصص: ${translations['ar'][`stone_${builderState.stoneKey}`]} (${builderState.carat} قيراط)`,
-                en: `Custom Ring: ${translations['en'][`stone_${builderState.stoneKey}`]} (${builderState.carat} ct)`,
-                id: `Cincin Kustom: ${translations['id'][`stone_${builderState.stoneKey}`]} (${builderState.carat} ct)`
-            };
-            
-            const customId = `custom-${Date.now()}`;
+      function addCustomRingToCart() {
 
-            cart.push({
-                id: customId,
-                title: titleObject,
-                priceUSD: price,
-                img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80',
-                qty: 1,
-                custom: true,
-                specs: specText
-            });
+    const ringSize = document.getElementById('ring-size')?.value || '';
 
-            renderCartItems();
-            updateCartStats();
-            toggleCartDrawer();
-            showToast(translations[currentLang].msgAddedCustom);
-        }
+    const price = calculateBuilderPrice();
+
+    const sizeLabel = {
+        ar: 'المقاس',
+        en: 'Size',
+        id: 'Ukuran'
+    };
+
+    const specText =
+        `${translations[currentLang][`metal_${builderState.metalTypeKey}`]} | ` +
+        `${translations[currentLang][`stone_${builderState.stoneKey}`]} | ` +
+        `${sizeLabel[currentLang]}: ${ringSize}`;
+
+    const titleObject = {
+        ar: `خاتم مخصص: ${translations['ar'][`stone_${builderState.stoneKey}`]} (${builderState.carat} قيراط)`,
+        en: `Custom Ring: ${translations['en'][`stone_${builderState.stoneKey}`]} (${builderState.carat} ct)`,
+        id: `Cincin Kustom: ${translations['id'][`stone_${builderState.stoneKey}`]} (${builderState.carat} ct)`
+    };
+
+    const customId = `custom-${Date.now()}`;
+
+    cart.push({
+        id: customId,
+        title: titleObject,
+        priceUSD: price,
+        img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80',
+        qty: 1,
+        custom: true,
+        size: ringSize,
+        specs: specText
+    });
+
+    renderCartItems();
+    updateCartStats();
+    toggleCartDrawer();
+    showToast(translations[currentLang].msgAddedCustom);
+}
 
         function removeFromCart(id) {
             const itemIndex = cart.findIndex(item => item.id === id);
