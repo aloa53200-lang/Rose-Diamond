@@ -2249,23 +2249,7 @@
             emailInput.value = '';
         }
 
-function toggleMobileMenu() {
-    const mobMenu = document.getElementById('mobile-menu');
-    if (mobMenu) mobMenu.classList.toggle('hidden');
-}
 
-let selectedRingSize = "8";
-
-function updateRingSize(size) {
-    selectedRingSize = size;
-
-    const el = document.getElementById('selected-ring-size');
-    if (el) {
-        el.textContent = size;
-    }
-
-    console.log("Selected ring size:", size);
-}
 
 // Window initial state loader
 function toggleMobileMenu() {
