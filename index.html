@@ -694,7 +694,73 @@
                         </div>
 
                         <!-- Size selection mock markup -->
-                     
+                     <!-- Size selection mock markup -->
+                                <div id="ring-size-selector" class="space-y-2">
+                                
+                                    <span class="text-xs text-gold-400 font-bold block" id="lbl-modal-size">
+                                        اختر مقاس الإصبع (متاح مقاسات مختلفة):
+                                    </span>
+                                
+                                    <" class="flex flex-wrap gap-2"></div>
+                                
+                                </div>
+                                
+                                <script>
+                               const ringSizes = Array.from({ length: 33 }, (_, i) => i + 8);
+
+                                    const sizeLabels = {
+                                        ar: "المقاس",
+                                        en: "Size",
+                                        id: "Ukuran"
+                                    };
+                                    
+                                    let selectedSize = 8;
+                                    
+                                    function renderRingSizes() {
+                                        const container = document.getElementById("ring-size-buttons");
+                                        const display = document.getElementById("selected-ring-size");
+                                    
+                                        if (!container || !display) return;
+                                    
+                                        container.innerHTML = "";
+                                    
+                                        ringSizes.forEach(size => {
+                                            const btn = document.createElement("button");
+                                    
+                                            btn.className =
+                                                "size-btn px-4 py-2 rounded-lg text-xs border " +
+                                                (size === selectedSize
+                                                    ? "border-gold-500 text-gold-300 bg-gold-950/20"
+                                                    : "border-gold-800/20 text-gray-400");
+                                    
+                                            btn.textContent = size;
+                                    
+                                            btn.onclick = () => {
+                                                selectedSize = size;
+                                                updateSizeUI();
+                                            };
+                                    
+                                            container.appendChild(btn);
+                                        });
+                                    
+                                        const lang = window.currentLang || "ar";
+                                        display.textContent = `${sizeLabels[lang]}: ${selectedSize}`;
+                                    }
+                                    
+                                    function updateSizeUI() {
+                                        renderRingSizes();
+                                    }
+                                    
+                                    // تشغيل آمن بعد تحميل الصفحة
+                                    window.addEventListener("load", () => {
+                                        renderRingSizes();
+                                    });
+                                </script>
+                                
+                                <p class="text-gold-300 text-sm">
+                                    المقاس المختار:
+                                    <span id="selected-ring-size">المقاس: 8</span>
+                                </p>
 
                         <!-- Add to cart CTA -->
                         <div class="border-t border-gold-800/10 pt-6 flex items-center justify-between">
@@ -2286,7 +2352,8 @@ function toggleMobileMenu() {
 // مقاس الخاتم الافتراضي
 let selectedRingSize = "8";
 
-// تحديث المقاس المختار
+const ringSizes = Array.from({ length: 33 }, (_, i) => i + 8);
+
 function updateRingSize(size) {
     selectedRingSize = size;
 
@@ -2298,30 +2365,40 @@ function updateRingSize(size) {
     console.log("Selected ring size:", size);
 }
 
-// تحميل البيانات عند فتح الصفحة
+function renderRingSizes() {
+    const container = document.getElementById("ring-size-buttons");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    ringSizes.forEach(size => {
+        const btn = document.createElement("button");
+
+        btn.className =
+            "px-3 py-2 rounded-lg text-xs border " +
+            (size == selectedRingSize
+                ? "border-gold-500 text-gold-300 bg-gold-950/20"
+                : "border-gold-800/20 text-gray-400");
+
+        btn.textContent = size;
+
+        btn.onclick = () => {
+            updateRingSize(size);
+            renderRingSizes();
+        };
+
+        container.appendChild(btn);
+    });
+}
+
+// تشغيل عند فتح الصفحة
 window.onload = function() {
 
-    // تحميل اللغة الحالية
     changeLanguage(currentLang);
 
-    // إنشاء مقاسات الخواتم من 8 إلى 40
-    const sizeSelect = document.getElementById('ring-size');
-
-    if (sizeSelect) {
-        sizeSelect.innerHTML = '';
-
-        for (let i = 8; i <= 40; i++) {
-            const option = document.createElement('option');
-            option.value = i;
-            option.textContent = i;
-            sizeSelect.appendChild(option);
-        }
-
-       sizeSelect.value = selectedRingSize;
+    renderRingSizes();
     updateRingSize(selectedRingSize);
-    }
 
-    // تحديد موعد الاستشارة لليوم التالي
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
 
