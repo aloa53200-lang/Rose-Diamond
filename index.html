@@ -420,18 +420,22 @@
                             <label class="text-sm font-semibold text-gray-400">
                                 اختر مقاس الإصبع (متاح مقاسات مختلفة):
                             </label>
-                        
-                            <select id="ring-size"
+                        <select id="ring-size"
                                     onchange="updateRingSize(this.value)"
                                     class="w-full bg-luxury-slate border border-gold-800/20 rounded-xl p-3 text-white">
-                                <option value="54">54 (M)</option>
-                                <option value="56">56 (L)</option>
-                                <option value="58">58 (XL)</option>
-                            </select>
+                                </select>
+                                
+                                <script>
+                                const sizeSelect = document.getElementById('ring-size');
+                                
+                                for (let i = 8; i <= 40; i++) {
+                                    sizeSelect.innerHTML += `<option value="${i}">${i}</option>`;
+                                }
+                                </script>
                         
-                            <p class="text-gold-300 text-sm">
-                                المقاس المختار:
-                                <span id="selected-ring-size">54 (M)</span>
+                           <p class="text-gold-300 text-sm">
+                            المقاس المختار:
+                            <span id="selected-ring-size">8</span>
                             </p>
                         </div>
 
@@ -1465,7 +1469,7 @@
                          {
                     id: 'p24',
                     category: 'gemstones',
-                    priceUSD: 2600,
+                    priceUSD: 2629,
                     tag: 'Premium',
                     img: 'gemstone1.jpg',
                     title: {
@@ -1484,7 +1488,7 @@
                          {
                     id: 'p24',
                     category: 'gemstones',
-                    priceUSD: 2600,
+                    priceUSD: 2626,
                     tag: 'Premium',
                     img: 'gemstone2.jpg',
                     title: {
@@ -1502,7 +1506,7 @@
                          {
                     id: 'p24',
                     category: 'gemstones',
-                    priceUSD: 2600,
+                    priceUSD: 2632,
                     tag: 'Premium',
                     img: 'gemstone3.jpg',
                     title: {
@@ -1520,7 +1524,7 @@
                          {
                     id: 'p24',
                     category: 'gemstones',
-                    priceUSD: 2600,
+                    priceUSD: 2621,
                     tag: 'Premium',
                     img: 'gemstone4.jpg',
                     title: {
@@ -1538,7 +1542,7 @@
                          {
                     id: 'p24',
                     category: 'gemstones',
-                    priceUSD: 2600,
+                    priceUSD: 2625,
                     tag: 'Premium',
                     img: 'gemstone5.jpg',
                     title: {
@@ -1556,7 +1560,7 @@
                          {
                     id: 'p24',
                     category: 'gemstones',
-                    priceUSD: 2600,
+                    priceUSD: 2625,
                     tag: 'Premium',
                     img: 'gemstone6.jpg',
                     title: {
@@ -1574,7 +1578,7 @@
                          {
                     id: 'p24',
                     category: 'gemstones',
-                    priceUSD: 2600,
+                    priceUSD: 2691,
                     tag: 'Premium',
                     img: 'gemstone7.jpg',
                     title: {
@@ -1592,7 +1596,7 @@
                          {
                     id: 'p24',
                     category: 'gemstones',
-                    priceUSD: 2600,
+                    priceUSD: 2690,
                     tag: 'Premium',
                     img: 'gemstone8.jpg',
                     title: {
@@ -1610,7 +1614,7 @@
                          {
                     id: 'p24',
                     category: 'gemstones',
-                    priceUSD: 2600,
+                    priceUSD: 2680,
                     tag: 'Premium',
                     img: 'gemstone9.jpg',
                     title: {
@@ -1628,7 +1632,7 @@
                          {
                     id: 'p24',
                     category: 'gemstones',
-                    priceUSD: 2600,
+                    priceUSD: 2640,
                     tag: 'Premium',
                     img: 'gemstone10.jpg',
                     title: {
@@ -1646,7 +1650,7 @@
                          {
                     id: 'p24',
                     category: 'gemstones',
-                    priceUSD: 2600,
+                    priceUSD: 2630,
                     tag: 'Premium',
                     img: 'gemstone11.jpg',
                     title: {
@@ -1664,7 +1668,7 @@
                          {
                     id: 'p24',
                     category: 'gemstones',
-                    priceUSD: 2600,
+                    priceUSD: 2610,
                     tag: 'Premium',
                     img: 'gemstone12.jpg',
                     title: {
@@ -2264,7 +2268,7 @@
             if (mobMenu) mobMenu.classList.toggle('hidden');
         }
 
-       let selectedRingSize = "54";
+       let selectedRingSize = "8";
 
 function updateRingSize(size) {
     selectedRingSize = size;
