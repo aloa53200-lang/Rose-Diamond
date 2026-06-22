@@ -414,32 +414,43 @@
                             </div>
                         </div>
 
-                       <!-- Ring Size Selection -->
-                                              <!-- Ring Size Selection -->
-                        <div class="space-y-4">
-                            <label class="text-sm font-semibold text-gray-400">
-                                اختر مقاس الإصبع (متاح مقاسات مختلفة):
-                            </label>
-                        <select id="ring-size"
+                    <!-- Ring Size Selection -->
+                            <div class="space-y-4">
+                                <label class="text-sm font-semibold text-gray-400">
+                                    اختر مقاس الإصبع (متاح مقاسات مختلفة):
+                                </label>
+                            
+                                <select id="ring-size"
                                     onchange="updateRingSize(this.value)"
                                     class="w-full bg-luxury-slate border border-gold-800/20 rounded-xl p-3 text-white">
                                 </select>
-                                
-                                <script>
-                                const sizeSelect = document.getElementById('ring-size');
-                                
-                                for (let i = 8; i <= 40; i++) {
-                                    sizeSelect.innerHTML += `<option value="${i}">${i}</option>`;
-                                }
-                                </script>
-                        
-                           <p class="text-gold-300 text-sm">
-                            المقاس المختار:
-                            <span id="selected-ring-size">8</span>
-                            </p>
-                        </div>
-
-                        
+                            
+                                <p class="text-gold-300 text-sm">
+                                    المقاس المختار:
+                                    <span id="selected-ring-size">8</span>
+                                </p>
+                            </div>
+                            
+                            <script>
+                            let selectedRingSize = "8";
+                            
+                            function updateRingSize(size) {
+                                selectedRingSize = size;
+                                document.getElementById('selected-ring-size').textContent = size;
+                            }
+                            
+                            const sizeSelect = document.getElementById('ring-size');
+                            
+                            for (let i = 8; i <= 40; i++) {
+                                const option = document.createElement('option');
+                                option.value = i;
+                                option.textContent = i;
+                                sizeSelect.appendChild(option);
+                            }
+                            
+                            sizeSelect.value = "8";
+                            </script>
+                                                    
                         <!-- pricing display box and action CTA -->
                         <div class="bg-luxury-slate p-5 rounded-2xl border border-gold-800/20 flex flex-col sm:flex-row items-center justify-between gap-4">
                             <div>
