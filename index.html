@@ -423,6 +423,7 @@
                                 <select id="ring-size"
                                     onchange="updateRingSize(this.value)"
                                     class="w-full bg-luxury-slate border border-gold-800/20 rounded-xl p-3 text-white">
+                                
                                 </select>
                             
                                 <p class="text-gold-300 text-sm">
@@ -430,28 +431,7 @@
                                     <span id="selected-ring-size">8</span>
                                 </p>
                             </div>
-                           <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                    
-                        let selectedRingSize = "8";
-                    
-                        window.updateRingSize = function(size) {
-                            selectedRingSize = size;
-                            document.getElementById('selected-ring-size').textContent = size;
-                        };
-                    
-                        const sizeSelect = document.getElementById('ring-size');
-                    
-                        for (let i = 8; i <= 40; i++) {
-                            const option = document.createElement('option');
-                            option.value = i;
-                            option.textContent = i;
-                            sizeSelect.appendChild(option);
-                        }
-                    
-                        sizeSelect.value = "8";
-                    });
-                    </script>
+                         
                                                     
                         <!-- pricing display box and action CTA -->
                         <div class="bg-luxury-slate p-5 rounded-2xl border border-gold-800/20 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -2276,35 +2256,71 @@
             emailInput.value = '';
         }
 
-        function toggleMobileMenu() {
-            const mobMenu = document.getElementById('mobile-menu');
-            if (mobMenu) mobMenu.classList.toggle('hidden');
-        }
+function toggleMobileMenu() {
+    const mobMenu = document.getElementById('mobile-menu');
+    if (mobMenu) mobMenu.classList.toggle('hidden');
+}
 
-       let selectedRingSize = "8";
+let selectedRingSize = "8";
 
 function updateRingSize(size) {
     selectedRingSize = size;
 
-    const sizes = {
-        "54": "54 (M)",
-        "56": "56 (L)",
-        "58": "58 (XL)"
-    };
-
     const el = document.getElementById('selected-ring-size');
     if (el) {
-        el.innerText = sizes[size];
+        el.textContent = size;
     }
 
     console.log("Selected ring size:", size);
 }
 
-
 // Window initial state loader
+function toggleMobileMenu() {
+    const mobMenu = document.getElementById('mobile-menu');
+    if (mobMenu) {
+        mobMenu.classList.toggle('hidden');
+    }
+}
+
+// مقاس الخاتم الافتراضي
+let selectedRingSize = "8";
+
+// تحديث المقاس المختار
+function updateRingSize(size) {
+    selectedRingSize = size;
+
+    const el = document.getElementById('selected-ring-size');
+    if (el) {
+        el.textContent = size;
+    }
+
+    console.log("Selected ring size:", size);
+}
+
+// تحميل البيانات عند فتح الصفحة
 window.onload = function() {
+
+    // تحميل اللغة الحالية
     changeLanguage(currentLang);
 
+    // إنشاء مقاسات الخواتم من 8 إلى 40
+    const sizeSelect = document.getElementById('ring-size');
+
+    if (sizeSelect) {
+        sizeSelect.innerHTML = '';
+
+        for (let i = 8; i <= 40; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            sizeSelect.appendChild(option);
+        }
+
+       sizeSelect.value = selectedRingSize;
+    updateRingSize(selectedRingSize);
+    }
+
+    // تحديد موعد الاستشارة لليوم التالي
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
 
