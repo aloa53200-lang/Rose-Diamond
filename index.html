@@ -430,26 +430,28 @@
                                     <span id="selected-ring-size">8</span>
                                 </p>
                             </div>
-                            
-                            <script>
-                            let selectedRingSize = "8";
-                            
-                            function updateRingSize(size) {
-                                selectedRingSize = size;
-                                document.getElementById('selected-ring-size').textContent = size;
-                            }
-                            
-                            const sizeSelect = document.getElementById('ring-size');
-                            
-                            for (let i = 8; i <= 40; i++) {
-                                const option = document.createElement('option');
-                                option.value = i;
-                                option.textContent = i;
-                                sizeSelect.appendChild(option);
-                            }
-                            
-                            sizeSelect.value = "8";
-                            </script>
+                           <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                    
+                        let selectedRingSize = "8";
+                    
+                        window.updateRingSize = function(size) {
+                            selectedRingSize = size;
+                            document.getElementById('selected-ring-size').textContent = size;
+                        };
+                    
+                        const sizeSelect = document.getElementById('ring-size');
+                    
+                        for (let i = 8; i <= 40; i++) {
+                            const option = document.createElement('option');
+                            option.value = i;
+                            option.textContent = i;
+                            sizeSelect.appendChild(option);
+                        }
+                    
+                        sizeSelect.value = "8";
+                    });
+                    </script>
                                                     
                         <!-- pricing display box and action CTA -->
                         <div class="bg-luxury-slate p-5 rounded-2xl border border-gold-800/20 flex flex-col sm:flex-row items-center justify-between gap-4">
