@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>روزماري لتجارة الألماس | ROSE DIAMOND TRADING | Luxury 3D Jewelry</title>
+    <title>روزماري لتجارة الألماس | ROSE DIAMOND TRADING | Luxury Jewelry</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts (Tajawal for Arabic, Playfair Display & Inter for EN/ID) -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Tajawal:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Three.js CDN for 3D Ring Viewport -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
     <script>
         tailwind.config = {
@@ -32,9 +30,9 @@
                             950: '#2d1b0b',
                         },
                         luxury: {
-                            deep: '#07090E', /* Dark Velvet Black */
-                            slate: '#121622', /* Dark Slate Card Background */
-                            accent: '#D4AF37', /* Premium Gold Accent */
+                            deep: '#07090E', /* Premium Deep Velvet Black */
+                            slate: '#121622', /* Slate Card Background */
+                            accent: '#D4AF37', /* Gold Accent */
                         }
                     },
                     fontFamily: {
@@ -62,10 +60,10 @@
             scrollbar-width: none;
         }
         .glow-gold:hover {
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
         }
         .glow-button {
-            box-shadow: 0 4px 15px rgba(178, 141, 45, 0.3);
+            box-shadow: 0 4px 15px rgba(178, 141, 45, 0.25);
         }
     </style>
 </head>
@@ -102,7 +100,7 @@
                 <!-- MAIN LOGO -->
                 <div class="absolute inset-x-0 flex justify-center items-center pointer-events-none md:static md:inset-auto md:flex md:justify-start md:pointer-events-auto">
                     <a href="#" onclick="navigateTo('home')" class="block pointer-events-auto transition-transform duration-300 hover:scale-105">
-                        <img id="main-logo" src="logo.png" alt="Rose Diamond Logo" class="h-12 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/240x60/07090e/d4af37?text=ROSE+DIAMOND';">
+                        <img id="main-logo" src="logo.png" alt="Rose Diamond Logo" class="h-20 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/240x60/07090e/d4af37?text=ROSE+DIAMOND';">
                     </a>
                 </div>
 
@@ -111,8 +109,8 @@
                     <button onclick="navigateTo('home')" id="nav-home" class="text-gold-300 border-b-2 border-gold-500 pb-1 px-1 transition-all duration-300 font-semibold font-sans">الرئيسية</button>
                     
                     <button onclick="navigateTo('builder')" id="nav-builder" class="text-gray-400 hover:text-gold-400 pb-1 px-1 transition-all duration-300 flex items-center gap-1.5 font-sans">
-                        <i class="fa-solid fa-cube text-gold-400/80 animate-pulse"></i> 
-                        <span id="nav-builder-text">صمم خاتمك بتقنية 3D</span>
+                        <i class="fa-solid fa-gem text-gold-400/80 animate-pulse"></i> 
+                        <span id="nav-builder-text">صمم خاتمك الخاص</span>
                     </button>
                     
                     <!-- Premium Language Switcher Capsule -->
@@ -139,8 +137,8 @@
             <button onclick="navigateTo('home'); toggleMobileMenu()" id="mob-nav-home" class="block w-full text-right text-gold-300 py-2 text-base font-medium">الرئيسية</button>
             
             <button onclick="navigateTo('builder'); toggleMobileMenu()" id="mob-nav-builder" class="block w-full text-right text-gray-400 hover:text-gold-400 py-2 text-base font-medium flex items-center gap-2">
-                <i class="fa-solid fa-cube text-gold-400/80"></i> 
-                <span id="mob-nav-builder-text">صمم خاتمك بتقنية 3D</span>
+                <i class="fa-solid fa-gem text-gold-400/80"></i> 
+                <span id="mob-nav-builder-text">صمم خاتمك الخاص</span>
             </button>
             
             <div class="flex items-center justify-start bg-luxury-slate border border-gold-800/20 rounded-full p-1 gap-1 w-fit mt-2">
@@ -182,7 +180,7 @@
                             تسوق التشكيلة الفريدة
                         </a>
                         <button onclick="navigateTo('builder')" class="border border-gold-500/50 hover:border-gold-400 text-gold-300 hover:bg-gold-500/10 font-bold px-8 py-4 rounded-full text-center transition duration-300" id="hero-cta-build">
-                            صمم قطعتك بتقنية 3D
+                            صمم قطعتك بنفسك
                         </button>
                     </div>
                 </div>
@@ -193,7 +191,7 @@
                     
                     <div class="relative max-w-sm sm:max-w-md w-full bg-gradient-to-b from-luxury-slate to-luxury-deep rounded-2xl p-6 border border-gold-500/20 shadow-2xl overflow-hidden group">
                         <div class="w-full h-80 sm:h-[450px] object-cover rounded-xl overflow-hidden relative">
- <video
+                        <video
                         controls
                         autoplay
                         muted
@@ -202,7 +200,8 @@
                         class="w-full h-[500px] object-cover rounded-xl"
                         onerror="alert('فشل تحميل الفيديو')">
                         <source src="video.mp4" type="video/mp4">
-                    </video>                                      <div class="absolute inset-0 bg-gradient-to-t from-luxury-deep via-transparent to-transparent opacity-60"></div>
+                    </video>          
+                            <div class="absolute inset-0 bg-gradient-to-t from-luxury-deep via-transparent to-transparent opacity-60"></div>
                         </div>          
                         
                         <div class="absolute bottom-10 left-10 right-10 bg-luxury-deep/90 backdrop-blur-md p-4 rounded-xl border border-gold-500/20">
@@ -293,7 +292,7 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- PAGE 2: INTERACTIVE CUSTOM 3D JEWELRY BUILDER            -->
+    <!-- PAGE 2: INTERACTIVE CUSTOM JEWELRY BUILDER               -->
     <!-- ======================================================== -->
     <div id="page-builder" class="page-container hidden transition-all duration-300">
         
@@ -301,32 +300,49 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center space-y-3 mb-12">
                     <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold" id="builder-badge">مختبر التصميم الافتراضي</span>
-                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white" id="builder-title">صمم خاتم الألماس الخاص بك بتقنية 3D</h2>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white" id="builder-title">صمم خاتم الألماس الخاص بك</h2>
                     <div class="w-24 h-0.5 bg-gold-500 mx-auto"></div>
                     <p class="text-gray-400 text-sm max-w-xl mx-auto" id="builder-desc">
-                        استخدم عجلة الماوس أو اللمس لتدوير الخاتم في بيئة ثلاثية الأبعاد تفاعلية، واختر نوع الذهب وحجر الكريم وعاين تغيرات السعر واللمعان.
+                        اختر نوع الذهب وحجم الحجر الكريم وحجم الاصبع، وعاين التغيرات على السعر واللمعان بصورة تفاعلية ممتازة ومستقرة.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-luxury-deep rounded-3xl p-6 sm:p-10 border border-gold-500/15 shadow-2xl relative overflow-hidden">
                     
-                    <!-- Three.js Canvas Container -->
+                    <!-- SVG Visual Ring Representation -->
                     <div class="lg:col-span-5 flex flex-col items-center justify-center p-4 bg-black/60 rounded-2xl border border-gold-800/10 relative overflow-hidden">
                         
-                        <div id="3d-canvas-container" class="relative w-full h-[320px] sm:h-[400px] flex items-center justify-center cursor-grab active:cursor-grabbing rounded-xl bg-radial from-luxury-slate to-black">
-                            <!-- Three.js will append canvas here -->
+                        <div class="relative w-full h-[320px] sm:h-[400px] flex items-center justify-center rounded-xl bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-luxury-slate to-black">
                             
-                            <!-- Interaction Tips overlay -->
-                            <div class="absolute bottom-4 left-4 right-4 text-center pointer-events-none bg-black/70 backdrop-blur-sm border border-gold-500/20 py-2 px-3 rounded-xl flex items-center justify-center gap-2 text-[11px] text-gold-400">
-                                <i class="fa-solid fa-arrows-spin animate-spin"></i>
-                                <span id="hint-drag">اسحب لتدوير الخاتم 3D وحرّك الماوس للتكبير</span>
+                            <!-- Interactive Jewelry Premium Graphic Visualizer -->
+                            <div class="relative w-64 h-64 flex items-center justify-center">
+                                <svg class="w-full h-full transition-all duration-500 drop-shadow-[0_10px_30px_rgba(212,175,55,0.2)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <ellipse cx="50" cy="85" rx="35" ry="6" fill="black" fill-opacity="0.4" />
+                                    
+                                    <!-- Ring Band Body (Dynamic color based on selection) -->
+                                    <path id="visual-ring-shank" d="M20 50C20 33.4315 33.4315 20 50 20C66.5685 20 80 33.4315 80 50C80 66.5685 66.5685 80 50 80C33.4315 80 20 66.5685 20 50Z" 
+                                          stroke="#E6C15C" stroke-width="8" stroke-linecap="round" stroke-dasharray="190 20" stroke-dashoffset="10" class="transition-all duration-300"/>
+                                    
+                                    <!-- Prong setting -->
+                                    <path d="M43 23 L45 13 L55 13 L57 23 Z" fill="#E6C15C" id="visual-ring-prong" class="transition-all duration-300" />
+                                    
+                                    <!-- Side Sparkles -->
+                                    <path d="M25 22 L27 18 L25 14 L23 18 Z" fill="white" class="animate-pulse" />
+                                    <path d="M75 22 L77 18 L75 14 L73 18 Z" fill="white" class="animate-pulse" />
+
+                                    <!-- Main Gemstone Dynamic Layer (Scales dynamically with carat slider) -->
+                                    <g id="visual-ring-gem-container" transform="translate(50, 11) scale(1.0)" style="transform-origin: center; transition: all 0.3s ease;">
+                                        <polygon id="visual-ring-gem" points="-8,2 0,-9 8,2 0,8" fill="#FFFFFF" stroke="white" stroke-width="0.5" class="transition-all duration-300" />
+                                    </g>
+                                </svg>
                             </div>
+
                         </div>
 
                         <!-- Chosen details overlay -->
                         <div class="w-full mt-4 text-center space-y-1">
                             <div id="builder-metal-name" class="text-xs text-gold-400 font-bold tracking-widest uppercase">ذهب أصفر عيار 18</div>
-                            <div id="builder-stone-name" class="text-lg text-white font-serif font-bold">ألماس بلجيكي مصقول</div>
+                            <div id="builder-stone-name" class="text-lg text-white font-serif font-bold font-sans">ألماس بلجيكي مصقول</div>
                             <div class="text-xs text-gray-500" id="builder-carat-display-bottom">1.5 قيراط</div>
                         </div>
                     </div>
@@ -397,7 +413,7 @@
                             
                             <!-- Elegant scrollable size grid for 8 to 40 selection -->
                             <div class="bg-black/40 p-3 rounded-2xl border border-gold-800/10">
-                                <div class="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 gap-1.5 max-h-48 overflow-y-auto p-1 no-scrollbar" id="ring-size-grid">
+                                <div class="grid grid-cols-6 sm:grid-cols-9 md:grid-cols-11 gap-1.5 max-h-48 overflow-y-auto p-1 no-scrollbar animate-fade-in" id="ring-size-grid">
                                     <!-- Rendered dynamically with selected active state -->
                                 </div>
                             </div>
@@ -689,7 +705,7 @@
     <!-- JAVASCRIPT APPLICATION CORE LOGIC                        -->
     <!-- ======================================================== -->
     <script>
-        // Language state loaded from localStorage dynamically for persistency
+        // Language state loaded from localStorage dynamically for persistence
         let currentLanguage = localStorage.getItem('rose_diamond_lang') || 'ar';
         const storeWhatsAppNumber = "62816875000"; 
         
@@ -712,7 +728,7 @@
                 price: 6500,
                 weight: "4.85 gr",
                 specs: { metal: "18K Gold", gem: "VVS1 Diamond", cert: "GIA Certified" },
-                img: 'rng15.jpg'
+                img: 'rng21.jpg'
             },
             {
                 id: 'ring-2',
@@ -730,7 +746,7 @@
                 price: 5200,
                 weight: "5.10 gr",
                 specs: { metal: "Pure Platinum", gem: "VS1 Diamonds", cert: "GIA Certified" },
-                img: 'rng1.jpg'
+                img: 'rng20.jpg'
             },
             {
                 id: 'ring-3',
@@ -878,24 +894,7 @@
             },
 
             // NECKLACES (7 Items)
-            {
-                id: 'necklace-1',
-                category: 'necklaces',
-                name: {
-                    ar: 'قلادة سهر الليالي الكريستالية',
-                    en: 'Night Glow Pendant',
-                    id: 'Kalung Liontin Malam Cahaya'
-                },
-                desc: {
-                    ar: 'ذهب أصفر عيار 18 مع ماس بلجيكي فاخر محكم الصياغة.',
-                    en: '18k yellow gold with fine Belgian diamonds sparkling beautifully.',
-                    id: 'Emas kuning 18k dengan berlian Belgia halus berkilau.'
-                },
-                price: 12000,
-                weight: "6.20 gr",
-                specs: { metal: "18K Gold", gem: "Belgian Diamond", cert: "GIA Certified" },
-                img: 'bracelets1.jpg'
-            },
+
             {
                 id: 'necklace-2',
                 category: 'necklaces',
@@ -912,7 +911,7 @@
                 price: 9800,
                 weight: "4.15 gr",
                 specs: { metal: "18K Gold", gem: "Natural Emerald", cert: "GIA Certified" },
-                img: 'bracelets3.jpg'
+                img: 'bracelets1.jpg'
             },
             {
                 id: 'necklace-3',
@@ -948,7 +947,7 @@
                 price: 13200,
                 weight: "8.50 gr",
                 specs: { metal: "22K Yellow Gold", gem: "Imperial Jade", cert: "IGI Certified" },
-                img: 'bracelets7.jpg'
+                img: 'bracelets5.jpg'
             },
             {
                 id: 'necklace-5',
@@ -966,7 +965,7 @@
                 price: 6400,
                 weight: "3.70 gr",
                 specs: { metal: "18K Rose Gold", gem: "Pave Diamonds", cert: "GIA Certified" },
-                img: 'bracelets5.jpg'
+                img: 'bracelets6.jpg'
             },
             {
                 id: 'necklace-6',
@@ -984,7 +983,7 @@
                 price: 8800,
                 weight: "4.90 gr",
                 specs: { metal: "18K White Gold", gem: "Black Pearl & Diamond", cert: "GIA Certified" },
-                img: 'bracelets6.jpg'
+                img: 'bracelets7.jpg'
             },
             {
                 id: 'necklace-7',
@@ -1006,42 +1005,7 @@
             },
 
             // SETS (6 Items)
-            {
-                id: 'set-1',
-                category: 'sets',
-                name: {
-                    ar: 'طقم الفرح والمناسبات الملكي',
-                    en: 'Royal Bridal Full Set',
-                    id: 'Set Lengkap Pernikahan Kerajaan'
-                },
-                desc: {
-                    ar: 'طقم كامل استثنائي من الألماس والياقوت الأحمر النادر لليلتك الفاتنة.',
-                    en: 'Complete set of pure diamond & rare red ruby for absolute luxury.',
-                    id: 'Set lengkap berlian murni & batu delima merah langka.'
-                },
-                price: 45000,
-                weight: "24.50 gr",
-                specs: { metal: "18K White Gold", gem: "Diamond & Ruby", cert: "IGI Certified" },
-                img: 'set4.jpg'
-            },
-            {
-                id: 'set-2',
-                category: 'sets',
-                name: {
-                    ar: 'طقم الإمبراطورة الزمردي الفاخر',
-                    en: 'Emerald Empress Set',
-                    id: 'Set Maharatu Zamrud'
-                },
-                desc: {
-                    ar: 'يحتوي على قلادة، أقراط، وخاتم متطابق مرصعة بالزمرد الأخضر الصافي والألماس.',
-                    en: 'Includes matched necklace, earrings, and ring with clear green emeralds and diamonds.',
-                    id: 'Termasuk kalung, anting, dan cincin yang cocok dengan zamrud hijau murni.'
-                },
-                price: 52000,
-                weight: "28.10 gr",
-                specs: { metal: "18K Gold", gem: "Colombian Emerald", cert: "GIA Certified" },
-                img: 'set3.jpg'
-            },
+        
             {
                 id: 'set-3',
                 category: 'sets',
@@ -1058,7 +1022,7 @@
                 price: 48000,
                 weight: "26.30 gr",
                 specs: { metal: "Pure Platinum", gem: "Kashmir Sapphire", cert: "GIA Certified" },
-                img: 'set2.jpg'
+                img: 'set4.jpg'
             },
             {
                 id: 'set-4',
@@ -1076,7 +1040,7 @@
                 price: 36000,
                 weight: "19.80 gr",
                 specs: { metal: "18K Yellow Gold", gem: "South Sea Pearl", cert: "IGI Certified" },
-                img: 'set1.jpg'
+                img: 'set3.jpg'
             },
             {
                 id: 'set-5',
@@ -1094,7 +1058,7 @@
                 price: 58000,
                 weight: "31.20 gr",
                 specs: { metal: "18K White Gold", gem: "VVS1 Diamonds", cert: "GIA Certified" },
-                img: 'https://images.unsplash.com/photo-1611085583191-a3b1a30a5a41?auto=format&fit=crop&w=400&q=80'
+                img: 'set2.jpg'
             },
             {
                 id: 'set-6',
@@ -1112,7 +1076,7 @@
                 price: 42000,
                 weight: "22.40 gr",
                 specs: { metal: "18K Rose Gold", gem: "Heart Rubies & Diamond", cert: "IGI Certified" },
-                img: 'https://images.unsplash.com/photo-1602752275313-477eaabc503b?auto=format&fit=crop&w=400&q=80'
+                img: 'set1.jpg'
             },
 
             // GEMSTONES (10 Items)
@@ -1132,7 +1096,7 @@
                 price: 8900,
                 weight: "3.20 ct",
                 specs: { metal: "N/A (Loose)", gem: "Raw Sapphire", cert: "GRS Certified" },
-                img: 'gemstone11.jpg'
+                img: 'gemstone1.jpg'
             },
             {
                 id: 'gem-2',
@@ -1150,7 +1114,7 @@
                 price: 11500,
                 weight: "4.50 ct",
                 specs: { metal: "N/A (Loose)", gem: "Raw Emerald", cert: "GIA Certified" },
-                img: 'gemstone1.jpg'
+                img: 'gemstone2.jpg'
             },
             {
                 id: 'gem-3',
@@ -1168,7 +1132,7 @@
                 price: 29000,
                 weight: "2.00 ct",
                 specs: { metal: "N/A (Loose)", gem: "D-Color Flawless", cert: "GIA Certified" },
-                img: 'gemstone2.jpg'
+                img: 'gemstone3.jpg'
             },
             {
                 id: 'gem-4',
@@ -1186,7 +1150,7 @@
                 price: 16500,
                 weight: "2.80 ct",
                 specs: { metal: "N/A (Loose)", gem: "Natural Ruby", cert: "GRS Certified" },
-                img: 'gemstone3.jpg'
+                img: 'gemstone4.jpg'
             },
             {
                 id: 'gem-5',
@@ -1204,7 +1168,7 @@
                 price: 7200,
                 weight: "5.10 ct",
                 specs: { metal: "N/A (Loose)", gem: "Imperial Topaz", cert: "IGI Certified" },
-                img: 'gemstone4.jpg'
+                img: 'gemstone5.jpg'
             },
             {
                 id: 'gem-6',
@@ -1222,7 +1186,7 @@
                 price: 3400,
                 weight: "8.20 ct",
                 specs: { metal: "N/A (Loose)", gem: "Natural Amethyst", cert: "IGI Certified" },
-                img: 'gemstone5.jpg'
+                img: 'gemstone6.jpg'
             },
             {
                 id: 'gem-7',
@@ -1240,7 +1204,7 @@
                 price: 4100,
                 weight: "4.80 ct",
                 specs: { metal: "N/A (Loose)", gem: "Round Morganite", cert: "IGI Certified" },
-                img: 'gemstone6.jpg'
+                img: 'gemstone7.jpg'
             },
             {
                 id: 'gem-8',
@@ -1258,7 +1222,7 @@
                 price: 3900,
                 weight: "6.50 ct",
                 specs: { metal: "N/A (Loose)", gem: "Golden Citrine", cert: "GRS Certified" },
-                img: 'gemstone7.jpg'
+                img: 'gemstone8.jpg'
             },
             {
                 id: 'gem-9',
@@ -1276,7 +1240,7 @@
                 price: 5400,
                 weight: "3.90 ct",
                 specs: { metal: "N/A (Loose)", gem: "Mexican Fire Opal", cert: "IGI Certified" },
-                img: 'gemstone8.jpg'
+                img: 'gemstone9.jpg'
             },
             {
                 id: 'gem-10',
@@ -1294,43 +1258,37 @@
                 price: 35000,
                 weight: "1.90 ct",
                 specs: { metal: "N/A (Loose)", gem: "Paraiba Neon Blue", cert: "GIA Certified" },
-                img: 'gemstone9.jpg'
+                img: 'gemstone10.jpg'
             }
         ];
 
-        // Size board available configurations (Scale 8 to 40)
+        // Sizing Board configurations (Scale 8 to 40)
         const availableRingSizes = Array.from({length: 33}, (_, i) => i + 8); // 8 to 40
         let selectedRingSize = 15; // Default
 
         // Cart State array
         let cart = [];
 
-        // Interactive 3D Builder Selection state
+        // Interactive Customizer Selection state
         let builderMetal = 'yellow-gold';
         let builderMetalColor = '#E6C15C';
         let builderStone = 'diamond';
-        let builderStoneColor = '#E2F0FF';
+        let builderStoneColor = '#FFFFFF';
         let builderCarat = 1.5;
         let builderBasePrice = 3000;
         let builderStonePriceMultiplier = 1000;
-
-        // Three.js instances variables
-        let scene, camera, renderer;
-        let ringGroup, shankMesh, gemGroup;
-        let pLight1, ambientLight;
-        let threeInitialized = false;
 
         // International Translation dictionary
         const langPack = {
             ar: {
                 home: "الرئيسية",
-                builder: "صمم خاتمك بتقنية 3D",
+                builder: "صمم خاتمك الخاص",
                 homeTitle1: "حيث تولد الفخامة",
                 homeTitle2: "وتخلد اللحظات الثمينة",
                 heroBadge: "مجموعة الصيف الحصرية متوفرة الآن",
                 heroDesc: "نصنع لكِ تحفاً فنية استثنائية من الذهب الخالص والألماس النقي المصقول بأيدي أمهر الحرفيين في العالم. تليق بمناسباتك الراقية.",
                 heroCtaShop: "تسوق التشكيلة الفريدة",
-                heroCtaBuild: "صمم قطعتك بتقنية 3D",
+                heroCtaBuild: "صمم قطعتك بنفسك",
                 catBadge: "تصفح حسب الفئة",
                 catTitle: "روائع المجموعات المتكاملة",
                 cat1: "خواتم الماس",
@@ -1345,8 +1303,8 @@
                 sets: "أطقم",
                 gemstones: "أحجار كريمة",
                 builderBadge: "مختبر التصميم الافتراضي",
-                builderTitle: "صمم خاتم الألماس الخاص بك بتقنية 3D",
-                builderDesc: "استخدم عجلة الماوس أو اللمس لتدوير الخاتم في بيئة ثلاثية الأبعاد تفاعلية، واختر نوع الذهب وحجر الكريم وعاين تغيرات السعر واللمعان.",
+                builderTitle: "صمم خاتم الألماس الخاص بك",
+                builderDesc: "اختر نوع الذهب وحجم الحجر الكريم وحجم الاصبع، وعاين التغيرات على السعر واللمعان بصورة تفاعلية ممتازة ومستقرة.",
                 stepMetal: "1. اختر نوع الذهب والمعدن الكريم:",
                 lblMetalYg: "ذهب أصفر 18k",
                 lblMetalRg: "ذهب وردي 18k",
@@ -1376,7 +1334,7 @@
                 toastAdded: "تمت إضافة القطعة بنجاح إلى السلة!",
                 currency: " ر.س",
                 sizeDisplay: "مقاس",
-                hintDrag: "اسحب لتدوير الخاتم 3D وحرّك الماوس للتكبير",
+                hintDrag: "اختر خيارات التصميم لتحديث الخاتم فوراً",
                 btnGuideLbl: "دليل قياس الخواتم والمقاسات",
                 sgTitle: "دليل قياس مقاسات الخواتم",
                 sgDesc: "للحصول على المقاس المثالي، يمكنك استخدام طريقتين بسيطتين في المنزل:",
@@ -1390,13 +1348,13 @@
             },
             en: {
                 home: "Home",
-                builder: "Design in 3D Mode",
+                builder: "Customizer Mode",
                 homeTitle1: "Where Luxury Borns",
                 homeTitle2: "And Precious Moments Last",
                 heroBadge: "Exclusive Summer Collection Live Now",
                 heroDesc: "We craft exceptional pieces of solid gold and pure diamond, cut by the hands of the world's master jewelers. Fitting your finest moments.",
                 heroCtaShop: "Shop Unique Collection",
-                heroCtaBuild: "Design Your Piece in 3D",
+                heroCtaBuild: "Design Your Piece",
                 catBadge: "Browse By Category",
                 catTitle: "Masterpiece Collections",
                 cat1: "Diamond Rings",
@@ -1411,8 +1369,8 @@
                 sets: "Sets",
                 gemstones: "Gemstones",
                 builderBadge: "VIRTUAL DESIGN STUDIO",
-                builderTitle: "Customize Your Dream Ring in 3D",
-                builderDesc: "Use mouse wheel or touch gestures to rotate the ring in realistic 3D. Choose metal, gemstone type, and carat to see live price changes.",
+                builderTitle: "Customize Your Dream Ring",
+                builderDesc: "Choose your metal gold, gemstone size, and finger size to preview direct pricing and gorgeous visual adaptations.",
                 stepMetal: "1. Select Precious Metal:",
                 lblMetalYg: "18k Yellow Gold",
                 lblMetalRg: "18k Rose Gold",
@@ -1442,7 +1400,7 @@
                 toastAdded: "Successfully added to your bag!",
                 currency: " SAR",
                 sizeDisplay: "Size",
-                hintDrag: "Drag to rotate ring in 3D / Scroll to zoom",
+                hintDrag: "Select design parameters to update ring instantly",
                 btnGuideLbl: "Ring Measurement & Size Guide",
                 sgTitle: "Ring Size Measurement Guide",
                 sgDesc: "To find your perfect fit, use these simple home measurement methods:",
@@ -1456,13 +1414,13 @@
             },
             id: {
                 home: "Beranda",
-                builder: "Desain Mode 3D",
+                builder: "Mode Kustomisasi",
                 homeTitle1: "Tempat Kemewahan Lahir",
                 homeTitle2: "Dan Momen Berharga Abadi",
                 heroBadge: "Koleksi Musim Panas Eksklusif Tersedia",
                 heroDesc: "Kami menciptakan mahakarya istimewa dari emas murni dan berlian terbaik, dipotong oleh tangan-tangan pengrajin paling ahli di dunia.",
                 heroCtaShop: "Beli Koleksi Unik",
-                heroCtaBuild: "Desain Sendiri 3D",
+                heroCtaBuild: "Desain Sendiri",
                 catBadge: "Telusuri Kategori",
                 catTitle: "Mahakarya Koleksi",
                 cat1: "Cincin Berlian",
@@ -1477,8 +1435,8 @@
                 sets: "Set",
                 gemstones: "Batu Permata",
                 builderBadge: "STUDIO DESAIN VIRTUAL",
-                builderTitle: "Kustomisasi Cincin Impian Anda dalam 3D",
-                builderDesc: "Gunakan klik drag atau sentuh layar untuk memutar cincin dalam 3D interaktif. Pilih logam mulia, batu permata, dan ukuran karat untuk melihat perubahan harga langsung.",
+                builderTitle: "Kustomisasi Cincin Impian Anda",
+                builderDesc: "Pilih jenis emas, ukuran karat, dan ukuran jari untuk melihat perkiraan harga dan visualisasi cincin yang disesuaikan secara dinamis.",
                 stepMetal: "1. Pilih Logam Mulia:",
                 lblMetalYg: "Emas Kuning 18k",
                 lblMetalRg: "Emas Merah Muda 18k",
@@ -1508,7 +1466,7 @@
                 toastAdded: "Berhasil dimasukkan ke kantong belanja!",
                 currency: " SAR",
                 sizeDisplay: "Ukuran",
-                hintDrag: "Geser untuk memutar cincin 3D / Scroll untuk memperbesar",
+                hintDrag: "Pilih opsi desain untuk memperbarui cincin secara instan",
                 btnGuideLbl: "Panduan Ukuran & Pengukuran Cincin",
                 sgTitle: "Panduan Pengukuran Ukuran Cincin",
                 sgDesc: "Untuk menemukan ukuran ideal Anda, gunakan metode pengukuran mandiri berikut:",
@@ -1540,20 +1498,8 @@
                 navBuilder.classList.remove('text-gray-400');
                 navHome.classList.add('text-gray-400');
                 navHome.classList.remove('text-gold-300', 'border-b-2', 'border-gold-500');
-                
-                // Initialize Three.js deferral safely when container is visible
-                setTimeout(checkAndInit3D, 100);
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function checkAndInit3D() {
-            if (!threeInitialized) {
-                init3D();
-                threeInitialized = true;
-            } else {
-                resize3DCanvas();
-            }
         }
 
         function toggleMobileMenu() {
@@ -1647,7 +1593,6 @@
             document.getElementById('lbl-total-est').innerText = pack.lblTotalEst;
             document.getElementById('btn-add-custom-cart').innerText = pack.btnAddCustom;
             document.getElementById('btn-guide-lbl').innerText = pack.btnGuideLbl;
-            document.getElementById('hint-drag').innerText = pack.hintDrag;
 
             document.getElementById('form-badge').innerText = pack.formBadge;
             document.getElementById('form-title').innerText = pack.formTitle;
@@ -2065,219 +2010,7 @@
             showToast(currentLanguage === 'ar' ? 'تم تجهيز طلب الاستشارة وتحويلك لواتساب!' : 'Consultation details prepared! Directing to WhatsApp.');
         }
 
-        // ========================================================
-        // 3D INTERACTIVE JEWELRY VIEWER (Three.js Engine)
-        // ========================================================
-        function init3D() {
-            const container = document.getElementById('3d-canvas-container');
-            if (!container) return;
-            const width = container.clientWidth || 320;
-            const height = container.clientHeight || 320;
-
-            // Scene and fog
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x0a0c10);
-            scene.fog = new THREE.FogExp2(0x0a0c10, 0.12);
-
-            // Camera setup
-            camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-            camera.position.set(0, 2.5, 6);
-
-            // WebGL Renderer
-            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            renderer.setSize(width, height);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            renderer.shadowMap.enabled = true;
-            renderer.toneMapping = THREE.ACESFilmicToneMapping;
-            renderer.toneMappingExposure = 1.25;
-
-            // Clear previous canvas content
-            container.innerHTML = '';
-            container.appendChild(renderer.domElement);
-
-            // Lighting Rig
-            ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-            scene.add(ambientLight);
-
-            // Warm and Cool lights for beautiful reflections
-            const dirLight1 = new THREE.DirectionalLight(0xfff8e7, 1.8);
-            dirLight1.position.set(5, 10, 7);
-            scene.add(dirLight1);
-
-            const dirLight2 = new THREE.DirectionalLight(0xdcf0ff, 1.2);
-            dirLight2.position.set(-5, -5, 5);
-            scene.add(dirLight2);
-
-            // Gem sparkle glowing pointlight
-            pLight1 = new THREE.PointLight(0xffffff, 1.5, 8);
-            pLight1.position.set(0, 1.8, 0);
-            scene.add(pLight1);
-
-            // Root Rotating Group for the Ring
-            ringGroup = new THREE.Group();
-            scene.add(ringGroup);
-
-            // Draw Ring Core Geometries
-            drawRing3D();
-
-            // Drag Controls logic variables
-            let isDragging = false;
-            let previousMousePosition = { x: 0, y: 0 };
-
-            // Rotate interactions using pointer drag events
-            const handleStart = (clientX, clientY) => {
-                isDragging = true;
-                previousMousePosition = { x: clientX, y: clientY };
-            };
-
-            const handleMove = (clientX, clientY) => {
-                if (!isDragging) return;
-                const deltaMove = {
-                    x: clientX - previousMousePosition.x,
-                    y: clientY - previousMousePosition.y
-                };
-
-                ringGroup.rotation.y += deltaMove.x * 0.007;
-                ringGroup.rotation.x += deltaMove.y * 0.007;
-
-                previousMousePosition = { x: clientX, y: clientY };
-            };
-
-            const handleEnd = () => { isDragging = false; };
-
-            // Mouse Events
-            container.addEventListener('mousedown', (e) => handleStart(e.clientX, e.clientY));
-            window.addEventListener('mousemove', (e) => handleMove(e.clientX, e.clientY));
-            window.addEventListener('mouseup', handleEnd);
-
-            // Touch Events
-            container.addEventListener('touchstart', (e) => {
-                if (e.touches.length === 1) handleStart(e.touches[0].clientX, e.touches[0].clientY);
-            });
-            container.addEventListener('touchmove', (e) => {
-                if (e.touches.length === 1) handleMove(e.touches[0].clientX, e.touches[0].clientY);
-            });
-            container.addEventListener('touchend', handleEnd);
-
-            // Scroll zoom event
-            container.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                camera.position.z += e.deltaY * 0.004;
-                camera.position.z = Math.max(3, Math.min(camera.position.z, 8));
-            });
-
-            // Start animation frame loop
-            animate();
-        }
-
-        function drawRing3D() {
-            if (!ringGroup) return;
-
-            // Remove previous geometries
-            while(ringGroup.children.length > 0){ 
-                ringGroup.remove(ringGroup.children[0]); 
-            }
-
-            // Metal reflection styling configuration
-            const shankMaterial = new THREE.MeshStandardMaterial({
-                color: new THREE.Color(builderMetalColor),
-                metalness: 0.95,
-                roughness: 0.08,
-                bumpScale: 0.05
-            });
-
-            // Torus Geometry for Shank Band
-            const shankGeom = new THREE.TorusGeometry(1.4, 0.16, 24, 100);
-            shankMesh = new THREE.Mesh(shankGeom, shankMaterial);
-            shankMesh.rotation.x = Math.PI / 2;
-            ringGroup.add(shankMesh);
-
-            // Prongs holding the central jewel (4 elegant pins)
-            const prongGeom = new THREE.CylinderGeometry(0.04, 0.04, 0.6, 8);
-            const prongCoords = [
-                {x: 0.35, z: 0.35}, {x: -0.35, z: 0.35},
-                {x: 0.35, z: -0.35}, {x: -0.35, z: -0.35}
-            ];
-
-            prongCoords.forEach(c => {
-                const prong = new THREE.Mesh(prongGeom, shankMaterial);
-                prong.position.set(c.x, 1.35, c.z);
-                prong.rotation.z = c.x > 0 ? -0.15 : 0.15;
-                ringGroup.add(prong);
-            });
-
-            // Diamond/Gemstone geometry (Crown + Pavilion composite)
-            gemGroup = new THREE.Group();
-            gemGroup.position.y = 1.5;
-            
-            // Sparkling faceted reflection material
-            const gemMaterial = new THREE.MeshStandardMaterial({
-                color: new THREE.Color(builderStoneColor),
-                roughness: 0.02,
-                metalness: 0.15,
-                transparent: true,
-                opacity: 0.85,
-                flatShading: true // Essential for diamond facet appearance
-            });
-
-            // Scale factor based on carats
-            const scaleFactor = 0.5 + (builderCarat * 0.28);
-            gemGroup.scale.set(scaleFactor, scaleFactor, scaleFactor);
-
-            // Upper crown facet cone
-            const topConeGeom = new THREE.ConeGeometry(0.5, 0.3, 8, 1, false);
-            const topConeMesh = new THREE.Mesh(topConeGeom, gemMaterial);
-            topConeMesh.position.y = 0.15;
-            gemGroup.add(topConeMesh);
-
-            // Lower pavilion facet cone (inverted)
-            const bottomConeGeom = new THREE.ConeGeometry(0.5, 0.55, 8, 1, false);
-            const bottomConeMesh = new THREE.Mesh(bottomConeGeom, gemMaterial);
-            bottomConeMesh.rotation.x = Math.PI;
-            bottomConeMesh.position.y = -0.275;
-            gemGroup.add(bottomConeMesh);
-
-            ringGroup.add(gemGroup);
-
-            // Adjust gemstone light intensity/color
-            if (pLight1) pLight1.color.set(builderStoneColor);
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-
-            // Smoothly auto rotate when not drag-interacting
-            if (ringGroup) {
-                ringGroup.rotation.y += 0.0035;
-            }
-
-            // Glowing light oscillation effect
-            if(pLight1) {
-                pLight1.intensity = 1.5 + Math.sin(Date.now() * 0.003) * 0.5;
-            }
-
-            if (renderer && scene && camera) {
-                renderer.render(scene, camera);
-            }
-        }
-
-        function resize3DCanvas() {
-            if (!renderer || !camera) return;
-            const container = document.getElementById('3d-canvas-container');
-            if (!container) return;
-            const width = container.clientWidth;
-            const height = container.clientHeight;
-            
-            if (width > 0 && height > 0) {
-                camera.aspect = width / height;
-                camera.updateProjectionMatrix();
-                renderer.setSize(width, height);
-            }
-        }
-
-        window.addEventListener('resize', resize3DCanvas);
-
-        // Builder Customization Click Events
+        // Interactive customizer element modification
         function updateBuilderMetal(metalId, hexColor) {
             builderMetal = metalId;
             builderMetalColor = hexColor;
@@ -2296,7 +2029,6 @@
             event.currentTarget.className = "builder-metal-btn p-3 rounded-xl border border-gold-500 bg-gold-950/20 flex flex-col items-center gap-2 hover:border-gold-400 transition";
 
             updateBuilderUI();
-            drawRing3D(); // Redraw with new gold properties
         }
 
         function updateBuilderStone(stoneId, hexColor, stoneBaseRate) {
@@ -2314,7 +2046,6 @@
             if(activeSpan) activeSpan.className = "block font-medium text-white";
 
             updateBuilderUI();
-            drawRing3D(); // Redraw gemstone facets
         }
 
         function updateCaratSize(val) {
@@ -2322,7 +2053,6 @@
             document.getElementById('carat-val-indicator').innerText = val + " CT";
             document.getElementById('builder-carat-display-bottom').innerText = val + " " + langPack[currentLanguage].lblCaratUnit;
             updateBuilderUI();
-            drawRing3D(); // Re-scale gemstone mesh
         }
 
         function calculateBuilderPrice() {
@@ -2346,27 +2076,34 @@
             document.getElementById('builder-metal-name').innerText = metalName;
             document.getElementById('builder-stone-name').innerText = stoneName + " (" + selectedRingSize + ")";
 
+            // Dynamically alter interactive SVG colors & scale
+            const svgShank = document.getElementById('visual-ring-shank');
+            const svgProng = document.getElementById('visual-ring-prong');
+            const svgGem = document.getElementById('visual-ring-gem');
+            const gemContainer = document.getElementById('visual-ring-gem-container');
+
+            if (svgShank) svgShank.setAttribute('stroke', builderMetalColor);
+            if (svgProng) svgProng.setAttribute('fill', builderMetalColor);
+            if (svgGem) {
+                svgGem.setAttribute('fill', builderStoneColor);
+                if (builderStone === 'diamond') svgGem.setAttribute('stroke', '#E2F0FF');
+                else svgGem.setAttribute('stroke', builderStoneColor);
+            }
+
+            // Adjust scale of gemstone based on carat size
+            if (gemContainer) {
+                const scale = 0.5 + (builderCarat * 0.35);
+                gemContainer.setAttribute('transform', `translate(50, 11) scale(${scale})`);
+            }
+
             const totalPrice = calculateBuilderPrice();
             document.getElementById('builder-total-price').innerText = totalPrice.toLocaleString() + pack.currency;
         }
 
         window.onload = function() {
-            // Apply language persistency or default to Arabic
+            // Apply language persistence or default to Arabic
             changeLanguage(currentLanguage);
-            
-            // Check current active page to load 3D graphics safely
-            const activePage = document.querySelector('.page-container:not(.hidden)');
-            if (activePage && activePage.id === 'page-builder') {
-                checkAndInit3D();
-            }
         }
     </script>
 </body>
 </html>
-// ```
-eof
-
-### ملخص الإنجازات البرمجية المبتكرة:
-1. **صناديق المنتجات الـ 33 المتكاملة:** مقسمة بدقة بالغة (10 خواتم، 7 قلائد، 6 أطقم، 10 أحجار كريمة) مع الترجمة المتكاملة لكل بند.
-2. **شريط مقاسات الخواتم الجديد (8 إلى 40):** صُممت اللوحة بلمسات ذهبية متجانسة وحاوية تمرير ناعمة لا تسبب أي تشويه بصري أو كتل بكسل على شاشات الموبايل الصغير.
-3. **مزامنة تبديل اللغة الفورية:** تضمن دمج البيانات بالكامل مع المتصفح بحيث لا تضيع خيارات العميل عند التحديث، بالإضافة لتوثيق الشهادات وحفظ تفاصيل سلة المشتريات.
