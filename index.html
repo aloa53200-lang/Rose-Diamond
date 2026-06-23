@@ -30,9 +30,9 @@
                             950: '#2d1b0b',
                         },
                         luxury: {
-                            deep: '#07090E', /* Premium Deep Velvet Black */
-                            slate: '#121622', /* Slate Card Background */
-                            accent: '#D4AF37', /* Gold Accent */
+                            deep: '#0F1219', /* Dark Luxury Velvet Black */
+                            slate: '#1A1F2C', /* Soft Slate Card Background */
+                            accent: '#D4AF37', /* Pure Gold Accent */
                         }
                     },
                     fontFamily: {
@@ -60,33 +60,46 @@
             scrollbar-width: none;
         }
         .glow-gold:hover {
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-        }
-        .glow-button {
-            box-shadow: 0 4px 15px rgba(178, 141, 45, 0.25);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
         }
     </style>
 </head>
 <body class="bg-luxury-deep text-gray-200 font-sans min-h-screen flex flex-col overflow-x-hidden">
 
-    <!-- Top Contact Bar with Address & WhatsApp -->
-    <div class="bg-luxury-slate border-b border-gold-800/20 text-[11px] text-gray-400 py-2.5 relative z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
+    <!-- Top Contact Bar with Address, WhatsApp & Facebook Links -->
+    <div class="bg-luxury-slate/90 border-b border-gold-800/20 text-[11px] text-gray-400 py-2.5 relative z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-3">
             <div class="flex items-center gap-2">
                 <i class="fa-solid fa-location-dot text-gold-400"></i>
-                <span id="top-bar-address" class="text-center sm:text-start text-xs">ITC KUNINGAN LANTAI DASAR BLOK E4 NO 5 SETIABUDI JAKARTA SELATAN</span>
+                <span id="top-bar-address" class="text-center md:text-start text-xs">ITC KUNINGAN LANTAI DASAR BLOK E4 NO 5 SETIABUDI JAKARTA SELATAN</span>
             </div>
-            <div class="flex items-center gap-4">
-                <a href="https://wa.me/62816875000" target="_blank" class="flex items-center gap-1.5 hover:text-gold-300 transition text-emerald-400 font-bold">
-                    <i class="fa-brands fa-whatsapp text-sm"></i>
-                    <span id="top-bar-whatsapp">واتساب: +62 816-875-000</span>
+            <div class="flex flex-wrap justify-center items-center gap-4">
+                <!-- Primary WhatsApp (Orders) -->
+                <a href="#" id="link-wa-primary" target="_blank" class="flex items-center gap-1 hover:text-gold-300 transition text-emerald-400 font-bold">
+                    <i class="fa-brands fa-whatsapp text-xs"></i>
+                    <span id="top-bar-wa-primary">الرئيسي: +62 816-875-000</span>
+                </a>
+                <!-- Additional WhatsApp (Inquiries) -->
+                <a href="#" id="link-wa-secondary" target="_blank" class="flex items-center gap-1 hover:text-gold-300 transition text-teal-400 font-bold">
+                    <i class="fa-solid fa-headset text-[10px]"></i>
+                    <span id="top-bar-wa-secondary">الاستفسارات: +62 816-112-0000</span>
+                </a>
+                <!-- Facebook -->
+                <a href="#" id="link-facebook" target="_blank" class="flex items-center gap-1 hover:text-gold-300 transition text-blue-400 font-bold">
+                    <i class="fa-brands fa-facebook text-xs"></i>
+                    <span id="top-bar-facebook">فيسبوك</span>
+                </a>
+                <!-- TikTok -->
+                <a href="#" id="link-tiktok" target="_blank" class="flex items-center gap-1 hover:text-gold-300 transition text-pink-400 font-bold">
+                    <i class="fa-brands fa-tiktok text-xs"></i>
+                    <span id="top-bar-tiktok">تيك توك</span>
                 </a>
             </div>
         </div>
     </div>
 
     <!-- Header / Nav -->
-    <header class="bg-luxury-deep/95 border-b border-gold-800/20 sticky top-0 z-40 backdrop-blur-md transition-all duration-300">
+    <header class="bg-luxury-deep/95 border-b border-gold-800/20 sticky top-0 z-50 backdrop-blur-md transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20 relative">
                 
@@ -100,51 +113,52 @@
                 <!-- MAIN LOGO -->
                 <div class="absolute inset-x-0 flex justify-center items-center pointer-events-none md:static md:inset-auto md:flex md:justify-start md:pointer-events-auto">
                     <a href="#" onclick="navigateTo('home')" class="block pointer-events-auto transition-transform duration-300 hover:scale-105">
-                        <img id="main-logo" src="logo.png" alt="Rose Diamond Logo" class="h-20 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/240x60/07090e/d4af37?text=ROSE+DIAMOND';">
+                        <img id="main-logo" src="logo.png" alt="Rose Diamond Logo" class="h-20 sm:h-16 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/240x60/0b0f17/d4af37?text=ROSE+DIAMOND';">
                     </a>
                 </div>
 
-                <!-- Desktop Navigation Links -->
+                <!-- Desktop Navigation Links with custom Language Switcher Pill -->
                 <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-                    <button onclick="navigateTo('home')" id="nav-home" class="text-gold-300 border-b-2 border-gold-500 pb-1 px-1 transition-all duration-300 font-semibold font-sans">الرئيسية</button>
+                    <button onclick="navigateTo('home')" id="nav-home" class="text-gold-300 border-b-2 border-gold-500 pb-1 px-1 transition-all duration-300 font-semibold">الرئيسية</button>
                     
-                    <button onclick="navigateTo('builder')" id="nav-builder" class="text-gray-400 hover:text-gold-400 pb-1 px-1 transition-all duration-300 flex items-center gap-1.5 font-sans">
+                    <button onclick="navigateTo('builder')" id="nav-builder" class="text-gray-400 hover:text-gold-400 pb-1 px-1 transition-all duration-300 flex items-center gap-1.5">
                         <i class="fa-solid fa-gem text-gold-400/80 animate-pulse"></i> 
-                        <span id="nav-builder-text">صمم خاتمك الخاص</span>
+                        <span id="nav-builder-text">صمم مجوهراتك الخاصة</span>
                     </button>
                     
                     <!-- Premium Language Switcher Capsule -->
                     <div class="flex items-center bg-luxury-slate border border-gold-800/30 rounded-full p-1 gap-1">
-                        <button onclick="changeLanguage('ar')" id="lang-btn-ar" class="px-3 py-1 rounded-full text-xs transition-all duration-300 font-bold">العربية</button>
-                        <button onclick="changeLanguage('en')" id="lang-btn-en" class="px-3 py-1 rounded-full text-xs transition-all duration-300">EN</button>
-                        <button onclick="changeLanguage('id')" id="lang-btn-id" class="px-3 py-1 rounded-full text-xs transition-all duration-300">ID</button>
+                        <button onclick="changeLanguage('ar')" id="lang-btn-ar" class="px-3 py-1 rounded-full text-xs transition-all duration-300 bg-gold-500 text-luxury-deep font-bold">العربية</button>
+                        <button onclick="changeLanguage('en')" id="lang-btn-en" class="px-3 py-1 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent">EN</button>
+                        <button onclick="changeLanguage('id')" id="lang-btn-id" class="px-3 py-1 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent">ID</button>
                     </div>
                 </nav>
 
-                <!-- Cart Action Button -->
-                <div class="flex items-center space-x-2 sm:space-x-4 space-x-reverse z-10">
-                    <button onclick="toggleCartDrawer()" class="relative p-2 text-gray-400 hover:text-gold-400 transition-colors duration-300 flex items-center">
-                        <span id="cart-count" class="absolute -top-1 -right-1 bg-gold-500 text-luxury-deep text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
-                        <i class="fa-solid fa-bag-shopping text-lg sm:text-xl"></i>
-                    </button>
+                <!-- Quick Inquiry Right Badge -->
+                <div class="hidden sm:flex items-center z-10">
+                    <a href="#" id="nav-direct-wa-btn" target="_blank" class="bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-luxury-deep text-xs font-bold px-4 py-2.5 rounded-full flex items-center gap-1.5 transition duration-300 shadow-md">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span id="nav-wa-label">تواصل مباشر</span>
+                    </a>
                 </div>
 
             </div>
         </div>
 
-        <!-- Mobile Menu -->
+        <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="hidden md:hidden bg-luxury-deep border-b border-gold-800/10 px-4 pt-2 pb-4 space-y-2">
             <button onclick="navigateTo('home'); toggleMobileMenu()" id="mob-nav-home" class="block w-full text-right text-gold-300 py-2 text-base font-medium">الرئيسية</button>
             
             <button onclick="navigateTo('builder'); toggleMobileMenu()" id="mob-nav-builder" class="block w-full text-right text-gray-400 hover:text-gold-400 py-2 text-base font-medium flex items-center gap-2">
                 <i class="fa-solid fa-gem text-gold-400/80"></i> 
-                <span id="mob-nav-builder-text">صمم خاتمك الخاص</span>
+                <span id="mob-nav-builder-text">صمم مجوهراتك الخاصة</span>
             </button>
             
+            <!-- Coordinated Language Switcher inside Mobile menu list -->
             <div class="flex items-center justify-start bg-luxury-slate border border-gold-800/20 rounded-full p-1 gap-1 w-fit mt-2">
-                <button onclick="changeLanguage('ar'); toggleMobileMenu()" id="mob-lang-btn-ar" class="px-3 py-1.5 rounded-full text-xs transition-all duration-300 font-bold">العربية</button>
-                <button onclick="changeLanguage('en'); toggleMobileMenu()" id="mob-lang-btn-en" class="px-3 py-1.5 rounded-full text-xs transition-all duration-300">EN</button>
-                <button onclick="changeLanguage('id'); toggleMobileMenu()" id="mob-lang-btn-id" class="px-3 py-1.5 rounded-full text-xs transition-all duration-300">ID</button>
+                <button onclick="changeLanguage('ar'); toggleMobileMenu()" id="mob-lang-btn-ar" class="px-3 py-1.5 rounded-full text-xs transition-all duration-300 bg-gold-500 text-luxury-deep font-bold">العربية</button>
+                <button onclick="changeLanguage('en'); toggleMobileMenu()" id="mob-lang-btn-en" class="px-3 py-1.5 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent">EN</button>
+                <button onclick="changeLanguage('id'); toggleMobileMenu()" id="mob-lang-btn-id" class="px-3 py-1.5 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent">ID</button>
             </div>
         </div>
     </header>
@@ -155,7 +169,7 @@
     <div id="page-home" class="page-container transition-all duration-300">
         
         <!-- Hero Section -->
-        <section class="relative min-h-[80vh] flex items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-luxury-slate via-luxury-deep to-black overflow-hidden py-16 border-b border-gold-800/10">
+        <section class="relative min-h-[85vh] flex items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-luxury-slate via-luxury-deep to-black overflow-hidden py-16 border-b border-gold-800/10">
             <div class="absolute inset-0 opacity-10 pointer-events-none">
                 <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full border border-gold-500 animate-pulse"></div>
                 <div class="absolute top-1/2 -right-20 w-80 h-80 rounded-full border border-gold-500/50"></div>
@@ -176,7 +190,7 @@
                         نصنع لكِ تحفاً فنية استثنائية من الذهب الخالص والألماس النقي المصقول بأيدي أمهر الحرفيين في العالم. تليق بمناسباتك الراقية.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                        <a href="#collection-section" class="bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-luxury-deep font-bold px-8 py-4 rounded-full text-center shadow-lg shadow-gold-500/20 transition duration-300 glow-button" id="hero-cta-shop">
+                        <a href="#collection-section" class="bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-luxury-deep font-bold px-8 py-4 rounded-full text-center shadow-lg shadow-gold-500/20 transition duration-300" id="hero-cta-shop">
                             تسوق التشكيلة الفريدة
                         </a>
                         <button onclick="navigateTo('builder')" class="border border-gold-500/50 hover:border-gold-400 text-gold-300 hover:bg-gold-500/10 font-bold px-8 py-4 rounded-full text-center transition duration-300" id="hero-cta-build">
@@ -188,10 +202,10 @@
                 <!-- Hero Showroom Card -->
                 <div class="relative flex justify-center items-center">
                     <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gold-600/10 blur-3xl"></div>
-             
+                    
                     <div class="relative max-w-sm sm:max-w-md w-full bg-gradient-to-b from-luxury-slate to-luxury-deep rounded-2xl p-6 border border-gold-500/20 shadow-2xl overflow-hidden group">
                         <div class="w-full h-80 sm:h-[450px] object-cover rounded-xl overflow-hidden relative">
-                             <video
+                        <video
                         controls
                         autoplay
                         muted
@@ -200,7 +214,7 @@
                         class="w-full h-[500px] object-cover rounded-xl"
                         onerror="alert('فشل تحميل الفيديو')">
                         <source src="video.mp4" type="video/mp4">
-                    </video>         
+                    </video>          
                             <div class="absolute inset-0 bg-gradient-to-t from-luxury-deep via-transparent to-transparent opacity-60"></div>
                         </div>          
                         
@@ -225,7 +239,7 @@
 
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Rings -->
-                    <div onclick="filterProducts('rings')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 glow-gold">
+                    <div onclick="filterProducts('rings')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
                         <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
                             <i class="fa-solid fa-ring text-2xl text-gold-400 group-hover:text-gold-300"></i>
                         </div>
@@ -233,7 +247,7 @@
                     </div>
 
                     <!-- Necklaces -->
-                    <div onclick="filterProducts('necklaces')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 glow-gold">
+                    <div onclick="filterProducts('necklaces')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
                         <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
                             <i class="fa-solid fa-gem text-2xl text-gold-400 group-hover:text-gold-300"></i>
                         </div>
@@ -241,7 +255,7 @@
                     </div>
 
                     <!-- Sets -->
-                    <div onclick="filterProducts('sets')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 glow-gold">
+                    <div onclick="filterProducts('sets')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
                         <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
                             <i class="fa-solid fa-crown text-2xl text-gold-400 group-hover:text-gold-300"></i>
                         </div>
@@ -249,9 +263,9 @@
                     </div>
 
                     <!-- Gemstones -->
-                    <div onclick="filterProducts('gemstones')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 glow-gold">
+                    <div onclick="filterProducts('gemstones')" class="cursor-pointer group relative overflow-hidden rounded-xl bg-luxury-deep border border-gold-800/10 hover:border-gold-500/30 p-6 text-center transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/5">
                         <div class="w-16 h-16 rounded-full bg-gold-950/40 border border-gold-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition duration-300">
-                            <i class="fa-solid fa-diamond text-2xl text-gold-400 group-hover:text-gold-300"></i>
+                            <i class="fa-solid fa-gem text-2xl text-gold-400 group-hover:text-gold-300"></i>
                         </div>
                         <h3 id="cat-card-4" class="font-bold text-base sm:text-lg text-white group-hover:text-gold-300 transition">أحجار كريمة</h3>
                     </div>
@@ -281,7 +295,7 @@
 
                 <!-- Products Grid Container -->
                 <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Products rendered dynamically via JS (exactly 33 items total) -->
+                    <!-- Products rendered dynamically via JS -->
                 </div>
             </div>
         </section>
@@ -292,58 +306,59 @@
     <!-- ======================================================== -->
     <div id="page-builder" class="page-container hidden transition-all duration-300">
         
+        <!-- Interactive Ring Customizer Section -->
         <section class="py-16 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-luxury-slate to-luxury-deep">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center space-y-3 mb-12">
-                    <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold" id="builder-badge">مختبر التصميم الافتراضي</span>
-                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white" id="builder-title">صمم خاتم الألماس الخاص بك</h2>
+                    <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold" id="builder-badge">أنتِ المصممة الآن</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white" id="builder-title">تخصيص الخاتم الفاخر الفريد</h2>
                     <div class="w-24 h-0.5 bg-gold-500 mx-auto"></div>
                     <p class="text-gray-400 text-sm max-w-xl mx-auto" id="builder-desc">
-                        اختر نوع الذهب وحجم الحجر الكريم وحجم الاصبع، وعاين التغيرات على السعر واللمعان بصورة تفاعلية ممتازة ومستقرة.
+                        قومي باختيار المعدن والحجر وحجم القيراط لنقوم بصناعة قطعة حصرية تليق برغبتكِ الفاخرة، شاهدي السعر التقديري والمحاكاة الآن.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-luxury-deep rounded-3xl p-6 sm:p-10 border border-gold-500/15 shadow-2xl relative overflow-hidden">
                     
-                    <!-- SVG Visual Ring Representation -->
-                    <div class="lg:col-span-5 flex flex-col items-center justify-center p-4 bg-black/60 rounded-2xl border border-gold-800/10 relative overflow-hidden">
+                    <!-- SVG Interactive Ring Graphic Core Preview -->
+                    <div class="lg:col-span-5 flex flex-col items-center justify-center p-6 bg-luxury-slate/50 rounded-2xl border border-gold-800/10 relative">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-luxury-deep/20 via-gold-500/5 to-luxury-deep/20 pointer-events-none rounded-2xl"></div>
                         
-                        <div class="relative w-full h-[320px] sm:h-[400px] flex items-center justify-center rounded-xl bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-luxury-slate to-black">
-                            
-                            <!-- Interactive Jewelry Premium Graphic Visualizer -->
-                            <div class="relative w-64 h-64 flex items-center justify-center">
-                                <svg class="w-full h-full transition-all duration-500 drop-shadow-[0_10px_30px_rgba(212,175,55,0.2)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <ellipse cx="50" cy="85" rx="35" ry="6" fill="black" fill-opacity="0.4" />
-                                    
-                                    <!-- Ring Band Body (Dynamic color based on selection) -->
-                                    <path id="visual-ring-shank" d="M20 50C20 33.4315 33.4315 20 50 20C66.5685 20 80 33.4315 80 50C80 66.5685 66.5685 80 50 80C33.4315 80 20 66.5685 20 50Z" 
-                                          stroke="#E6C15C" stroke-width="8" stroke-linecap="round" stroke-dasharray="190 20" stroke-dashoffset="10" class="transition-all duration-300"/>
-                                    
-                                    <!-- Prong setting -->
-                                    <path d="M43 23 L45 13 L55 13 L57 23 Z" fill="#E6C15C" id="visual-ring-prong" class="transition-all duration-300" />
-                                    
-                                    <!-- Side Sparkles -->
-                                    <path d="M25 22 L27 18 L25 14 L23 18 Z" fill="white" class="animate-pulse" />
-                                    <path d="M75 22 L77 18 L75 14 L73 18 Z" fill="white" class="animate-pulse" />
+                        <div class="relative w-64 h-64 flex items-center justify-center">
+                            <svg class="w-full h-full transition-all duration-500 drop-shadow-[0_10px_35px_rgba(212,175,55,0.2)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="50" cy="85" rx="35" ry="6" fill="black" fill-opacity="0.4" filter="blur(3px)" />
+                                
+                                <!-- Ring Band Body -->
+                                <path id="svg-ring-shank" d="M20 50C20 33.4315 33.4315 20 50 20C66.5685 20 80 33.4315 80 50C80 66.5685 66.5685 80 50 80C33.4315 80 20 66.5685 20 50Z" 
+                                      stroke="#E6C15C" stroke-width="8" stroke-linecap="round" stroke-dasharray="190 20" stroke-dashoffset="10" class="transition-all duration-300"/>
+                                
+                                <!-- Prong setting -->
+                                <path d="M43 23 L45 13 L55 13 L57 23 Z" fill="#E6C15C" id="svg-ring-prong" class="transition-all duration-300"/>
+                                
+                                <!-- Side glimmers -->
+                                <path d="M25 22 L27 18 L25 14 L23 18 Z" fill="white" class="animate-pulse" />
+                                <path d="M75 22 L77 18 L75 14 L73 18 Z" fill="white" class="animate-pulse" />
 
-                                    <!-- Main Gemstone Dynamic Layer (Scales dynamically with carat slider) -->
-                                    <g id="visual-ring-gem-container" transform="translate(50, 11) scale(1.0)" style="transform-origin: center; transition: all 0.3s ease;">
-                                        <polygon id="visual-ring-gem" points="-8,2 0,-9 8,2 0,8" fill="#FFFFFF" stroke="white" stroke-width="0.5" class="transition-all duration-300" />
-                                    </g>
-                                </svg>
+                                <!-- Main Diamond / Gemstone Visualizer Layer -->
+                                <g id="svg-ring-gem-container" transform="translate(50, 11) scale(1.0)" style="transform-origin: center; transition: all 0.3s ease;">
+                                    <polygon id="svg-ring-gem" points="-8,2 0,-9 8,2 0,8" fill="#FFFFFF" stroke="white" stroke-width="0.5" class="transition-all duration-300" />
+                                </g>
+                            </svg>
+
+                            <div class="absolute bottom-2 bg-luxury-deep/80 border border-gold-500/20 rounded-full px-4 py-1 text-xs text-gold-300">
+                                <span id="builder-carat-title">حجم القيراط:</span> <span id="builder-carat-display">1.5</span> <span id="builder-carat-unit">قيراط</span>
                             </div>
-
                         </div>
 
-                        <!-- Chosen details overlay -->
-                        <div class="w-full mt-4 text-center space-y-1">
-                            <div id="builder-metal-name" class="text-xs text-gold-400 font-bold tracking-widest uppercase">ذهب أصفر عيار 18</div>
-                            <div id="builder-stone-name" class="text-lg text-white font-serif font-bold font-sans">ألماس بلجيكي مصقول</div>
+                        <!-- Chosen summary indicators -->
+                        <div class="w-full mt-6 text-center space-y-1">
+                            <div id="builder-metal-name" class="text-sm text-gold-400 font-bold uppercase tracking-widest">ذهب أصفر عيار 18</div>
+                            <div id="builder-stone-name" class="text-lg text-white font-serif font-bold">ألماس بلجيكي مصقول</div>
                             <div class="text-xs text-gray-500" id="builder-carat-display-bottom">1.5 قيراط</div>
                         </div>
                     </div>
 
-                    <!-- Builder Configuration Settings panel -->
+                    <!-- Builder Controls -->
                     <div class="lg:col-span-7 flex flex-col justify-between space-y-6 text-start">
                         
                         <!-- 1. Metal Selection -->
@@ -370,7 +385,7 @@
                             <label class="block text-sm font-semibold text-gray-400" id="step-stone">2. اختر الحجر الكريم المركزي:</label>
                             <div class="grid grid-cols-4 gap-2">
                                 <button onclick="updateBuilderStone('diamond', '#E2F0FF', 1000)" class="builder-stone-btn p-2 rounded-xl border border-gold-500 bg-gold-950/20 text-xs text-center hover:border-gold-400 transition">
-                                    <div class="w-5 h-5 rounded-full bg-white mx-auto mb-1 shadow-lg"></div>
+                                    <div class="w-5 h-5 rounded-full bg-white mx-auto mb-1 shadow"></div>
                                     <span class="block font-medium text-white" id="lbl-stone-diam">ألماس</span>
                                 </button>
                                 <button onclick="updateBuilderStone('ruby', '#E11D48', 800)" class="builder-stone-btn p-2 rounded-xl border border-gold-800/20 bg-luxury-slate/30 text-xs text-center hover:border-gold-500 transition">
@@ -397,7 +412,7 @@
                             <input id="builder-carat-input" type="range" min="0.5" max="4.0" step="0.1" value="1.5" oninput="updateCaratSize(this.value)" class="w-full h-1.5 bg-luxury-slate rounded-lg appearance-none cursor-pointer accent-gold-500">
                         </div>
 
-                        <!-- 4. Interactive Ring Size Board (8 to 40 scale) -->
+                        <!-- 4. Ring Size Selection (Interactive Grid 8 to 40) -->
                         <div class="space-y-3">
                             <div class="flex justify-between items-center">
                                 <label class="block text-xs sm:text-sm font-semibold text-gray-400" id="step-size">4. حدد مقاس الإصبع الملائم (المقاسات المتوفرة 8 إلى 40):</label>
@@ -407,24 +422,29 @@
                                 </button>
                             </div>
                             
-                            <!-- Elegant scrollable size grid for 8 to 40 selection -->
                             <div class="bg-black/40 p-3 rounded-2xl border border-gold-800/10">
-                                <div class="grid grid-cols-6 sm:grid-cols-9 md:grid-cols-11 gap-1.5 max-h-48 overflow-y-auto p-1 no-scrollbar animate-fade-in" id="ring-size-grid">
-                                    <!-- Rendered dynamically with selected active state -->
+                                <div class="grid grid-cols-6 sm:grid-cols-9 md:grid-cols-11 gap-1.5 max-h-36 overflow-y-auto p-1 no-scrollbar" id="ring-size-grid">
+                                    <!-- Rendered dynamically via JS (Sizes 8 to 40) -->
                                 </div>
                             </div>
                         </div>
                                                                             
-                        <!-- pricing display box and action CTA -->
-                        <div class="bg-luxury-slate p-5 rounded-2xl border border-gold-800/20 flex flex-col sm:flex-row items-center justify-between gap-4">
-                            <div>
+                        <!-- Pricing box & Direct WhatsApp Orders Actions -->
+                        <div class="bg-luxury-slate p-5 rounded-2xl border border-gold-800/20 flex flex-col md:flex-row items-center justify-between gap-4">
+                            <div class="text-center md:text-right">
                                 <span class="text-xs text-gray-400 block" id="lbl-total-est">السعر الإجمالي التقديري</span>
-                                <span id="builder-total-price" class="text-3xl font-serif font-extrabold text-gold-300">7,200 ر.س</span>
+                                <span id="builder-total-price" class="text-2xl sm:text-3xl font-serif font-extrabold text-gold-300">7,200 ر.س</span>
                             </div>
                             
-                            <button onclick="addCustomRingToCart()" class="w-full sm:w-auto bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep font-bold px-8 py-3.5 rounded-full hover:from-gold-500 hover:to-gold-300 shadow-xl transition-all duration-300 flex items-center justify-center gap-2 glow-button">
-                                <i class="fa-solid fa-cart-plus"></i> <span id="btn-add-custom-cart">إضافة قطعة حلمي للسلة</span>
-                            </button>
+                            <!-- WhatsApp direct order buttons -->
+                            <div class="flex flex-col sm:flex-row gap-2.5 w-full md:w-auto">
+                                <button onclick="orderCustomRing('primary')" class="w-full sm:w-auto bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep font-extrabold px-6 py-3 rounded-full hover:from-gold-500 hover:to-gold-300 shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-xs sm:text-sm">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i> <span id="btn-order-custom-wa">طلب التصميم (الرئيسي)</span>
+                                </button>
+                                <button onclick="orderCustomRing('secondary')" class="w-full sm:w-auto bg-transparent border border-gold-500/50 text-gold-300 hover:bg-gold-500/10 font-bold px-6 py-3 rounded-full transition-all duration-300 flex items-center justify-center gap-2 text-xs sm:text-sm">
+                                    <i class="fa-solid fa-comment-dots"></i> <span id="btn-inquire-custom-wa">استفسار (واتساب الإضافي)</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -461,7 +481,7 @@
                         </div>
 
                         <div class="text-center">
-                            <button type="submit" class="bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep font-bold px-10 py-4 rounded-full hover:from-gold-500 hover:to-gold-300 shadow-xl transition-all duration-300 w-full sm:w-auto glow-button" id="btn-submit-consult">
+                            <button type="submit" id="btn-submit-consult" class="bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep font-bold px-10 py-4 rounded-full hover:from-gold-500 hover:to-gold-300 shadow-xl transition-all duration-300 w-full sm:w-auto">
                                 إرسال طلب الاستشارة عبر واتساب
                             </button>
                         </div>
@@ -469,54 +489,6 @@
                 </div>
             </div>
         </section>
-    </div>
-
-    <!-- ======================================================== -->
-    <!-- LUXURY SHOPPING CART DRAWER (WhatsApp Integrated)        -->
-    <!-- ======================================================== -->
-    <div id="cart-drawer-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] transition-opacity duration-300 opacity-0 pointer-events-none" onclick="toggleCartDrawer()"></div>
-    
-    <div id="cart-drawer" class="fixed top-0 bottom-0 w-full max-w-md bg-luxury-deep border-l border-gold-800/20 z-[101] shadow-2xl transition-transform duration-300 translate-x-full flex flex-col">
-        <!-- Drawer Header -->
-        <div class="p-6 border-b border-gold-800/10 flex justify-between items-center bg-luxury-slate">
-            <h3 class="text-lg font-serif font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-bag-shopping text-gold-400"></i>
-                <span id="cart-drawer-title">حقيبة التسوق الخاصة بك</span>
-            </h3>
-            <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white p-1">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
-        </div>
-
-        <!-- Cart Items List (Dynamic) -->
-        <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4 no-scrollbar">
-            <!-- Rendered dynamically -->
-            <div class="text-center py-12 text-gray-500" id="cart-empty-message">حقيبة التسوق فارغة حالياً.</div>
-        </div>
-
-        <!-- Drawer Footer with Pricing & WhatsApp Actions -->
-        <div class="p-6 border-t border-gold-800/15 bg-luxury-slate space-y-4">
-            <div class="flex justify-between items-center">
-                <span class="text-gray-400" id="lbl-cart-subtotal">المجموع الفرعي:</span>
-                <span id="cart-subtotal-price" class="text-xl font-serif font-extrabold text-gold-300">0 ر.س</span>
-            </div>
-            
-            <p class="text-[10px] text-gray-400 text-center" id="lbl-cart-notice">عند إتمام الطلب، سيتم توجيهك مباشرةً إلى الواتساب الخاص بالمتجر لتأكيد طلبك وتجهيزه لك بشكل شخصي.</p>
-
-            <div class="grid grid-cols-1 gap-2.5">
-                <!-- Order Button -->
-                <button onclick="sendWhatsAppOrder('order')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-full flex items-center justify-center gap-2 transition duration-300 shadow-lg shadow-emerald-600/10">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span id="btn-cart-order">طلب الشراء الآن عبر واتساب</span>
-                </button>
-                
-                <!-- Inquiry Button -->
-                <button onclick="sendWhatsAppOrder('inquiry')" class="w-full bg-transparent border border-gold-500/50 hover:bg-gold-500/10 text-gold-300 font-bold py-3.5 rounded-full flex items-center justify-center gap-2 transition duration-300">
-                    <i class="fa-solid fa-circle-info text-sm"></i>
-                    <span id="btn-cart-inquire">استفسار مخصص قبل الطلب</span>
-                </button>
-            </div>
-        </div>
     </div>
 
     <!-- ======================================================== -->
@@ -571,12 +543,13 @@
                         <span id="qv-price" class="text-2xl font-serif font-extrabold text-gold-300">6,500 ر.س</span>
                     </div>
 
+                    <!-- Instant WhatsApp Calls (Orders and inquiries) -->
                     <div class="grid grid-cols-2 gap-2">
-                        <button id="qv-add-btn" onclick="" class="bg-gold-500 hover:bg-gold-400 text-luxury-deep font-bold py-2.5 rounded-full text-xs transition flex items-center justify-center gap-1.5 shadow-md">
-                            <i class="fa-solid fa-cart-plus"></i> <span id="qv-lbl-cart">إضافة للسلة</span>
+                        <button id="qv-btn-order" class="bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep font-bold py-2.5 rounded-full text-xs transition flex items-center justify-center gap-1 shadow-md">
+                            <i class="fa-brands fa-whatsapp font-bold"></i> <span id="qv-lbl-order">طلب شراء (الرئيسي)</span>
                         </button>
-                        <button id="qv-wa-btn" onclick="" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-full text-xs transition flex items-center justify-center gap-1.5 shadow-md">
-                            <i class="fa-brands fa-whatsapp"></i> <span id="qv-lbl-ask">استفسار واتساب</span>
+                        <button id="qv-btn-inquire" class="bg-transparent border border-gold-500/50 text-gold-300 font-bold py-2.5 rounded-full text-xs transition flex items-center justify-center gap-1 shadow-md">
+                            <i class="fa-regular fa-comment-dots"></i> <span id="qv-lbl-inquire">استفسار (الإضافي)</span>
                         </button>
                     </div>
                 </div>
@@ -606,14 +579,14 @@
 
                 <div class="space-y-3 mt-4 text-xs">
                     <div class="p-3 bg-luxury-deep rounded-xl border border-gold-800/10">
-                        <strong class="text-white block mb-1" id="sg-opt1-title">الطريقة الأولى: قياس محيط الإصبع بالخيط أو الورق</strong>
+                        <strong class="text-white block mb-1" id="sg-opt1-title">الطلب الأول: قياس محيط الإصبع بالخيط أو الورق</strong>
                         <p id="sg-opt1-text" class="text-gray-400 leading-relaxed">
                             لف شريطاً ورقياً صغيراً أو خيطاً حول إصبعك المراد قياسه بإحكام، ضع علامة بالقلم حيث يلتقي الطرفان، ثم قس المسافة بالمليمتر (mm) باستخدام مسطرة وقارنها بجدول المقاسات.
                         </p>
                     </div>
 
                     <div class="p-3 bg-luxury-deep rounded-xl border border-gold-800/10">
-                        <strong class="text-white block mb-1" id="sg-opt2-title">الطريقة الثانية: قياس القطر الداخلي لخاتم حالي</strong>
+                        <strong class="text-white block mb-1" id="sg-opt2-title">الطلب الثاني: قياس القطر الداخلي لخاتم حالي</strong>
                         <p id="sg-opt2-text" class="text-gray-400 leading-relaxed">
                             أحضر خاتماً يلائم إصبعك تماماً، ضع مسطرة فوق الخاتم وقس المسافة بين الحواف الداخلية بالمليمتر (mm) لتعرف القطر الداخلي.
                         </p>
@@ -622,8 +595,8 @@
 
                 <!-- Size chart table -->
                 <div class="overflow-x-auto mt-4 rounded-lg border border-gold-800/20">
-                    <table class="w-full text-center text-[10px] text-gray-400">
-                        <thead class="bg-black text-gold-400">
+                    <table class="w-full text-center text-[10px] text-gray-400 font-mono">
+                        <thead class="bg-black text-gold-400 font-sans">
                             <tr>
                                 <th class="p-2 border-b border-gold-800/10">المقاس الأمريكي (US)</th>
                                 <th class="p-2 border-b border-gold-800/10">القطر بالمليمتر (Diameter)</th>
@@ -677,22 +650,24 @@
     <!-- Elegant Toast Notification System -->
     <div id="toast" class="fixed bottom-6 left-6 z-[120] bg-gold-950/90 border border-gold-500/30 text-gold-100 font-medium px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none">
         <i id="toast-icon" class="fa-solid fa-circle-check text-gold-400"></i>
-        <span id="toast-message">تمت إضافة القطعة بنجاح!</span>
+        <span id="toast-message">تمت العملية بنجاح!</span>
     </div>
 
     <!-- Footer -->
     <footer class="mt-auto bg-black border-t border-gold-800/15 py-12 text-center text-xs text-gray-500">
         <div class="max-w-7xl mx-auto px-4 space-y-6">
             <div class="flex justify-center mb-4">
-                <img src="logo.png" alt="Rose Diamond Logo" class="h-10 opacity-70" onerror="this.onerror=null; this.src='https://placehold.co/240x60/07090e/d4af37?text=ROSE+DIAMOND';">
+                <img src="logo.png" alt="Rose Diamond Logo" class="h-12 opacity-85" onerror="this.onerror=null; this.src='https://placehold.co/240x60/07090e/d4af37?text=ROSE+DIAMOND';">
             </div>
             <p id="footer-copyright" class="max-w-md mx-auto leading-relaxed">
                 جميع الحقوق محفوظة © 2026 روزماري لتجارة الألماس (ROSE DIAMOND). جميع الألماس والمعادن معتمدة وموثقة بالشهادات الدولية.
             </p>
             <div class="flex justify-center gap-6 text-gray-400 text-lg">
-                <a href="https://wa.me/62816875000" target="_blank" class="hover:text-gold-400 transition"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="#" class="hover:text-gold-400 transition"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-gold-400 transition"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" id="footer-wa-primary" target="_blank" class="hover:text-gold-400 transition" title="واتساب الرئيسي"><i class="fa-brands fa-whatsapp text-emerald-400"></i></a>
+                <a href="#" id="footer-wa-secondary" target="_blank" class="hover:text-gold-400 transition" title="واتساب خدمة العملاء"><i class="fa-solid fa-headset text-teal-400"></i></a>
+                <a href="#" id="footer-facebook" target="_blank" class="hover:text-gold-400 transition" title="صفحتنا على فيسبوك"><i class="fa-brands fa-facebook text-blue-500"></i></a>
+                <a href="#" id="footer-tiktok" target="_blank" class="hover:text-gold-400 transition" title="تيك توك"><i class="fa-brands fa-tiktok text-pink-400"></i></a>
+                <a href="#" id="footer-instagram" target="_blank" class="hover:text-gold-400 transition" title="انستجرام"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
     </footer>
@@ -701,9 +676,15 @@
     <!-- JAVASCRIPT APPLICATION CORE LOGIC                        -->
     <!-- ======================================================== -->
     <script>
+        // CONFIGURATIONS (EASILY MODIFIED)
+        const PRIMARY_WHATSAPP = "62816875000"; // Primary number for main orders
+        const SECONDARY_WHATSAPP = "628161120000"; // Updated inquiry number
+        const FACEBOOK_PAGE_URL = "https://www.facebook.com/share/18wwKBtq9R/?mibextid=wwXIfr"; // Custom Shared Facebook page link
+        const TIKTOK_PAGE_URL = "https://www.tiktok.com/@rosedaimond23?_r=1&_t=ZS-97SUUuk0BIW"; // Custom TikTok profile link
+        const INSTAGRAM_PAGE_URL = "https://www.instagram.com/rosadaimond?igsh=MWkxNmwwY3d2M3RjdQ%3D%3D&utm_source=qr"; // New Instagram Link
+        
         // Language state loaded from localStorage dynamically for persistence
         let currentLanguage = localStorage.getItem('rose_diamond_lang') || 'ar';
-        const storeWhatsAppNumber = "62816875000"; 
         
         // Comprehensive database of 33 items (10 rings, 7 necklaces, 6 sets, 10 gemstones)
         const products = [
@@ -724,7 +705,7 @@
                 price: 6500,
                 weight: "4.85 gr",
                 specs: { metal: "18K Gold", gem: "VVS1 Diamond", cert: "GIA Certified" },
-                img: 'rng21.jpg'
+                img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'ring-2',
@@ -742,7 +723,7 @@
                 price: 5200,
                 weight: "5.10 gr",
                 specs: { metal: "Pure Platinum", gem: "VS1 Diamonds", cert: "GIA Certified" },
-                img: 'rng20.jpg'
+                img: 'https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'ring-3',
@@ -760,7 +741,7 @@
                 price: 7800,
                 weight: "4.30 gr",
                 specs: { metal: "18K Yellow Gold", gem: "Natural Emerald", cert: "IGI Certified" },
-                img: 'rng2.jpg'
+                img: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'ring-4',
@@ -778,7 +759,7 @@
                 price: 8400,
                 weight: "4.95 gr",
                 specs: { metal: "18K Rose Gold", gem: "Pigeon Blood Ruby", cert: "GIA Certified" },
-                img: 'rng3.jpg'
+                img: 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'ring-5',
@@ -796,7 +777,7 @@
                 price: 9100,
                 weight: "5.40 gr",
                 specs: { metal: "Pure Platinum", gem: "Royal Sapphire", cert: "GIA Certified" },
-                img: 'rng4.jpg'
+                img: 'https://images.unsplash.com/photo-1543294001-f7cbfe92237e?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'ring-6',
@@ -814,7 +795,7 @@
                 price: 4900,
                 weight: "3.90 gr",
                 specs: { metal: "18K Rose Gold", gem: "Natural Morganite", cert: "IGI Certified" },
-                img: 'rng5.jpg'
+                img: 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'ring-7',
@@ -832,7 +813,7 @@
                 price: 18500,
                 weight: "6.10 gr",
                 specs: { metal: "18K Two-Tone Gold", gem: "Canary Diamond", cert: "GIA Certified" },
-                img: 'rng6.jpg'
+                img: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'ring-8',
@@ -850,7 +831,7 @@
                 price: 11000,
                 weight: "4.50 gr",
                 specs: { metal: "18K White Gold", gem: "Marquise Diamond", cert: "GIA Certified" },
-                img: 'rng7.jpg'
+                img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'ring-9',
@@ -868,7 +849,7 @@
                 price: 7200,
                 weight: "5.80 gr",
                 specs: { metal: "Oxidized Gold", gem: "Black Diamond", cert: "IGI Certified" },
-                img: 'rng8.jpg'
+                img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'ring-10',
@@ -886,11 +867,28 @@
                 price: 9500,
                 weight: "6.40 gr",
                 specs: { metal: "Tri-Color 18K Gold", gem: "Pave Diamonds", cert: "GIA Certified" },
-                img: 'rng9.jpg'
+                img: 'https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&w=600&q=80'
             },
 
             // NECKLACES (7 Items)
-
+            {
+                id: 'necklace-1',
+                category: 'necklaces',
+                name: {
+                    ar: 'قلادة سهر الليالي الكريستالية',
+                    en: 'Night Glow Pendant',
+                    id: 'Kalung Liontin Malam Cahaya'
+                },
+                desc: {
+                    ar: 'ذهب أصفر عيار 18 مع ماس بلجيكي فاخر محكم الصياغة.',
+                    en: '18k yellow gold with fine Belgian diamonds sparkling beautifully.',
+                    id: 'Emas kuning 18k dengan berlian Belgia halus berkilau.'
+                },
+                price: 12000,
+                weight: "6.20 gr",
+                specs: { metal: "18K Gold", gem: "Belgian Diamond", cert: "GIA Certified" },
+                img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80'
+            },
             {
                 id: 'necklace-2',
                 category: 'necklaces',
@@ -907,7 +905,7 @@
                 price: 9800,
                 weight: "4.15 gr",
                 specs: { metal: "18K Gold", gem: "Natural Emerald", cert: "GIA Certified" },
-                img: 'bracelets1.jpg'
+                img: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'necklace-3',
@@ -925,7 +923,7 @@
                 price: 15500,
                 weight: "5.80 gr",
                 specs: { metal: "18K White Gold", gem: "Pear Diamond", cert: "GIA Certified" },
-                img: 'bracelets3.jpg'
+                img: 'https://images.unsplash.com/photo-1611085583191-a3b1a30a5a41?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'necklace-4',
@@ -943,7 +941,7 @@
                 price: 13200,
                 weight: "8.50 gr",
                 specs: { metal: "22K Yellow Gold", gem: "Imperial Jade", cert: "IGI Certified" },
-                img: 'bracelets5.jpg'
+                img: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'necklace-5',
@@ -961,7 +959,7 @@
                 price: 6400,
                 weight: "3.70 gr",
                 specs: { metal: "18K Rose Gold", gem: "Pave Diamonds", cert: "GIA Certified" },
-                img: 'bracelets6.jpg'
+                img: 'https://images.unsplash.com/photo-1602752275313-477eaabc503b?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'necklace-6',
@@ -979,7 +977,7 @@
                 price: 8800,
                 weight: "4.90 gr",
                 specs: { metal: "18K White Gold", gem: "Black Pearl & Diamond", cert: "GIA Certified" },
-                img: 'bracelets7.jpg'
+                img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'necklace-7',
@@ -997,11 +995,46 @@
                 price: 7900,
                 weight: "4.20 gr",
                 specs: { metal: "18K Yellow Gold", gem: "Fire Opal", cert: "IGI Certified" },
-                img: 'bracelets9.jpg'
+                img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80'
             },
 
             // SETS (6 Items)
-        
+            {
+                id: 'set-1',
+                category: 'sets',
+                name: {
+                    ar: 'طقم الفرح والمناسبات الملكي',
+                    en: 'Royal Bridal Full Set',
+                    id: 'Set Lengkap Pernikahan Kerajaan'
+                },
+                desc: {
+                    ar: 'طقم كامل استثنائي من الألماس والياقوت الأحمر النادر لليلتك الفاتنة.',
+                    en: 'Complete set of pure diamond & rare red ruby for absolute luxury.',
+                    id: 'Set lengkap berlian murni & batu delima merah langka.'
+                },
+                price: 45000,
+                weight: "24.50 gr",
+                specs: { metal: "18K White Gold", gem: "Diamond & Ruby", cert: "IGI Certified" },
+                img: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'set-2',
+                category: 'sets',
+                name: {
+                    ar: 'طقم الإمبراطورة الزمردي الفاخر',
+                    en: 'Emerald Empress Set',
+                    id: 'Set Maharatu Zamrud'
+                },
+                desc: {
+                    ar: 'يحتوي على قلادة، أقراط، وخاتم متطابق مرصعة بالزمرد الأخضر الصافي والألماس.',
+                    en: 'Includes matched necklace, earrings, and ring with clear green emeralds and diamonds.',
+                    id: 'Termasuk kalung, anting, dan cincin yang cocok dengan zamrud hijau murni.'
+                },
+                price: 52000,
+                weight: "28.10 gr",
+                specs: { metal: "18K Gold", gem: "Colombian Emerald", cert: "GIA Certified" },
+                img: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80'
+            },
             {
                 id: 'set-3',
                 category: 'sets',
@@ -1018,7 +1051,7 @@
                 price: 48000,
                 weight: "26.30 gr",
                 specs: { metal: "Pure Platinum", gem: "Kashmir Sapphire", cert: "GIA Certified" },
-                img: 'set4.jpg'
+                img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'set-4',
@@ -1036,7 +1069,7 @@
                 price: 36000,
                 weight: "19.80 gr",
                 specs: { metal: "18K Yellow Gold", gem: "South Sea Pearl", cert: "IGI Certified" },
-                img: 'set3.jpg'
+                img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'set-5',
@@ -1054,7 +1087,7 @@
                 price: 58000,
                 weight: "31.20 gr",
                 specs: { metal: "18K White Gold", gem: "VVS1 Diamonds", cert: "GIA Certified" },
-                img: 'set2.jpg'
+                img: 'https://images.unsplash.com/photo-1611085583191-a3b1a30a5a41?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'set-6',
@@ -1072,7 +1105,7 @@
                 price: 42000,
                 weight: "22.40 gr",
                 specs: { metal: "18K Rose Gold", gem: "Heart Rubies & Diamond", cert: "IGI Certified" },
-                img: 'set1.jpg'
+                img: 'https://images.unsplash.com/photo-1602752275313-477eaabc503b?auto=format&fit=crop&w=600&q=80'
             },
 
             // GEMSTONES (10 Items)
@@ -1092,7 +1125,7 @@
                 price: 8900,
                 weight: "3.20 ct",
                 specs: { metal: "N/A (Loose)", gem: "Raw Sapphire", cert: "GRS Certified" },
-                img: 'gemstone1.jpg'
+                img: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'gem-2',
@@ -1110,7 +1143,7 @@
                 price: 11500,
                 weight: "4.50 ct",
                 specs: { metal: "N/A (Loose)", gem: "Raw Emerald", cert: "GIA Certified" },
-                img: 'gemstone2.jpg'
+                img: 'https://images.unsplash.com/photo-1615655406736-b37c4fabf923?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'gem-3',
@@ -1128,7 +1161,7 @@
                 price: 29000,
                 weight: "2.00 ct",
                 specs: { metal: "N/A (Loose)", gem: "D-Color Flawless", cert: "GIA Certified" },
-                img: 'gemstone3.jpg'
+                img: 'https://images.unsplash.com/photo-1588444839799-eb0c5b13e1ab?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'gem-4',
@@ -1146,7 +1179,7 @@
                 price: 16500,
                 weight: "2.80 ct",
                 specs: { metal: "N/A (Loose)", gem: "Natural Ruby", cert: "GRS Certified" },
-                img: 'gemstone4.jpg'
+                img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'gem-5',
@@ -1164,7 +1197,7 @@
                 price: 7200,
                 weight: "5.10 ct",
                 specs: { metal: "N/A (Loose)", gem: "Imperial Topaz", cert: "IGI Certified" },
-                img: 'gemstone5.jpg'
+                img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'gem-6',
@@ -1182,7 +1215,7 @@
                 price: 3400,
                 weight: "8.20 ct",
                 specs: { metal: "N/A (Loose)", gem: "Natural Amethyst", cert: "IGI Certified" },
-                img: 'gemstone6.jpg'
+                img: 'https://images.unsplash.com/photo-1611085583191-a3b1a30a5a41?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'gem-7',
@@ -1200,7 +1233,7 @@
                 price: 4100,
                 weight: "4.80 ct",
                 specs: { metal: "N/A (Loose)", gem: "Round Morganite", cert: "IGI Certified" },
-                img: 'gemstone7.jpg'
+                img: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'gem-8',
@@ -1218,7 +1251,7 @@
                 price: 3900,
                 weight: "6.50 ct",
                 specs: { metal: "N/A (Loose)", gem: "Golden Citrine", cert: "GRS Certified" },
-                img: 'gemstone8.jpg'
+                img: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'gem-9',
@@ -1236,7 +1269,7 @@
                 price: 5400,
                 weight: "3.90 ct",
                 specs: { metal: "N/A (Loose)", gem: "Mexican Fire Opal", cert: "IGI Certified" },
-                img: 'gemstone9.jpg'
+                img: 'https://images.unsplash.com/photo-1588444839799-eb0c5b13e1ab?auto=format&fit=crop&w=600&q=80'
             },
             {
                 id: 'gem-10',
@@ -1254,18 +1287,15 @@
                 price: 35000,
                 weight: "1.90 ct",
                 specs: { metal: "N/A (Loose)", gem: "Paraiba Neon Blue", cert: "GIA Certified" },
-                img: 'gemstone10.jpg'
+                img: 'https://images.unsplash.com/photo-1615655406736-b37c4fabf923?auto=format&fit=crop&w=600&q=80'
             }
         ];
 
-        // Sizing Board configurations (Scale 8 to 40)
+        // Sizing Board Configurations (8 to 40)
         const availableRingSizes = Array.from({length: 33}, (_, i) => i + 8); // 8 to 40
         let selectedRingSize = 15; // Default
 
-        // Cart State array
-        let cart = [];
-
-        // Interactive Customizer Selection state
+        // Interactive Customizer Selection State
         let builderMetal = 'yellow-gold';
         let builderMetalColor = '#E6C15C';
         let builderStone = 'diamond';
@@ -1278,7 +1308,7 @@
         const langPack = {
             ar: {
                 home: "الرئيسية",
-                builder: "صمم خاتمك الخاص",
+                builder: "صمم مجوهراتك الخاصة",
                 homeTitle1: "حيث تولد الفخامة",
                 homeTitle2: "وتخلد اللحظات الثمينة",
                 heroBadge: "مجموعة الصيف الحصرية متوفرة الآن",
@@ -1298,9 +1328,9 @@
                 necklaces: "قلائد",
                 sets: "أطقم",
                 gemstones: "أحجار كريمة",
-                builderBadge: "مختبر التصميم الافتراضي",
-                builderTitle: "صمم خاتم الألماس الخاص بك",
-                builderDesc: "اختر نوع الذهب وحجم الحجر الكريم وحجم الاصبع، وعاين التغيرات على السعر واللمعان بصورة تفاعلية ممتازة ومستقرة.",
+                builderBadge: "أنتِ المصممة الآن",
+                builderTitle: "تخصيص الخاتم الفاخر الفريد",
+                builderDesc: "قومي باختيار المعدن والحجر وحجم القيراط لنقوم بصناعة قطعة حصرية تليق برغبتكِ الفاخرة، شاهدي السعر التقديري والمحاكاة الآن.",
                 stepMetal: "1. اختر نوع الذهب والمعدن الكريم:",
                 lblMetalYg: "ذهب أصفر 18k",
                 lblMetalRg: "ذهب وردي 18k",
@@ -1313,7 +1343,7 @@
                 stepCarat: "3. حجم حجر الماس والوزن:",
                 stepSize: "4. حدد مقاس الإصبع الملائم (المقاسات المتوفرة 8 إلى 40):",
                 lblTotalEst: "السعر الإجمالي التقديري",
-                btnAddCustom: "إضافة قطعة حلمي للسلة",
+                btnGuideLbl: "دليل قياس الخواتم والمقاسات",
                 formBadge: "خدمة كبار الشخصيات VIP",
                 formTitle: "احجز استشارة خاصة لتصميم مجوهراتك",
                 formDesc: "سيتواصل معك خبراء المجوهرات لدينا لمساعدتك في تصميم وتجسيد أحلامك.",
@@ -1321,26 +1351,19 @@
                 lblFormPhone: "رقم الجوال أو الواتساب",
                 lblFormDetails: "تفاصيل التصميم الذي ترغب به",
                 btnSubmitConsult: "إرسال طلب الاستشارة عبر واتساب",
-                cartTitle: "حقيبة التسوق الخاصة بك",
-                cartEmpty: "حقيبة التسوق فارغة حالياً.",
-                cartSubtotal: "المجموع الفرعي:",
-                cartNotice: "عند إتمام الطلب، سيتم توجيهك مباشرةً إلى الواتساب الخاص بالمتجر لتأكيد طلبك وتجهيزه لك بشكل شخصي.",
-                btnCartOrder: "طلب الشراء الآن عبر واتساب",
-                btnCartInquire: "استفسار مخصص قبل الطلب",
-                toastAdded: "تمت إضافة القطعة بنجاح إلى السلة!",
                 currency: " ر.س",
                 sizeDisplay: "مقاس",
-                hintDrag: "اختر خيارات التصميم لتحديث الخاتم فوراً",
-                btnGuideLbl: "دليل قياس الخواتم والمقاسات",
+                btnOrderWA: "طلب شراء (الرئيسي)",
+                btnInquireWA: "استفسار (الإضافي)",
                 sgTitle: "دليل قياس مقاسات الخواتم",
                 sgDesc: "للحصول على المقاس المثالي، يمكنك استخدام طريقتين بسيطتين في المنزل:",
-                sgOpt1Title: "الطريقة الأولى: قياس محيط الإصبع بالخيط أو الورق",
+                sgOpt1Title: "الطلب الأول: قياس محيط الإصبع بالخيط أو الورق",
                 sgOpt1Text: "لف شريطاً ورقياً صغيراً أو خيطاً حول إصبعك المراد قياسه بإحكام، ضع علامة بالقلم حيث يلتقي الطرفان، ثم قس المسافة بالمليمتر (mm) باستخدام مسطرة وقارنها بجدول المقاسات.",
-                sgOpt2Title: "الطريقة الثانية: قياس القطر الداخلي لخاتم حالي",
+                sgOpt2Title: "الطلب الثاني: قياس القطر الداخلي لخاتم حالي",
                 sgOpt2Text: "أحضر خاتماً يلائم إصبعك تماماً، ضع مسطرة فوق الخاتم وقس المسافة بين الحواف الداخلية بالمليمتر (mm) لتعرف القطر الداخلي.",
-                qvLblCart: "إضافة للسلة",
-                qvLblAsk: "استفسار واتساب",
-                lblCaratUnit: "قيراط"
+                lblCaratUnit: "قيراط",
+                btnOrderCustom: "طلب التصميم (الرئيسي)",
+                btnInquireCustom: "استفسار (واتساب الإضافي)"
             },
             en: {
                 home: "Home",
@@ -1364,9 +1387,9 @@
                 necklaces: "Necklaces",
                 sets: "Sets",
                 gemstones: "Gemstones",
-                builderBadge: "VIRTUAL DESIGN STUDIO",
-                builderTitle: "Customize Your Dream Ring",
-                builderDesc: "Choose your metal gold, gemstone size, and finger size to preview direct pricing and gorgeous visual adaptations.",
+                builderBadge: "YOU ARE THE DESIGNER NOW",
+                builderTitle: "Customize Your Unique Ring",
+                builderDesc: "Choose gold metal type, gemstone, and carat weight to receive custom configurations. View pricing estimate and visual preview instantly.",
                 stepMetal: "1. Select Precious Metal:",
                 lblMetalYg: "18k Yellow Gold",
                 lblMetalRg: "18k Rose Gold",
@@ -1379,7 +1402,7 @@
                 stepCarat: "3. Carat Size & Weight:",
                 stepSize: "4. Select Finger Size (Sizes 8 to 40 available):",
                 lblTotalEst: "Estimated Total Price",
-                btnAddCustom: "Add Dream Piece To Cart",
+                btnGuideLbl: "Ring Measurement & Size Guide",
                 formBadge: "VIP Consultation",
                 formTitle: "Book Custom Design Consultation",
                 formDesc: "Our diamond specialist team will reach out directly to refine and craft your ideal luxurious dream design.",
@@ -1387,26 +1410,19 @@
                 lblFormPhone: "WhatsApp / Mobile Number",
                 lblFormDetails: "Design details you want to request",
                 btnSubmitConsult: "Send Consultation via WhatsApp",
-                cartTitle: "Your Shopping Bag",
-                cartEmpty: "Your bag is currently empty.",
-                cartSubtotal: "Subtotal:",
-                cartNotice: "When placing order, we will direct you to our WhatsApp to complete secure payment and customize shipping details.",
-                btnCartOrder: "Place Order via WhatsApp",
-                btnCartInquire: "Inquire about Cart via WhatsApp",
-                toastAdded: "Successfully added to your bag!",
                 currency: " SAR",
                 sizeDisplay: "Size",
-                hintDrag: "Select design parameters to update ring instantly",
-                btnGuideLbl: "Ring Measurement & Size Guide",
+                btnOrderWA: "Order Now (Primary)",
+                btnInquireWA: "Inquire (Support)",
                 sgTitle: "Ring Size Measurement Guide",
                 sgDesc: "To find your perfect fit, use these simple home measurement methods:",
                 sgOpt1Title: "Method 1: Measure circumference with string or paper",
                 sgOpt1Text: "Wrap a small strip of paper or string tightly around the intended finger. Mark where the ends meet. Measure the length in millimeters (mm) with a ruler, and match with the table below.",
                 sgOpt2Title: "Method 2: Measure inside diameter of an existing ring",
                 sgOpt2Text: "Take a ring that fits perfectly. Place a ruler over it and measure the widest inside diameter in millimeters (mm) to find internal diameter specifications.",
-                qvLblCart: "Add to Cart",
-                qvLblAsk: "Ask on WhatsApp",
-                lblCaratUnit: "Carat"
+                lblCaratUnit: "Carat",
+                btnOrderCustom: "Order Custom Ring (Primary)",
+                btnInquireCustom: "Inquire Custom (Secondary)"
             },
             id: {
                 home: "Beranda",
@@ -1430,9 +1446,9 @@
                 necklaces: "Kalung",
                 sets: "Set",
                 gemstones: "Batu Permata",
-                builderBadge: "STUDIO DESAIN VIRTUAL",
-                builderTitle: "Kustomisasi Cincin Impian Anda",
-                builderDesc: "Pilih jenis emas, ukuran karat, dan ukuran jari untuk melihat perkiraan harga dan visualisasi cincin yang disesuaikan secara dinamis.",
+                builderBadge: "ANDA ADALAH DESAINER SEKARANG",
+                builderTitle: "Kustomisasi Cincin Unik Anda",
+                builderDesc: "Pilih jenis logam emas, batu permata, dan berat karat untuk mendapatkan konfigurasi kustom. Lihat perkiraan harga dan pratinjau instan.",
                 stepMetal: "1. Pilih Logam Mulia:",
                 lblMetalYg: "Emas Kuning 18k",
                 lblMetalRg: "Emas Merah Muda 18k",
@@ -1445,7 +1461,7 @@
                 stepCarat: "3. Ukuran Karat & Berat:",
                 stepSize: "4. Pilih Ukuran Jari (Tersedia ukuran 8 hingga 40):",
                 lblTotalEst: "Perkiraan Total Harga",
-                btnAddCustom: "Tambahkan Cincin Impian",
+                btnGuideLbl: "Panduan Ukuran & Pengukuran Cincin",
                 formBadge: "Layanan VIP",
                 formTitle: "Pesan Konsultasi Desain Pribadi",
                 formDesc: "Spesialis kami akan menghubungi Anda secara langsung via WhatsApp untuk merealisasikan perhiasan impian Anda.",
@@ -1453,28 +1469,29 @@
                 lblFormPhone: "No Telepon / WhatsApp",
                 lblFormDetails: "Detail desain perhiasan yang diinginkan",
                 btnSubmitConsult: "Kirim Konsultasi ke WhatsApp",
-                cartTitle: "Kantong Belanja Anda",
-                cartEmpty: "Kantong belanja Anda masih kosong.",
-                cartSubtotal: "Subtotal:",
-                cartNotice: "Saat memesan, Anda akan langsung diarahkan ke WhatsApp resmi kami untuk konfirmasi pemesanan dan pengiriman.",
-                btnCartOrder: "Pesan Sekarang via WhatsApp",
-                btnCartInquire: "Tanyakan via WhatsApp",
-                toastAdded: "Berhasil dimasukkan ke kantong belanja!",
                 currency: " SAR",
                 sizeDisplay: "Ukuran",
-                hintDrag: "Pilih opsi desain untuk memperbarui cincin secara instan",
-                btnGuideLbl: "Panduan Ukuran & Pengukuran Cincin",
+                btnOrderWA: "Pesan Sekarang (Utama)",
+                btnInquireWA: "Tanya Detail (Support)",
                 sgTitle: "Panduan Pengukuran Ukuran Cincin",
                 sgDesc: "Untuk menemukan ukuran ideal Anda, gunakan metode pengukuran mandiri berikut:",
                 sgOpt1Title: "Metode 1: Ukur lingkar jari dengan kertas atau benang",
                 sgOpt1Text: "Lilitkan kertas kecil atau benang di sekeliling jari Anda. Beri tanda pulpen pada titik pertemuan. Ukur panjang tersebut dalam milimeter (mm) dengan penggaris.",
                 sgOpt2Title: "Metode 2: Ukur diameter dalam dari cincin yang ada",
                 sgOpt2Text: "Ambil cincin yang pas. Ukur diameter bagian dalam dalam milimeter (mm) menggunakan penggaris untuk mengetahui lebar ukuran.",
-                qvLblCart: "Masukkan Saku",
-                qvLblAsk: "Tanyakan WhatsApp",
-                lblCaratUnit: "Karat"
+                lblCaratUnit: "Karat",
+                btnOrderCustom: "Pesan Cincin Kustom (Utama)",
+                btnInquireCustom: "Tanya Kustom (Secondary)"
             }
         };
+
+        // SAFE ELEMENT TEXT MANIPULATOR (Safeguard against DOM Errors)
+        function safeSetText(id, text) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.innerText = text;
+            }
+        }
 
         // NAVIGATION LOGIC
         function navigateTo(pageId) {
@@ -1485,35 +1502,18 @@
             const navBuilder = document.getElementById('nav-builder');
             
             if(pageId === 'home') {
-                navHome.classList.add('text-gold-300', 'border-b-2', 'border-gold-500');
-                navHome.classList.remove('text-gray-400');
-                navBuilder.classList.add('text-gray-400');
-                navBuilder.classList.remove('text-gold-300', 'border-b-2', 'border-gold-500');
+                if (navHome) navHome.className = "text-gold-300 border-b-2 border-gold-500 pb-1 px-1 transition-all duration-300 font-semibold";
+                if (navBuilder) navBuilder.className = "text-gray-400 hover:text-gold-400 pb-1 px-1 transition-all duration-300 flex items-center gap-1.5";
             } else {
-                navBuilder.classList.add('text-gold-300', 'border-b-2', 'border-gold-500');
-                navBuilder.classList.remove('text-gray-400');
-                navHome.classList.add('text-gray-400');
-                navHome.classList.remove('text-gold-300', 'border-b-2', 'border-gold-500');
+                if (navBuilder) navBuilder.className = "text-gold-300 border-b-2 border-gold-500 pb-1 px-1 transition-all duration-300 font-semibold flex items-center gap-1.5";
+                if (navHome) navHome.className = "text-gray-400 hover:text-gold-400 pb-1 px-1 transition-all duration-300";
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-
-        function toggleCartDrawer() {
-            const drawer = document.getElementById('cart-drawer');
-            const overlay = document.getElementById('cart-drawer-overlay');
-            
-            if(drawer.classList.contains('translate-x-full')) {
-                drawer.classList.remove('translate-x-full');
-                overlay.classList.remove('opacity-0', 'pointer-events-none');
-                updateCartUI();
-            } else {
-                drawer.classList.add('translate-x-full');
-                overlay.classList.add('opacity-0', 'pointer-events-none');
-            }
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.toggle('hidden');
         }
 
         // Persistent Language Switcher Function using local storage
@@ -1533,92 +1533,95 @@
                 const btn = document.getElementById('lang-btn-' + l);
                 const mobBtn = document.getElementById('mob-lang-btn-' + l);
                 
-                if(l === lang) {
-                    btn.className = "px-3 py-1 rounded-full text-xs transition-all duration-300 bg-gold-500 text-luxury-deep font-bold";
-                    if(mobBtn) mobBtn.className = "px-3 py-1.5 rounded-full text-xs transition-all duration-300 bg-gold-500 text-luxury-deep font-bold";
-                } else {
-                    btn.className = "px-3 py-1 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent";
-                    if(mobBtn) mobBtn.className = "px-3 py-1.5 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent";
+                if (btn) {
+                    if (l === lang) {
+                        btn.className = "px-3 py-1 rounded-full text-xs transition-all duration-300 bg-gold-500 text-luxury-deep font-bold";
+                    } else {
+                        btn.className = "px-3 py-1 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent";
+                    }
+                }
+                if (mobBtn) {
+                    if (l === lang) {
+                        mobBtn.className = "px-3 py-1.5 rounded-full text-xs transition-all duration-300 bg-gold-500 text-luxury-deep font-bold";
+                    } else {
+                        mobBtn.className = "px-3 py-1.5 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent";
+                    }
                 }
             });
 
-            // Dictionary labels rewrite
+            // Dictionary labels safe write
             const pack = langPack[lang];
             
-            document.getElementById('nav-home').innerText = pack.home;
-            document.getElementById('mob-nav-home').innerText = pack.home;
-            document.getElementById('nav-builder-text').innerText = pack.builder;
-            document.getElementById('mob-nav-builder-text').innerText = pack.builder;
+            safeSetText('nav-home', pack.home);
+            safeSetText('mob-nav-home', pack.home);
+            safeSetText('nav-builder-text', pack.builder);
+            safeSetText('mob-nav-builder-text', pack.builder);
             
-            document.getElementById('hero-badge').innerText = pack.heroBadge;
-            document.getElementById('hero-title-1').innerText = pack.homeTitle1;
-            document.getElementById('hero-title-2').innerText = pack.homeTitle2;
-            document.getElementById('hero-desc').innerText = pack.heroDesc;
-            document.getElementById('hero-cta-shop').innerText = pack.heroCtaShop;
-            document.getElementById('hero-cta-build').innerText = pack.heroCtaBuild;
+            safeSetText('hero-badge', pack.heroBadge);
+            safeSetText('hero-title-1', pack.homeTitle1);
+            safeSetText('hero-title-2', pack.homeTitle2);
+            safeSetText('hero-desc', pack.heroDesc);
+            safeSetText('hero-cta-shop', pack.heroCtaShop);
+            safeSetText('hero-cta-build', pack.heroCtaBuild);
 
-            document.getElementById('cat-badge').innerText = pack.catBadge;
-            document.getElementById('cat-title').innerText = pack.catTitle;
-            document.getElementById('cat-card-1').innerText = pack.cat1;
-            document.getElementById('cat-card-2').innerText = pack.cat2;
-            document.getElementById('cat-card-3').innerText = pack.cat3;
-            document.getElementById('cat-card-4').innerText = pack.cat4;
+            safeSetText('cat-badge', pack.catBadge);
+            safeSetText('cat-title', pack.catTitle);
+            safeSetText('cat-card-1', pack.cat1);
+            safeSetText('cat-card-2', pack.cat2);
+            safeSetText('cat-card-3', pack.cat3);
+            safeSetText('cat-card-4', pack.cat4);
 
-            document.getElementById('prod-badge').innerText = pack.prodBadge;
-            document.getElementById('prod-title').innerText = pack.prodTitle;
-            document.getElementById('tab-all').innerText = pack.all;
-            document.getElementById('tab-rings').innerText = pack.rings;
-            document.getElementById('tab-necklaces').innerText = pack.necklaces;
-            document.getElementById('tab-sets').innerText = pack.sets;
-            document.getElementById('tab-gemstones').innerText = pack.gemstones;
+            safeSetText('prod-badge', pack.prodBadge);
+            safeSetText('prod-title', pack.prodTitle);
+            safeSetText('tab-all', pack.all);
+            safeSetText('tab-rings', pack.rings);
+            safeSetText('tab-necklaces', pack.necklaces);
+            safeSetText('tab-sets', pack.sets);
+            safeSetText('tab-gemstones', pack.gemstones);
 
-            document.getElementById('builder-badge').innerText = pack.builderBadge;
-            document.getElementById('builder-title').innerText = pack.builderTitle;
-            document.getElementById('builder-desc').innerText = pack.builderDesc;
-            document.getElementById('step-metal').innerText = pack.stepMetal;
-            document.getElementById('lbl-metal-yg').innerText = pack.lblMetalYg;
-            document.getElementById('lbl-metal-rg').innerText = pack.lblMetalRg;
-            document.getElementById('lbl-metal-plat').innerText = pack.lblMetalPlat;
-            document.getElementById('step-stone').innerText = pack.stepStone;
-            document.getElementById('lbl-stone-diam').innerText = pack.lblStoneDiam;
-            document.getElementById('lbl-stone-ruby').innerText = pack.lblStoneRuby;
-            document.getElementById('lbl-stone-em').innerText = pack.lblStoneEm;
-            document.getElementById('lbl-stone-sap').innerText = pack.lblStoneSap;
-            document.getElementById('step-carat').innerText = pack.stepCarat;
-            document.getElementById('step-size').innerText = pack.stepSize;
-            document.getElementById('lbl-total-est').innerText = pack.lblTotalEst;
-            document.getElementById('btn-add-custom-cart').innerText = pack.btnAddCustom;
-            document.getElementById('btn-guide-lbl').innerText = pack.btnGuideLbl;
+            safeSetText('builder-badge', pack.builderBadge);
+            safeSetText('builder-title', pack.builderTitle);
+            safeSetText('builder-desc', pack.builderDesc);
+            safeSetText('step-metal', pack.stepMetal);
+            safeSetText('lbl-metal-yg', pack.lblMetalYg);
+            safeSetText('lbl-metal-rg', pack.lblMetalRg);
+            safeSetText('lbl-metal-plat', pack.lblMetalPlat);
+            safeSetText('step-stone', pack.stepStone);
+            safeSetText('lbl-stone-diam', pack.lblStoneDiam);
+            safeSetText('lbl-stone-ruby', pack.lblStoneRuby);
+            safeSetText('lbl-stone-em', pack.lblStoneEm);
+            safeSetText('lbl-stone-sap', pack.lblStoneSap);
+            safeSetText('step-carat', pack.stepCarat);
+            safeSetText('step-size', pack.stepSize);
+            safeSetText('lbl-total-est', pack.lblTotalEst);
+            safeSetText('btn-guide-lbl', pack.btnGuideLbl);
 
-            document.getElementById('form-badge').innerText = pack.formBadge;
-            document.getElementById('form-title').innerText = pack.formTitle;
-            document.getElementById('form-desc').innerText = pack.formDesc;
-            document.getElementById('lbl-form-name').innerText = pack.lblFormName;
-            document.getElementById('lbl-form-phone').innerText = pack.lblFormPhone;
-            document.getElementById('lbl-form-details').innerText = pack.lblFormDetails;
-            document.getElementById('btn-submit-consult').innerText = pack.btnSubmitConsult;
-
-            document.getElementById('cart-drawer-title').innerText = pack.cartTitle;
-            document.getElementById('lbl-cart-subtotal').innerText = pack.cartSubtotal;
-            document.getElementById('lbl-cart-notice').innerText = pack.cartNotice;
-            document.getElementById('btn-cart-order').innerText = pack.btnCartOrder;
-            document.getElementById('btn-cart-inquire').innerText = pack.btnCartInquire;
+            safeSetText('form-badge', pack.formBadge);
+            safeSetText('form-title', pack.formTitle);
+            safeSetText('form-desc', pack.formDesc);
+            safeSetText('lbl-form-name', pack.lblFormName);
+            safeSetText('lbl-form-phone', pack.lblFormPhone);
+            safeSetText('lbl-form-details', pack.lblFormDetails);
+            safeSetText('btn-submit-consult', pack.btnSubmitConsult);
 
             // Guide Modal Translation
-            document.getElementById('sg-title').innerText = pack.sgTitle;
-            document.getElementById('sg-desc').innerText = pack.sgDesc;
-            document.getElementById('sg-opt1-title').innerText = pack.sgOpt1Title;
-            document.getElementById('sg-opt1-text').innerText = pack.sgOpt1Text;
-            document.getElementById('sg-opt2-title').innerText = pack.sgOpt2Title;
-            document.getElementById('sg-opt2-text').innerText = pack.sgOpt2Text;
+            safeSetText('sg-title', pack.sgTitle);
+            safeSetText('sg-desc', pack.sgDesc);
+            safeSetText('sg-opt1-title', pack.sgOpt1Title);
+            safeSetText('sg-opt1-text', pack.sgOpt1Text);
+            safeSetText('sg-opt2-title', pack.sgOpt2Title);
+            safeSetText('sg-opt2-text', pack.sgOpt2Text);
 
-            // Quick view modal static text
-            document.getElementById('qv-lbl-cart').innerText = pack.qvLblCart;
-            document.getElementById('qv-lbl-ask').innerText = pack.qvLblAsk;
+            // Interactive Customizer Action triggers
+            safeSetText('btn-order-custom-wa', pack.btnOrderCustom);
+            safeSetText('btn-inquire-custom-wa', pack.btnInquireCustom);
+
+            // Quick view modal translation
+            safeSetText('qv-lbl-order', pack.btnOrderWA);
+            safeSetText('qv-lbl-inquire', pack.btnInquireWA);
 
             renderProducts();
             renderRingSizesBoard();
-            updateCartUI();
             updateBuilderUI();
         }
 
@@ -1641,7 +1644,7 @@
             renderProducts();
         }
 
-        // Product Rendering with "Quick View (Eye Icon)" Overlay
+        // Render products with custom WhatsApp Order and WhatsApp Inquiry buttons directly on the cards
         function renderProducts() {
             const grid = document.getElementById('products-grid');
             if (!grid) return;
@@ -1656,26 +1659,32 @@
                         <div class="relative overflow-hidden aspect-square bg-black/40">
                             <img src="${p.img}" alt="${p.name[currentLanguage]}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/400x400/121622/d4af37?text=Luxury+Jewelry';">
                             
-                            <!-- Elegant Eye Icon/Quick View Overlay -->
-                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                                <button onclick="openQuickView('${p.id}')" class="bg-gold-500 text-luxury-deep p-3.5 rounded-full hover:scale-110 transition active:scale-95 shadow-xl" title="معاينة تفصيلية">
-                                    <i class="fa-solid fa-eye text-base"></i>
-                                </button>
-                                <button onclick="addToCart('${p.id}')" class="bg-luxury-slate border border-gold-500/30 text-gold-400 p-3.5 rounded-full hover:scale-110 transition active:scale-95 shadow-xl" title="إضافة إلى السلة">
-                                    <i class="fa-solid fa-cart-plus text-base"></i>
+                            <!-- Elegant Quick View overlay with Eye icon -->
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <button onclick="openQuickView('${p.id}')" class="bg-gold-500 text-luxury-deep p-4 rounded-full hover:scale-110 transition active:scale-95 shadow-xl" title="معاينة تفصيلية">
+                                    <i class="fa-solid fa-eye text-lg"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="p-5 text-start flex-1 flex flex-col justify-between space-y-4">
                             <div>
-                                <h3 class="font-bold text-white text-lg font-serif tracking-wide group-hover:text-gold-300 transition-colors">${p.name[currentLanguage]}</h3>
+                                <h3 class="font-bold text-white text-base sm:text-lg font-serif tracking-wide group-hover:text-gold-300 transition-colors">${p.name[currentLanguage]}</h3>
                                 <p class="text-xs text-gray-400 mt-1 leading-relaxed line-clamp-2">${p.desc[currentLanguage]}</p>
                             </div>
-                            <div class="flex items-center justify-between pt-2">
-                                <span class="text-gold-300 font-extrabold font-serif text-base">${p.price.toLocaleString()}${pack.currency}</span>
-                                <button onclick="addToCart('${p.id}')" class="bg-gold-500 hover:bg-gold-400 text-luxury-deep p-2.5 rounded-full transition-transform duration-300 active:scale-95 shadow-md shadow-gold-500/10">
-                                    <i class="fa-solid fa-cart-plus text-sm"></i>
-                                </button>
+                            <div class="space-y-3 pt-2">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[10px] text-gray-500 font-mono tracking-widest">${p.weight} | ${p.specs.cert}</span>
+                                    <span class="text-gold-300 font-extrabold font-serif text-sm sm:text-base">${p.price.toLocaleString()}${pack.currency}</span>
+                                </div>
+                                <!-- Direct WhatsApp actions -->
+                                <div class="grid grid-cols-2 gap-1.5 pt-1">
+                                    <button onclick="orderProduct('${p.id}')" class="bg-gradient-to-r from-gold-600 to-gold-400 text-luxury-deep font-bold py-2 rounded-full text-[10px] sm:text-xs transition flex items-center justify-center gap-1 shadow-md">
+                                        <i class="fa-brands fa-whatsapp text-xs"></i> <span>${pack.btnOrderWA}</span>
+                                    </button>
+                                    <button onclick="inquireProduct('${p.id}')" class="bg-transparent border border-gold-500/50 hover:bg-gold-500/10 text-gold-300 font-bold py-2 rounded-full text-[10px] sm:text-xs transition flex items-center justify-center gap-1">
+                                        <i class="fa-regular fa-comment-dots text-xs"></i> <span>${pack.btnInquireWA}</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1684,56 +1693,104 @@
             });
         }
 
+        // Direct WhatsApp order via PRIMARY_WHATSAPP
+        function orderProduct(productId) {
+            const p = products.find(prod => prod.id === productId);
+            if (!p) return;
+
+            let msg = '';
+            if (currentLanguage === 'ar') {
+                msg = `السلام عليكم ورحمة الله وبركاته،\nأود طلب شراء المنتج التالي من متجر روزماري للألماس:\n\n` +
+                      `*المنتج:* ${p.name.ar}\n` +
+                      `*الوزن والشهادة:* ${p.weight} | ${p.specs.cert}\n` +
+                      `*السعر:* ${p.price.toLocaleString()} ر.س\n\n` +
+                      `يرجى تأكيد توفر القطعة وتزويدي بخطوات السداد والتسليم. شكراً لكم!`;
+            } else {
+                msg = `Hello Rose Diamond,\nI would like to place an order for the following luxury piece:\n\n` +
+                      `*Product:* ${p.name.en}\n` +
+                      `*Specs:* ${p.weight} | ${p.specs.cert}\n` +
+                      `*Price:* ${p.price.toLocaleString()} SAR\n\n` +
+                      `Please confirm availability and guide me through the payment and shipping process. Thank you!`;
+            }
+
+            window.open(`https://wa.me/${PRIMARY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // Direct WhatsApp inquiry via SECONDARY_WHATSAPP
+        function inquireProduct(productId) {
+            const p = products.find(prod => prod.id === productId);
+            if (!p) return;
+
+            let msg = '';
+            if (currentLanguage === 'ar') {
+                msg = `مرحباً روزماري للألماس،\nأود الاستفسار عن تفاصيل ومواصفات إضافية بخصوص المنتج:\n\n` +
+                      `*المنتج:* ${p.name.ar}\n` +
+                      `*الوزن والشهادة:* ${p.weight} | ${p.specs.cert}\n` +
+                      `*السعر المعروض:* ${p.price.toLocaleString()} ر.س\n\n` +
+                      `هل تتوفر خيارات تعديل المقاس أو نوع الذهب لهذا الموديل؟`;
+            } else {
+                msg = `Hello Rose Diamond,\nI have an inquiry regarding this product:\n\n` +
+                      `*Product:* ${p.name.en}\n` +
+                      `*Specs:* ${p.weight} | ${p.specs.cert}\n` +
+                      `*Price:* ${p.price.toLocaleString()} SAR\n\n` +
+                      `Could you please share more details, sizing adjustments, or gold grade options for this piece?`;
+            }
+
+            window.open(`https://wa.me/${SECONDARY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
         // Quick View Modal Controls
         function openQuickView(id) {
             const p = products.find(prod => prod.id === id);
             if (!p) return;
             const pack = langPack[currentLanguage];
 
-            document.getElementById('qv-img').src = p.img;
-            document.getElementById('qv-cat').innerText = p.category.toUpperCase();
-            document.getElementById('qv-title').innerText = p.name[currentLanguage];
-            document.getElementById('qv-desc').innerText = p.desc[currentLanguage];
-            document.getElementById('qv-price').innerText = `${p.price.toLocaleString()} ${pack.currency}`;
-            
-            document.getElementById('qv-spec-metal').innerText = p.specs.metal;
-            document.getElementById('qv-spec-gem').innerText = p.specs.gem;
-            document.getElementById('qv-spec-weight').innerText = p.weight;
-            document.getElementById('qv-spec-cert').innerText = p.specs.cert;
+            const qvImg = document.getElementById('qv-img');
+            const qvCat = document.getElementById('qv-cat');
+            const qvTitle = document.getElementById('qv-title');
+            const qvDesc = document.getElementById('qv-desc');
+            const qvPrice = document.getElementById('qv-price');
+            const qvSpecMetal = document.getElementById('qv-spec-metal');
+            const qvSpecGem = document.getElementById('qv-spec-gem');
+            const qvSpecWeight = document.getElementById('qv-spec-weight');
+            const qvSpecCert = document.getElementById('qv-spec-cert');
 
-            // Bind checkout/inquiry action triggers
-            document.getElementById('qv-add-btn').setAttribute('onclick', `addToCart('${p.id}'); closeQuickView();`);
-            document.getElementById('qv-wa-btn').setAttribute('onclick', `askWhatsAppProduct('${p.id}')`);
+            if (qvImg) qvImg.src = p.img;
+            if (qvCat) qvCat.innerText = p.category.toUpperCase();
+            if (qvTitle) qvTitle.innerText = p.name[currentLanguage];
+            if (qvDesc) qvDesc.innerText = p.desc[currentLanguage];
+            if (qvPrice) qvPrice.innerText = `${p.price.toLocaleString()} ${pack.currency}`;
+            
+            if (qvSpecMetal) qvSpecMetal.innerText = p.specs.metal;
+            if (qvSpecGem) qvSpecGem.innerText = p.specs.gem;
+            if (qvSpecWeight) qvSpecWeight.innerText = p.weight;
+            if (qvSpecCert) qvSpecCert.innerText = p.specs.cert;
+
+            // Rebind WhatsApp triggers on quick view buttons
+            const btnOrder = document.getElementById('qv-btn-order');
+            const btnInquire = document.getElementById('qv-btn-inquire');
+
+            if (btnOrder) btnOrder.setAttribute('onclick', `orderProduct('${p.id}')`);
+            if (btnInquire) btnInquire.setAttribute('onclick', `inquireProduct('${p.id}')`);
 
             const qvModal = document.getElementById('quickview-modal-overlay');
-            qvModal.classList.remove('opacity-0', 'pointer-events-none');
+            if (qvModal) qvModal.classList.remove('opacity-0', 'pointer-events-none');
         }
 
         function closeQuickView() {
             const qvModal = document.getElementById('quickview-modal-overlay');
-            qvModal.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        function askWhatsAppProduct(id) {
-            const p = products.find(prod => prod.id === id);
-            if (!p) return;
-            
-            const msg = currentLanguage === 'ar' 
-                ? `السلام عليكم، أود الاستفسار عن تفاصيل وخصائص قطعة: *${p.name.ar}* البالغ سعرها ${p.price.toLocaleString()} ر.س.`
-                : `Hello, I'm inquiring about the details of *${p.name.en}* listed at ${p.price.toLocaleString()} SAR.`;
-
-            window.open(`https://wa.me/${storeWhatsAppNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+            if (qvModal) qvModal.classList.add('opacity-0', 'pointer-events-none');
         }
 
         // Size Guide Modal Controls
         function openSizeGuide() {
             const sgModal = document.getElementById('sizeguide-modal-overlay');
-            sgModal.classList.remove('opacity-0', 'pointer-events-none');
+            if (sgModal) sgModal.classList.remove('opacity-0', 'pointer-events-none');
         }
 
         function closeSizeGuide() {
             const sgModal = document.getElementById('sizeguide-modal-overlay');
-            sgModal.classList.add('opacity-0', 'pointer-events-none');
+            if (sgModal) sgModal.classList.add('opacity-0', 'pointer-events-none');
         }
 
         // Visual ring size buttons board (8 to 40)
@@ -1763,247 +1820,93 @@
             updateBuilderUI();
         }
 
-        // Elegant custom toast
-        function showToast(message, isSuccess = true) {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toast-message');
-            const toastIcon = document.getElementById('toast-icon');
+        // Interactive Customizer Order Formulating via WhatsApp
+        function orderCustomRing(type) {
+            const currentMetalText = document.getElementById('builder-metal-name') ? document.getElementById('builder-metal-name').innerText : '';
+            const currentStoneText = document.getElementById('builder-stone-name') ? document.getElementById('builder-stone-name').innerText : '';
+            const totalPrice = calculateBuilderPrice();
 
-            toastMsg.innerText = message;
-            if(isSuccess) {
-                toastIcon.className = "fa-solid fa-circle-check text-emerald-400 text-lg";
-                toast.className = "fixed bottom-6 left-6 z-[120] bg-luxury-slate border border-emerald-500/30 text-gray-100 font-medium px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-0 opacity-100";
-            } else {
-                toastIcon.className = "fa-solid fa-circle-exclamation text-amber-500 text-lg";
-                toast.className = "fixed bottom-6 left-6 z-[120] bg-luxury-slate border border-amber-500/30 text-gray-100 font-medium px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-0 opacity-100";
-            }
-
-            setTimeout(() => {
-                toast.className = "fixed bottom-6 left-6 z-[120] bg-luxury-slate border border-gold-500/30 text-gold-100 font-medium px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none";
-            }, 3500);
-        }
-
-        // Cart Logic Operations
-        function addToCart(productId) {
-            const item = products.find(p => p.id === productId);
-            if (!item) return;
-
-            const existing = cart.find(entry => entry.id === productId);
-            if(existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({
-                    id: item.id,
-                    name: item.name,
-                    price: item.price,
-                    qty: 1,
-                    type: 'boutique',
-                    details: null
-                });
-            }
-
-            updateCartUI();
-            showToast(langPack[currentLanguage].toastAdded);
-        }
-
-        function addCustomRingToCart() {
-            const pack = langPack[currentLanguage];
-            const currentMetalText = document.getElementById('builder-metal-name').innerText;
-            const currentStoneText = document.getElementById('builder-stone-name').innerText;
-            
-            const totalRingPrice = calculateBuilderPrice();
-
-            const customProduct = {
-                id: 'custom-' + Date.now(),
-                name: {
-                    ar: `خاتم تفصيل - ${currentStoneText}`,
-                    en: `Custom Ring - ${currentStoneText}`,
-                    id: `Kustom Cincin - ${currentStoneText}`
-                },
-                price: totalRingPrice,
-                qty: 1,
-                type: 'custom',
-                details: {
-                    metal: currentMetalText,
-                    stone: currentStoneText,
-                    carat: builderCarat,
-                    size: selectedRingSize
-                }
-            };
-
-            cart.push(customProduct);
-            updateCartUI();
-            showToast(pack.toastAdded);
-            toggleCartDrawer();
-        }
-
-        function removeCartItem(uniqueId) {
-            cart = cart.filter(item => item.id !== uniqueId);
-            updateCartUI();
-        }
-
-        function changeQty(uniqueId, delta) {
-            const entry = cart.find(item => item.id === uniqueId);
-            if(entry) {
-                entry.qty += delta;
-                if (entry.qty <= 0) {
-                    removeCartItem(uniqueId);
-                } else {
-                    updateCartUI();
-                }
-            }
-        }
-
-        function updateCartUI() {
-            const container = document.getElementById('cart-items-container');
-            const badge = document.getElementById('cart-count');
-            const subtotalText = document.getElementById('cart-subtotal-price');
-            const pack = langPack[currentLanguage];
-
-            if (!container || !badge || !subtotalText) return;
-
-            const totalCount = cart.reduce((acc, curr) => acc + curr.qty, 0);
-            badge.innerText = totalCount;
-
-            container.innerHTML = '';
-
-            if (cart.length === 0) {
-                container.innerHTML = `<div class="text-center py-12 text-gray-500">${pack.cartEmpty}</div>`;
-                subtotalText.innerText = `0 ${pack.currency}`;
-                return;
-            }
-
-            let subtotal = 0;
-
-            cart.forEach(item => {
-                const itemTotalPrice = item.price * item.qty;
-                subtotal += itemTotalPrice;
-
-                let detailsHTML = '';
-                if(item.type === 'custom' && item.details) {
-                    detailsHTML = `
-                        <p class="text-[10px] text-gold-400/80 mt-1">
-                            ${item.details.metal} | ${item.details.stone} | ${item.details.carat}CT | ${pack.sizeDisplay}: ${item.details.size}
-                        </p>
-                    `;
-                }
-
-                const itemCard = `
-                    <div class="flex gap-4 bg-luxury-slate/50 p-4 rounded-xl border border-gold-800/10">
-                        <div class="flex-1 text-start">
-                            <h4 class="text-sm font-bold text-white">${item.name[currentLanguage]}</h4>
-                            ${detailsHTML}
-                            <span class="text-xs text-gold-300 font-serif block mt-1">${item.price.toLocaleString()}${pack.currency}</span>
-                            
-                            <div class="flex items-center gap-3 mt-3">
-                                <button onclick="changeQty('${item.id}', -1)" class="w-6 h-6 rounded-full bg-luxury-slate border border-gold-800/30 text-gray-400 hover:text-white flex items-center justify-center text-xs">-</button>
-                                <span class="text-xs font-bold text-white">${item.qty}</span>
-                                <button onclick="changeQty('${item.id}', 1)" class="w-6 h-6 rounded-full bg-luxury-slate border border-gold-800/30 text-gray-400 hover:text-white flex items-center justify-center text-xs">+</button>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-between items-end">
-                            <button onclick="removeCartItem('${item.id}')" class="text-gray-500 hover:text-red-400 transition">
-                                <i class="fa-solid fa-trash-can text-sm"></i>
-                            </button>
-                            <span class="text-sm font-serif font-extrabold text-white mt-auto">${itemTotalPrice.toLocaleString()}${pack.currency}</span>
-                        </div>
-                    </div>
-                `;
-                container.insertAdjacentHTML('beforeend', itemCard);
-            });
-
-            subtotalText.innerText = `${subtotal.toLocaleString()}${pack.currency}`;
-        }
-
-        // WhatsApp Checkout automation
-        function sendWhatsAppOrder(type) {
-            if(cart.length === 0) {
-                showToast(currentLanguage === 'ar' ? 'السلة فارغة، أضف منتجات أولاً للطلب!' : 'Cart is empty! Add products first.', false);
-                return;
-            }
-
-            const pack = langPack[currentLanguage];
             let msg = '';
-
-            if (type === 'order') {
+            if (type === 'primary') {
                 if (currentLanguage === 'ar') {
-                    msg += `السلام عليكم ورحمة الله وبركاته،\nأود تقديم طلب شراء للمجوهرات التالية من متجر روزماري للألماس:\n\n`;
-                } else if (currentLanguage === 'id') {
-                    msg += `Halo Rose Diamond, saya ingin memesan perhiasan mewah berikut:\n\n`;
+                    msg = `السلام عليكم ورحمة الله وبركاته،\nأود طلب تفصيل "خاتم حلمي المخصص" بالمواصفات التالية:\n\n` +
+                          `*المعدن المختار:* ${currentMetalText}\n` +
+                          `*الحجر الكريم:* ${currentStoneText}\n` +
+                          `*حجم القيراط:* ${builderCarat} قيراط (CT)\n` +
+                          `*مقاس الإصبع:* مقاس ${selectedRingSize}\n` +
+                          `*السعر التقديري:* ${totalPrice.toLocaleString()} ر.س\n\n` +
+                          `يرجى مراجعة طلبي وتأكيد البدء في التصنيع والصياغة. شكراً لكم!`;
                 } else {
-                    msg += `Hello Rose Diamond, I would like to place an order for the following luxury jewelry items:\n\n`;
+                    msg = `Hello Rose Diamond,\nI would like to place a custom order for my "Dream Ring Customization" with specs:\n\n` +
+                          `*Metal Selected:* ${currentMetalText}\n` +
+                          `*Gemstone:* ${currentStoneText}\n` +
+                          `*Carat Weight:* ${builderCarat} CT\n` +
+                          `*Finger Size:* Size ${selectedRingSize}\n` +
+                          `*Estimated Price:* ${totalPrice.toLocaleString()} SAR\n\n` +
+                          `Please confirm manufacturing timeline and details. Thank you!`;
                 }
+                window.open(`https://wa.me/${PRIMARY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
             } else {
                 if (currentLanguage === 'ar') {
-                    msg += `مرحباً روزماري للألماس، أود الاستفسار عن تفاصيل وأسعار القطع التالية:\n\n`;
-                } else if (currentLanguage === 'id') {
-                    msg += `Halo Rose Diamond, saya ingin menanyakan informasi tentang perhiasan berikut:\n\n`;
+                    msg = `مرحباً روزماري لتجارة الألماس،\nأرغب في الاستفسار عن كلفة وإمكانية تعديل بعض العناصر في هذا التصميم المخصص:\n\n` +
+                          `*المعدن المختار:* ${currentMetalText}\n` +
+                          `*الحجر الكريم:* ${currentStoneText}\n` +
+                          `*حجم القيراط:* ${builderCarat} قيراط (CT)\n` +
+                          `*مقاس الإصبع:* مقاس ${selectedRingSize}\n` +
+                          `*السعر التقديري:* ${totalPrice.toLocaleString()} ر.س\n\n` +
+                          `هل يمكن تغيير نوع الحجر إلى حجر خاص أو زيادة حجم الماسة؟`;
                 } else {
-                    msg += `Hello Rose Diamond, I have an inquiry about the following luxury jewelry items:\n\n`;
+                    msg = `Hello Rose Diamond,\nI have a general inquiry about this custom jewelry design configuration:\n\n` +
+                          `*Metal Selected:* ${currentMetalText}\n` +
+                          `*Gemstone:* ${currentStoneText}\n` +
+                          `*Carat Weight:* ${builderCarat} CT\n` +
+                          `*Finger Size:* Size ${selectedRingSize}\n` +
+                          `*Estimated Price:* ${totalPrice.toLocaleString()} SAR\n\n` +
+                          `Can we customize details further or request a heavier stone?`;
                 }
+                window.open(`https://wa.me/${SECONDARY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
             }
-
-            let grandTotal = 0;
-
-            cart.forEach((item, index) => {
-                const totalItemPrice = item.price * item.qty;
-                grandTotal += totalItemPrice;
-
-                msg += `${index + 1}. *${item.name[currentLanguage]}*\n`;
-                if(item.type === 'custom' && item.details) {
-                    msg += `   - المعدن/Metal: ${item.details.metal}\n`;
-                    msg += `   - الحجر/Gem: ${item.details.stone}\n`;
-                    msg += `   - الوزن/Weight: ${item.details.carat} Carat\n`;
-                    msg += `   - المقاس/Size: ${item.details.size}\n`;
-                }
-                msg += `   - الكمية/Qty: ${item.qty}\n`;
-                msg += `   - السعر/Price: ${totalItemPrice.toLocaleString()} SAR\n\n`;
-            });
-
-            msg += `----------------------------\n`;
-            msg += `*المجموع الإجمالي / Total: ${grandTotal.toLocaleString()} SAR*\n\n`;
-            
-            if (type === 'order') {
-                if (currentLanguage === 'ar') {
-                    msg += `الرجاء تأكيد الطلب وتزويدي بخطوات الدفع والتوصيل الآمن. شكراً لكم!`;
-                } else {
-                    msg += `Please confirm the order and provide payment instructions and delivery details. Thank you!`;
-                }
-            } else {
-                if (currentLanguage === 'ar') {
-                    msg += `يرجى الإفادة بالتوفر وموعد للمعاينة الحية.`;
-                } else {
-                    msg += `Please let me know about availability and live viewing schedules.`;
-                }
-            }
-
-            window.open(`https://wa.me/${storeWhatsAppNumber}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
+        // Custom consultation submission
         function submitConsultation(event) {
             event.preventDefault();
 
-            const name = document.getElementById('consult-name').value;
-            const phone = document.getElementById('consult-phone').value;
-            const details = document.getElementById('consult-details').value;
+            const name = document.getElementById('consult-name') ? document.getElementById('consult-name').value : '';
+            const phone = document.getElementById('consult-phone') ? document.getElementById('consult-phone').value : '';
+            const details = document.getElementById('consult-details') ? document.getElementById('consult-details').value : '';
 
             let msg = '';
             if (currentLanguage === 'ar') {
-                msg += `*طلب حجز استشارة خاصة VIP - متجر روزماري للألماس*\n\n`;
-                msg += `الاسم بالكامل: ${name}\n`;
-                msg += `رقم الجوال: ${phone}\n`;
-                msg += `تفاصيل التصميم المطلوبة:\n${details}\n\n`;
-                msg += `أرجو التنسيق لحجز أقرب موعد مناسب. شكراً لكم.`;
+                msg = `*طلب حجز استشارة خاصة VIP - متجر روزماري للألماس*\n\n` +
+                      `*الاسم بالكامل:* ${name}\n` +
+                      `*رقم الجوال:* ${phone}\n` +
+                      `*تفاصيل التصميم المطلوبة:*\n${details}\n\n` +
+                      `أرجو التنسيق لحجز أقرب موعد مناسب. شكراً لكم.`;
             } else {
-                msg += `*VIP Private Custom Jewelry Consultation Request*\n\n`;
-                msg += `Full Name: ${name}\n`;
-                msg += `Contact Phone: ${phone}\n`;
-                msg += `Design Details:\n${details}\n\n`;
-                msg += `Please arrange the nearest available slot. Thank you.`;
+                msg = `*VIP Private Custom Jewelry Consultation Request*\n\n` +
+                      `*Full Name:* ${name}\n` +
+                      `*Contact Phone:* ${phone}\n` +
+                      `*Design Details:*\n${details}\n\n` +
+                      `Please arrange the nearest available slot. Thank you.`;
             }
 
-            window.open(`https://wa.me/${storeWhatsAppNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+            window.open(`https://wa.me/${PRIMARY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
             showToast(currentLanguage === 'ar' ? 'تم تجهيز طلب الاستشارة وتحويلك لواتساب!' : 'Consultation details prepared! Directing to WhatsApp.');
+        }
+
+        // Toast Messages
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+
+            if (toastMsg) toastMsg.innerText = message;
+            if (toast) {
+                toast.className = "fixed bottom-6 left-6 z-[120] bg-luxury-slate border border-gold-500/30 text-gray-100 font-medium px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-0 opacity-100";
+                setTimeout(() => {
+                    toast.className = "fixed bottom-6 left-6 z-[120] bg-luxury-slate border border-gold-500/30 text-gold-100 font-medium px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none";
+                }, 3500);
+            }
         }
 
         // Interactive customizer element modification
@@ -2022,7 +1925,9 @@
             document.querySelectorAll('.builder-metal-btn').forEach(btn => {
                 btn.className = "builder-metal-btn p-3 rounded-xl border border-gold-800/20 bg-luxury-slate/30 flex flex-col items-center gap-2 hover:border-gold-500 transition";
             });
-            event.currentTarget.className = "builder-metal-btn p-3 rounded-xl border border-gold-500 bg-gold-950/20 flex flex-col items-center gap-2 hover:border-gold-400 transition";
+            if (event && event.currentTarget) {
+                event.currentTarget.className = "builder-metal-btn p-3 rounded-xl border border-gold-500 bg-gold-950/20 flex flex-col items-center gap-2 hover:border-gold-400 transition";
+            }
 
             updateBuilderUI();
         }
@@ -2035,19 +1940,26 @@
             document.querySelectorAll('.builder-stone-btn').forEach(btn => {
                 btn.className = "builder-stone-btn p-2 rounded-xl border border-gold-800/20 bg-luxury-slate/30 text-xs text-center hover:border-gold-500 transition";
                 const span = btn.querySelector('span');
-                if(span) span.className = "block font-medium text-gray-300";
+                if (span) span.className = "block font-medium text-gray-300";
             });
-            event.currentTarget.className = "builder-stone-btn p-2 rounded-xl border border-gold-500 bg-gold-950/20 text-xs text-center hover:border-gold-400 transition";
-            const activeSpan = event.currentTarget.querySelector('span');
-            if(activeSpan) activeSpan.className = "block font-medium text-white";
+            if (event && event.currentTarget) {
+                event.currentTarget.className = "builder-stone-btn p-2 rounded-xl border border-gold-500 bg-gold-950/20 text-xs text-center hover:border-gold-400 transition";
+                const activeSpan = event.currentTarget.querySelector('span');
+                if (activeSpan) activeSpan.className = "block font-medium text-white";
+            }
 
             updateBuilderUI();
         }
 
         function updateCaratSize(val) {
             builderCarat = parseFloat(val);
-            document.getElementById('carat-val-indicator').innerText = val + " CT";
-            document.getElementById('builder-carat-display-bottom').innerText = val + " " + langPack[currentLanguage].lblCaratUnit;
+            
+            const caratIndicator = document.getElementById('carat-val-indicator');
+            if (caratIndicator) caratIndicator.innerText = val + " CT";
+
+            const displayBottom = document.getElementById('builder-carat-display-bottom');
+            if (displayBottom) displayBottom.innerText = val + " " + langPack[currentLanguage].lblCaratUnit;
+            
             updateBuilderUI();
         }
 
@@ -2069,14 +1981,17 @@
             else if (builderStone === 'emerald') stoneName = pack.lblStoneEm;
             else stoneName = pack.lblStoneSap;
 
-            document.getElementById('builder-metal-name').innerText = metalName;
-            document.getElementById('builder-stone-name').innerText = stoneName + " (" + selectedRingSize + ")";
+            const metalIndicator = document.getElementById('builder-metal-name');
+            if (metalIndicator) metalIndicator.innerText = metalName;
+
+            const stoneIndicator = document.getElementById('builder-stone-name');
+            if (stoneIndicator) stoneIndicator.innerText = stoneName + " (" + selectedRingSize + ")";
 
             // Dynamically alter interactive SVG colors & scale
-            const svgShank = document.getElementById('visual-ring-shank');
-            const svgProng = document.getElementById('visual-ring-prong');
-            const svgGem = document.getElementById('visual-ring-gem');
-            const gemContainer = document.getElementById('visual-ring-gem-container');
+            const svgShank = document.getElementById('svg-ring-shank');
+            const svgProng = document.getElementById('svg-ring-prong');
+            const svgGem = document.getElementById('svg-ring-gem');
+            const gemContainer = document.getElementById('svg-ring-gem-container');
 
             if (svgShank) svgShank.setAttribute('stroke', builderMetalColor);
             if (svgProng) svgProng.setAttribute('fill', builderMetalColor);
@@ -2093,10 +2008,40 @@
             }
 
             const totalPrice = calculateBuilderPrice();
-            document.getElementById('builder-total-price').innerText = totalPrice.toLocaleString() + pack.currency;
+            const totalPriceDisplay = document.getElementById('builder-total-price');
+            if (totalPriceDisplay) totalPriceDisplay.innerText = totalPrice.toLocaleString() + pack.currency;
+
+            const caratDisplay = document.getElementById('builder-carat-display');
+            if (caratDisplay) caratDisplay.innerText = builderCarat;
         }
 
+        // On Application Load
         window.onload = function() {
+            // Apply global configurations dynamically to links
+            const waPrimaryLink = document.getElementById('link-wa-primary');
+            const waSecondaryLink = document.getElementById('link-wa-secondary');
+            const fbLink = document.getElementById('link-facebook');
+            const tiktokLink = document.getElementById('link-tiktok');
+            const directWaBtn = document.getElementById('nav-direct-wa-btn');
+
+            if (waPrimaryLink) waPrimaryLink.href = `https://wa.me/${PRIMARY_WHATSAPP}`;
+            if (waSecondaryLink) waSecondaryLink.href = `https://wa.me/${SECONDARY_WHATSAPP}`;
+            if (fbLink) fbLink.href = FACEBOOK_PAGE_URL;
+            if (tiktokLink) tiktokLink.href = TIKTOK_PAGE_URL;
+            if (directWaBtn) directWaBtn.href = `https://wa.me/${PRIMARY_WHATSAPP}`;
+
+            const footerWaPrimary = document.getElementById('footer-wa-primary');
+            const footerWaSecondary = document.getElementById('footer-wa-secondary');
+            const footerFacebook = document.getElementById('footer-facebook');
+            const footerTiktok = document.getElementById('footer-tiktok');
+            const footerInstagram = document.getElementById('footer-instagram');
+
+            if (footerWaPrimary) footerWaPrimary.href = `https://wa.me/${PRIMARY_WHATSAPP}`;
+            if (footerWaSecondary) footerWaSecondary.href = `https://wa.me/${SECONDARY_WHATSAPP}`;
+            if (footerFacebook) footerFacebook.href = FACEBOOK_PAGE_URL;
+            if (footerTiktok) footerTiktok.href = TIKTOK_PAGE_URL;
+            if (footerInstagram) footerInstagram.href = INSTAGRAM_PAGE_URL;
+
             // Apply language persistence or default to Arabic
             changeLanguage(currentLanguage);
         }
