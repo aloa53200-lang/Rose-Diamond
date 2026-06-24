@@ -677,6 +677,23 @@
         const FACEBOOK_PAGE_URL = "https://www.facebook.com/share/18wwKBtq9R/?mibextid=wwXIfr"; // Custom Shared Facebook page link
         const TIKTOK_PAGE_URL = "https://www.tiktok.com/@rosedaimond23?_r=1&_t=ZS-97SUUuk0BIW"; // Custom TikTok profile link
         const INSTAGRAM_PAGE_URL = "https://www.instagram.com/rosadaimond?igsh=MWkxNmwwY3d2M3RjdQ%3D%3D&utm_source=qr"; // New Instagram Link
+
+ 
+
+        // Global App State Variables
+        let currentLanguage = 'ar';
+        let currentSearchQuery = '';
+        let activeCategory = 'all';
+
+        // Bespoke builder parameters
+        let selectedMetal = 'yellow-gold';
+        let selectedMetalColor = '#E6C15C';
+        let selectedStone = 'diamond';
+        let selectedStoneColor = '#E2F0FF';
+        let selectedCarat = 1.5;
+        let selectedSize = 12;
+
+
         
         // Language state loaded from localStorage dynamically for persistence
         let currentLanguage = localStorage.getItem('rose_diamond_lang') || 'ar';
