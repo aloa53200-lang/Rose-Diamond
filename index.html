@@ -681,7 +681,7 @@
  
 
         // Global App State Variables
-        let currentLanguage = 'ar';
+        let currentLanguage = localStorage.getItem('rose_diamond_lang') || 'ar';
         let currentSearchQuery = '';
         let activeCategory = 'all';
 
