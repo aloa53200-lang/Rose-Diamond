@@ -205,19 +205,20 @@
                     
                     <div class="relative max-w-sm sm:max-w-md w-full bg-gradient-to-b from-luxury-slate to-luxury-deep rounded-2xl p-6 border border-gold-500/20 shadow-2xl overflow-hidden group">
                         <div class="w-full h-80 sm:h-[450px] object-cover rounded-xl overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" alt="Rose Diamond Jewelry Background" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <video
+                        controls
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        class="w-full h-[500px] object-cover rounded-xl"
+                        onerror="alert('فشل تحميل الفيديو')">
+                        <source src="video.mp4" type="video/mp4">
+                    </video>          
                             <div class="absolute inset-0 bg-gradient-to-t from-luxury-deep via-transparent to-transparent opacity-60"></div>
                         </div>          
                         
-                        <div class="absolute bottom-10 left-10 right-10 bg-luxury-deep/90 backdrop-blur-md p-4 rounded-xl border border-gold-500/20">
-                            <div class="flex justify-between items-center text-start">
-                                <div>
-                                    <h3 id="hero-carousel-title" class="font-bold text-white text-sm sm:text-base">قلادة "شمس الأمل"</h3>
-                                    <p id="hero-carousel-desc" class="text-[10px] sm:text-xs text-gold-400">ذهب أصفر عيار 18، مع حجر سمرقند</p>
-                                </div>
-                                <span id="hero-carousel-price" class="text-gold-300 font-bold font-serif text-sm">4,500 ر.س</span>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -652,7 +653,7 @@
     <footer class="mt-auto bg-black border-t border-gold-800/15 py-12 text-center text-xs text-gray-500">
         <div class="max-w-7xl mx-auto px-4 space-y-6">
             <div class="flex justify-center mb-4">
-                <img src="logo.png" alt="Rose Diamond Logo" class="h-12 opacity-85" onerror="this.onerror=null; this.src='https://placehold.co/240x60/07090e/d4af37?text=ROSE+DIAMOND';">
+                <img src="logo.png" alt="Rose Diamond Logo" class="h-20 opacity-85" onerror="this.onerror=null; this.src='https://placehold.co/240x60/07090e/d4af37?text=ROSE+DIAMOND';">
             </div>
             <p id="footer-copyright" class="max-w-md mx-auto leading-relaxed">
                 جميع الحقوق محفوظة © 2026 روزماري لتجارة الألماس (ROSE DIAMOND). جميع الألماس والمعادن معتمدة وموثقة بالشهادات الدولية.
@@ -677,642 +678,578 @@
         const FACEBOOK_PAGE_URL = "https://www.facebook.com/share/18wwKBtq9R/?mibextid=wwXIfr"; // Custom Shared Facebook page link
         const TIKTOK_PAGE_URL = "https://www.tiktok.com/@rosedaimond23?_r=1&_t=ZS-97SUUuk0BIW"; // Custom TikTok profile link
         const INSTAGRAM_PAGE_URL = "https://www.instagram.com/rosadaimond?igsh=MWkxNmwwY3d2M3RjdQ%3D%3D&utm_source=qr"; // New Instagram Link
-
- 
-
-        // Global App State Variables
-        let currentLanguage = localStorage.getItem('rose_diamond_lang') || 'ar';
-        let currentSearchQuery = '';
-        let activeCategory = 'all';
-
-        // Bespoke builder parameters
-        let selectedMetal = 'yellow-gold';
-        let selectedMetalColor = '#E6C15C';
-        let selectedStone = 'diamond';
-        let selectedStoneColor = '#E2F0FF';
-        let selectedCarat = 1.5;
-        let selectedSize = 12;
-
-
         
         // Language state loaded from localStorage dynamically for persistence
         let currentLanguage = localStorage.getItem('rose_diamond_lang') || 'ar';
         
         // Comprehensive database of 33 items (10 rings, 7 necklaces, 6 sets, 10 gemstones)
-          // Complete 33 High-End Certified Masterpieces (Strictly priceless inside arrays/images)
         const products = [
-            // ==================== 10 LUXURY DIAMOND RINGS ====================
+            // RINGS (10 Items)
             {
-                id: "empress-ring",
-                category: "rings",
-                title: {
-                    ar: "خاتم الإمبراطورة الملكية",
-                    en: "Royal Empress Ring",
-                    id: "Cincin Royal Empress"
+                id: 'ring-1',
+                category: 'rings',
+                name: {
+                    ar: 'خاتم التاج الملكي الألماسي',
+                    en: 'Royal Crown Diamond Ring',
+                    id: 'Cincin Berlian Mahkota Kerajaan'
                 },
-                image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=600",
                 desc: {
-                    ar: "تحفة فنية كلاسيكية مرصعة بقطعة ألماس وسطية بقطع دائري تزن 2 قيراط ومحاطة بهالة من الألماس اللامع الصغير على طوق من البلاتينوم النقي.",
-                    en: "A classical masterpiece featuring a central 2-carat round brilliant-cut diamond, surrounded by a halo of micro-pave diamonds on a pure platinum band.",
-                    id: "Mahakarya klasik yang menampilkan berlian potongan bulat cemerlang 2 karat di bagian tengah, dikelilingi oleh jajaran berlian mikro-pave pada rangka platinum murni."
+                    ar: 'ألماس نقي عيار 18 قيراط من الذهب الأبيض الفاخر بتصميم فريد.',
+                    en: 'Pure 18k white gold diamond crown ring with brilliant cuts.',
+                    id: 'Cincin mahkota berlian emas putih murni 18k yang elegan.'
                 },
-                specs: {
-                    ar: ["البلاتينوم النقي 950", "ألماس طبيعي 2.0 قيراط", "درجة النقاوة: VVS1", "اللون: D (خالي من اللون)", "قطع ممتاز (Excellent)"],
-                    en: ["Pure Platinum 950", "Natural Diamond 2.0 CT", "Clarity: VVS1", "Color: D (Colorless)", "Excellent Cut"],
-                    id: ["Platinum Murni 950", "Berlian Alami 2.0 Karat", "Kejernihan: VVS1", "Warna: D (Tanpa Warna)", "Potongan Sangat Baik (Excellent)"]
-                }
+                price: 6500,
+                weight: "4.85 gr",
+                specs: { metal: "18K Gold", gem: "VVS1 Diamond", cert: "GIA Certified" },
+                img: 'rng13.jpg'
             },
             {
-                id: "majestic-solitaire",
-                category: "rings",
-                title: {
-                    ar: "خاتم سوليتير روزماري الماجستيك",
-                    en: "Rosemary Majestic Solitaire",
-                    id: "Cincin Solitaire Rosemary"
+                id: 'ring-2',
+                category: 'rings',
+                name: {
+                    ar: 'خاتم الأبدية البلاتيني الفاخر',
+                    en: 'Eternity Platinum Band',
+                    id: 'Cincin Keabadian Mewah'
                 },
-                image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&q=80&w=600",
                 desc: {
-                    ar: "البسَاطة والأناقة في آن واحد. خاتم سوليتير يتميز بألماسة بقطع برنسيس عيار 1.5 قيراط مثبتة بأربعة مقابض على طوق كلاسيكي من الذهب الأصفر عيار 18 قيراط.",
-                    en: "Simplicity meets ultimate sophistication. This solitaire features a 1.5-carat princess-cut diamond, held securely in a classic 18k yellow gold band.",
-                    id: "Kesederhanaan berpadu dengan kemewahan sejati. Cincin tunggal ini menampilkan berlian potongan princess 1,5 karat, terpasang kokoh pada emas kuning 18 karat klasik."
+                    ar: 'رصيف ألماس دائري كامل على ذهب بلاتينيوم نقي يعكس الأبدية.',
+                    en: 'Full circle pave diamond band on platinum for modern eternity styling.',
+                    id: 'Pave berlian lingkaran penuh pada platinum murni.'
                 },
-                specs: {
-                    ar: ["ذهب أصفر عيار 18 قيراط", "ألماس طبيعي 1.5 قيراط", "درجة النقاوة: VS1", "اللون: E", "قطع ممتاز (Excellent)"],
-                    en: ["18k Yellow Gold", "Natural Diamond 1.5 CT", "Clarity: VS1", "Color: E", "Excellent Princess Cut"],
-                    id: ["Emas Kuning 18k", "Berlian Alami 1.5 Karat", "Kejernihan: VS1", "Warna: E", "Potongan Princess Sangat Baik"]
-                }
+                price: 5200,
+                weight: "5.10 gr",
+                specs: { metal: "Pure Platinum", gem: "VS1 Diamonds", cert: "GIA Certified" },
+                img: 'rng55.jpg'
             },
             {
-                id: "sapphire-eternity",
-                category: "rings",
-                title: {
-                    ar: "خاتم سافير الأبدية بريستيج",
-                    en: "Prestige Sapphire Eternity Band",
-                    id: "Cincin Sapphire Eternity"
+                id: 'ring-3',
+                category: 'rings',
+                name: {
+                    ar: 'خاتم سوليتير الزمرد الذهبي',
+                    en: 'Golden Emerald Solitaire Ring',
+                    id: 'Cincin Solitaire Zamrud Emas'
                 },
-                image: "https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&q=80&w=600",
                 desc: {
-                    ar: "شريط من البلاتينوم لا ينتهي من السحر الملكي، يتميز بتبادل كلاسيكي بين السافير الأزرق الطبيعي الخلاب والألماس البراق في حلقة دائرية متكاملة.",
-                    en: "An endless circle of royal elegance, featuring alternating natural blue sapphires and brilliant colorless diamonds set within a secure platinum frame.",
-                    id: "Lingkaran tanpa akhir dari keanggunan royal, menampilkan kombinasi batu safir biru alami dan berlian cemerlang dalam rangka platinum murni."
+                    ar: 'فص زمرد كولومبي خلاب ذو قطع مستطيل محاط بإطار ناعم من الذهب الأصفر.',
+                    en: 'Breathable emerald-cut Colombian emerald enclosed in solid 18k yellow gold.',
+                    id: 'Zamrud Kolombia berpotongan persegi dalam balutan emas kuning 18k.'
                 },
-                specs: {
-                    ar: ["بلاتينوم نقي 950", "سافير أزرق طبيعي 1.8 قيراط", "ألماس طبيعي 1.2 قيراط", "درجة النقاوة: VS1", "لون الألماس: E-F"],
-                    en: ["Pure Platinum 950", "Natural Blue Sapphires 1.8 CT", "Natural Diamonds 1.2 CT", "Clarity: VS1", "Diamond Color: E-F"],
-                    id: ["Platinum Murni 950", "Safir Biru Alami 1.8 Karat", "Berlian Alami 1.2 Karat", "Kejernihan: VS1", "Warna Berlian: E-F"]
-                }
+                price: 7800,
+                weight: "4.30 gr",
+                specs: { metal: "18K Yellow Gold", gem: "Natural Emerald", cert: "IGI Certified" },
+                img: 'rng10.jpg'
             },
             {
-                id: "crown-princess-ring",
-                category: "rings",
-                title: {
-                    ar: "خاتم تاج الأميرة الماسي",
-                    en: "Crown Princess Diamond Ring",
-                    id: "Cincin Crown Princess"
+                id: 'ring-4',
+                category: 'rings',
+                name: {
+                    ar: 'خاتم هالو الياقوت الأحمر الكلاسيكي',
+                    en: 'Vintage Ruby Halo Ring',
+                    id: 'Cincin Halo Ruby Klasik'
                 },
-                image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=600",
                 desc: {
-                    ar: "خاتم مصمم على هيئة تاج ملكي ناعم، مرصع بقطع مستديرة من الألماس البلجيكي الفاخر بوزن إجمالي 1.2 قيراط على الذهب الوردي الفريد.",
-                    en: "Designed in the shape of a delicate royal crown, set with high-grade round Belgian diamonds on a unique 18k rose gold band.",
-                    id: "Didesain menyerupai mahkota kerajaan yang anggun, bertahtakan berlian bulat Belgia berkualitas tinggi pada emas merah muda 18k."
+                    ar: 'تصميم عتيق يبرز حجر ياقوت أحمر دموي تحيط به هالة من الألماس اللامع.',
+                    en: 'Vintage design accentuating a blood-red ruby haloed by shiny diamond clusters.',
+                    id: 'Desain antik menonjolkan ruby merah darah dikelilingi berlian berkilau.'
                 },
-                specs: {
-                    ar: ["ذهب وردي عيار 18 قيراط", "ألماس طبيعي 1.2 قيراط", "اللون: F", "النقاوة: VVS2"],
-                    en: ["18k Rose Gold", "Natural Diamonds 1.2 CT", "Color: F", "Clarity: VVS2"],
-                    id: ["Emas Merah Muda 18k", "Berlian Alami 1.2 Karat", "Warna: F", "Kejernihan: VVS2"]
-                }
+                price: 8400,
+                weight: "4.95 gr",
+                specs: { metal: "18K Rose Gold", gem: "Pigeon Blood Ruby", cert: "GIA Certified" },
+                img: 'rng8.jpg'
             },
             {
-                id: "ocean-emerald-ring",
-                category: "rings",
-                title: {
-                    ar: "خاتم هالة زمرد المحيط",
-                    en: "Ocean Emerald Halo Ring",
-                    id: "Cincin Ocean Emerald Halo"
+                id: 'ring-5',
+                category: 'rings',
+                name: {
+                    ar: 'خاتم الأميرة السافير الأزرق',
+                    en: 'Princess Blue Sapphire Ring',
+                    id: 'Cincin Safir Biru Putri'
                 },
-                image: "https://images.unsplash.com/photo-1588444839799-eb00f7e6696e?auto=format&fit=crop&q=80&w=600",
                 desc: {
-                    ar: "زمرد كولومبي طبيعي بقطع بيضاوي ساحر محاط بألماس هالو لامع ومرصع على طوق كلاسيكي من الذهب الأبيض عيار 18 قيراط.",
-                    en: "Stunning oval-cut natural Colombian emerald encased in an icy diamond halo on an 18k white gold frame.",
-                    id: "Zamrud Kolombia alami potongan oval yang memukau dibalut halo berlian berkilau pada rangka emas putih 18k."
+                    ar: 'سافير أزرق ملكي بقطع الأميرة الفخم مرصع على قاعدة من البلاتين اللامع.',
+                    en: 'Royal blue sapphire with a luxurious princess cut mounted on bright platinum.',
+                    id: 'Safir biru royal potongan putri mewah bertakhta platinum mengkilap.'
                 },
-                specs: {
-                    ar: ["ذهب أبيض عيار 18 قيراط", "زمرد طبيعي 1.7 قيراط", "ألماس هالو 0.6 قيراط", "درجة اللون: أخضر فيفد"],
-                    en: ["18k White Gold", "Natural Emerald 1.7 CT", "Halo Diamonds 0.6 CT", "Color: Vivid Green"],
-                    id: ["Emas Putih 18k", "Zamrud Alami 1.7 Karat", "Halo Berlian 0.6 Karat", "Warna: Hijau Vivid"]
-                }
+                price: 9100,
+                weight: "5.40 gr",
+                specs: { metal: "Pure Platinum", gem: "Royal Sapphire", cert: "GIA Certified" },
+                img: 'rng10.jpg'
             },
             {
-                id: "golden-aurora",
-                category: "rings",
-                title: {
-                    ar: "خاتم الألماس الأصفر أورورا",
-                    en: "Golden Aurora Yellow Ring",
-                    id: "Cincin Aurora Kuning"
+                id: 'ring-6',
+                category: 'rings',
+                name: {
+                    ar: 'خاتم المورجانيت الوردي الرقيق',
+                    en: 'Rose Gold Morganite Ring',
+                    id: 'Cincin Morganite Emas Merah Muda'
                 },
-                image: "https://images.unsplash.com/photo-1543294001-f7cbfe92237e?auto=format&fit=crop&q=80&w=600",
                 desc: {
-                    ar: "خاتم فخم بوسطه ألماسة صفراء نادرة للغاية بقطع وسادة (Cushion) تزن 2.5 قيراط، تبرق بلون الذهب الصافي والجاذبية الاستثنائية.",
-                    en: "A premium statement ring highlighting an extremely rare cushion-cut fancy yellow diamond of 2.5 Carats.",
-                    id: "Cincin istimewa yang menonjolkan berlian kuning langka potongan cushion seberat 2.5 Karat."
+                    ar: 'تناغم خلاب من الذهب الوردي عيار 18 مع حجر المورجانيت الكمثرى الرقيق.',
+                    en: 'Stunning harmony of 18k rose gold with a delicate pear-shaped morganite stone.',
+                    id: 'Harmoni indah emas merah muda 18k dengan batu morganite pir halus.'
                 },
-                specs: {
-                    ar: ["ذهب بلاتينوم وذهب أصفر", "ألماس أصفر طبيعي 2.5 قيراط", "درجة اللون: Fancy Intense Yellow", "النقاوة: VVS1"],
-                    en: ["Platinum & 18k Yellow Gold", "Fancy Yellow Diamond 2.5 CT", "Color: Fancy Intense Yellow", "Clarity: VVS1"],
-                    id: ["Platinum & Emas Kuning 18k", "Berlian Kuning Alami 2.5 Karat", "Warna: Fancy Intense Yellow", "Kejernihan: VVS1"]
-                }
+                price: 4900,
+                weight: "3.90 gr",
+                specs: { metal: "18K Rose Gold", gem: "Natural Morganite", cert: "IGI Certified" },
+                img: 'rng5.jpg'
             },
             {
-                id: "vintage-marquise-ring",
-                category: "rings",
-                title: {
-                    ar: "خاتم ماركيز الفيكتوري العتيق",
-                    en: "Vintage Marquise Diamond Ring",
-                    id: "Cincin Vintage Marquise"
+                id: 'ring-7',
+                category: 'rings',
+                name: {
+                    ar: 'خاتم الألماس الكناري الأصفر',
+                    en: 'Canary Yellow Diamond Ring',
+                    id: 'Cincin Berlian Kuning Canary'
                 },
-                image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=600",
                 desc: {
-                    ar: "تصميم فيكتوري يعود للقرن الماضي مرصع بألماسة ماركيز متطاولة ولمعان لا يضاهى يحاكي المجوهرات الملكية العتيقة.",
-                    en: "A beautiful Victorian design presenting a dramatic marquise-cut center diamond on a hand-carved gold band.",
-                    id: "Desain Victorian cantik yang menghadirkan berlian tengah potongan marquise yang dramatis pada rangka emas ukiran tangan."
+                    ar: 'ألماس أصفر كناري نادر ذو قطع وسادة متميز، ينضح بالدفء والأناقة.',
+                    en: 'Rare canary yellow diamond cushion cut, oozing warmth and premium elegance.',
+                    id: 'Berlian kuning canary langka potongan bantal, memancarkan kehangatan.'
                 },
-                specs: {
-                    ar: ["ذهب أصفر عيار 18 قيراط", "ألماس ماركيز 1.4 قيراط", "النقاوة: VS2", "نقش فني يدوي فريد"],
-                    en: ["18k Yellow Gold", "Marquise Diamond 1.4 CT", "Clarity: VS2", "Unique Hand-Engraved Detailing"],
-                    id: ["Emas Kuning 18k", "Berlian Marquise 1.4 Karat", "Kejernihan: VS2", "Detail Ukiran Tangan Unik"]
-                }
+                price: 18500,
+                weight: "6.10 gr",
+                specs: { metal: "18K Two-Tone Gold", gem: "Canary Diamond", cert: "GIA Certified" },
+                img: 'rng1.jpg'
             },
             {
-                id: "eternal-union-band",
-                category: "rings",
-                title: {
-                    ar: "خاتم الاتحاد الأبدي الماسي",
-                    en: "Eternal Union Diamond Band",
-                    id: "Cincin Kawin Eternal Union"
+                id: 'ring-8',
+                category: 'rings',
+                name: {
+                    ar: 'خاتم ماركيز الألماسي المصقول',
+                    en: 'Marquise Diamond Band',
+                    id: 'Cincin Berlian Marquise'
                 },
-                image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&q=80&w=600",
                 desc: {
-                    ar: "دبلة زواج كاملة مرصعة بقطع الألماس الدائرية المتراصة بدقة متناهية لترمز للالتزام الأبدي والحب الصادق.",
-                    en: "A modern eternity wedding band meticulously encrusted with brilliant round diamonds symbolizing endless love and fidelity.",
-                    id: "Cincin kawin eternity modern yang bertahtakan berlian bulat cemerlang dengan teliti, melambangkan cinta tanpa akhir."
+                    ar: 'قطع الماركيز المستدق يمنح الإصبع مظهرًا طويلاً ويزيد من انعكاس بريق الضوء.',
+                    en: 'The tapered marquise cut elongates the finger while maximizing brilliance.',
+                    id: 'Potongan marquise meruncing memperpanjang jari sekaligus memaksimalkan kilau.'
                 },
-                specs: {
-                    ar: ["بلاتينوم نقي 950", "ألماس طبيعي إجمالي 2.1 قيراط", "النقاوة: VS1-VS2", "القطع: ممتاز جداً"],
-                    en: ["Pure Platinum 950", "Total Diamonds 2.1 CT", "Clarity: VS1-VS2", "Cut: Very Good / Excellent"],
-                    id: ["Platinum Murni 950", "Total Berlian 2.1 Karat", "Kejernihan: VS1-VS2", "Potongan: Sangat Baik / Excellent"]
-                }
+                price: 11000,
+                weight: "4.50 gr",
+                specs: { metal: "18K White Gold", gem: "Marquise Diamond", cert: "GIA Certified" },
+                img: 'rng15.jpg'
             },
             {
-                id: "pink-romance-ring",
-                category: "rings",
-                title: {
-                    ar: "خاتم الرومانسية الوردية النادر",
-                    en: "Pink Romance Cushion Cut Ring",
-                    id: "Cincin Pink Romance"
+                id: 'ring-9',
+                category: 'rings',
+                name: {
+                    ar: 'خاتم الألماس الأسود الفيكتوري',
+                    en: 'Black Diamond Gothic Band',
+                    id: 'Cincin Berlian Hitam Goth'
                 },
-                image: "https://images.unsplash.com/photo-1543294001-f7cbfe92237e?auto=format&fit=crop&q=80&w=600",
                 desc: {
-                    ar: "قطعة من الخيال الرومانسي، خاتم مرصع بماسة وردية طبيعية نادرة جداً بقطع الوسادة لتكوني متميزة وجريئة.",
-                    en: "A romantic fantasy piece showcasing a sweet, rare natural fancy pink cushion diamond with rose gold prongs.",
-                    id: "Perhiasan fantasi romantis yang memamerkan berlian pink alami potongan cushion yang manis dan langka."
+                    ar: 'ألماس أسود غامض ومصقول يعبر عن التميز والجرأة العصرية.',
+                    en: 'Mysterious polished black diamond band representing modern audacity.',
+                    id: 'Cincin berlian hitam misterius yang dipoles mewakili keberanian modern.'
                 },
-                specs: {
-                    ar: ["ذهب أبيض ووردي عيار 18", "ألماس وردي طبيعي 1.1 قيراط", "اللون: Fancy Pink", "النقاوة: VVS2"],
-                    en: ["18k White & Rose Gold", "Natural Pink Diamond 1.1 CT", "Color: Fancy Pink", "Clarity: VVS2"],
-                    id: ["Emas Putih & Merah Muda 18k", "Berlian Pink Alami 1.1 Karat", "Warna: Fancy Pink", "Kejernihan: VVS2"]
-                }
+                price: 7200,
+                weight: "5.80 gr",
+                specs: { metal: "Oxidized Gold", gem: "Black Diamond", cert: "IGI Certified" },
+                img: 'rng17.jpg'
             },
             {
-                id: "destiny-oval-ring",
-                category: "rings",
-                title: {
-                    ar: "خاتم القدر ذو القطع البيضاوي",
-                    en: "Destiny Oval Cut Diamond Ring",
-                    id: "Cincin Destiny Oval"
+                id: 'ring-10',
+                category: 'rings',
+                name: {
+                    ar: 'خاتم الثالوث ثلاثي الألوان',
+                    en: 'Two-Tone Gold Trinity Ring',
+                    id: 'Cincin Trinity Dua Nada Emas'
                 },
-                image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&q=80&w=600",
                 desc: {
-                    ar: "تصميم متناسق يجمع بين النعومة والفخامة، يتميز بألماسة بيضاوية تزن 1.8 قيراط تمنح إصبعكِ مظهراً رقيقاً وطويلاً.",
-                    en: "A flawless design displaying a sparkling 1.8-carat oval cut diamond, elongating the finger with modern luxury.",
-                    id: "Desain sempurna yang menampilkan berlian potongan oval 1.8 karat berkilau, mempercantik jari dengan kemewahan modern."
+                    ar: 'ثلاثة خطوط متداخلة من الذهب الأصفر والوردي والأبيض مرصعة بالألماس النقي.',
+                    en: 'Three interlocking bands of yellow, rose, and white gold paved with diamonds.',
+                    id: 'Tiga cincin saling bertautan dari emas kuning, merah muda, dan putih.'
                 },
-                specs: {
-                    ar: ["بلاتينوم نقي 950", "ألماس طبيعي 1.8 قيراط", "اللون: E", "النقاوة: VVS1", "القطع: ممتاز"],
-                    en: ["Pure Platinum 950", "Natural Diamond 1.8 CT", "Color: E", "Clarity: VVS1", "Cut: Excellent"],
-                    id: ["Platinum Murni 950", "Berlian Alami 1.8 Karat", "Warna: E", "Kejernihan: VVS1", "Potongan: Excellent"]
-                }
+                price: 9500,
+                weight: "6.40 gr",
+                specs: { metal: "Tri-Color 18K Gold", gem: "Pave Diamonds", cert: "GIA Certified" },
+                img: 'rng16.jpg'
             },
 
-            // ==================== 7 RARE AND ENCHANTING NECKLACES ====================
+            // NECKLACES (7 Items)
+            {
+                id: 'necklace-1',
+                category: 'necklaces',
+                name: {
+                    ar: 'قلادة سهر الليالي الكريستالية',
+                    en: 'Night Glow Pendant',
+                    id: 'Kalung Liontin Malam Cahaya'
+                },
+                desc: {
+                    ar: 'ذهب أصفر عيار 18 مع ماس بلجيكي فاخر محكم الصياغة.',
+                    en: '18k yellow gold with fine Belgian diamonds sparkling beautifully.',
+                    id: 'Emas kuning 18k dengan berlian Belgia halus berkilau.'
+                },
+                price: 12000,
+                weight: "6.20 gr",
+                specs: { metal: "18K Gold", gem: "Belgian Diamond", cert: "GIA Certified" },
+                img: 'bracelets9.jpg'
+            },
+            {
+                id: 'necklace-2',
+                category: 'necklaces',
+                name: {
+                    ar: 'قلادة الزمرد الأسطوري الأخضر',
+                    en: 'Mythical Emerald Pendant',
+                    id: 'Kalung Liontin Zamrud Mistis'
+                },
+                desc: {
+                    ar: 'قلادة زمرد كولومبي طبيعي محاط بقطع الماس الدائرية الرقيقة.',
+                    en: 'Natural Colombian emerald flanked by diamond details on solid chain.',
+                    id: 'Zamrud Kolombia alami diapit oleh berlian halus.'
+                },
+                price: 9800,
+                weight: "4.15 gr",
+                specs: { metal: "18K Gold", gem: "Natural Emerald", cert: "GIA Certified" },
+                img: 'bracelets7.jpg'
+            },
+            {
+                id: 'necklace-3',
+                category: 'necklaces',
+                name: {
+                    ar: 'عقد الألماس الكمثرى المنسدل',
+                    en: 'Pear-Cut Diamond Choker',
+                    id: 'Kalung Choker Berlian Pir'
+                },
+                desc: {
+                    ar: 'سلسلة رفيعة من الذهب الأبيض تتدلى منها ماسة على شكل قطرة ماء نقية.',
+                    en: 'Delicate white gold chain featuring a suspended pear-cut flawless diamond droplet.',
+                    id: 'Rantai emas putih halus menampilkan tetesan berlian murni.'
+                },
+                price: 15500,
+                weight: "5.80 gr",
+                specs: { metal: "18K White Gold", gem: "Pear Diamond", cert: "GIA Certified" },
+                img: 'bracelets6.jpg'
+            },
+            {
+                id: 'necklace-4',
+                category: 'necklaces',
+                name: {
+                    ar: 'سلسلة اليشم الإمبراطوري الذهبية',
+                    en: 'Imperial Jade Golden Chain',
+                    id: 'Rantai Emas Giok Kekaisaran'
+                },
+                desc: {
+                    ar: 'تداخل لافت بين حجر اليشم الأخضر النادر وحلقات الذهب الأصفر عيار 22.',
+                    en: 'Striking integration of rare green jade gemstone and heavy 22k yellow gold links.',
+                    id: 'Perpaduan batu giok hijau langka dan rantai emas kuning 22k.'
+                },
+                price: 13200,
+                weight: "8.50 gr",
+                specs: { metal: "22K Yellow Gold", gem: "Imperial Jade", cert: "IGI Certified" },
+                img: 'bracelets5.jpg'
+            },
+            {
+                id: 'necklace-5',
+                category: 'necklaces',
+                name: {
+                    ar: 'قلادة القلب الرومانسي الذهبية',
+                    en: 'Rose Gold Heart Diamond Necklace',
+                    id: 'Kalung Jantung Berlian Emas Rose'
+                },
+                desc: {
+                    ar: 'قلادة على شكل قلب رقيق مرصع بالألماس الصغير، هدية الحب المثالية.',
+                    en: 'A romantic heart pendant fully paved with brilliant diamonds in 18k rose gold.',
+                    id: 'Liontin hati romantis bertakhta berlian cemerlang emas merah muda.'
+                },
+                price: 6400,
+                weight: "3.70 gr",
+                specs: { metal: "18K Rose Gold", gem: "Pave Diamonds", cert: "GIA Certified" },
+                img: 'bracelets4.jpg'
+            },
+            {
+                id: 'necklace-6',
+                category: 'necklaces',
+                name: {
+                    ar: 'قلادة اللؤلؤ الأسود التاهيتي',
+                    en: 'Tahitian Black Pearl Pendant',
+                    id: 'Liontin Mutiara Hitam Tahiti'
+                },
+                desc: {
+                    ar: 'لؤلؤة سوداء تاهيتية نادرة ذات لمعان أخضر داكن مع مشبك ألماس فاخر.',
+                    en: 'Rare Tahitian black pearl with peacock green luster, with a diamond bale.',
+                    id: 'Mutiara hitam Tahiti langka dengan kilau hijau merak.'
+                },
+                price: 8800,
+                weight: "4.90 gr",
+                specs: { metal: "18K White Gold", gem: "Black Pearl & Diamond", cert: "GIA Certified" },
+                img: 'bracelets3.jpg'
+            },
+            {
+                id: 'necklace-7',
+                category: 'necklaces',
+                name: {
+                    ar: 'عقد الأوبال الناري المتوهج',
+                    en: 'Fire Opal Gold Necklace',
+                    id: 'Kalung Emas Opal Api'
+                },
+                desc: {
+                    ar: 'حجر أوبال مكسيكي ناري ينبض بألوان قوس قزح مع كل حركة تحت الضوء.',
+                    en: 'Vibrant Mexican fire opal reflecting rainbow flashes under light movement.',
+                    id: 'Opal api Meksiko cerah mencerminkan kilatan pelangi.'
+                },
+                price: 7900,
+                weight: "4.20 gr",
+                specs: { metal: "18K Yellow Gold", gem: "Fire Opal", cert: "IGI Certified" },
+                img: 'bracelets1.jpg'
+            },
+
+            // SETS (6 Items)
+            {
+                id: 'set-1',
+                category: 'sets',
+                name: {
+                    ar: 'طقم الفرح والمناسبات الملكي',
+                    en: 'Royal Bridal Full Set',
+                    id: 'Set Lengkap Pernikahan Kerajaan'
+                },
+                desc: {
+                    ar: 'طقم كامل استثنائي من الألماس والياقوت الأحمر النادر لليلتك الفاتنة.',
+                    en: 'Complete set of pure diamond & rare red ruby for absolute luxury.',
+                    id: 'Set lengkap berlian murni & batu delima merah langka.'
+                },
+                price: 45000,
+                weight: "24.50 gr",
+                specs: { metal: "18K White Gold", gem: "Diamond & Ruby", cert: "IGI Certified" },
+                img: 'set1.jpg'
+            },
+            {
+                id: 'set-2',
+                category: 'sets',
+                name: {
+                    ar: 'طقم الإمبراطورة الزمردي الفاخر',
+                    en: 'Emerald Empress Set',
+                    id: 'Set Maharatu Zamrud'
+                },
+                desc: {
+                    ar: 'يحتوي على قلادة، أقراط، وخاتم متطابق مرصعة بالزمرد الأخضر الصافي والألماس.',
+                    en: 'Includes matched necklace, earrings, and ring with clear green emeralds and diamonds.',
+                    id: 'Termasuk kalung, anting, dan cincin yang cocok dengan zamrud hijau murni.'
+                },
+                price: 52000,
+                weight: "28.10 gr",
+                specs: { metal: "18K Gold", gem: "Colombian Emerald", cert: "GIA Certified" },
+                img: 'set2.jpg'
+            },
+            {
+                id: 'set-3',
+                category: 'sets',
+                name: {
+                    ar: 'طقم السافير الأزرق المخملي',
+                    en: 'Sapphire Velvet Gala Set',
+                    id: 'Set Gala Beludru Safir'
+                },
+                desc: {
+                    ar: 'تألق مدهش يجمع روعة البحر وعمق السماء في طقم سافير كشميري فاخر.',
+                    en: 'Remarkable brilliance combining sea and sky depths in Kashmiri Sapphire set.',
+                    id: 'Kecemerlangan luar biasa menggabungkan kedalaman laut dan langit.'
+                },
+                price: 48000,
+                weight: "26.30 gr",
+                specs: { metal: "Pure Platinum", gem: "Kashmir Sapphire", cert: "GIA Certified" },
+                img: 'set3.jpg'
+            },
+            {
+                id: 'set-4',
+                category: 'sets',
+                name: {
+                    ar: 'طقم اللؤلؤ الذهبي والألماس',
+                    en: 'Golden Pearl Diamond Set',
+                    id: 'Set Mutiara Emas & Berlian'
+                },
+                desc: {
+                    ar: 'طقم ناعم يدمج لآلئ بحر الجنوب الذهبية الطبيعية مع قطع الألماس الدائرية.',
+                    en: 'Soft design integrating natural Golden South Sea pearls and round diamonds.',
+                    id: 'Desain lembut mutiara laut selatan emas alami dan berlian bulat.'
+                },
+                price: 36000,
+                weight: "19.80 gr",
+                specs: { metal: "18K Yellow Gold", gem: "South Sea Pearl", cert: "IGI Certified" },
+                img: 'set4.jpg'
+            },
          
+            // GEMSTONES (10 Items)
             {
-                id: "celestial-sapphire-neck",
-                category: "necklaces",
-                title: {
-                    ar: "قلادة السافير السماوي النادر",
-                    en: "Celestial Blue Sapphire Necklace",
-                    id: "Kalung Celestial Blue Sapphire"
+                id: 'gem-1',
+                category: 'gemstones',
+                name: {
+                    ar: 'حجر السافير الأزرق غير المصقول',
+                    en: 'Raw Blue Sapphire Stone',
+                    id: 'Batu Nilam Biru Alami'
                 },
-                image: "bracelets1.jpg",
                 desc: {
-                    ar: "حجر من السافير الأزرق الملكي تزن 4 قيراط تتدلى بأناقة مذهلة من طوق من الذهب الأبيض المرصع بالماس لإطلالة ساحرة.",
-                    en: "An exquisite royal blue sapphire of 4 Carats suspended from a delicate diamond-laden white gold drop chain.",
-                    id: "Batu safir biru royal seberat 4 Karat tergantung anggun pada rantai emas putih bertahtakan berlian."
+                    ar: 'حجر طبيعي 100% مستخرج مباشرة من مناجم سريلانكا العريقة مع شهادة توثيق.',
+                    en: '100% natural raw sapphire mined directly in Sri Lanka with cert.',
+                    id: 'Batu safir mentah 100% alami dari Sri Lanka bersertifikat.'
                 },
-                specs: {
-                    ar: ["ذهب أبيض عيار 18 قيراط", "سافير سريلانكي 4.0 قيراط", "ألماس طبيعي 1.1 قيراط", "طول السلسلة: 42 سم"],
-                    en: ["18k White Gold", "Sri Lankan Sapphire 4.0 CT", "Natural Diamonds 1.1 CT", "Chain Length: 42 cm"],
-                    id: ["Emas Putih 18k", "Safir Sri Lanka 4.0 Karat", "Berlian Alami 1.1 Karat", "Panjang Rantai: 42 cm"]
-                }
+                price: 8900,
+                weight: "3.20 ct",
+                specs: { metal: "N/A (Loose)", gem: "Raw Sapphire", cert: "GRS Certified" },
+                img: 'gemstone2.jpg'
             },
             {
-                id: "shimmering-cascade-choker",
-                category: "necklaces",
-                title: {
-                    ar: "عقد شوكر شلال الألماس",
-                    en: "Shimmering Diamond Cascade Choker",
-                    id: "Choker Shimmering Diamond Cascade"
+                id: 'gem-2',
+                category: 'gemstones',
+                name: {
+                    ar: 'حجر زمرد كولومبي غير مصقول',
+                    en: 'Uncut Colombian Emerald',
+                    id: 'Zamrud Kolombia Kasar'
                 },
-                image: "bracelets3.jpg",
                 desc: {
-                    ar: "عقد شوكر ضيق يلتف حول الرقبة بنعومة كالشلال، مرصع بصفوف متتالية من الألماس المستدير الفاخر لإضاءة ساطعة.",
-                    en: "A beautiful cascading diamond choker designed to sit flush against the neck, casting unparalleled brilliance with every movement.",
-                    id: "Choker berlian indah yang didesain pas di leher, memancarkan kilau tiada tanding pada setiap gerakan."
+                    ar: 'بلورة زمرد خام طبيعية تمتاز بلون أخضر غامق وعميق غني بالمعادن.',
+                    en: 'Natural raw emerald crystal displaying a deep, rich mineral green hue.',
+                    id: 'Kristal zamrud mentah alami menampilkan warna hijau mineral yang pekat.'
                 },
-                specs: {
-                    ar: ["ذهب أبيض عيار 18 قيراط", "إجمالي وزن الألماس: 6.5 قيراط", "اللون: D-E", "النقاوة: VVS2"],
-                    en: ["18k White Gold", "Total Diamond Weight: 6.5 CT", "Color: D-E", "Clarity: VVS2"],
-                    id: ["Emas Putih 18k", "Total Berat Berlian: 6.5 Karat", "Warna: D-E", "Kejernihan: VVS2"]
-                }
+                price: 11500,
+                weight: "4.50 ct",
+                specs: { metal: "N/A (Loose)", gem: "Raw Emerald", cert: "GIA Certified" },
+                img: 'gemstone2.jpg'
             },
             {
-                id: "golden-sunburst-pendant",
-                category: "necklaces",
-                title: {
-                    ar: "قلادة أشعة الشمس الصفراء الحصرية",
-                    en: "Golden Sunburst Yellow Pendant",
-                    id: "Liontin Golden Sunburst"
+                id: 'gem-3',
+                category: 'gemstones',
+                name: {
+                    ar: 'ألماس كمثرى نقي 2 قيراط',
+                    en: 'Flawless Pear Diamond 2ct',
+                    id: 'Berlian Pir Sempurna 2ct'
                 },
-                image: "bracelets5.jpg",
                 desc: {
-                    ar: "أشعة الشمس متجسدة في قلادة، تتوسطها ألماسة صفراء لامعة نادرة تبرق كالنور الطبيعي الدافئ.",
-                    en: "Like a drop of liquid sunshine, this pendant features a glowing fancy yellow radiant-cut diamond bordered by white diamonds.",
-                    id: "Bagaikan tetesan sinar matahari, liontin ini menampilkan berlian kuning alami dengan bingkai berlian putih."
+                    ar: 'ماسة نقية بالكامل خالية من الشوائب ومصقولة بأعلى دقة وانعكاس للضوء.',
+                    en: 'Completely flawless pear-cut loose diamond certified with excellent fire.',
+                    id: 'Berlian longgar potongan pir yang benar-benar sempurna bersertifikat.'
                 },
-                specs: {
-                    ar: ["ذهب أصفر وأبيض عيار 18", "ألماس أصفر طبيعي 2.2 قيراط", "ألماس أبيض مرافئ 0.8 قيراط", "تصميم مشع حصري"],
-                    en: ["18k Yellow & White Gold", "Fancy Yellow Diamond 2.2 CT", "White Diamonds 0.8 CT", "Exclusive Radiating Design"],
-                    id: ["Emas Kuning & Putih 18k", "Berlian Kuning Alami 2.2 Karat", "Berlian Putih 0.8 Karat", "Desain Memancar Eksklusif"]
-                }
+                price: 29000,
+                weight: "2.00 ct",
+                specs: { metal: "N/A (Loose)", gem: "D-Color Flawless", cert: "GIA Certified" },
+                img: 'gemstone3.jpg'
             },
             {
-                id: "pear-perfection-drop",
-                category: "necklaces",
-                title: {
-                    ar: "عقد تدلي كمثرى الكمال الماسي",
-                    en: "Pear Perfection Diamond Drop",
-                    id: "Kalung Pear Perfection Drop"
+                id: 'gem-4',
+                category: 'gemstones',
+                name: {
+                    ar: 'ياقوت أحمر دم الحمام النادر',
+                    en: 'Blood-Red Pigeon Ruby',
+                    id: 'Ruby Merah Darah Merpati Langka'
                 },
-                image: "bracelets6.jpg",
                 desc: {
-                    ar: "عقد ناعم ينتهي بقطرة ألماسية كبرى بقطع كمثرى متدلي، يتحرك معكِ كقطرة ندى تلمع تحت أشعة الصباح.",
-                    en: "An elegant diamond chain terminating in a substantial pear-shaped colorless diamond drop that captures light beautifully.",
-                    id: "Rantai berlian elegan dengan ujung berlian potongan pir besar yang menangkap cahaya dengan indah."
+                    ar: 'لون أحمر ناري نادر ومميز يجذب القلوب، جاهز للتركيب على أي تصميم.',
+                    en: 'Incredibly rare pigeon blood red hue, premium brilliance, ready for mounting.',
+                    id: 'Warna merah darah merpati yang sangat langka, kecemerlangan premium.'
                 },
-                specs: {
-                    ar: ["بلاتينوم نقي 950", "ألماس كمثرى 2.8 قيراط", "اللون: D (خالي من اللون تماماً)", "النقاوة: IF (خالي من العيوب)"],
-                    en: ["Pure Platinum 950", "Pear Diamond 2.8 CT", "Color: D (Flawless Color)", "Clarity: IF (Internally Flawless)"],
-                    id: ["Platinum Murni 950", "Berlian Pir 2.8 Karat", "Warna: D", "Kejernihan: IF (Internally Flawless)"]
-                }
+                price: 16500,
+                weight: "2.80 ct",
+                specs: { metal: "N/A (Loose)", gem: "Natural Ruby", cert: "GRS Certified" },
+                img: 'gemstone4.jpg'
             },
             {
-                id: "imperial-ruby-pendant",
-                category: "necklaces",
-                title: {
-                    ar: "قلادة الياقوت الإمبراطوري الفاخرة",
-                    en: "Imperial Ruby & Diamond Pendant",
-                    id: "Liontin Imperial Ruby & Berlian"
+                id: 'gem-5',
+                category: 'gemstones',
+                name: {
+                    ar: 'حجر التوباز الإمبراطوري النادر',
+                    en: 'Rare Imperial Topaz',
+                    id: 'Topaz Kekaisaran Langka'
                 },
-                image: "bracelets7.jpg",
                 desc: {
-                    ar: "ياقوت بورمي أحمر ناصع بلون دم الحمام تحيط به هالة كلاسيكية من الألماس بقطع الماركيز لتشكل تحفة كلاسيكية تليق بالملوك.",
-                    en: "A fiery Burmese red ruby with pigeon-blood grading framed by marquise diamonds forming a gorgeous timeless medallion.",
-                    id: "Batu ruby merah Burma alami dengan warna pigeon-blood yang bingkai oleh berlian marquise membentuk medali abadi."
+                    ar: 'درجة لون ذهبي برتقالي دافئ فريد من نوعه وحجر عالي الوضوح والنقاء.',
+                    en: 'A unique warm orange-golden hue with premium gemstone clarity.',
+                    id: 'Warna oranye-emas hangat yang unik dengan kejelasan batu permata premium.'
                 },
-                specs: {
-                    ar: ["ذهب أصفر عيار 18 قيراط", "ياقوت أحمر بورمي طبيعي 3.2 قيراط", "ألماس مرافئ 1.2 قيراط", "مصحوب بشهادة موثقة GRS"],
-                    en: ["18k Yellow Gold", "Burmese Natural Ruby 3.2 CT", "Marquise Diamonds 1.2 CT", "Comes with GRS Certification"],
-                    id: ["Emas Kuning 18k", "Ruby Burma Alami 3.2 Karat", "Berlian Marquise 1.2 Karat", "Sertifikasi GRS Resmi"]
-                }
+                price: 7200,
+                weight: "5.10 ct",
+                specs: { metal: "N/A (Loose)", gem: "Imperial Topaz", cert: "IGI Certified" },
+                img: 'gemstone5.jpg'
             },
             {
-                id: "baroque-radiance-choker",
-                category: "necklaces",
-                title: {
-                    ar: "شوكر لؤلؤ الباروك المشع",
-                    en: "Baroque Radiant Pearl Choker",
-                    id: "Choker Mutiara Baroque Radiant"
+                id: 'gem-6',
+                category: 'gemstones',
+                name: {
+                    ar: 'حجر الجمشت الأرجواني الداكن',
+                    en: 'Deep Velvet Amethyst',
+                    id: 'Kecubung Ungu Beludru Pekat'
                 },
-                image: "bracelets9.jpg",
                 desc: {
-                    ar: "مزيج ساحر يجمع بين لؤلؤ بحر الجنوب النادر والباروك ذي الأشكال الفريدة وحبات الألماس الفاخرة المتلألئة بينها.",
-                    en: "An avant-garde blend of rare South Sea baroque pearls interwoven with brilliant-cut diamonds on an 18k white gold structure.",
-                    id: "Paduan avant-garde mutiara South Sea baroque langka yang dipadukan dengan berlian pada rangka emas putih 18k."
+                    ar: 'جمشت برازيلي نقي ومصقول بلون بنفسجي غامق ساحر ومثالي للخواتم الكبيرة.',
+                    en: 'Polished Brazilian deep purple amethyst, perfect for statement rings.',
+                    id: 'Kecubung ungu tua Brasil yang dipoles, cocok untuk cincin pernyataan.'
                 },
-                specs: {
-                    ar: ["ذهب أبيض عيار 18 قيراط", "لؤلؤ بحر الجنوب الطبيعي", "ألماس مرافئ 1.5 قيراط", "تصميم نسيجي نادر فريد"],
-                    en: ["18k White Gold", "Natural South Sea Baroque Pearls", "Brilliant Diamonds 1.5 CT", "One-of-a-kind organic texture"],
-                    id: ["Emas Putih 18k", "Mutiara South Sea Baroque Alami", "Berlian Cemerlang 1.5 Karat", "Desain Tekstur Organik Unik"]
-                }
-            },
-
-            // ==================== 6 FULL ROYAL SETS ====================
-            {
-                id: "royal-victoria-set",
-                category: "sets",
-                title: {
-                    ar: "طقم الملكة فيكتوريا الماسي الملكي",
-                    en: "Victoria Royal Diamond Set",
-                    id: "Set Berlian Royal Victoria"
-                },
-                image: "set4.jpg",
-                desc: {
-                    ar: "طقم ملكي متكامل يجمع بين الفخامة والروعة الحقيقية، يشتمل على قلادة ملكية، سوار متناسق، زوج من الأقراط، وخاتم، كلها مصقولة بأفخم أنواع الألماس النقي.",
-                    en: "An ultimate royal suite collecting unmatched luxury, comprising a magnificent collar necklace, matching tennis bracelet, earrings, and a ring, all set with top-tier conflict-free diamonds.",
-                    id: "Set suite royal utama yang mengumpulkan kemewahan luar biasa, terdiri dari kalung kerah mewah, gelang tenis senada, anting-anting, dan cincin, semuanya dihiasi dengan berlian bebas konflik tingkat tinggi."
-                },
-                specs: {
-                    ar: ["البلاتينوم النقي والذهب الأبيض", "إجمالي وزن الألماس: 14.5 قيراط", "درجة النقاوة العامة: VVS2 / VS1", "لون الألماس: F-G", "شهادات GIA كاملة لكل قطعة"],
-                    en: ["Pure Platinum & White Gold", "Total Diamond Weight: 14.5 Carats", "Overall Clarity: VVS2 / VS1", "Diamond Color: F-G", "Full GIA certificates for each item"],
-                    id: ["Platinum Murni & Emas Putih", "Total Berat Berlian: 14.5 Karat", "Kejernihan Umum: VVS2 / VS1", "Warna Berlian: F-G", "Sertifikat GIA Lengkap untuk setiap item"]
-                }
+                price: 3400,
+                weight: "8.20 ct",
+                specs: { metal: "N/A (Loose)", gem: "Natural Amethyst", cert: "IGI Certified" },
+                img: 'gemstone6.jpg'
             },
             {
-                id: "empress-ruby-set",
-                category: "sets",
-                title: {
-                    ar: "طقم الإمبراطورة بالياقوت الأحمر القرمزي",
-                    en: "Empress Crimson Ruby Royal Set",
-                    id: "Set Crimson Ruby Empress"
+                id: 'gem-7',
+                category: 'gemstones',
+                name: {
+                    ar: 'حجر المورجانيت الطبيعي الدائري',
+                    en: 'Natural Morganite Gemstone',
+                    id: 'Batu Permata Morganite Alami'
                 },
-                image: "set3.jpg",
                 desc: {
-                    ar: "طقم كامل للمناسبات الكبرى، يجمع بين بريق الياقوت الأحمر الإفريقي النادر وألماس الهالو الدائري اللامع ليجعلك نجمة الحفل المطلقة.",
-                    en: "A stunning celebration of passion and status, showcasing matched vibrant African rubies bordered with brilliant round halos.",
-                    id: "Set perhiasan mewah untuk perayaan agung, menampilkan keindahan batu ruby Afrika merah berpadu dengan halo berlian bulat."
+                    ar: 'حجر مورجانيت مستدير بقطع رائع يشع باللون الوردي اللطيف المنعش.',
+                    en: 'Round-cut brilliant loose morganite radiating refreshing soft pink sparkles.',
+                    id: 'Morganite longgar potongan bulat memancarkan kerlip merah muda lembut.'
                 },
-                specs: {
-                    ar: ["ذهب أصفر عيار 18 قيراط", "ياقوت أحمر إجمالي: 12.0 قيراط", "ألماس طبيعي إجمالي: 5.5 قيراط", "يضم: عقد، أقراط، خاتم وسوار"],
-                    en: ["18k Yellow Gold", "Total Rubies: 12.0 CT", "Total Diamonds: 5.5 CT", "Includes: Necklace, Earrings, Ring, and Bracelet"],
-                    id: ["Emas Kuning 18k", "Total Batu Ruby: 12.0 Karat", "Total Berlian: 5.5 Karat", "Termasuk: Kalung, Anting, Cincin, dan Gelang"]
-                }
+                price: 4100,
+                weight: "4.80 ct",
+                specs: { metal: "N/A (Loose)", gem: "Round Morganite", cert: "IGI Certified" },
+                img: 'gemstone7.jpg'
             },
             {
-                id: "majestica-emerald-set",
-                category: "sets",
-                title: {
-                    ar: "طقم زمرد الملكة ماجستيكا",
-                    en: "Majestic Emerald Queen Suite",
-                    id: "Set Emerald Queen Suite"
+                id: 'gem-8',
+                category: 'gemstones',
+                name: {
+                    ar: 'بلورة السترين الذهبية اللامعة',
+                    en: 'Golden Citrine Crystal',
+                    id: 'Kristal Citrine Emas'
                 },
-                image: "set2.jpg",
                 desc: {
-                    ar: "مجموعة زمرد زامبيا الأخضر الداكن الأنيق، صُممت لتحاكي القطع الأثرية التاريخية للعائلات الحاكمة بتناسق لوني مبهر.",
-                    en: "High-jewelry suite made with carefully matched Zambian deep green emeralds representing heritage and prestige.",
-                    id: "Set perhiasan mewah yang dibuat dengan batu zamrud Zambia hijau tua alami, memancarkan warisan dan kemewahan."
+                    ar: 'حجر سترين أصفر ذهبي نقي مفعم بالحيوية، يجلب الدفء لجميع التصاميم.',
+                    en: 'Vibrant pure golden-yellow citrine gem bringing warmth to any custom mount.',
+                    id: 'Batu citrine kuning-emas murni yang cerah membawa kehangatan.'
                 },
-                specs: {
-                    ar: ["ذهب أبيض عيار 18 قيراط", "زمرد زامبي إجمالي: 10.5 قيراط", "ألماس أبيض نقي: 6.0 قيراط", "مظهر عتيق وملكي فاخر"],
-                    en: ["18k White Gold", "Total Zambian Emeralds: 10.5 CT", "White Diamonds: 6.0 CT", "Antique Royal Design Influence"],
-                    id: ["Emas Putih 18k", "Total Zamrud Zambia: 10.5 Karat", "Berlian Putih: 6.0 Karat", "Desain Klasik Pengaruh Kerajaan"]
-                }
+                price: 3900,
+                weight: "6.50 ct",
+                specs: { metal: "N/A (Loose)", gem: "Golden Citrine", cert: "GRS Certified" },
+                img: 'gemstone8.jpg'
             },
             {
-                id: "aurora-yellow-set",
-                category: "sets",
-                title: {
-                    ar: "طقم الألماس الأصفر أورورا الفاخر",
-                    en: "Aurora Fancy Yellow Diamond Set",
-                    id: "Set Berlian Kuning Aurora"
+                id: 'gem-9',
+                category: 'gemstones',
+                name: {
+                    ar: 'حجر أوبال ناري نقي سائب',
+                    en: 'Fire Opal Loose Gem',
+                    id: 'Opal Api Longgar'
                 },
-                image: "set1.jpg",
                 desc: {
-                    ar: "مجموعة نادرة تعكس دفء أشعة الشمس الذهبية، تتميز بقطع ألماس صفراء زاهية تبرز التفوق في الفن والصقل الفني.",
-                    en: "An incredibly rare color harmony featuring fancy yellow diamonds framed by colorless micro-pave borders.",
-                    id: "Harmoni warna yang sangat langka menampilkan berlian kuning alami dibingkai oleh jajaran berlian mikro-pave."
+                    ar: 'أوبال خام مصقول يعرض تدرجات برتقالية وحمراء متوهجة مثل لهب حقيقي.',
+                    en: 'Polished fiery loose opal exhibiting glowing orange-red flashes like actual fire.',
+                    id: 'Opal api longgar yang dipoles menampilkan kilatan oranye-merah.'
                 },
-                specs: {
-                    ar: ["ذهب أصفر وبلاتينوم", "ألماس أصفر إجمالي: 15.0 قيراط", "ألماس أبيض إجمالي: 4.8 قيراط", "تصميم متناسق متكامل بالكامل"],
-                    en: ["18k Yellow Gold & Platinum", "Total Fancy Yellow Diamonds: 15.0 CT", "White Diamonds: 4.8 CT", "Fully Coordinated Runway Suite"],
-                    id: ["Emas Kuning 18k & Platinum", "Total Berlian Kuning: 15.0 Karat", "Berlian Putih: 4.8 Karat", "Set Koordinasi Mewah Lengkap"]
-                }
-            },
-          
-
-            // ==================== 10 CERTIFIED LOOSE GEMSTONES ====================
-            {
-                id: "loose-ruby",
-                category: "gemstones",
-                title: {
-                    ar: "حجر ياقوت أحمر بقطع ماركيز",
-                    en: "Marquise Cut Loose Ruby",
-                    id: "Batu Mulia Ruby Marquise"
-                },
-                image: "gemstone3.jpg",
-                desc: {
-                    ar: "حجر ياقوت أحمر طبيعي غير معالج بلون 'دم الحمام' الفريد وبقطع ماركيز نادر، جاهز للتركيب حسب رغبتك على الخاتم أو القلادة الخاصة بكِ.",
-                    en: "A certified unheated natural pigeon blood red ruby featuring an elegant marquise-cut, completely ready to be crafted on your dream bespoke ring or necklace.",
-                    id: "Batu permata ruby merah pigeon-blood alami tanpa pemanasan bersertifikasi resmi, siap dipasangkan pada cincin atau kalung kustom impian Anda."
-                },
-                specs: {
-                    ar: ["ياقوت طبيعي 3.5 قيراط", "اللون: دم الحمام (Pigeon Blood)", "قطع ماركيز (Marquise)", "بدون معالجة حرارية (Unheated)", "مصحوب بشهادة المختبر السويسري (GRS)"],
-                    en: ["Natural Ruby 3.5 CT", "Color: Pigeon Blood Red", "Marquise Cut", "Unheated / No Heat Treatment", "Swiss GRS Certified"],
-                    id: ["Ruby Alami 3.5 Karat", "Warna: Merah Pigeon Blood", "Potongan Marquise", "Tanpa Pemanasan (Unheated)", "Sertifikasi GRS Swiss"]
-                }
+                price: 5400,
+                weight: "3.90 ct",
+                specs: { metal: "N/A (Loose)", gem: "Mexican Fire Opal", cert: "IGI Certified" },
+                img: 'gemstone11.jpg'
             },
             {
-                id: "loose-diamond-cushion",
-                category: "gemstones",
-                title: {
-                    ar: "ألماس سائب بقطع وسادة ممتاز",
-                    en: "Cushion Cut Flawless Diamond",
-                    id: "Berlian Cushion Cut Flawless"
+                id: 'gem-10',
+                category: 'gemstones',
+                name: {
+                    ar: 'حجر تورمالين بارايبا الأزرق النادر',
+                    en: 'Paraiba Tourmaline Rare Stone',
+                    id: 'Batu Langka Tourmaline Paraiba'
                 },
-                image: "gemstone4.jpg",
                 desc: {
-                    ar: "حجر ألماس ناصع النقاء واللمعان بقطع الوسادة الكلاسيكي المذهل، ممتاز للاقتناء أو للتركيب كحجر أساسي لخاتم زفافك.",
-                    en: "An incredibly bright and flawlessly cut cushion diamond, suitable as a pristine investment or centerpiece of an engagement ring.",
-                    id: "Berlian potongan cushion yang luar biasa terang dan dipotong tanpa cela, cocok sebagai investasi atau batu utama cincin pertunangan."
+                    ar: 'لون أزرق نيون مشع وخاطف للغاية، يعد من أندر وأثمن الأحجار في العالم.',
+                    en: 'Exquisite neon glowing blue Paraiba tourmaline, highly sought after by collectors.',
+                    id: 'Tourmaline Paraiba biru menyala neon yang indah, sangat dicari.'
                 },
-                specs: {
-                    ar: ["ألماس طبيعي 3.01 قيراط", "اللون: D (أعلى درجات خلو اللون)", "النقاوة: IF (خالي تماماً من العيوب)", "شهادة معتمدة من GIA برقم ليزر محفور"],
-                    en: ["Natural Diamond 3.01 CT", "Color: D (Highest Grade)", "Clarity: IF (Internally Flawless)", "GIA Certified with Laser Inscription"],
-                    id: ["Berlian Alami 3.01 Karat", "Warna: D (Tingkat Tertinggi)", "Kejernihan: IF (Internally Flawless)", "Sertifikasi GIA dengan Nomor Laser"]
-                }
-            },
-            {
-                id: "loose-emerald-colombian",
-                category: "gemstones",
-                title: {
-                    ar: "زمرد كولومبي طبيعي بقطع ثماني الأضلاع",
-                    en: "Colombian Emerald Cut Octagon",
-                    id: "Zamrud Kolombia Potongan Oktagon"
-                },
-                image: "gemstone5.jpg",
-                desc: {
-                    ar: "زمرد مستخرج من أشهر مناجم كولومبيا بلون أخضر مشع وشفافية ممتازة مع معالجة زيتية خفيفة جداً ومصرح بها.",
-                    en: "Natural green emerald sourced from renowned Colombian mines, displaying deep forest coloration and superior clarity.",
-                    id: "Zamrud hijau alami yang bersumber dari tambang terkenal di Kolombia, menampilkan warna hijau hutan yang pekat dan kejernihan tinggi."
-                },
-                specs: {
-                    ar: ["زمرد كولومبي طبيعي 4.2 قيراط", "القطع: ثماني الأضلاع (Octagon Emerald Cut)", "اللون: أخضر فيفد (Vivid Green)", "مع شهادة مختبر سويسري موثقة GIA"],
-                    en: ["Natural Colombian Emerald 4.2 CT", "Cut: Octagon Emerald Cut", "Color: Vivid Green", "Certified by GIA/GRS Laboratories"],
-                    id: ["Zamrud Kolombia Alami 4.2 Karat", "Potongan: Oktagon Emerald", "Warna: Hijau Vivid", "Sertifikasi Laboratorium GIA/GRS Resmi"]
-                }
-            },
-            {
-                id: "loose-sapphire-royal",
-                category: "gemstones",
-                title: {
-                    ar: "حجر سافير أزرق ملكي بقطع بيضاوي",
-                    en: "Royal Blue Oval Cut Sapphire",
-                    id: "Batu Safir Biru Royal Oval"
-                },
-                image: "gemstone6.jpg",
-                desc: {
-                    ar: "حجر سافير طبيعي بقطع بيضاوي ودرجة لون كحلي ملكي عميق من مناجم سريلانكا المرموقة.",
-                    en: "Natural oval-cut blue sapphire featuring a highly coveted royal blue hue and pristine transparency.",
-                    id: "Safir biru alami potongan oval yang menampilkan warna biru royal yang sangat didambakan dan transparansi murni."
-                },
-                specs: {
-                    ar: ["سافير طبيعي 5.1 قيراط", "اللون: أزرق ملكي (Royal Blue)", "المنشأ: سريلانكا (Ceylon)", "بدون معالجة حرارية (No Heat)"],
-                    en: ["Natural Sapphire 5.1 CT", "Color: Royal Blue", "Origin: Sri Lanka (Ceylon)", "No Heat Treatment (Unheated)"],
-                    id: ["Safir Alami 5.1 Karat", "Warna: Biru Royal", "Asal: Sri Lanka (Ceylon)", "Tanpa Pemanasan (Unheated)"]
-                }
-            },
-            {
-                id: "loose-yellow-diamond",
-                category: "gemstones",
-                title: {
-                    ar: "ألماس أصفر زاهي سائب",
-                    en: "Fancy Intense Yellow Radiant Diamond",
-                    id: "Berlian Kuning Radiant Alami"
-                },
-                image: "gemstone7.jpg",
-                desc: {
-                    ar: "ألماسة ملونة نادرة بوزن 2.1 قيراط بقطع الراديانت تبرز قوة ونقاء انعكاس اللون الأصفر الساطع داخل الحجر.",
-                    en: "A beautiful fancy intense yellow radiant-cut natural diamond, highly desirable for bespoke luxury designs.",
-                    id: "Berlian alami potongan radiant kuning intens yang sangat indah, sangat diinginkan untuk desain kustom mewah."
-                },
-                specs: {
-                    ar: ["ألماس أصفر طبيعي 2.1 قيراط", "درجة اللون: Fancy Intense Yellow", "النقاوة: VVS2", "قطع وتماثل ممتاز جداً (GIA)"],
-                    en: ["Fancy Natural Yellow Diamond 2.1 CT", "Color Grade: Fancy Intense Yellow", "Clarity: VVS2", "GIA Certified Grading Report"],
-                    id: ["Berlian Kuning Alami 2.1 Karat", "Tingkat Warna: Fancy Intense Yellow", "Kejernihan: VVS2", "Laporan Sertifikasi GIA Resmi"]
-                }
-            },
-            {
-                id: "loose-pink-sapphire",
-                category: "gemstones",
-                title: {
-                    ar: "سافير وردي زاهي بقطع كمثرى",
-                    en: "Pear Shaped Vivid Pink Sapphire",
-                    id: "Safir Pink Potongan Pir"
-                },
-                image: "gemstone8.jpg",
-                desc: {
-                    ar: "سافير وردي فاقع ونادر بقطع الكمثرى الأنيق، يتميز بتألق استثنائي ولون متجانس يخطف الأبصار.",
-                    en: "Vibrant pear-shaped vivid pink sapphire of clean clarity and high saturation, perfect for a high-jewelry pendant.",
-                    id: "Safir merah muda cerah alami potongan pir dengan kejernihan tinggi, sempurna untuk liontin perhiasan mewah."
-                },
-                specs: {
-                    ar: ["سافير وردي طبيعي 3.3 قيراط", "اللون: وردي فاقع (Vivid Pink)", "القطع: كمثرى (Pear Cut)", "شهادة فحص معملية دولية"],
-                    en: ["Natural Pink Sapphire 3.3 CT", "Color: Vivid Pink", "Cut: Pear Cut", "International Laboratory Certificate"],
-                    id: ["Safir Pink Alami 3.3 Karat", "Warna: Pink Vivid", "Potongan: Pir", "Sertifikat Laboratorium Internasional"]
-                }
-            },
-            {
-                id: "loose-alexandrite-magic",
-                category: "gemstones",
-                title: {
-                    ar: "حجر ألكسندريت سحري متغير اللون",
-                    en: "Magic Color-Change Alexandrite",
-                    id: "Batu Alexandrite Pengubah Warna"
-                },
-                image: "gemstone9.jpg",
-                desc: {
-                    ar: "ظاهرة علمية في حجر كريم، يتغير لونه من الأخضر الزمردي تحت أشعة الشمس إلى الأحمر الأرجواني في الإضاءة الداخلية الدافئة.",
-                    en: "A mesmerizing optical phenomenon, changing color from emerald green in daylight to raspberry red in incandescent light.",
-                    id: "Fenomena optik yang memukau, mengubah warna dari hijau zamrud di siang hari menjadi merah raspberry di bawah cahaya lampu."
-                },
-                specs: {
-                    ar: ["ألكسندريت طبيعي 2.05 قيراط", "نسبة تغير اللون: 90% (ممتازة جداً)", "القطع: وسادة بيضاوية", "شهادة معتمدة لإثبات المنشأ البرازيلي"],
-                    en: ["Natural Alexandrite 2.05 CT", "Color Change Percentage: 90% (Outstanding)", "Cut: Oval Cushion", "Certified Brazilian Origin Report"],
-                    id: ["Alexandrite Alami 2.05 Karat", "Persentase Perubahan Warna: 90% (Sangat Baik)", "Potongan: Oval Cushion", "Sertifikat Laporan Asal Brasil Resmi"]
-                }
-            },
-            {
-                id: "loose-tanzanite-velvet",
-                category: "gemstones",
-                title: {
-                    ar: "تانزانيت أزرق بنفسجي مخملي",
-                    en: "Velvet Blue-Violet Tanzanite",
-                    id: "Tanzanite Biru-Ungu Velvet"
-                },
-                image: "gemstone10.jpg",
-                desc: {
-                    ar: "حجر تانزانيت طبيعي مميز تظهر فيه ثلاثية الألوان بوضوح متناهٍ بوزن كبير ولون مخملي يجمع بين الأزرق والكحلي والبنفسجي.",
-                    en: "A large-carat flawless natural tanzanite displaying magnificent trichroism with intense deep blue-violet saturation.",
-                    id: "Tanzanite alami tanpa cacat berukuran karat besar menampilkan trikroisme yang indah dengan warna biru-ungu pekat."
-                },
-                specs: {
-                    ar: ["تانزانيت طبيعي 6.8 قيراط", "اللون: أزرق بنفسجي مكثف", "درجة النقاوة: خالي من الشوائب بالعين المجردة", "المنشأ: تانزانيا (تلال ميريلاني)"],
-                    en: ["Natural Tanzanite 6.8 CT", "Color: Intense Blue-Violet", "Clarity: Eye Clean", "Origin: Tanzania (Merelani Hills)"],
-                    id: ["Tanzanite Alami 6.8 Karat", "Warna: Biru-Ungu Intens", "Kejernihan: Eye Clean", "Asal: Tanzania (Merelani Hills)"]
-                }
-            },
-            {
-                id: "loose-diamond-pear",
-                category: "gemstones",
-                title: {
-                    ar: "ألماس كمثرى ناصع النقاء",
-                    en: "Flawless Pear Shape Loose Diamond",
-                    id: "Berlian Pir Tanpa Cela"
-                },
-                image: "gemstone11.jpg",
-                desc: {
-                    ar: "ألماسة كمثرية نقية تماماً بنسب صقل ممتازة وتناظر مدهش يعطي لمعاناً يغطي الحجرة بالكامل.",
-                    en: "A flawless pear-shaped diamond of premium master cut proportions, radiating outstanding sparkle and fire.",
-                    id: "Berlian potongan pir tanpa cela dengan proporsi potongan master premium, memancarkan kilau luar biasa."
-                },
-                specs: {
-                    ar: ["ألماس طبيعي 2.5 قيراط", "اللون: D (عديم اللون)", "النقاوة: FL (خالي من الشوائب تماماً)", "شهادة معتمدة من GIA مع نقش رقمي"],
-                    en: ["Natural Diamond 2.5 CT", "Color: D", "Clarity: FL (Flawless)", "GIA Certified with Digital Laser Registry"],
-                    id: ["Berlian Alami 2.5 Karat", "Warna: D", "Kejernihan: FL (Flawless)", "Sertifikasi GIA Resmi dengan Nomor Laser"]
-                }
-            },
-            {
-                id: "loose-tsavorite-garnet",
-                category: "gemstones",
-                title: {
-                    ar: "حجر تسافوريت غارنت أخضر مشع",
-                    en: "Electric Green Tsavorite Garnet",
-                    id: "Tsavorite Garnet Hijau Elektrik"
-                },
-                image: "gemstone12.jpg",
-                desc: {
-                    ar: "بديل الزمرد النادر والأكثر لمعاناً، حجر غارنت تسافوريت بلون أخضر زمردي ساطع وشفافية ممتازة.",
-                    en: "The rare and highly brilliant emerald alternative, showing off an electric green tsavorite garnet with top luster.",
-                    id: "Alternatif zamrud yang langka dan sangat berkilau, memamerkan tsavorite garnet hijau elektrik dengan kilau tinggi."
-                },
-                specs: {
-                    ar: ["تسافوريت طبيعي 3.8 قيراط", "اللون: أخضر مشع (Electric Green)", "القطع: وسادة متناسقة", "منشأ شرق إفريقيا معتمد"],
-                    en: ["Natural Tsavorite 3.8 CT", "Color: Electric Green", "Cut: Cushion Cut", "Certified East African Origin"],
-                    id: ["Tsavorite Alami 3.8 Karat", "Warna: Hijau Elektrik", "Potongan: Cushion", "Sertifikasi Asal Afrika Timur Resmi"]
-                }
+                price: 35000,
+                weight: "1.90 ct",
+                specs: { metal: "N/A (Loose)", gem: "Paraiba Neon Blue", cert: "GIA Certified" },
+                img: 'gemstone9.jpg'
             }
         ];
-
-
 
         // Sizing Board Configurations (8 to 40)
         const availableRingSizes = Array.from({length: 33}, (_, i) => i + 8); // 8 to 40
