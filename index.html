@@ -1715,7 +1715,15 @@
             if (qvCat) qvCat.innerText = p.category.toUpperCase();
             if (qvTitle) qvTitle.innerText = p.name[currentLanguage];
             if (qvDesc) qvDesc.innerText = p.desc[currentLanguage];
-            if (qvPrice) qvPrice.style.display = 'none';            
+            if (qvPrice) {
+            qvPrice.innerText =
+                currentLanguage === 'ar'
+                ? 'تواصل لمعرفة السعر'
+                : currentLanguage === 'en'
+                ? 'Contact for Price'
+                : 'Hubungi untuk Harga';
+}
+            
             if (qvSpecMetal) qvSpecMetal.innerText = p.specs.metal;
             if (qvSpecGem) qvSpecGem.innerText = p.specs.gem;
             if (qvSpecWeight) qvSpecWeight.innerText = p.weight;
@@ -1779,7 +1787,6 @@
         function orderCustomRing(type) {
             const currentMetalText = document.getElementById('builder-metal-name') ? document.getElementById('builder-metal-name').innerText : '';
             const currentStoneText = document.getElementById('builder-stone-name') ? document.getElementById('builder-stone-name').innerText : '';
-            const totalPrice = calculateBuilderPrice();
 
             let msg = '';
             if (type === 'primary') {
@@ -1789,16 +1796,16 @@
                           `*الحجر الكريم:* ${currentStoneText}\n` +
                           `*حجم القيراط:* ${builderCarat} قيراط (CT)\n` +
                           `*مقاس الإصبع:* مقاس ${selectedRingSize}\n` +
-                          `*السعر التقديري:* ${totalPrice.toLocaleString()} ر.س\n\n` +
-                          `يرجى مراجعة طلبي وتأكيد البدء في التصنيع والصياغة. شكراً لكم!`;
+
+                        `يرجى مراجعة طلبي وتأكيد البدء في التصنيع والصياغة. شكراً لكم!`;
                 } else {
                     msg = `Hello Rose Diamond,\nI would like to place a custom order for my "Dream Ring Customization" with specs:\n\n` +
                           `*Metal Selected:* ${currentMetalText}\n` +
                           `*Gemstone:* ${currentStoneText}\n` +
                           `*Carat Weight:* ${builderCarat} CT\n` +
                           `*Finger Size:* Size ${selectedRingSize}\n` +
-                          `*Estimated Price:* ${totalPrice.toLocaleString()} SAR\n\n` +
-                          `Please confirm manufacturing timeline and details. Thank you!`;
+
+                        `Please confirm manufacturing timeline and details. Thank you!`;
                 }
                 window.open(`https://wa.me/${PRIMARY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
             } else {
@@ -1808,16 +1815,16 @@
                           `*الحجر الكريم:* ${currentStoneText}\n` +
                           `*حجم القيراط:* ${builderCarat} قيراط (CT)\n` +
                           `*مقاس الإصبع:* مقاس ${selectedRingSize}\n` +
-                          `*السعر التقديري:* ${totalPrice.toLocaleString()} ر.س\n\n` +
-                          `هل يمكن تغيير نوع الحجر إلى حجر خاص أو زيادة حجم الماسة؟`;
+
+                        `هل يمكن تغيير نوع الحجر إلى حجر خاص أو زيادة حجم الماسة؟`;
                 } else {
                     msg = `Hello Rose Diamond,\nI have a general inquiry about this custom jewelry design configuration:\n\n` +
                           `*Metal Selected:* ${currentMetalText}\n` +
                           `*Gemstone:* ${currentStoneText}\n` +
                           `*Carat Weight:* ${builderCarat} CT\n` +
                           `*Finger Size:* Size ${selectedRingSize}\n` +
-                          `*Estimated Price:* ${totalPrice.toLocaleString()} SAR\n\n` +
-                          `Can we customize details further or request a heavier stone?`;
+
+                        `Can we customize details further or request a heavier stone?`;
                 }
                 window.open(`https://wa.me/${SECONDARY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
             }
