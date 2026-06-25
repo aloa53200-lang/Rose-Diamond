@@ -1969,9 +1969,10 @@
                 gemContainer.setAttribute('transform', `translate(50, 11) scale(${scale})`);
             }
 
-            const totalPrice = calculateBuilderPrice();
             const totalPriceDisplay = document.getElementById('builder-total-price');
-            if (totalPriceDisplay) totalPriceDisplay.innerText = totalPrice.toLocaleString() + pack.currency;
+if (totalPriceDisplay) {
+    totalPriceDisplay.style.display = 'none';
+}
 
             const caratDisplay = document.getElementById('builder-carat-display');
             if (caratDisplay) caratDisplay.innerText = builderCarat;
