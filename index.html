@@ -1684,13 +1684,11 @@
                 msg = `مرحباً روزماري للألماس،\nأود الاستفسار عن تفاصيل ومواصفات إضافية بخصوص المنتج:\n\n` +
                       `*المنتج:* ${p.name.ar}\n` +
                       `*الوزن والشهادة:* ${p.weight} | ${p.specs.cert}\n` +
-                      `*السعر المعروض:* ${p.price.toLocaleString()} ر.س\n\n` +
                       `هل تتوفر خيارات تعديل المقاس أو نوع الذهب لهذا الموديل؟`;
             } else {
                 msg = `Hello Rose Diamond,\nI have an inquiry regarding this product:\n\n` +
                       `*Product:* ${p.name.en}\n` +
                       `*Specs:* ${p.weight} | ${p.specs.cert}\n` +
-                      `*Price:* ${p.price.toLocaleString()} SAR\n\n` +
                       `Could you please share more details, sizing adjustments, or gold grade options for this piece?`;
             }
 
@@ -1717,8 +1715,7 @@
             if (qvCat) qvCat.innerText = p.category.toUpperCase();
             if (qvTitle) qvTitle.innerText = p.name[currentLanguage];
             if (qvDesc) qvDesc.innerText = p.desc[currentLanguage];
-            if (qvPrice) qvPrice.innerText = `${p.price.toLocaleString()} ${pack.currency}`;
-            
+            if (qvPrice) qvPrice.style.display = 'none';            
             if (qvSpecMetal) qvSpecMetal.innerText = p.specs.metal;
             if (qvSpecGem) qvSpecGem.innerText = p.specs.gem;
             if (qvSpecWeight) qvSpecWeight.innerText = p.weight;
