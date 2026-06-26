@@ -1650,8 +1650,7 @@
                       `Please confirm availability and guide me through the payment and shipping process. Thank you!`;
             }
 
-            window.open(`https://wa.me/${PRIMARY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
-        }
+            window.location.href = `https://wa.me/${SECONDARY_WHATSAPP}?text=${encodeURIComponent(msg)}`;        }
 
         // Direct WhatsApp inquiry via SECONDARY_WHATSAPP
         function inquireProduct(productId) {
@@ -1671,8 +1670,7 @@
                       `Could you please share more details, sizing adjustments, or gold grade options for this piece?`;
             }
 
-            window.open(`https://wa.me/${SECONDARY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
-        }
+window.location.href = `https://wa.me/${SECONDARY_WHATSAPP}?text=${encodeURIComponent(msg)}`;        }
 
         // Quick View Modal Controls
         function openQuickView(id) {
@@ -1786,8 +1784,7 @@
 
                         `Please confirm manufacturing timeline and details. Thank you!`;
                 }
-                window.open(`https://wa.me/${PRIMARY_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
-            } else {
+window.location.href = `https://wa.me/${SECONDARY_WHATSAPP}?text=${encodeURIComponent(msg)}`;            } else {
                 if (currentLanguage === 'ar') {
                     msg = `مرحباً روزماري لتجارة الألماس،\nأرغب في الاستفسار عن كلفة وإمكانية تعديل بعض العناصر في هذا التصميم المخصص:\n\n` +
                           `*المعدن المختار:* ${currentMetalText}\n` +
