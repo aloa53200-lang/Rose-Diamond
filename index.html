@@ -1985,5 +1985,25 @@ if (totalPriceDisplay) {
             changeLanguage(currentLanguage);
         }
     </script>
+    <!-- Floating WhatsApp -->
+<div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+
+    <!-- Text Bubble -->
+    <div class="hidden sm:flex items-center bg-white text-gray-800 px-4 py-2 rounded-full shadow-xl border border-gray-200">
+        <span class="text-sm font-semibold">تواصل معنا</span>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/62816875000"
+       target="_blank"
+       class="relative flex items-center justify-center w-16 h-16 bg-[#25D366] rounded-full shadow-2xl hover:scale-110 transition duration-300">
+
+        <!-- Pulse Animation -->
+        <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-40 animate-ping"></span>
+
+        <i class="fa-brands fa-whatsapp text-white text-4xl relative z-10"></i>
+    </a>
+
+</div>
 </body>
 </html>
