@@ -220,9 +220,10 @@
                     
                     <!-- Premium Language Switcher Capsule -->
                     <div class="flex items-center bg-luxury-slate border border-gold-800/30 rounded-full p-1 gap-1">
-                        <button onclick="changeLanguage('ar')" id="lang-btn-ar" class="px-3 py-1 rounded-full text-xs transition-all duration-300 bg-gold-500 text-luxury-deep font-bold">العربية</button>
                         <button onclick="changeLanguage('en')" id="lang-btn-en" class="px-3 py-1 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent">EN</button>
                         <button onclick="changeLanguage('id')" id="lang-btn-id" class="px-3 py-1 rounded-full text-xs transition-all duration-300 text-gray-400 hover:text-gold bg-transparent">ID</button>
+                        <button onclick="changeLanguage('ar')" id="lang-btn-ar" class="px-3 py-1 rounded-full text-xs transition-all duration-300 bg-gold-500 text-luxury-deep font-bold">العربية</button>
+                        
                     </div>
                 </nav>
 
@@ -771,8 +772,8 @@
         const TIKTOK_PAGE_URL = "https://www.tiktok.com/@rosedaimond23?_r=1&_t=ZS-97SUUuk0BIW"; // Custom TikTok profile link
         const INSTAGRAM_PAGE_URL = "https://www.instagram.com/rosadaimond?igsh=MWkxNmwwY3d2M3RjdQ%3D%3D&utm_source=qr"; // New Instagram Link
         
-        // Language state loaded from localStorage dynamically for persistence
-        let currentLanguage = localStorage.getItem('rose_diamond_lang') || 'ar';        
+// Language state loaded from localStorage dynamically for persistence
+let currentLanguage = 'en';
         // Comprehensive database of 33 items (10 rings, 7 necklaces, 6 sets, 10 gemstones)
         const products = [
             // RINGS (10 Items)
