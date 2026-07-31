@@ -741,36 +741,69 @@
         <i id="toast-icon" class="fa-solid fa-circle-check text-gold-400"></i>
         <span id="toast-message">تمت العملية بنجاح!</span>
     </div>
-<!-- ================= PDF COMPANY PROFILE ================= -->
+<!-- ================= PDF DOWNLOADS ================= -->
 <section class="py-20 bg-luxury-slate border-t border-gold-800/20">
-    <div class="max-w-5xl mx-auto px-6 text-center">
+    <div class="max-w-6xl mx-auto px-6">
 
-        <div class="mb-6">
-            <i class="fa-solid fa-file-pdf text-red-500 text-6xl"></i>
+        <div class="text-center mb-12">
+            <h2 id="pdf-section-title" class="text-4xl font-bold text-white">
+                Downloads
+            </h2>
+
+            <p id="pdf-section-desc" class="text-gray-400 mt-4">
+                Download our company documents.
+            </p>
         </div>
 
-        <h2 id="pdf-title"
-            class="text-3xl font-bold text-white mb-4">
-            Company Profile
-        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
 
-        <p id="pdf-desc"
-           class="text-gray-400 max-w-2xl mx-auto mb-8">
-            Download our company profile to learn more about our products,
-            services and international trading activities.
-        </p>
+            <!-- Company Profile -->
+            <div class="bg-gray-900 rounded-2xl p-8 text-center border border-gray-700 hover:border-red-500 transition">
 
-        <a href="pdf/company-profile.pdf"
-           target="_blank"
-           class="inline-flex items-center gap-3 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white px-8 py-4 rounded-full font-bold transition shadow-lg">
+                <i class="fa-solid fa-building text-red-500 text-5xl mb-6"></i>
 
-            <i class="fa-solid fa-download"></i>
+                <h3 id="profile-title" class="text-2xl font-bold text-white mb-3">
+                    Company Profile
+                </h3>
 
-            <span id="pdf-btn">
-                Download PDF
-            </span>
+                <p id="profile-desc" class="text-gray-400 mb-6">
+                    Learn more about our company.
+                </p>
 
-        </a>
+                <a href="pdf/company-profile.pdf"
+                   target="_blank"
+                   class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg inline-block">
+
+                    <span id="profile-btn">Download PDF</span>
+
+                </a>
+
+            </div>
+
+            <!-- Product Catalog -->
+            <div class="bg-gray-900 rounded-2xl p-8 text-center border border-gray-700 hover:border-yellow-500 transition">
+
+                <i class="fa-solid fa-book-open text-yellow-400 text-5xl mb-6"></i>
+
+                <h3 id="catalog-title" class="text-2xl font-bold text-white mb-3">
+                    Product Catalog
+                </h3>
+
+                <p id="catalog-desc" class="text-gray-400 mb-6">
+                    Explore our products and specifications.
+                </p>
+
+                <a href="pdf/product-catalog.pdf"
+                   target="_blank"
+                   class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-6 py-3 rounded-lg inline-block">
+
+                    <span id="catalog-btn">Download PDF</span>
+
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 </section>
@@ -1448,10 +1481,17 @@ let currentLanguage = 'en';
                 lblCaratUnit: "قيراط",
                 btnOrderCustom: "طلب التصميم (الرئيسي)",
                 btnInquireCustom: "استفسار (واتساب الإضافي)",
-                pdfTitle: "ملف الشركة",
-                pdfDesc: "قم بتنزيل ملف الشركة للتعرف على منتجاتنا وخدماتنا وأنشطة التجارة الدولية.",
-                pdfBtn: "تحميل ملف PDF"
-            },
+               pdfSectionTitle: "الملفات",
+                pdfSectionDesc: "يمكنك تنزيل ملفات الشركة من هنا.",
+                
+                profileTitle: "ملف الشركة",
+                profileDesc: "تعرف على شركتنا وخدماتنا.",
+                profileBtn: "تحميل PDF",
+                
+                catalogTitle: "كتالوج المنتجات",
+                catalogDesc: "استعرض منتجاتنا ومواصفاتها.",
+                catalogBtn: "تحميل PDF",
+                            },
             en: {
                 home: "Home",
                 builder: "Customizer Mode",
@@ -1510,9 +1550,16 @@ let currentLanguage = 'en';
                 lblCaratUnit: "Carat",
                 btnOrderCustom: "Order Custom Ring (Primary)",
                 btnInquireCustom: "Inquire Custom (Secondary)",
-                pdfTitle: "Company Profile",
-                pdfDesc: "Download our company profile to learn more about our products, services and international trading activities.",
-                pdfBtn: "Download PDF"
+                pdfSectionTitle: "Downloads",
+                pdfSectionDesc: "Download our company documents.",
+                
+                profileTitle: "Company Profile",
+                profileDesc: "Learn more about our company.",
+                profileBtn: "Download PDF",
+                
+                catalogTitle: "Product Catalog",
+                catalogDesc: "Explore our products and specifications.",
+                catalogBtn: "Download PDF",
             },
             id: {
                 home: "Beranda",
@@ -1572,9 +1619,16 @@ let currentLanguage = 'en';
                 lblCaratUnit: "Karat",
                 btnOrderCustom: "Pesan Cincin Kustom (Utama)",
                 btnInquireCustom: "Tanya Kustom (Secondary)",
-                pdfTitle: "Profil Perusahaan",
-                pdfDesc: "Unduh profil perusahaan kami untuk mengetahui lebih lanjut tentang produk, layanan, dan aktivitas perdagangan internasional kami.",
-                pdfBtn: "Unduh PDF"
+               pdfSectionTitle: "Unduhan",
+            pdfSectionDesc: "Unduh dokumen perusahaan kami.",
+            
+            profileTitle: "Profil Perusahaan",
+            profileDesc: "Pelajari lebih lanjut tentang perusahaan kami.",
+            profileBtn: "Unduh PDF",
+            
+            catalogTitle: "Katalog Produk",
+            catalogDesc: "Lihat produk dan spesifikasinya.",
+            catalogBtn: "Unduh PDF",
             }
         };
 
@@ -1709,13 +1763,28 @@ let currentLanguage = 'en';
             safeSetText('btn-order-custom-wa', pack.btnOrderCustom);
             safeSetText('btn-inquire-custom-wa', pack.btnInquireCustom);
 
+
+        
             // Quick view modal translation
             safeSetText('qv-lbl-order', pack.btnOrderWA);
             safeSetText('qv-lbl-inquire', pack.btnInquireWA);
-
+            
+            // PDF Section
+            safeSetText("pdf-section-title", pack.pdfSectionTitle);
+            safeSetText("pdf-section-desc", pack.pdfSectionDesc);
+            
+            safeSetText("profile-title", pack.profileTitle);
+            safeSetText("profile-desc", pack.profileDesc);
+            safeSetText("profile-btn", pack.profileBtn);
+            
+            safeSetText("catalog-title", pack.catalogTitle);
+            safeSetText("catalog-desc", pack.catalogDesc);
+            safeSetText("catalog-btn", pack.catalogBtn);
+            
             renderProducts();
             renderRingSizesBoard();
             updateBuilderUI();
+                        
         }
 
         let activeFilter = 'all';
