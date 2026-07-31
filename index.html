@@ -741,7 +741,39 @@
         <i id="toast-icon" class="fa-solid fa-circle-check text-gold-400"></i>
         <span id="toast-message">تمت العملية بنجاح!</span>
     </div>
+<!-- ================= PDF COMPANY PROFILE ================= -->
+<section class="py-20 bg-luxury-slate border-t border-gold-800/20">
+    <div class="max-w-5xl mx-auto px-6 text-center">
 
+        <div class="mb-6">
+            <i class="fa-solid fa-file-pdf text-red-500 text-6xl"></i>
+        </div>
+
+        <h2 id="pdf-title"
+            class="text-3xl font-bold text-white mb-4">
+            Company Profile
+        </h2>
+
+        <p id="pdf-desc"
+           class="text-gray-400 max-w-2xl mx-auto mb-8">
+            Download our company profile to learn more about our products,
+            services and international trading activities.
+        </p>
+
+        <a href="pdf/company-profile.pdf"
+           target="_blank"
+           class="inline-flex items-center gap-3 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white px-8 py-4 rounded-full font-bold transition shadow-lg">
+
+            <i class="fa-solid fa-download"></i>
+
+            <span id="pdf-btn">
+                Download PDF
+            </span>
+
+        </a>
+
+    </div>
+</section>
     <!-- Footer -->
    <!-- Footer -->
 <footer class="mt-auto bg-black border-t border-gold-800/15 py-12 text-center text-xs text-gray-500">
@@ -1415,7 +1447,10 @@ let currentLanguage = 'en';
                 sgOpt2Text: "أحضر خاتماً يلائم إصبعك تماماً، ضع مسطرة فوق الخاتم وقس المسافة بين الحواف الداخلية بالمليمتر (mm) لتعرف القطر الداخلي.",
                 lblCaratUnit: "قيراط",
                 btnOrderCustom: "طلب التصميم (الرئيسي)",
-                btnInquireCustom: "استفسار (واتساب الإضافي)"
+                btnInquireCustom: "استفسار (واتساب الإضافي)",
+                pdfTitle: "ملف الشركة",
+                pdfDesc: "قم بتنزيل ملف الشركة للتعرف على منتجاتنا وخدماتنا وأنشطة التجارة الدولية.",
+                pdfBtn: "تحميل ملف PDF"
             },
             en: {
                 home: "Home",
@@ -1474,7 +1509,10 @@ let currentLanguage = 'en';
                 sgOpt2Text: "Take a ring that fits perfectly. Place a ruler over it and measure the widest inside diameter in millimeters (mm) to find internal diameter specifications.",
                 lblCaratUnit: "Carat",
                 btnOrderCustom: "Order Custom Ring (Primary)",
-                btnInquireCustom: "Inquire Custom (Secondary)"
+                btnInquireCustom: "Inquire Custom (Secondary)",
+                pdfTitle: "Company Profile",
+                pdfDesc: "Download our company profile to learn more about our products, services and international trading activities.",
+                pdfBtn: "Download PDF"
             },
             id: {
                 home: "Beranda",
@@ -1533,7 +1571,10 @@ let currentLanguage = 'en';
                 sgOpt2Text: "Ambil cincin yang pas. Ukur diameter bagian dalam dalam milimeter (mm) menggunakan penggaris untuk mengetahui lebar ukuran.",
                 lblCaratUnit: "Karat",
                 btnOrderCustom: "Pesan Cincin Kustom (Utama)",
-                btnInquireCustom: "Tanya Kustom (Secondary)"
+                btnInquireCustom: "Tanya Kustom (Secondary)",
+                pdfTitle: "Profil Perusahaan",
+                pdfDesc: "Unduh profil perusahaan kami untuk mengetahui lebih lanjut tentang produk, layanan, dan aktivitas perdagangan internasional kami.",
+                pdfBtn: "Unduh PDF"
             }
         };
 
